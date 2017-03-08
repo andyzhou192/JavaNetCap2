@@ -1,0 +1,5 @@
+2017-03-05 12:17:23  [ AWT-EventQueue-0:1 ] - [ DEBUG ]  Couldn't find template in cache for "HttpTestScriptEntity.ftlh"("zh_CN", UTF-8, parsed); will try to load it.
+2017-03-05 12:17:23  [ AWT-EventQueue-0:7 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity_zh_CN.ftlh"): Not found
+2017-03-05 12:17:23  [ AWT-EventQueue-0:10 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity_zh.ftlh"): Not found
+2017-03-05 12:17:23  [ AWT-EventQueue-0:11 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity.ftlh"): Found
+2017-03-05 12:17:23  [ AWT-EventQueue-0:13 ] - [ DEBUG ]  Loading template for "HttpTestScriptEntity.ftlh"("zh_CN", UTF-8, parsed) from "D:\\workspace\\JavaNetCap\\template\\HttpTestScriptEntity.ftlh"
