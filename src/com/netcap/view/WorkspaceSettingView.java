@@ -18,6 +18,13 @@ public class WorkspaceSettingView extends AbstractSettingView {
 	private JButton browseButton, applyButton;
 	private JLabel workSpaceLabel;
 	
+	public WorkspaceSettingView() {
+		super(10, 10);
+		defineComponents();
+		layoutComponents();
+		initData();
+	}
+	
 	/**
 	 * 定义组件
 	 */
@@ -36,7 +43,7 @@ public class WorkspaceSettingView extends AbstractSettingView {
 		this.add(workSpaceTextField, ViewModules.getGridBagConstraints(2, 1, 8, 1));
 		this.add(browseButton, ViewModules.getGridBagConstraints(10, 1, 1, 1));
 		
-		this.add(applyButton, ViewModules.getGridBagConstraints(10, 10, 1, 1));
+		this.add(applyButton, ViewModules.getGridBagConstraints(10, 12, 1, 1));
 	}
 	
 	/**
@@ -75,6 +82,7 @@ public class WorkspaceSettingView extends AbstractSettingView {
 	public void saveSettings(){
 		// 必填：生成的脚本文件包名，如：com.cmcc
 		storeProperty("fileStoreDir", workSpaceTextField.getText());
+		ConstsUtil.initProperties(ConstsUtil.PROP_FILE);
 	}
 	
 }

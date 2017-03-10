@@ -25,10 +25,9 @@ import jpcap.JpcapCaptor;
  * PURCHASED FOR THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED LEGALLY FOR
  * ANY CORPORATE OR COMMERCIAL PURPOSE.
  */
-@SuppressWarnings("restriction")
+@SuppressWarnings({ "restriction", "serial" })
 public class JcaptureSettingView extends AbstractSettingView {
 
-	private static final long serialVersionUID = 1L;
 	/**
 	 * Auto-generated main method to display this JDialog
 	 */
@@ -38,6 +37,13 @@ public class JcaptureSettingView extends AbstractSettingView {
 	private JComboBox<?> netJComboBox, proJComboBox;
 	private JRadioButton wholeRadioButton, headRadioButton, otherRadioButton;
 	private JButton applyButton;
+	
+	public JcaptureSettingView() {
+		super(10, 10);
+		defineComponents();
+		layoutComponents();
+		initData();
+	}
 	
 	/**
 	 * 定义组件
@@ -168,6 +174,7 @@ public class JcaptureSettingView extends AbstractSettingView {
 		storeProperty("capture_length", String.valueOf(caplen));
 		// 待捕获的URL，不含参数
 		storeProperty("capture_url", urlFilterField.getText());
+		ConstsUtil.initProperties(ConstsUtil.PROP_FILE);
 	}
 	
 	/**

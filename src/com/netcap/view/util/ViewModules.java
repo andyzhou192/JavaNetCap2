@@ -29,6 +29,7 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JSeparator;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import javax.swing.SpringLayout;
@@ -91,17 +92,6 @@ public class ViewModules {
 	 */
 	public static JMenuItem addSimpleMenuItem(JMenu menu, String name, String command, ActionListener listener) {
 		return menu.add(ViewModules.createSimpleMenuItem(name, command, listener));
-	}
-	
-	/**
-	 * 
-	 * @param menu
-	 * @param me
-	 * @param listener
-	 * @return
-	 */
-	public static JMenuItem addSimpleMenuItem(JMenu menu, MenuEnum me, ActionListener listener) {
-		return ViewModules.addSimpleMenuItem(menu, me.getDescription(), me.getCommand(), listener);
 	}
 	
 	/**
@@ -218,7 +208,22 @@ public class ViewModules {
 		JTextField textField = new JTextField(width);
 		textField.setText(content);//1514
 		textField.setEnabled(enabled);
+		textField.setForeground(Color.BLACK);
 		return textField;
+	}
+	
+	/**
+	 * 
+	 * @param content
+	 * @return
+	 */
+	public static JTextArea createTextArea(String content){
+		JTextArea textArea = new JTextArea();
+		textArea.setEditable(true);
+		textArea.setLineWrap(true);
+		textArea.setWrapStyleWord(true);
+		textArea.setForeground(Color.BLACK);
+		return textArea;
 	}
 	
 	/**
@@ -491,12 +496,24 @@ public class ViewModules {
 	 * 
 	 * @return
 	 */
-	public static GridBagLayout getGridBagLayout(){
+	public static GridBagLayout getGridBagLayout(int rowNum, int columnNum, int rowHeight, int columnWidth, double rowWeight, double colWeight){
+		int[] rowHight = new int[rowNum];
+		double[] rowWeights = new double[rowNum];
+		for(int i = 0; i < rowNum; i++){
+			rowHight[i] = rowHeight;
+			rowWeights[i] = 1.0;
+		}
+		int[] colWidth = new int[columnNum];
+		double[] colWeights = new double[columnNum];
+		for(int i = 0; i < columnNum; i++){
+			colWidth[i] = columnWidth;
+			colWeights[i] = 1.0;
+		}
 		GridBagLayout mainLayout = new GridBagLayout(); 
-		mainLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		mainLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		mainLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		mainLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		mainLayout.rowHeights = rowHight;
+		mainLayout.rowWeights = rowWeights;
+		mainLayout.columnWidths = colWidth;
+		mainLayout.columnWeights = colWeights;
 		return mainLayout;
 	}
 }

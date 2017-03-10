@@ -2,21 +2,35 @@ package com.dataprocess;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Map;
 
 import org.apache.http.util.Asserts;
 
 import com.db.excel.ExcelWriter;
-import com.protocol.http.bean.HttpDataBean;
 
 import jxl.write.Label;
 import jxl.write.WritableSheet;
 import jxl.write.WriteException;
-import jxl.write.biff.RowsExceededException;
 
 public class DataSaveHandler {
-	private static String file;
 	
-	private static void initFile(String url){
+	private String[] titles = {"ID", "URL","Method","ReqHeader","ReqParams","StatusCode","ReasonPhrase","RspHeader","RspBody"};
+	
+	private String url, method, reqHeader, reqParams, statusCode, reasonPhrase, rspHeader, rspBody, file;
+	
+	public DataSaveHandler(Map<String, String> dataMap){
+		this.url = dataMap.get("URL").toString();
+		this.method = dataMap.get("Method").toString();
+		this.reqHeader = dataMap.get("ReqHeader").toString();
+		this.reqParams = dataMap.get("ReqParams").toString();
+		this.statusCode = dataMap.get("StatusCode").toString();
+		this.reasonPhrase = dataMap.get("ReasonPhrase").toString();
+		this.rspHeader = dataMap.get("RspHeader").toString();
+		this.rspBody = dataMap.get("RspBody").toString();
+		this.file = getFileName();
+	}
+	
+	private String getFileName(){
 		Asserts.notEmpty(url, "url");
 		String fileName = "";
 		if(url.contains("?")){
@@ -27,61 +41,53 @@ public class DataSaveHandler {
 		} else {
 			fileName = url.substring(url.lastIndexOf("/")).trim();
 		}
-		file = "data" + fileName.replace(":", "-") + ".xls";
+		return "data" + fileName.replace(":", "-") + ".xls";
 	}
 	
-	public static void saveToExcel(HttpDataBean data) {
-		HttpDataBean httpData = ((HttpDataBean) data);
-		if(null != httpData.getUrl())
-			initFile(httpData.getUrl());
-		try {
-			writeToExcel(httpData);
-		} catch (RowsExceededException e) {
-			e.printStackTrace();
-		} catch (WriteException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
-	private static synchronized void writeToExcel(HttpDataBean httpData) throws RowsExceededException, WriteException, IOException {
-		File srcFile = new File(file);
-		ExcelWriter book = ExcelWriter.getBook(srcFile);
-		WritableSheet sheet = null;
-		if(book.getNumberOfSheets() < 1){
-			sheet = book.createSheet("data", 0);
-		} else {
-			sheet = book.getSheet(0);
-		}
-		int rowCount = sheet.getRows();
-		if(rowCount < 1 || !"ID".equals(sheet.getCell(0, 0).getContents())){
-			String[] titles = {"ID", "URL","Method","ReqHeader","ReqParams","RspCode","RspMsg","RspHeader","RspBody"};
-			for(int i = 0; i < titles.length; i++){
-				Label label = new Label(i, 0, titles[i]);
-				sheet.addCell(label);
+	public synchronized void writeToExcel() {
+		try{
+			File srcFile = new File(file);
+			ExcelWriter book = ExcelWriter.getBook(srcFile);
+			WritableSheet sheet = null;
+			if(book.getNumberOfSheets() < 1){
+				sheet = book.createSheet("data", 0);
+			} else {
+				sheet = book.getSheet(0);
 			}
-			rowCount = rowCount + 1;
+			int rowCount = sheet.getRows();
+			if(rowCount < 1 || !"ID".equals(sheet.getCell(0, 0).getContents())){
+				for(int i = 0; i < titles.length; i++){
+					Label label = new Label(i, 0, titles[i]);
+					sheet.addCell(label);
+				}
+				rowCount = rowCount + 1;
+			}
+			sheet.addCell(new Label(0, rowCount, "Case" + rowCount)); 
+			sheet.addCell(new Label(1, rowCount, url)); 
+			sheet.addCell(new Label(2, rowCount, method)); 
+			sheet.addCell(new Label(3, rowCount, reqHeader)); 
+			sheet.addCell(new Label(4, rowCount, reqParams)); 
+			sheet.addCell(new Label(5, rowCount, statusCode)); 
+			sheet.addCell(new Label(6, rowCount, reasonPhrase)); 
+			sheet.addCell(new Label(7, rowCount, rspHeader)); 
+			sheet.addCell(new Label(8, rowCount, rspBody)); 
+			book.write();
+			book.close();
+			ExcelWriter.deleteTempFile(srcFile);
+		} catch(WriteException | IOException e){
+			e.printStackTrace();
 		}
-		//String id = String.valueOf(httpData.getId());
-//		sheet.addCell(new Label(0, rowCount, id)); //ExcelReader.getColumn(titles, "ID")
-		sheet.addCell(new Label(1, rowCount, httpData.getUrl())); //ExcelReader.getColumn(titles, "URL")
-		String method = httpData.getMethod();
-		sheet.addCell(new Label(2, rowCount, method)); //ExcelReader.getColumn(titles, "Method")
-		sheet.addCell(new Label(3, rowCount, httpData.getRequestHeader().toString())); //ExcelReader.getColumn(titles, "ReqHeader")
-		sheet.addCell(new Label(4, rowCount, httpData.getRequestParam().toString())); //ExcelReader.getColumn(titles, "ReqParams")
-		sheet.addCell(new Label(5, rowCount, String.valueOf(httpData.getStatusCode()))); //ExcelReader.getColumn(titles, "RespStatus")
-		sheet.addCell(new Label(6, rowCount, httpData.getReasonPhrase())); //ExcelReader.getColumn(titles, "RespMsg")
-		sheet.addCell(new Label(7, rowCount, httpData.getResponseHeader().toString())); //ExcelReader.getColumn(titles, "RespHeader")
-		sheet.addCell(new Label(8, rowCount, httpData.getResponseBody())); //ExcelReader.getColumn(titles, "RespBody")
-		book.write();
-		book.close();
-		ExcelWriter.deleteTempFile(srcFile);
 	}
 	
 	public static void main(String[] args) {
-		String url = "http://172.23.27.210:8888?";
-		initFile(url);
-		System.out.println(file);
+		java.util.HashMap<String, Object> map = new java.util.HashMap<String, Object>();
+		map.put("URL", "11111111111");
+		map.put("Method", "22222222222222");
+		map.put("ReqHeader", "3333333333333333");
+		map.put("ReqParams", "44444444444444444");
+		map.put("StatusCode", "55555555555555555555");
+		map.put("ReasonPhrase", "6666666666666666666666");
+		map.put("RspHeader", "777777777777777777777");
+		map.put("RspBody", "8888888888888888888");
 	}
 }

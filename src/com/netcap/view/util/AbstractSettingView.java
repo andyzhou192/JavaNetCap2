@@ -11,19 +11,12 @@ import javax.swing.border.LineBorder;
 import com.codegenerator.util.PropertiesUtil;
 import com.common.util.ConstsUtil;
 
+@SuppressWarnings("serial")
 public abstract class AbstractSettingView extends JPanel implements ActionListener {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	
-	public AbstractSettingView(){
+	public AbstractSettingView(int rowNum, int columnNum){
 		this.setBorder(new LineBorder(new Color(255, 200, 0), 2));
-		this.setLayout(ViewModules.getGridBagLayout());
-		defineComponents();
-		layoutComponents();
-		initData();
+		this.setLayout(ViewModules.getGridBagLayout(rowNum, columnNum, 5, 5, 1.0, 1.0));
 	}
 	
 	/**

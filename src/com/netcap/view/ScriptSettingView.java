@@ -25,16 +25,22 @@ import com.netcap.view.util.ViewModules;
  * @author sifuma@163.com
  *
  */
+@SuppressWarnings("serial")
 public class ScriptSettingView extends AbstractSettingView {
 
-	private static final long serialVersionUID = 1L;
-	
 	private JLabel packageNameLabel, authorLabel, classDescLabel, classNameLabel, superclassLabel, paramNamesLabel, smokeScriptLabel, templateDirLabel, templateFileLabel;
 	private JTextField packageNameField, authorField, classDescField, classNameField, superclassField, paramNamesField, templateDirField;
 	private JCheckBox smokeScriptCheckBox;
 	private JButton browseButton, applyButton;
 	private JComboBox<String> templateFileCombBox;
 	private DefaultComboBoxModel<String> combBoxModel;
+	
+	public ScriptSettingView() {
+		super(10, 10);
+		defineComponents();
+		layoutComponents();
+		initData();
+	}
 	
 	/**
 	 * 初始化界面数据
@@ -194,6 +200,7 @@ public class ScriptSettingView extends AbstractSettingView {
 		storeProperty("templateDir", templateDirField.getText());
 		// 必填，模板文件名称，包括后缀名
 		storeProperty("templateFile", templateFileCombBox.getSelectedItem().toString());
+		ConstsUtil.initProperties(ConstsUtil.PROP_FILE);
 	}
 	
 	public class MouseClickListener extends MouseAdapter {

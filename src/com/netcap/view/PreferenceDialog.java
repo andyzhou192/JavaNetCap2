@@ -7,6 +7,7 @@ import java.awt.Container;
 
 import javax.swing.JDialog;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTree;
 import javax.swing.border.LineBorder;
 import javax.swing.event.TreeSelectionEvent;
@@ -15,9 +16,8 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeSelectionModel;
 
+@SuppressWarnings("serial")
 public class PreferenceDialog extends JDialog implements TreeSelectionListener {
-	
-	private static final long serialVersionUID = 1L;
 	
 	private JTree tree = new JTree();
 	private CardLayout card = new CardLayout();
@@ -35,7 +35,8 @@ public class PreferenceDialog extends JDialog implements TreeSelectionListener {
 		panel.add("JavaScriptSetting", new ScriptSettingView());
 		card.show(panel, "WorkspaceSetting");
 		createTree();
-		container.add(panel, BorderLayout.CENTER);
+		JScrollPane jsp = new JScrollPane(panel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+		container.add(jsp, BorderLayout.CENTER);
 		container.add(tree, BorderLayout.WEST);
 		this.pack();
 	}
