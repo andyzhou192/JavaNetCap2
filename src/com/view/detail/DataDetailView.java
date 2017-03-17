@@ -1,4 +1,4 @@
-package com.view.view;
+package com.view.detail;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -18,7 +18,7 @@ import javax.swing.JTextField;
 import com.generator.java.ScriptGenerator;
 import com.handler.DataSaveHandler;
 import com.protocol.http.HttptHelper;
-import com.view.util.AbstractPreferencesView;
+import com.view.preference.AbstractPreferencesView;
 import com.view.util.ViewModules;
 import com.common.Constants;
 

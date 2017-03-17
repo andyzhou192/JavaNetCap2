@@ -5,7 +5,6 @@ import com.netcap.handler.AsyncHandler;
 import com.netcap.handler.DataQueues;
 import com.protocol.http.HttptHelper;
 import com.view.MainFrame;
-
 import jpcap.PacketReceiver;
 import jpcap.packet.Packet;
 import jpcap.packet.TCPPacket;

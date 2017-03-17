@@ -1,4 +1,4 @@
-package com.view.view;
+package com.view.preference.component;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -10,7 +10,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import com.common.Constants;
-import com.view.util.AbstractPreferencesView;
+import com.view.preference.AbstractPreferencesView;
 import com.view.util.ViewModules;
 
 import jpcap.NetworkInterface;
@@ -175,7 +175,7 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 		storeProperty("capture_length", String.valueOf(caplen));
 		// 待捕获的URL，不含参数
 		storeProperty("capture_url", urlFilterField.getText());
-		Constants.initProperties(Constants.PROP_FILE);
+		Constants.initProperties(Constants.DEF_SET_PROP_FILE);
 	}
 	
 	/**

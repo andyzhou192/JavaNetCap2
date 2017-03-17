@@ -22,16 +22,18 @@ import com.handler.DataSaveHandler;
 import com.netcap.captor.Netcaptor;
 import com.protocol.http.bean.HttpDataBean;
 import com.view.MainFrame;
-import com.view.dialog.PreferenceDialog;
+import com.view.detail.DataDetailView;
+import com.view.preference.PreferenceDialog;
+import com.view.table.RowTableScrollPane;
 import com.view.util.ViewModules;
-import com.view.view.DataDetailView;
-import com.view.view.RowTableScrollPane;
+
 import net.sf.json.JSONObject;
 
 public class ActionListenerImpl implements ActionListener {
 	private Class<?> cl = ActionListenerImpl.class;
 	
 	private MainFrame frame;
+	private RowTableScrollPane scrollPane;
 	private JTable table;
 
 	public ActionListenerImpl(MainFrame frame) {
@@ -40,7 +42,8 @@ public class ActionListenerImpl implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent event) {
-		this.table = frame.scrollPane.getTable();
+		this.scrollPane = frame.getScrollPane();
+		this.table = frame.getScrollPane().getTable();
 		switch(event.getActionCommand()){
 		case "OPEN":
 			openFile(frame);
@@ -59,19 +62,19 @@ public class ActionListenerImpl implements ActionListener {
 			break;
 		case "START":
 			Netcaptor.startCapture(frame);
-			frame.startItem.setEnabled(false);
-			frame.stopItem.setEnabled(true);
+			frame.getFrameMenuBar().getStartItem().setEnabled(false);
+			frame.getFrameMenuBar().getStopItem().setEnabled(true);
 			break;
 		case "STOP":
 			Netcaptor.stopCapture();
-			frame.startItem.setEnabled(true);
-			frame.stopItem.setEnabled(false);
+			frame.getFrameMenuBar().getStartItem().setEnabled(true);
+			frame.getFrameMenuBar().getStopItem().setEnabled(false);
 			break;
 		case "SETTING":
 			new PreferenceDialog();
 			break;
 		case "DETAIL":
-			Map<String, Object> dataMap = RowTableScrollPane.getRowData(table, table.getSelectedRow());
+			Map<String, Object> dataMap = scrollPane.getRowData(table.getSelectedRow());
 			DataDetailView.showDialog(dataMap);
 			break;
 		default:
@@ -85,11 +88,13 @@ public class ActionListenerImpl implements ActionListener {
 	 */
 	private void deleteSelectedData(MainFrame frame) {
 		int flag = 0;
-		for(int i = 0; i < table.getRowCount(); i++){
+		int count = table.getRowCount();
+		for(int i = 0; i < count; i++){
 			JCheckBox checkBox = ((JCheckBox)(table.getValueAt(i, 0)));
 			if(checkBox.isSelected()){
 				flag++;
 				frame.deleteRowFromTable(Integer.valueOf(checkBox.getText())-1);
+				count--;
 			}
 		}
 		if(flag == 0)
@@ -126,7 +131,7 @@ public class ActionListenerImpl implements ActionListener {
 		for(String data : dataList){
 			HttpDataBean bean = JsonUtil.jsonToBean(data, HttpDataBean.class, classMap);
 			if(null == bean)
-				ViewModules.showMessageDialog(frame, "json To Bean has some error!");
+				ViewModules.showMessageDialog(null, "json To Bean has some error!");
 			else
 				frame.addRowToTable(bean);
 		}
@@ -141,8 +146,9 @@ public class ActionListenerImpl implements ActionListener {
 		for(int i = 0; i < table.getRowCount(); i++){
 			JCheckBox checkBox = ((JCheckBox)(table.getValueAt(i, 0)));
 			if(checkBox.isSelected()){
-				Map<String, Object> oneData = RowTableScrollPane.getRowData(table, i);
-				String[] excludes = new String[]{frame.title[0], frame.title[frame.title.length - 1], "protocol"};
+				Map<String, Object> oneData = scrollPane.getRowData(i);
+				String[] tableHead = frame.getTableHead();
+				String[] excludes = new String[]{tableHead[0], tableHead[tableHead.length - 1], "protocol"};
 				dataStr = dataStr + JsonUtil.mapToJson(oneData, excludes) + "\r\n\r\n";
 			}
 		}
@@ -178,6 +184,7 @@ public class ActionListenerImpl implements ActionListener {
 			fr.close();
 			br.close(); // 关闭文件缓冲区
 		} catch (IOException ioe) {// 输入输出异常捕获
+			ViewModules.showMessageDialog(frame, "import data has some error:" + ioe);
 			LogUtil.err(cl, ioe);
 		}
 		return dataList;

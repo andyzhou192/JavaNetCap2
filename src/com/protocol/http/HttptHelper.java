@@ -3,9 +3,8 @@ package com.protocol.http;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 
-import org.apache.http.util.Asserts;
-import org.apache.http.util.TextUtils;
-
+import com.common.asserts.Assert;
+import com.common.util.StringUtil;
 import com.protocol.http.bean.HttpDataBean;
 
 import net.sf.json.JSONObject;
@@ -48,10 +47,10 @@ public class HttptHelper {
 		int startIndex = data[0].toUpperCase().indexOf("HOST" + HttptHelper.NVSeparator) + ("HOST" + HttptHelper.NVSeparator).length();
 		String host = data[0].substring(startIndex).split(HttptHelper.CRLF)[0].trim();
 		bean.setUrl(host + uri);
-		if(!TextUtils.isEmpty(data[0]) && !TextUtils.isBlank(data[0])){
+		if(StringUtil.validate(data[0])){
 			JSONObject requestHeader = new JSONObject();
 			for(String nv : data[0].split(HttptHelper.CRLF)){
-				if(!TextUtils.isEmpty(nv) && !TextUtils.isBlank(nv)){
+				if(StringUtil.validate(nv)){
 					String name = nv.split(HttptHelper.NVSeparator)[0].trim();
 					String value = nv.split(HttptHelper.NVSeparator).length > 1 ? nv.split(HttptHelper.NVSeparator)[1].trim() : "";
 					/**
@@ -70,7 +69,7 @@ public class HttptHelper {
 		case "POST":
 			if(data.length > 1)
 				for(String nv : data[1].split(HttptHelper.AND)){
-					if(!TextUtils.isEmpty(nv) && !TextUtils.isBlank(nv)){
+					if(StringUtil.validate(nv)){
 						String name = nv.split(HttptHelper.EQUAL)[0];
 						String value = nv.split(HttptHelper.EQUAL).length > 1 ? nv.split(HttptHelper.EQUAL)[1].trim() : "";
 						requestParam.put(name, value);
@@ -79,7 +78,7 @@ public class HttptHelper {
 		case "GET":
 			if(uriStr.length > 1){
 				for(String nv : uriStr[1].split(HttptHelper.AND)){
-					if(!TextUtils.isEmpty(nv) && !TextUtils.isBlank(nv)){
+					if(StringUtil.validate(nv)){
 						String name = nv.split(HttptHelper.EQUAL)[0];
 						String value = nv.split(HttptHelper.EQUAL).length > 1 ? nv.split(HttptHelper.EQUAL)[1].trim() : "";
 						requestParam.put(name, value);
@@ -107,10 +106,10 @@ public class HttptHelper {
 		if(rspStatusLine.length > 2)
 			bean.setReasonPhrase(rspStatusLine[2]);
 		String[] data = rspData.trim().substring(index).split(HttptHelper.CRLF + HttptHelper.CRLF);
-		if(!TextUtils.isEmpty(data[0]) && !TextUtils.isBlank(data[0])){
+		if(StringUtil.validate(data[0])){
 			JSONObject responseHeader = new JSONObject();
 			for(String nv : data[0].split(HttptHelper.CRLF)){
-				if(!TextUtils.isEmpty(nv) && !TextUtils.isBlank(nv)){
+				if(StringUtil.validate(nv)){
 					String name = nv.split(HttptHelper.NVSeparator)[0].trim();
 					String value = nv.split(HttptHelper.NVSeparator).length > 1 ? nv.split(HttptHelper.NVSeparator)[1].trim() : "";
 					responseHeader.put(name, value);
@@ -174,7 +173,7 @@ public class HttptHelper {
 	}
 	
 	public static String getInterfaceMethodName(String url){
-		Asserts.notEmpty(url, "url");
+		Assert.notEmpty(url, "url");
 		String fileName = "";
 		if(url.contains("?")){
 			String temp = url.substring(0, url.lastIndexOf("?") - 1);

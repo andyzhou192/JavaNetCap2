@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.SwingUtilities;
 
-import com.view.view.ScriptSettingView;
+import com.view.preference.component.ScriptSettingView;
 
 public class JTabbedPaneDemo  extends JPanel {
 

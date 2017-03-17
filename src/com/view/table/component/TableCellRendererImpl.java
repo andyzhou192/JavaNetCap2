@@ -1,4 +1,4 @@
-package com.view.util;
+package com.view.table.component;
 
 import java.awt.Component;
 

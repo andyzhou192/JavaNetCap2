@@ -1,4 +1,4 @@
-package com.view.dialog;
+package com.view.preference;
 
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
@@ -16,9 +16,9 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeSelectionModel;
 
-import com.view.view.JcaptureSettingView;
-import com.view.view.ScriptSettingView;
-import com.view.view.WorkspaceSettingView;
+import com.view.preference.component.JcaptureSettingView;
+import com.view.preference.component.ScriptSettingView;
+import com.view.preference.component.WorkspaceSettingView;
 
 @SuppressWarnings("serial")
 public class PreferenceDialog extends JDialog implements TreeSelectionListener {

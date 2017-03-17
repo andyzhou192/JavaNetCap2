@@ -1,4 +1,4 @@
-package com.view.util;
+package com.view.preference;
 
 import java.awt.Color;
 import java.awt.event.ActionListener;
@@ -11,6 +11,7 @@ import javax.swing.border.LineBorder;
 
 import com.common.Constants;
 import com.common.util.PropertiesUtil;
+import com.view.util.ViewModules;
 
 @SuppressWarnings("serial")
 public abstract class AbstractPreferencesView extends JPanel implements ActionListener {
@@ -41,7 +42,7 @@ public abstract class AbstractPreferencesView extends JPanel implements ActionLi
 	public abstract void saveSettings();
 	
 	protected void storeProperty(String name, Object value){
-		PropertiesUtil.storeProperty(Constants.PROP_FILE, name, String.valueOf(value), "");
+		PropertiesUtil.storeProperty(Constants.DEF_SET_PROP_FILE, name, String.valueOf(value), "");
 	}
 	
 	/**

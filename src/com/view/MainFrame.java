@@ -7,60 +7,41 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 import com.common.Constants;
 import com.protocol.http.bean.HttpDataBean;
 import com.view.listener.ActionListenerImpl;
+import com.view.menu.FrameMenuBar;
+import com.view.table.RowTableScrollPane;
 import com.view.util.ViewModules;
-import com.view.view.RowTableScrollPane;
 
 @SuppressWarnings("serial")
 public class MainFrame extends JFrame {
 
-	public RowTableScrollPane scrollPane = null;
-	public JMenuItem startItem, stopItem;
-	public Vector<Vector<Object>> rows = new Vector<Vector<Object>>();
-	private ActionListenerImpl listener;
+	private RowTableScrollPane scrollPane = null;
+	private FrameMenuBar menuBar;
 
-	public final String[] title = {"ALL", "url", "method", "reqHeader", "reqParams", "statusCode", "reasonPhrase", "rspHeader", "rspBody", "Operate"};
-	
+	private ActionListenerImpl listener;
+	private Vector<Vector<Object>> rows = new Vector<Vector<Object>>();
+	private String[] tableHead = {"ALL", "url", "method", "reqHeader", "reqParams", "statusCode", "reasonPhrase", "rspHeader", "rspBody", "Operate"};
+
+
 	public MainFrame() {
 		super();
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(600, 600);
-		Constants.initProperties(Constants.PROP_FILE);
-		listener = new ActionListenerImpl(this);
-		initMenu();
-		initViewer();
-		this.setVisible(true);
-	}
-
-	private void initMenu() {
-		JMenuBar jMenuBar = new JMenuBar();
-		this.setJMenuBar(jMenuBar);
-		JMenu fileMenu = ViewModules.addMenu(jMenuBar, "File");
-		JMenu mainMenu = ViewModules.addMenu(jMenuBar, "Captor");
-		JMenu setMenu = ViewModules.addMenu(jMenuBar, "Setting");
+		Constants.initProperties(Constants.DEF_SET_PROP_FILE);
+		this.listener = new ActionListenerImpl(this);
 		
-		ViewModules.addSimpleMenuItem(fileMenu, "Open", "OPEN", listener);
-		ViewModules.addSimpleMenuItem(fileMenu, "Save", "SAVE", listener);
-		ViewModules.addSimpleMenuItem(fileMenu, "SaveAs", "SAVEAS", listener);
-		ViewModules.addSimpleMenuItem(fileMenu, "Delete", "DELETE", listener);
-		ViewModules.addSimpleMenuItem(fileMenu, "Exit", "EXIT", listener);
-		startItem = ViewModules.addSimpleMenuItem(mainMenu, "Start", "START", listener);
-		stopItem = ViewModules.addSimpleMenuItem(mainMenu, "Stop", "STOP", listener);
-		ViewModules.addSimpleMenuItem(setMenu, "Setting", "SETTING", listener);
-	}
-	
-	private void initViewer() {
-		Vector<Object> heads = ViewModules.createVector(title);
-		scrollPane = new RowTableScrollPane(rows, heads);
+		menuBar = new FrameMenuBar(listener);
+		this.setJMenuBar(menuBar);
+		
+		Vector<Object> heads = ViewModules.createVector(this.getTableHead());
+		this.scrollPane = new RowTableScrollPane(this.getRows(), heads);
 		this.getContentPane().add(scrollPane, BorderLayout.CENTER);
 		
 		JLabel statusLabel = new JLabel("zhouyelin@cmhi.chinamobile.com");
 		this.getContentPane().add(statusLabel, BorderLayout.SOUTH);
+		this.setVisible(true);
 	}
 	
 	/**
@@ -68,12 +49,12 @@ public class MainFrame extends JFrame {
 	 * @param data
 	 */
 	public void addRowToTable(HttpDataBean data){
-		Object[] values = {getCheckBox(String.valueOf(rows.size() + 1)), 
+		Object[] values = {getCheckBox(String.valueOf(this.getRows().size() + 1)), 
 				data.getUrl(), data.getMethod(), data.getReqHeader(), data.getReqParams(), 
 				data.getStatusCode(), data.getReasonPhrase(), data.getRspHeader(), data.getRspBody(), 
 				getButton()};
 		Vector<Object> r = ViewModules.createVector(values);
-		rows.addElement(r);
+		this.getRows().addElement(r);
 		scrollPane.addNotifyTable();
 	}
 	
@@ -83,9 +64,12 @@ public class MainFrame extends JFrame {
 	 */
 	public void deleteRowFromTable(int rowIndex){
 		if(-1 == rowIndex){
-			rows.removeAllElements();
+			if(this.getRows().size() > 0)
+				this.getRows().removeAllElements();
+			else
+				return;
 		} else {
-			rows.removeElementAt(rowIndex);
+			this.getRows().removeElementAt(rowIndex);
 		}
 		scrollPane.addNotifyTable();
 	}
@@ -111,5 +95,33 @@ public class MainFrame extends JFrame {
 		label.setEnabled(true);
 		label.setVisible(true);
 		return label;
+	}
+	
+	public FrameMenuBar getFrameMenuBar() {
+		return menuBar;
+	}
+	
+	public RowTableScrollPane getScrollPane() {
+		return scrollPane;
+	}
+
+	public Vector<Vector<Object>> getRows() {
+		return this.rows;
+	}
+
+	public void setRows(Vector<Vector<Object>> rows) {
+		this.rows = rows;
+	}
+
+	public String[] getTableHead() {
+		return this.tableHead;
+	}
+
+	public void setTableHead(String[] tableHead) {
+		this.tableHead = tableHead;
+	}
+	
+	public static void main(String[] args) {
+		new MainFrame();
 	}
 }

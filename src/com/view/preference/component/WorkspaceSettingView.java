@@ -1,4 +1,4 @@
-package com.view.view;
+package com.view.preference.component;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -8,7 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import com.common.Constants;
-import com.view.util.AbstractPreferencesView;
+import com.view.preference.AbstractPreferencesView;
 import com.view.util.ViewModules;
 
 public class WorkspaceSettingView extends AbstractPreferencesView {
@@ -82,7 +82,7 @@ public class WorkspaceSettingView extends AbstractPreferencesView {
 	public void saveSettings(){
 		// 必填：生成的脚本文件包名，如：com.cmcc
 		storeProperty("fileStoreDir", workSpaceTextField.getText());
-		Constants.initProperties(Constants.PROP_FILE);
+		Constants.initProperties(Constants.DEF_SET_PROP_FILE);
 	}
 	
 }

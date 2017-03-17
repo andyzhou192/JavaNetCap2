@@ -1,4 +1,4 @@
-package com.view.view;
+package com.view.preference.component;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -17,7 +17,7 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
 import com.common.Constants;
-import com.view.util.AbstractPreferencesView;
+import com.view.preference.AbstractPreferencesView;
 import com.view.util.ViewModules;
 
 /**
@@ -200,7 +200,7 @@ public class ScriptSettingView extends AbstractPreferencesView {
 		storeProperty("templateDir", templateDirField.getText());
 		// 必填，模板文件名称，包括后缀名
 		storeProperty("templateFile", templateFileCombBox.getSelectedItem().toString());
-		Constants.initProperties(Constants.PROP_FILE);
+		Constants.initProperties(Constants.DEF_SET_PROP_FILE);
 	}
 	
 	public class MouseClickListener extends MouseAdapter {

@@ -38,12 +38,11 @@ public class Netcaptor {
 	 * 开始抓包
 	 */
 	public static void startCapture(final MainFrame frame) {
-		System.out.println("线程启动!");
 		LogUtil.debug(cl, "Capture Thread is started...");
 		String msgTitle = "提示信息";
 		if (captureThread != null && captureThread.isAlive()){
 			String message = "抓包已经处于启动状态！";
-			ViewModules.showMessageDialog(frame.getContentPane(), message, msgTitle, 1);
+			ViewModules.showMessageDialog(null, message, msgTitle, 1);
 			return;
 		} else {
 			captureThread = new Thread(new Runnable() {
