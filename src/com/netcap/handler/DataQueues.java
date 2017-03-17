@@ -4,9 +4,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 import com.common.util.LogUtil;
-import com.dataprocess.DataSaveHandler;
-import com.netcap.view.MainView;
+import com.protocol.http.HttptHelper;
 import com.protocol.http.bean.HttpDataBean;
+import com.view.MainFrame;
 
 public class DataQueues {
 
@@ -28,9 +28,9 @@ public class DataQueues {
     	
     	private String reqData;
     	private String rspData;
-    	private MainView frame;
+    	private MainFrame frame;
 
-        public void setFrame(MainView frame){
+        public void setFrame(MainFrame frame){
         	this.frame = frame;
         }
     	
@@ -40,12 +40,11 @@ public class DataQueues {
     	}
     	
         public void dataProcess(){
-        	HttpDataBean dataBean = new HttpDataBean(reqData, rspData);
-        	if (dataBean != null && isValidReq(dataBean.getUri())) {
+        	HttpDataBean dataBean = HttptHelper.getDataBean(reqData, rspData);
+        	if (dataBean != null && isValidReq(dataBean.getUrl())) {
             	LogUtil.debug(cl, dataBean);
             	if(null != this.frame)
-            		frame.updateView(dataBean);
-            	//DataSaveHandler.saveToExcel(dataBean);
+            		frame.addRowToTable(dataBean);
             }
         }
     }

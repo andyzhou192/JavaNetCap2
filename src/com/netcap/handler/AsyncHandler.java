@@ -1,7 +1,7 @@
 package com.netcap.handler;
 
 import com.common.util.LogUtil;
-import com.netcap.view.MainView;
+import com.view.MainFrame;
 
 /**
  * <pre> 简单异步处理示例. </pre>
@@ -12,9 +12,9 @@ import com.netcap.view.MainView;
 public class AsyncHandler implements Runnable {
 	private static Class<?> cl = AsyncHandler.class;
 
-    private MainView frame;
+    private MainFrame frame;
 
-    public void setFrame(MainView frame){
+    public void setFrame(MainFrame frame){
     	this.frame = frame;
     }
 

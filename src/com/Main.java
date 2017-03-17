@@ -1,10 +1,10 @@
 package com;
-import com.netcap.view.MainView;
+import com.view.MainFrame;
 
 public class Main {
 
 	public static void main(String[] args) {
-		new MainView();
+		new MainFrame();
 	}
 
 }

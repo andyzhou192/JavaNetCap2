@@ -10,7 +10,8 @@ import org.apache.log4j.PropertyConfigurator;
  */
 public class LogUtil {
 	static {
-		String properties = LogUtil.class.getClassLoader().getResource("log4j.properties").getPath();
+//		String properties = LogUtil.class.getClassLoader().getResource("../log4j.properties").getPath();
+		String properties = "log4j.properties";
 		PropertyConfigurator.configure(properties);
 	}
 	

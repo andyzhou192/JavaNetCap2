@@ -20,16 +20,19 @@ public class ${entity.className}<#if entity.superclass?has_content> extends ${en
     /********** test method ***********/
     @Test(<#if entity.smokeScript>groups={"SMOKE"}, </#if>dataProvider="defaultMethod", dataProviderClass=ExcelDataProvider.class)
     public test${entity.className}(<#list entity.paramNames as paramName>String ${paramName}<#if paramName_has_next>, </#if></#list>) {
-			<#assign caseId = entity.paramNames[0], desc = entity.paramNames[1], method = entity.paramNames[2],
-				url = entity.paramNames[3], headers = entity.paramNames[4], params = entity.paramNames[5], 
-				rspCode = entity.paramNames[6], expected = entity.paramNames[7] />
+			<#assign caseId = entity.paramNames[0], desc = entity.paramNames[1], url = entity.paramNames[2],
+				method = entity.paramNames[3], reqHeader = entity.paramNames[4], reqParams = entity.paramNames[5], 
+				rspCode = entity.paramNames[6], reasonPhrase = entity.paramNames[7],
+				rspHeader = entity.paramNames[8], rspBody = entity.paramNames[9] />
     	LOGGER.info("########## " + ${caseId} + ": " + ${desc} + " ##########"+" BEGIN ##########");
 		try {
-			HttpClient client = new HttpClient(${url}, ${headers}, ${params});
+			HttpClient client = new HttpClient(${url}, ${reqHeader}, ${reqParams});
 			HttpResponse rsp = client.doRequest(${method});
 			
 			Assert.assertEquals(String.valueOf(rsp.getStatusLine().getStatusCode()), ${rspCode});
-			Assert.assertEquals(EntityUtils.toString(rsp.getEntity()), ${expected});
+			Assert.assertEquals(rsp.getStatusLine().getReasonPhrase(), ${reasonPhrase});
+			Assert.assertEquals(rsp.getAllHeaders().toString(), ${rspHeader});
+			Assert.assertEquals(EntityUtils.toString(rsp.getEntity()), ${rspBody});
 		}
 		catch(Exception e) {
 			Assert.fail(e.toString());

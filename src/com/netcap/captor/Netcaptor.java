@@ -2,10 +2,10 @@ package com.netcap.captor;
 
 import java.io.IOException;
 
-import com.common.util.ConstsUtil;
+import com.common.Constants;
 import com.common.util.LogUtil;
-import com.netcap.view.MainView;
-import com.netcap.view.util.ViewModules;
+import com.view.MainFrame;
+import com.view.util.ViewModules;
 
 import jpcap.JpcapCaptor;
 
@@ -22,12 +22,12 @@ public class Netcaptor {
 	 */
 	public static JpcapCaptor getJpcapCaptor() {
 		JpcapCaptor jpcap = null;
-		int net_devices_index = Integer.valueOf(ConstsUtil.PROPS.getProperty("net_devices_index"));
-		int caplen = Integer.valueOf(ConstsUtil.PROPS.getProperty("capture_length"));
-		boolean isPromisc = Boolean.valueOf(ConstsUtil.PROPS.getProperty("promisc"));
+		int net_devices_index = Integer.valueOf(Constants.PROPS.getProperty("net_devices_index"));
+		int caplen = Integer.valueOf(Constants.PROPS.getProperty("capture_length"));
+		boolean isPromisc = Boolean.valueOf(Constants.PROPS.getProperty("promisc"));
 		try {
 			jpcap = JpcapCaptor.openDevice(JpcapCaptor.getDeviceList()[net_devices_index], caplen, isPromisc, 5000);
-			jpcap.setFilter(ConstsUtil.PROPS.getProperty("protocol_type").toLowerCase(), true);
+			jpcap.setFilter(Constants.PROPS.getProperty("protocol_type").toLowerCase(), true);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -37,7 +37,7 @@ public class Netcaptor {
 	/**
 	 * 开始抓包
 	 */
-	public static void startCapture(final MainView frame) {
+	public static void startCapture(final MainFrame frame) {
 		System.out.println("线程启动!");
 		LogUtil.debug(cl, "Capture Thread is started...");
 		String msgTitle = "提示信息";

@@ -3,8 +3,8 @@ package com.netcap.captor;
 import com.common.util.LogUtil;
 import com.netcap.handler.AsyncHandler;
 import com.netcap.handler.DataQueues;
-import com.netcap.view.MainView;
 import com.protocol.http.HttptHelper;
+import com.view.MainFrame;
 
 import jpcap.PacketReceiver;
 import jpcap.packet.Packet;
@@ -16,10 +16,10 @@ public class PacketReceiverImpl implements PacketReceiver {
 
 	private static String reqData = "";
 	private static String rspData = "";
-	private MainView frame;
+	private MainFrame frame;
 	private static int contentLen = -1000;
 	
-	public PacketReceiverImpl(MainView frame){
+	public PacketReceiverImpl(MainFrame frame){
 		this.frame = frame;
 	}
 	

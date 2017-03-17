@@ -11,8 +11,8 @@ import javax.swing.JLabel;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeSelectionModel;
 
-import com.netcap.view.JcaptureSettingView;
-import com.netcap.view.ScriptSettingView;
+import com.view.view.JcaptureSettingView;
+import com.view.view.ScriptSettingView;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.border.LineBorder;
