@@ -40,11 +40,11 @@ public class DataQueues {
     	}
     	
         public void dataProcess(){
-        	HttpDataBean dataBean = HttptHelper.getDataBean(reqData, rspData);
-        	if (dataBean != null && isValidReq(dataBean.getUrl())) {
-            	LogUtil.debug(cl, dataBean);
+        	HttpDataBean bean = HttptHelper.getDataBean(reqData, rspData);
+        	if (bean != null && isValidReq(bean.getUrl())) {
+            	LogUtil.debug(cl, bean);
             	if(null != this.frame)
-            		frame.addRowToTable(dataBean);
+            		frame.getScrollPane().addRowToTable(frame.getRows(), bean);
             }
         }
     }

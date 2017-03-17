@@ -93,7 +93,8 @@ public class ActionListenerImpl implements ActionListener {
 			JCheckBox checkBox = ((JCheckBox)(table.getValueAt(i, 0)));
 			if(checkBox.isSelected()){
 				flag++;
-				frame.deleteRowFromTable(Integer.valueOf(checkBox.getText())-1);
+				int index = Integer.valueOf(checkBox.getText())-1;
+				frame.getScrollPane().deleteRowFromTable(frame.getRows(), index);
 				count--;
 			}
 		}
@@ -127,13 +128,13 @@ public class ActionListenerImpl implements ActionListener {
 		classMap.put("reqParams", JSONObject.class);
 		classMap.put("rspHeader", JSONObject.class);
 		classMap.put("statusCode", int.class);
-		frame.deleteRowFromTable(-1);
+		frame.getScrollPane().deleteRowFromTable(frame.getRows(), -1);
 		for(String data : dataList){
 			HttpDataBean bean = JsonUtil.jsonToBean(data, HttpDataBean.class, classMap);
 			if(null == bean)
 				ViewModules.showMessageDialog(null, "json To Bean has some error!");
 			else
-				frame.addRowToTable(bean);
+				frame.getScrollPane().addRowToTable(frame.getRows(), bean);
 		}
 	}
 
