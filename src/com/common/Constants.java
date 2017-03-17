@@ -41,12 +41,14 @@ public final class Constants {
 	
 	public static Properties PROPS = new Properties();
 	
-	public static String PROP_FILE = "setting";
+	public static String DEF_LOG_PROP_FILE = "./conf/log4j.properties";
+	
+	public static String DEF_SET_PROP_FILE = "./conf/setting.properties";
 	
 	public static void initProperties(String fileName){
-		PROP_FILE = fileName;
+		DEF_SET_PROP_FILE = fileName;
 		try {
-			InputStream in = new BufferedInputStream(new FileInputStream(fileName + ".properties"));
+			InputStream in = new BufferedInputStream(new FileInputStream(fileName));
 			InputStreamReader inr = new InputStreamReader(in, "UTF-8");// 解决读取的内容乱码问题
 			PROPS.load(inr);
 		} catch (Exception e) {
