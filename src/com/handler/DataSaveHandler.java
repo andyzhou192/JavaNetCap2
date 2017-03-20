@@ -6,11 +6,14 @@ import java.io.IOException;
 import java.util.Map;
 
 import com.common.data.excel.ExcelWriter;
+import com.common.util.LogUtil;
+
 import jxl.write.Label;
 import jxl.write.WritableSheet;
 import jxl.write.WriteException;
 
 public class DataSaveHandler {
+	private static Class<?> cl = DataSaveHandler.class;
 
 	private String caseId, caseDesc, url, method, reqHeader, reqParams, statusCode, reasonPhrase, rspHeader, rspBody;
 
@@ -65,14 +68,18 @@ public class DataSaveHandler {
 
 	// 自定义的save方法，参数为文件对象
 	public static boolean save(File file, String content) {
+		LogUtil.debug(cl, file.getAbsolutePath());
 		// 将文本区内容写入字符输出流
 		try { // 文件写入通道连向文件对象
 			FileWriter fw = new FileWriter(file, false);
 			fw.write(content);// 写入多行文本框的内容
 			fw.close(); // 关闭通道
+			LogUtil.debug(cl, "properties is saved:" + true);
 			return true;
 		} catch (IOException ioe) { // 异常处理
+			LogUtil.err(cl, ioe);
 		}
+		LogUtil.debug(cl, "properties is saved:" + false);
 		return false;
 	}
 

@@ -166,16 +166,18 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 			return;
 		}
 		// 网卡序号，默认为0
-		storeProperty("net_devices_index", String.valueOf(netJComboBox.getSelectedIndex()));
+		boolean isSucc_01 = storeProperty("net_devices_index", String.valueOf(netJComboBox.getSelectedIndex()));
 		// 是否混杂模式:true/false，默认false
-		storeProperty("promisc", String.valueOf(promiscCheckBox.isSelected()));
+		boolean isSucc_02 = storeProperty("promisc", String.valueOf(promiscCheckBox.isSelected()));
 		// 待捕获的协议类型，默认为tcp
-		storeProperty("protocol_type", proJComboBox.getSelectedItem().toString());
+		boolean isSucc_03 = storeProperty("protocol_type", proJComboBox.getSelectedItem().toString());
 		// 待捕获的数据长度 ,捕获长度必须介于 68和1514之间的整数，默认为1514
-		storeProperty("capture_length", String.valueOf(caplen));
+		boolean isSucc_04 = storeProperty("capture_length", String.valueOf(caplen));
 		// 待捕获的URL，不含参数
-		storeProperty("capture_url", urlFilterField.getText());
+		boolean isSucc_05 = storeProperty("capture_url", urlFilterField.getText());
 		Constants.initProperties(Constants.DEF_SET_PROP_FILE);
+		boolean isSucc = isSucc_01 && isSucc_02 && isSucc_03 && isSucc_04 && isSucc_05;
+		ViewModules.showMessageDialog(null, "Properties saved : " + isSucc);
 	}
 	
 	/**

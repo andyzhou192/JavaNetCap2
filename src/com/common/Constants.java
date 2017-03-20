@@ -6,6 +6,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Properties;
 
+import com.common.util.LogUtil;
+
 /**
  * 
  * @author zhouyelin@chinamobile.com
@@ -41,12 +43,13 @@ public final class Constants {
 	
 	public static Properties PROPS = new Properties();
 	
-	public static String DEF_LOG_PROP_FILE = "./conf/log4j.properties";
+	public static String DEF_LOG_PROP_FILE = "conf/log4j.properties";
 	
-	public static String DEF_SET_PROP_FILE = "./conf/setting.properties";
+	public static String DEF_SET_PROP_FILE = "conf/setting.properties";
 	
 	public static void initProperties(String fileName){
 		DEF_SET_PROP_FILE = fileName;
+		LogUtil.debug(Constants.class, (new java.io.File(DEF_SET_PROP_FILE)).getAbsolutePath());
 		try {
 			InputStream in = new BufferedInputStream(new FileInputStream(fileName));
 			InputStreamReader inr = new InputStreamReader(in, "UTF-8");// 解决读取的内容乱码问题

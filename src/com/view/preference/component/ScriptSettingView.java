@@ -183,24 +183,26 @@ public class ScriptSettingView extends AbstractPreferencesView {
 	 */
 	public void saveSettings(){
 		// 必填：生成的脚本文件包名，如：com.cmcc
-		storeProperty("packageName", packageNameField.getText());
+		boolean isSucc_01 = storeProperty("packageName", packageNameField.getText());
 		// 选填：生成的脚本作者，不填时使用电脑当前用户
-		storeProperty("author", authorField.getText());
+		boolean isSucc_02 = storeProperty("author", authorField.getText());
 		// 选填：生成的脚本描述
-		storeProperty("classDesc", classDescField.getText());
+		boolean isSucc_03 = storeProperty("classDesc", classDescField.getText());
 		// 必填：生成的脚本类名，建议首字母大写
-		storeProperty("className", classNameField.getText());
+		boolean isSucc_04 = storeProperty("className", classNameField.getText());
 		// 选填：生成的脚本继承的父类，设置是请加上包名，如：org.apache.http.HttpResponse
-		storeProperty("superClass", superClassField.getText());
+		boolean isSucc_05 = storeProperty("superClass", superClassField.getText());
 		// 必填，测试方法的变量名称，多个值时用,分隔
-		storeProperty("paramNames", paramNamesField.getText());
+		boolean isSucc_06 = storeProperty("paramNames", paramNamesField.getText());
 		// 选填，测试方法是否为冒烟测试脚本，值为true或false,默认false
-		storeProperty("smokeScript", String.valueOf(smokeScriptCheckBox.isSelected()));
+		boolean isSucc_07 = storeProperty("smokeScript", String.valueOf(smokeScriptCheckBox.isSelected()));
 		// 必填，模板文件的存储目录，可以是项目中的相对路径
-		storeProperty("templateDir", templateDirField.getText());
+		boolean isSucc_08 = storeProperty("templateDir", templateDirField.getText());
 		// 必填，模板文件名称，包括后缀名
-		storeProperty("templateFile", templateFileCombBox.getSelectedItem().toString());
+		boolean isSucc_09 = storeProperty("templateFile", templateFileCombBox.getSelectedItem().toString());
 		Constants.initProperties(Constants.DEF_SET_PROP_FILE);
+		boolean isSucc = isSucc_01 && isSucc_02 && isSucc_03 && isSucc_04 && isSucc_05 && isSucc_06 && isSucc_07 && isSucc_08 && isSucc_09;
+		ViewModules.showMessageDialog(null, "Properties saved : " + isSucc);
 	}
 	
 	public class MouseClickListener extends MouseAdapter {

@@ -81,8 +81,10 @@ public class WorkspaceSettingView extends AbstractPreferencesView {
 	 */
 	public void saveSettings(){
 		// 必填：生成的脚本文件包名，如：com.cmcc
-		storeProperty("fileStoreDir", workSpaceTextField.getText());
+		boolean isSucc_01 = storeProperty("fileStoreDir", workSpaceTextField.getText());
 		Constants.initProperties(Constants.DEF_SET_PROP_FILE);
+		boolean isSucc = isSucc_01;
+		ViewModules.showMessageDialog(null, "Properties saved : " + isSucc);
 	}
 	
 }

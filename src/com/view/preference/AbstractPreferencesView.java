@@ -41,8 +41,8 @@ public abstract class AbstractPreferencesView extends JPanel implements ActionLi
 	 */
 	public abstract void saveSettings();
 	
-	protected void storeProperty(String name, Object value){
-		PropertiesUtil.storeProperty(Constants.DEF_SET_PROP_FILE, name, String.valueOf(value), "");
+	protected boolean storeProperty(String name, Object value){
+		return PropertiesUtil.storeProperty(Constants.DEF_SET_PROP_FILE, name, String.valueOf(value), "");
 	}
 	
 	/**

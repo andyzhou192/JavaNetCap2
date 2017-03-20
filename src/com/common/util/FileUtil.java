@@ -95,6 +95,26 @@ public class FileUtil {
             return false;
         }
     }
+    
+    public static boolean deleteFolder(String url){  
+		java.io.File file=new java.io.File(url);  
+	    if(!file.exists()){  
+	        return false;  
+	    }  
+	    if(file.isFile()){  
+	        file.delete();  
+	        return true;  
+	    }else{  
+	    	java.io.File[] files=file.listFiles();  
+	        for(int i=0;i<files.length;i++){  
+	            String root=files[i].getAbsolutePath();//得到子文件或文件夹的绝对路径  
+	            //System.out.println(root);  
+	            deleteFolder(root);  
+	        }  
+	        file.delete();  
+	        return true;  
+	    }  
+	}
 	
 	/**
 	 * 判断指定文件中是否存在指定的内容

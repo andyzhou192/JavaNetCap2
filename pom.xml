@@ -11,7 +11,7 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<deploy.dir>./target/</deploy.dir>
+		<deploy.dir>${project.basedir}/bin</deploy.dir>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
@@ -135,6 +135,10 @@
                             <!-- application's main class -->
                             <mainClass>com.view.MainFrame</mainClass>
                         </manifest>
+                        <!-- 给清单文件添加键值对(配置文件外置) -->  
+                        <manifestEntries>  
+                            <Class-Path>exts/*.jar</Class-Path>  
+                        </manifestEntries>
                     </archive>
                     <!-- Filter out files that don't want to be included in jar -->
                     <!--<excludes>-->

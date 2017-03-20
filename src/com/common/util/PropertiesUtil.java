@@ -28,20 +28,22 @@ public class PropertiesUtil {
 		}
 	}
 	
-	public static void storeProperty(String fileName, String key, String value, String comments){
+	public static boolean storeProperty(String file, String key, String value, String comments){
 		///保存属性到config.properties文件
 		try {
-			InputStream in = new BufferedInputStream(new FileInputStream(fileName + ".properties"));
+			InputStream in = new BufferedInputStream(new FileInputStream(file));
 			InputStreamReader inr = new InputStreamReader(in, "UTF-8");// 解决读取的内容乱码问题
 			prop.load(inr);
 			//FileOutputStream oFile = new FileOutputStream(fileName + ".properties", true);//true表示追加打开
-			FileOutputStream fos = new FileOutputStream(fileName + ".properties");
+			FileOutputStream fos = new FileOutputStream(file);
 			prop.setProperty(key, value);
 			prop.store(fos, comments);
 			fos.close();
+			return true;
 		} catch (IOException e) {
-			e.printStackTrace();
+			LogUtil.err(PropertiesUtil.class, e);
 		}
+		return false;
 	}
 	
 //	public static void main(String[] args) {

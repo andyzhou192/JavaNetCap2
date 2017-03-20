@@ -194,6 +194,7 @@ public class ActionListenerForMenu implements ActionListener {
 	 * @return
 	 */
 	private void saveDataToFile(JFrame parent, String filePath, String content){
+		boolean isSucc = false;
 		if (filePath == null || filePath.trim().length() < 1){
 			String file = "data.dat";
 			FileDialog fileDialog = new FileDialog(parent, "Save data to file", FileDialog.SAVE);
@@ -206,16 +207,17 @@ public class ActionListenerForMenu implements ActionListener {
 				// 文件对象的赋值
 				File f = new File(fileDialog.getDirectory(), fileDialog.getFile());
 				file = f.getAbsolutePath();
-				DataSaveHandler.save(f, content); // 调用自定义的save方法
+				isSucc = DataSaveHandler.save(f, content); // 调用自定义的save方法
 				frame.setTitle(file);
 				refreshDataView(readDataFromFile(new File(file)));
 				ViewModules.showMessageDialog(frame, "Data save is successed!");
 			}
 		} else {
-			DataSaveHandler.save(new File(filePath), content); // 调用自定义的save方法
+			isSucc = DataSaveHandler.save(new File(filePath), content); // 调用自定义的save方法
 			refreshDataView(readDataFromFile(new File(filePath)));
 			ViewModules.showMessageDialog(frame, "Data save is successed!");
 		}
+		LogUtil.debug(cl, "properties is saved:" + isSucc);
 	}
 
 }
