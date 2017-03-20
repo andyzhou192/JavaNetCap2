@@ -2,7 +2,6 @@ package com.view.table;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.event.ActionListener;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Vector;
@@ -15,6 +14,8 @@ import javax.swing.event.TableModelEvent;
 import javax.swing.table.DefaultTableModel;
 
 import com.protocol.http.bean.HttpDataBean;
+import com.view.MainFrame;
+import com.view.listener.ActionListenerForButton;
 import com.view.table.component.TableButtonEditor;
 import com.view.table.component.TableCheckBoxEditor;
 import com.view.util.ViewModules;
@@ -24,10 +25,10 @@ public class RowTableScrollPane extends JScrollPane {
 	
 	// data table
 	private JTable table = null;
-	private ActionListener listener;
+	private ActionListenerForButton listener;
 	
-	public RowTableScrollPane(Vector<Vector<Object>> data, Vector<Object> header, ActionListener listener) {
-		this.listener = listener;
+	public RowTableScrollPane(Vector<Vector<Object>> data, Vector<Object> header, MainFrame frame) {
+		this.listener = new ActionListenerForButton(frame);
 		initTable(data, header);
 		this.setViewportView(this.getTable());
 		this.setAutoscrolls(true);
@@ -38,8 +39,8 @@ public class RowTableScrollPane extends JScrollPane {
 	public void addNotifyTable(){
 		if(null != this.getTable()){
 			this.getTable().addNotify();
-			this.getTable().updateUI();
-			this.validate();
+//			this.getTable().updateUI();
+//			this.validate();
 		} else {
 			ViewModules.showMessageDialog(null, "data import failed!");
 		}
@@ -59,6 +60,8 @@ public class RowTableScrollPane extends JScrollPane {
         this.table.getTableHeader().setBackground(new Color(200, 200, 200));
         this.table.getTableHeader().setForeground(Color.BLACK);
         this.table.getTableHeader().setFont(new Font(Font.SANS_SERIF, 1, 12));
+        this.table.setAutoscrolls(true);
+        this.table.getColumnModel().getColumn(0).setWidth(20);
         new TableCheckBoxEditor(this.table, 0);
         new TableButtonEditor(this.table, header.size() - 1);
     }

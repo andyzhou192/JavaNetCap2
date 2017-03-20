@@ -3,6 +3,7 @@ package com.netcap.handler;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.common.Constants;
 import com.common.util.LogUtil;
 import com.protocol.http.HttptHelper;
 import com.protocol.http.bean.HttpDataBean;
@@ -42,7 +43,7 @@ public class DataQueues {
         public void dataProcess(){
         	HttpDataBean bean = HttptHelper.getDataBean(reqData, rspData);
         	if (bean != null && isValidReq(bean.getUrl())) {
-            	LogUtil.debug(cl, bean);
+            	LogUtil.debug(cl, bean.toJson());
             	if(null != this.frame)
             		frame.getScrollPane().addRowToTable(frame.getRows(), bean);
             }
@@ -50,9 +51,13 @@ public class DataQueues {
     }
     
     public static boolean isValidReq(String url){
+    	String captureUrl = Constants.PROPS.getProperty("capture_url");
     	if(null == url || url.endsWith(".js") || url.endsWith(".css") || url.endsWith(".png"))
     		return false;
-    	return true;
+    	else if(null == captureUrl || url.contains(captureUrl)){
+    		return true;
+    	}
+		return false;
     }
 
 }

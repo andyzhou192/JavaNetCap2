@@ -22,21 +22,20 @@ import com.handler.DataSaveHandler;
 import com.netcap.captor.Netcaptor;
 import com.protocol.http.bean.HttpDataBean;
 import com.view.MainFrame;
-import com.view.detail.DataDetailView;
 import com.view.preference.PreferenceDialog;
 import com.view.table.RowTableScrollPane;
 import com.view.util.ViewModules;
 
 import net.sf.json.JSONObject;
 
-public class ActionListenerImpl implements ActionListener {
-	private Class<?> cl = ActionListenerImpl.class;
+public class ActionListenerForMenu implements ActionListener {
+	private Class<?> cl = ActionListenerForMenu.class;
 	
 	private MainFrame frame;
 	private RowTableScrollPane scrollPane;
 	private JTable table;
 
-	public ActionListenerImpl(MainFrame frame) {
+	public ActionListenerForMenu(MainFrame frame) {
 		this.frame = frame;
 	}
 
@@ -73,10 +72,6 @@ public class ActionListenerImpl implements ActionListener {
 		case "SETTING":
 			new PreferenceDialog();
 			break;
-		case "DETAIL":
-			Map<String, Object> dataMap = scrollPane.getRowData(table.getSelectedRow());
-			DataDetailView.showDialog(dataMap);
-			break;
 		default:
 			break;
 		}
@@ -93,10 +88,10 @@ public class ActionListenerImpl implements ActionListener {
 			JCheckBox checkBox = ((JCheckBox)(table.getValueAt(i, 0)));
 			if(checkBox.isSelected()){
 				flag++;
-				int index = Integer.valueOf(checkBox.getText())-1;
-				frame.getScrollPane().deleteRowFromTable(frame.getRows(), index);
-				count--;
+				frame.getScrollPane().deleteRowFromTable(frame.getRows(), i);
+				i--;
 			}
+			count = table.getRowCount();
 		}
 		if(flag == 0)
 			ViewModules.showMessageDialog(frame, "Please choose the data you want to delete...");
@@ -217,6 +212,7 @@ public class ActionListenerImpl implements ActionListener {
 				ViewModules.showMessageDialog(frame, "Data save is successed!");
 			}
 		} else {
+			DataSaveHandler.save(new File(filePath), content); // 调用自定义的save方法
 			refreshDataView(readDataFromFile(new File(filePath)));
 			ViewModules.showMessageDialog(frame, "Data save is successed!");
 		}
