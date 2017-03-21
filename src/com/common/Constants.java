@@ -43,6 +43,10 @@ public final class Constants {
 	
 	public static Properties PROPS = new Properties();
 	
+	public static String EXPAND_ICON = "img/expand.png";
+	
+	public static String COLLAPSE_ICON = "img/collapse.png";
+	
 	public static String DEF_LOG_PROP_FILE = "conf/log4j.properties";
 	
 	public static String DEF_SET_PROP_FILE = "conf/setting.properties";

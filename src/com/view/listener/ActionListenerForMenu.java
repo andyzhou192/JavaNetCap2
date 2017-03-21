@@ -14,6 +14,7 @@ import java.util.Map;
 
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 
 import com.common.util.JsonUtil;
@@ -57,7 +58,13 @@ public class ActionListenerForMenu implements ActionListener {
 			deleteSelectedData(frame);
 			break;
 		case "EXIT":
-			System.exit(0);
+			String title = "Exit Confirm Dialog";
+			String content = "Do you really need to exit the applicateion?";
+			int option = JOptionPane.showConfirmDialog(null, content, title, JOptionPane.YES_NO_CANCEL_OPTION);
+        	if(option == JOptionPane.YES_OPTION){
+        		frame.dispose();
+        	}
+			//System.exit(0);
 			break;
 		case "START":
 			Netcaptor.startCapture(frame);
@@ -70,7 +77,7 @@ public class ActionListenerForMenu implements ActionListener {
 			frame.getFrameMenuBar().getStopItem().setEnabled(false);
 			break;
 		case "SETTING":
-			new PreferenceDialog();
+			new PreferenceDialog(frame);
 			break;
 		default:
 			break;
@@ -84,12 +91,15 @@ public class ActionListenerForMenu implements ActionListener {
 	private void deleteSelectedData(MainFrame frame) {
 		int flag = 0;
 		int count = table.getRowCount();
-		for(int i = 0; i < count; i++){
+		for(int i = 0; i < count; ){
 			JCheckBox checkBox = ((JCheckBox)(table.getValueAt(i, 0)));
 			if(checkBox.isSelected()){
-				flag++;
 				frame.getScrollPane().deleteRowFromTable(frame.getRows(), i);
-				i--;
+				flag++;
+			} else {
+				if(Integer.valueOf(checkBox.getText()) != (i + 1))
+					checkBox.setText(String.valueOf(i + 1));
+				i++;
 			}
 			count = table.getRowCount();
 		}

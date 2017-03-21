@@ -6,6 +6,7 @@ import java.awt.Color;
 import java.awt.Container;
 
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTree;
@@ -27,22 +28,23 @@ public class PreferenceDialog extends JDialog implements TreeSelectionListener {
 	private CardLayout card = new CardLayout();
 	private JPanel panel;
 	
-	public PreferenceDialog(){
+	public PreferenceDialog(JFrame frame){
+		super(frame, "Preferences");
 		this.setBackground(Color.LIGHT_GRAY);
-		this.setTitle("Preferences");
 		this.setBounds(100, 100, 900, 600);
 		this.setVisible(true);
 		Container container = this.getContentPane();
-		panel = new JPanel(card);
-		panel.add("WorkspaceSetting", new WorkspaceSettingView());
-		panel.add("CaptureSetting", new JcaptureSettingView());
-		panel.add("JavaScriptSetting", new ScriptSettingView());
-		card.show(panel, "WorkspaceSetting");
+		this.panel = new JPanel(card);
+		this.panel.add("WorkspaceSetting", new WorkspaceSettingView());
+		this.panel.add("CaptureSetting", new JcaptureSettingView());
+		this.panel.add("JavaScriptSetting", new ScriptSettingView());
+		card.show(this.panel, "WorkspaceSetting");
 		createTree();
-		JScrollPane jsp = new JScrollPane(panel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+		JScrollPane jsp = new JScrollPane(this.panel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		container.add(jsp, BorderLayout.CENTER);
 		container.add(tree, BorderLayout.WEST);
 		this.pack();
+		this.setModal(true);
 	}
 
 	/**

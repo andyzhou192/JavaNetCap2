@@ -27,7 +27,7 @@ public class ActionListenerForButton implements ActionListener {
 		switch(e.getActionCommand()){
 		case "DETAIL":
 			Map<String, Object> dataMap = scrollPane.getRowData(table.getSelectedRow());
-			DataDetailView.showDialog(dataMap);
+			DataDetailView.showDialog(frame, dataMap);
 			break;
 		default:
 			break;

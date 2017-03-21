@@ -1,16 +1,21 @@
 package com.view.detail;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -21,6 +26,8 @@ import com.protocol.http.HttptHelper;
 import com.view.preference.AbstractPreferencesView;
 import com.view.util.ViewModules;
 import com.common.Constants;
+import com.common.asserts.AssertEnum;
+import com.common.util.JsonUtil;
 
 import freemarker.template.TemplateException;
 
@@ -34,7 +41,9 @@ public class DataDetailView extends AbstractPreferencesView {
 	private JButton applyButton;
 	
 	private String url, method, reqHeader, reqParams, statusCode, reasonPhrase, rspHeader, rspBody;
+	private Map<String, String> rspHeadMap;
 	
+	@SuppressWarnings("unchecked")
 	public DataDetailView(Map<String, Object> dataMap) {
 		super(20, 10);
 		this.url = dataMap.get("url").toString();
@@ -45,13 +54,14 @@ public class DataDetailView extends AbstractPreferencesView {
 		this.reasonPhrase = dataMap.get("reasonPhrase").toString();
 		this.rspHeader = dataMap.get("rspHeader").toString();
 		this.rspBody = dataMap.get("rspBody").toString();
+		rspHeadMap = JsonUtil.jsonToMap(this.rspHeader);
 		defineComponents();
 		layoutComponents();
 		initData();
 	}
 	
-	public static void showDialog(Map<String, Object> map){
-		JDialog dialog = new JDialog();
+	public static void showDialog(JFrame frame, Map<String, Object> map){
+		JDialog dialog = new JDialog(frame, "Data Detail");
 		dialog.setBackground(Color.LIGHT_GRAY);
 		dialog.setTitle("DataDetail");
 		dialog.setBounds(100, 100, 900, 600);
@@ -59,6 +69,8 @@ public class DataDetailView extends AbstractPreferencesView {
 		DataDetailView ddv = new DataDetailView(map);
 		JScrollPane jsp = new JScrollPane(ddv, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		dialog.getContentPane().add(jsp);
+		dialog.setModal(true);
+		dialog.pack();
 	}
 
 	@Override
@@ -177,12 +189,9 @@ public class DataDetailView extends AbstractPreferencesView {
 		boolean isChose = Boolean.valueOf((smokeScript.trim().length() > 0) ? smokeScript : "false");
 		smokeScriptCheckBox.setSelected(isChose);
 	}
-
+	
 	@Override
-	public void saveSettings() {
-		// TODO Auto-generated method stub
-		
-	}
+	public void saveSettings() {}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
