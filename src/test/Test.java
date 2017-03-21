@@ -1,4 +1,4 @@
-package com.test;
+package test;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -18,14 +18,16 @@ public class Test {
 //		c.isAssignableFrom(List.class);  //判断c是否是List类的子类或父类
 //		System.out.println(c.isAssignableFrom(List.class));
 //		//c.getGenericType(); //得到泛型类型
-//		try {
-//			Process process = Runtime.getRuntime().exec("cmd mvn -v >> test.txt");
-//			System.out.println(process.getOutputStream().toString());
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-		deleteFolder("D:\\workspace\\JavaNetCap2\\target");
+		try {
+			//String cmd = "cmd /f cd D:\\workspace\\JavaNetCap2\\temp-src && mvn archetype:generate -DgroupId=com.cmcc.helloworld -DartifactId=helloworld -Dpackage=com.cmcc.helloworld -Dversion=1.0-SNAPSHOT -DarchetypeCatalog=internal ";
+			Runtime runTime = Runtime.getRuntime();
+			Process process = runTime.exec("cmd /f cd D:\\workspace\\JavaNetCap2\\temp-src && mvn -v > test.txt");
+			System.out.println(process.getOutputStream().toString());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+//		deleteFolder("D:\\workspace\\JavaNetCap2\\target");
 		
 	}
 	

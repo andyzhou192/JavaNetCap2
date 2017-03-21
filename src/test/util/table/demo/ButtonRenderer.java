@@ -1,4 +1,4 @@
-package com.test.util.table.demo;
+package test.util.table.demo;
 
 import java.awt.Component;
 import javax.swing.JButton;

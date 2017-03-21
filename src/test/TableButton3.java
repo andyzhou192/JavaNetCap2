@@ -1,4 +1,4 @@
-package com.test;
+package test;
 
 import java.awt.Component;
 import java.awt.event.ActionEvent;

@@ -1,4 +1,4 @@
-package com.test.util.table.demo;
+package test.util.table.demo;
 
 import java.awt.Component;  
 import java.awt.event.ActionEvent;  
@@ -10,7 +10,7 @@ import javax.swing.JTable;
 import javax.swing.table.TableCellEditor;  
 import javax.swing.table.TableColumnModel;
 
-import com.test.util.table.TableCellRendererImpl;  
+import test.util.table.TableCellRendererImpl;  
   
 @SuppressWarnings("serial")
 public class ButtonEditor extends AbstractCellEditor implements TableCellEditor, ActionListener {  

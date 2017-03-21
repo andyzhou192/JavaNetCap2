@@ -1,4 +1,4 @@
-package com.test.util.table;
+package test.util.table;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,4 +1,4 @@
-package com.test;
+package test;
 
 import java.awt.GridLayout;
 import java.awt.event.KeyEvent;

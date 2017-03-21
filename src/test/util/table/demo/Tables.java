@@ -1,4 +1,4 @@
-package com.test.util.table.demo;
+package test.util.table.demo;
 
 import java.awt.Dimension;
 import java.util.Vector;
