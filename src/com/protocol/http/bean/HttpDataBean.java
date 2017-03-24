@@ -22,7 +22,7 @@ public class HttpDataBean extends DataBean {
 	private int statusCode;
 	private String reasonPhrase;
 	private JSONObject rspHeader;
-	private String rspBody;
+	private Object rspBody;
 
 	
 
@@ -82,11 +82,11 @@ public class HttpDataBean extends DataBean {
 		this.rspHeader = rspHeader;
 	}
 
-	public String getRspBody() {
+	public Object getRspBody() {
 		return (null == rspBody) ? "" : rspBody;
 	}
 
-	public void setRspBody(String rspBody) {
+	public void setRspBody(Object rspBody) {
 		this.rspBody = rspBody;
 	}
 

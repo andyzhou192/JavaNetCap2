@@ -1,4 +1,4 @@
-package com.view.table.component;
+package com.view.mainframe.table.component;
 
 import java.awt.Component;  
 import javax.swing.AbstractCellEditor;  

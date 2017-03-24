@@ -1,7 +1,7 @@
 package com.netcap.handler;
 
 import com.common.util.LogUtil;
-import com.view.MainFrame;
+import com.view.mainframe.MainFrame;
 
 /**
  * <pre> 简单异步处理示例. </pre>

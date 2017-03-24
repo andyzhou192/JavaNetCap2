@@ -1,6 +1,6 @@
 package com.view.listener;
 
-import java.awt.FileDialog;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -16,15 +16,16 @@ import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
-
+import javax.swing.SwingUtilities;
 import com.common.util.JsonUtil;
 import com.common.util.LogUtil;
-import com.handler.DataSaveHandler;
 import com.netcap.captor.Netcaptor;
 import com.protocol.http.bean.HttpDataBean;
-import com.view.MainFrame;
-import com.view.preference.PreferenceDialog;
-import com.view.table.RowTableScrollPane;
+import com.view.mainframe.MainFrame;
+import com.view.mainframe.table.RowTableScrollPane;
+import com.view.preference.PreferenceFrame;
+import com.view.script.editor.ScriptEditFrame;
+import com.view.util.ViewDataHandler;
 import com.view.util.ViewModules;
 
 import net.sf.json.JSONObject;
@@ -45,39 +46,74 @@ public class ActionListenerForMenu implements ActionListener {
 		this.scrollPane = frame.getScrollPane();
 		this.table = frame.getScrollPane().getTable();
 		switch(event.getActionCommand()){
-		case "OPEN":
-			openFile(frame);
+		case "IMPORT":
+			SwingUtilities.invokeLater(new Runnable() {
+				public void run() {
+					openFile(frame);
+				}
+			});
 			break;
-		case "SAVE":
-			saveDataToFile(frame, frame.getTitle(), getDataFromTable(table));
-			break;
-		case "SAVEAS":
-			saveDataToFile(frame, null, getDataFromTable(table));
+//		case "SAVE":
+//			saveDataToFile(frame, frame.getTitle(), getDataFromTable(table));
+//			break;
+		case "EXPORT":
+			SwingUtilities.invokeLater(new Runnable() {
+				public void run() {
+					saveDataToFile(frame, null, "data.dat", getDataFromTable(table));
+				}
+			});
 			break;
 		case "DELETE":
-			deleteSelectedData(frame);
+			SwingUtilities.invokeLater(new Runnable() {
+				public void run() {
+					deleteSelectedData(frame);
+				}
+			});
 			break;
 		case "EXIT":
-			String title = "Exit Confirm Dialog";
-			String content = "Do you really need to exit the applicateion?";
-			int option = JOptionPane.showConfirmDialog(null, content, title, JOptionPane.YES_NO_CANCEL_OPTION);
-        	if(option == JOptionPane.YES_OPTION){
-        		frame.dispose();
-        	}
-			//System.exit(0);
+			SwingUtilities.invokeLater(new Runnable() {
+				public void run() {
+					String title = "Exit Confirm Dialog";
+					String content = "Do you really need to exit the applicateion?";
+					int option = JOptionPane.showConfirmDialog(null, content, title, JOptionPane.YES_NO_CANCEL_OPTION);
+					if(option == JOptionPane.YES_OPTION){
+						frame.dispose();
+					}
+				}
+			});
 			break;
 		case "START":
-			Netcaptor.startCapture(frame);
-			frame.getFrameMenuBar().getStartItem().setEnabled(false);
-			frame.getFrameMenuBar().getStopItem().setEnabled(true);
+			SwingUtilities.invokeLater(new Runnable() {
+				public void run() {
+					Netcaptor.startCapture(frame);
+					frame.getFrameMenuBar().getStartItem().setEnabled(false);
+					frame.getFrameMenuBar().getStopItem().setEnabled(true);
+				}
+			});
 			break;
 		case "STOP":
-			Netcaptor.stopCapture();
-			frame.getFrameMenuBar().getStartItem().setEnabled(true);
-			frame.getFrameMenuBar().getStopItem().setEnabled(false);
+			SwingUtilities.invokeLater(new Runnable() {
+				public void run() {
+					Netcaptor.stopCapture();
+					frame.getFrameMenuBar().getStartItem().setEnabled(true);
+					frame.getFrameMenuBar().getStopItem().setEnabled(false);
+				}
+			});
 			break;
-		case "SETTING":
-			new PreferenceDialog(frame);
+		case "OPENSCRIPT":
+			SwingUtilities.invokeLater(new Runnable() {
+				public void run() {
+					Toolkit.getDefaultToolkit().setDynamicLayout(true);
+					new ScriptEditFrame(frame).setVisible(true);
+				}
+			});
+			break;
+		case "PREFERENCE":
+			SwingUtilities.invokeLater(new Runnable() {
+				public void run() {
+					new PreferenceFrame(frame);
+				}
+			});
 			break;
 		default:
 			break;
@@ -113,14 +149,10 @@ public class ActionListenerForMenu implements ActionListener {
 	 * @return
 	 */
 	private void openFile(JFrame parent){
+		String fileName = ViewDataHandler.openFile(parent);
 		List<String> dataList = null;
-		FileDialog fileDialog = new FileDialog(parent, "Open data from file", FileDialog.LOAD);
-		fileDialog.setVisible(true); // 创建并显示打开文件对话框
-		if ((fileDialog.getDirectory() != null) && (fileDialog.getFile() != null)) { // 单行文本框显示文件路径名
-			parent.setTitle(fileDialog.getDirectory() + fileDialog.getFile());
-			// 以缓冲区方式读取文件内容
-			// 文件对象赋值
-			File file = new File(fileDialog.getDirectory(), fileDialog.getFile());
+		if (fileName != null && fileName.length()>0) { // 单行文本框显示文件路径名
+			File file = new File(fileName);
 			dataList = readDataFromFile(file);
 		} // 结束if文件不为空
 		refreshDataView(dataList);
@@ -133,6 +165,7 @@ public class ActionListenerForMenu implements ActionListener {
 		classMap.put("reqParams", JSONObject.class);
 		classMap.put("rspHeader", JSONObject.class);
 		classMap.put("statusCode", int.class);
+		classMap.put("rspBody", JSONObject.class);
 		frame.getScrollPane().deleteRowFromTable(frame.getRows(), -1);
 		for(String data : dataList){
 			HttpDataBean bean = JsonUtil.jsonToBean(data, HttpDataBean.class, classMap);
@@ -203,31 +236,10 @@ public class ActionListenerForMenu implements ActionListener {
 	 * @param content
 	 * @return
 	 */
-	private void saveDataToFile(JFrame parent, String filePath, String content){
-		boolean isSucc = false;
-		if (filePath == null || filePath.trim().length() < 1){
-			String file = "data.dat";
-			FileDialog fileDialog = new FileDialog(parent, "Save data to file", FileDialog.SAVE);
-			fileDialog.setFile(file); // 缺省文件名
-			fileDialog.setFile(new File(file).getName());
-			fileDialog.setVisible(true);
-			// 创建并显示保存文件对话框
-			if ((fileDialog.getDirectory() != null) && (fileDialog.getFile() != null)) { // 单行文本框中显示文件路径和名称
-				parent.setTitle(fileDialog.getDirectory() + fileDialog.getFile());
-				// 文件对象的赋值
-				File f = new File(fileDialog.getDirectory(), fileDialog.getFile());
-				file = f.getAbsolutePath();
-				isSucc = DataSaveHandler.save(f, content); // 调用自定义的save方法
-				frame.setTitle(file);
-				refreshDataView(readDataFromFile(new File(file)));
-				ViewModules.showMessageDialog(frame, "Data save is successed!");
-			}
-		} else {
-			isSucc = DataSaveHandler.save(new File(filePath), content); // 调用自定义的save方法
-			refreshDataView(readDataFromFile(new File(filePath)));
-			ViewModules.showMessageDialog(frame, "Data save is successed!");
-		}
-		LogUtil.debug(cl, "properties is saved:" + isSucc);
+	private void saveDataToFile(JFrame parent, String filePath, String defaultFileName, String content){
+		filePath = ViewDataHandler.saveDataToFile(parent, filePath, defaultFileName, content);
+		refreshDataView(readDataFromFile(new File(filePath)));
+		ViewModules.showMessageDialog(parent, "Data save is successed!");
 	}
 
 }

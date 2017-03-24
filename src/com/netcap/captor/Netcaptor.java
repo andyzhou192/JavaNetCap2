@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import com.common.Constants;
 import com.common.util.LogUtil;
-import com.view.MainFrame;
+import com.view.mainframe.MainFrame;
 import com.view.util.ViewModules;
 
 import jpcap.JpcapCaptor;

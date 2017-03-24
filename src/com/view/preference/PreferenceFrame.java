@@ -5,7 +5,6 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Container;
 
-import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -20,19 +19,19 @@ import javax.swing.tree.TreeSelectionModel;
 import com.view.preference.component.JcaptureSettingView;
 import com.view.preference.component.ScriptSettingView;
 import com.view.preference.component.WorkspaceSettingView;
+import com.view.util.FrameWindowAdapter;
 
 @SuppressWarnings("serial")
-public class PreferenceDialog extends JDialog implements TreeSelectionListener {
+public class PreferenceFrame extends JFrame implements TreeSelectionListener {
 	
 	private JTree tree = new JTree();
 	private CardLayout card = new CardLayout();
 	private JPanel panel;
 	
-	public PreferenceDialog(JFrame frame){
-		super(frame, "Preferences");
+	public PreferenceFrame(JFrame parent){
+		super("Preferences");
 		this.setBackground(Color.LIGHT_GRAY);
 		this.setBounds(100, 100, 900, 600);
-		this.setVisible(true);
 		Container container = this.getContentPane();
 		this.panel = new JPanel(card);
 		this.panel.add("WorkspaceSetting", new WorkspaceSettingView());
@@ -44,7 +43,9 @@ public class PreferenceDialog extends JDialog implements TreeSelectionListener {
 		container.add(jsp, BorderLayout.CENTER);
 		container.add(tree, BorderLayout.WEST);
 		this.pack();
-		this.setModal(true);
+		this.setVisible(true);
+		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		this.addWindowListener(new FrameWindowAdapter(parent, this));
 	}
 
 	/**

@@ -477,6 +477,18 @@ public class ViewModules {
 	 * @return
 	 */
 	public static GridBagConstraints getGridBagConstraints(int gridx, int gridy, int gridwidth, int gridheight){
+		return getGridBagConstraints(gridx, gridy, gridwidth, gridheight, GridBagConstraints.BOTH);
+	}
+	
+	/**
+	 * 与GridBagLayout mainLayout = new GridBagLayout(); 配合使用
+	 * @param gridx 在 X轴（横向） 所处的位置。
+	 * @param gridy 在 Y轴（纵向） 所处的位置。
+	 * @param gridwidth X轴占据的单元格数 
+	 * @param gridheight Y轴占据的单元格数
+	 * @return
+	 */
+	public static GridBagConstraints getGridBagConstraints(int gridx, int gridy, int gridwidth, int gridheight, int fill){
 		GridBagConstraints gbc = new GridBagConstraints();
 		gbc.gridx = gridx; // 在 X轴（横向） 所处的位置。
 		gbc.gridy = gridy; // 在 Y轴（纵向） 所处的位置。
@@ -485,7 +497,7 @@ public class ViewModules {
 		gbc.weightx = 0.5; // 当窗口缩放时，是否缩放组件的左右间距
 		gbc.weighty = 0.0; // 当窗口缩放时，是否缩放组件的上下间距
 		gbc.anchor = GridBagConstraints.NORTHWEST; // 当组件小于其显示区域时使用此字段。它可以确定在显示区域中放置组件的位置。
-		gbc.fill = GridBagConstraints.BOTH; // 当格子有剩余空间时，填充空间
+		gbc.fill = fill; // 当格子有剩余空间时，填充空间
 		gbc.insets = new Insets(5, 5, 5, 5); // 组件彼此的间距
 		gbc.ipadx = 0; // 组件内部填充空间，即给组件的最小宽度添加多大的空间
 		gbc.ipady = 0; // 组件内部填充空间，即给组件的最小高度添加多大的空间

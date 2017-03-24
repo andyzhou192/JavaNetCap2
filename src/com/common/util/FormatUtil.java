@@ -1,6 +1,8 @@
 package com.common.util;
 
 import java.io.StringWriter;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
@@ -14,6 +16,16 @@ import org.dom4j.io.OutputFormat;
  * @date 2017-3-12
  */
 public final class FormatUtil {
+	
+	public static String formatText(String text) {
+		if (null == text || "".equals(text))
+			return "";
+		 String dest = "";
+		 Pattern p = Pattern.compile("\\t|\r|\n"); //"\\s*|\t|\r|\n"
+		 Matcher m = p.matcher(text);
+		 dest = m.replaceAll("");
+		  return dest;
+	}
 
 	/**
 	 * 格式化
@@ -94,12 +106,12 @@ public final class FormatUtil {
 	    return writer.toString();  
 	}  
 	
-	public static void main(String[] args) throws Exception {
-//		String jsonStr = "{\"content\":\"this is the msg content.\",\"tousers\":\"user1|user2\",\"msgtype\":\"texturl\",\"appkey\":\"test\",\"domain\":\"test\","
-//				+ "\"system\":{\"wechat\":{\"safe\":\"1\"}},\"texturl\":{\"urltype\":\"0\",\"user1\":{\"spStatus\":\"user01\",\"workid\":\"work01\"},\"user2\":{\"spStatus\":\"user02\",\"workid\":\"work02\"}}}";
-//		System.out.println(FormatUtil.formatJson(jsonStr));
-		
-		String htmlStr = "<!DOCTYPE html><html><head><meta name=\"test\"/><title>ceshi</title></head><body link=\"#0000cc\"><div id=\"div\" class=\"nihao\">naskjf</div></body></html>";
-		System.out.println(FormatUtil.formatHtml(htmlStr));
-	}
+//	public static void main(String[] args) throws Exception {
+////		String jsonStr = "{\"content\":\"this is the msg content.\",\"tousers\":\"user1|user2\",\"msgtype\":\"texturl\",\"appkey\":\"test\",\"domain\":\"test\","
+////				+ "\"system\":{\"wechat\":{\"safe\":\"1\"}},\"texturl\":{\"urltype\":\"0\",\"user1\":{\"spStatus\":\"user01\",\"workid\":\"work01\"},\"user2\":{\"spStatus\":\"user02\",\"workid\":\"work02\"}}}";
+////		System.out.println(FormatUtil.formatJson(jsonStr));
+//		
+//		String htmlStr = "<!DOCTYPE html><html><head><meta name=\"test\"/><title>ceshi</title></head><body link=\"#0000cc\"><div id=\"div\" class=\"nihao\">naskjf</div></body></html>";
+//		System.out.println(FormatUtil.formatHtml(htmlStr));
+//	}
 }

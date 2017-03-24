@@ -155,16 +155,16 @@ public class JsonUtil {
 	 * @param jsonString
 	 * @return
 	 */
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public static Map jsonToMap(String jsonString) {
+	@SuppressWarnings({ "rawtypes" })
+	public static Map<String, Object> jsonToMap(String jsonString) {
 		JSONObject jsonObject = JSONObject.fromObject(jsonString);
 		Iterator keyIter = jsonObject.keys();
 		String key;
 		Object value;
-		Map valueMap = new HashMap();
+		Map<String, Object> valueMap = new HashMap<String, Object>();
 		while (keyIter.hasNext()) {
 			key = (String) keyIter.next();
-			value = jsonObject.get(key).toString();
+			value = jsonObject.get(key);
 			valueMap.put(key, value);
 		}
 		return valueMap;
@@ -306,4 +306,9 @@ public class JsonUtil {
 		return doubleArray;
 	}
 
+//	public static void main(String[] args) {
+//		String jsonStr = "{\"reqHeader\":{\"Host\":\"172.23.29.178:9013\",\"Connection\":\"keep-alive\",\"Upgrade-Insecure-Requests\":\"1\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36\",\"Accept\":\"text/html,application/xhtml xml,application/xml;q=0.9,image/webp,*/*;q=0.8\",\"Referer\":\"http://172.23.29.183:9014/\",\"Accept-Encoding\":\"gzip, deflate, sdch\",\"Accept-Language\":\"zh-CN,zh;q=0.8\",\"Cookie\":\"JSESSIONID=2A780FA1722E32FFA7FC09E7B516EE69; TGC=eyJhbGciOiJIUzUxMiJ9\"},\"method\":\"GET\",\"reqParams\":{\"service\":\"http://172.23.29.183:9014\"},\"reasonPhrase\":\"Found\",\"rspHeader\":{\"Server\":\"Apache-Coyote/1.1\",\"Cache-Control\":\"no-store\",\"Set-Cookie\":\"CASPRIVACY=\\\"\\\"; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/; Secure\",\"Pragma\":\"no-cache\",\"Expires\":\"Thu, 01 Jan 1970 00:00:00 GMT\",\"Location\":\"http://172.23.29.183:9014\",\"Content-Length\":\"0\",\"Date\":\"Tue, 14 Mar 2017 08:58:53 GMT\"},\"rspBody\":\"\",\"url\":\"172.23.29.178:9013/logout\",\"statusCode\":300}";
+//		Map<String, Object> jsonMap = jsonToMap(jsonStr);
+//		System.out.println(jsonMap);
+//	}
 }

@@ -1,4 +1,4 @@
-package com.view.table;
+package com.view.mainframe.table;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -14,10 +14,10 @@ import javax.swing.event.TableModelEvent;
 import javax.swing.table.DefaultTableModel;
 
 import com.protocol.http.bean.HttpDataBean;
-import com.view.MainFrame;
 import com.view.listener.ActionListenerForButton;
-import com.view.table.component.TableButtonEditor;
-import com.view.table.component.TableCheckBoxEditor;
+import com.view.mainframe.MainFrame;
+import com.view.mainframe.table.component.TableButtonEditor;
+import com.view.mainframe.table.component.TableCheckBoxEditor;
 import com.view.util.ViewModules;
 
 @SuppressWarnings("serial")

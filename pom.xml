@@ -27,6 +27,11 @@
 			<artifactId>jgoodies-forms</artifactId>
 			<version>1.8.0</version>
 		</dependency>
+		<dependency>
+			<groupId>com.fifesoft</groupId>
+			<artifactId>rsyntaxtextarea</artifactId>
+			<version>2.6.1</version>
+		</dependency>
 		<!-- json-lib components begin -->
 		<dependency>
 			<groupId>net.sf.json-lib</groupId>
@@ -133,7 +138,7 @@
                         	<!-- the classpath prefix in Manifest generated, because the third party jar into the Lib directory, so the classpath prefix is lib/ -->
                             <classpathPrefix>lib/</classpathPrefix>
                             <!-- application's main class -->
-                            <mainClass>com.view.MainFrame</mainClass>
+                            <mainClass>com.view.mainframe.MainFrame</mainClass>
                         </manifest>
                         <!-- 给清单文件添加键值对(配置文件外置) -->  
                         <manifestEntries>  

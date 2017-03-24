@@ -7,7 +7,7 @@ import com.common.Constants;
 import com.common.util.LogUtil;
 import com.protocol.http.HttptHelper;
 import com.protocol.http.bean.HttpDataBean;
-import com.view.MainFrame;
+import com.view.mainframe.MainFrame;
 
 public class DataQueues {
 

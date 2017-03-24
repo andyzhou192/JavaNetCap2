@@ -6,9 +6,9 @@ import java.util.Map;
 
 import javax.swing.JTable;
 
-import com.view.MainFrame;
-import com.view.detail.DataDetailView;
-import com.view.table.RowTableScrollPane;
+import com.view.mainframe.MainFrame;
+import com.view.mainframe.table.RowTableScrollPane;
+import com.view.script.generator.GeneratorFrame;
 
 public class ActionListenerForButton implements ActionListener {
 
@@ -27,7 +27,7 @@ public class ActionListenerForButton implements ActionListener {
 		switch(e.getActionCommand()){
 		case "DETAIL":
 			Map<String, Object> dataMap = scrollPane.getRowData(table.getSelectedRow());
-			DataDetailView.showDialog(frame, dataMap);
+			new GeneratorFrame(frame, dataMap);
 			break;
 		default:
 			break;

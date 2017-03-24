@@ -1,79 +1,58 @@
-package com.view.detail;
+package com.view.script.generator;
 
 import java.awt.Color;
-import java.awt.Dimension;
+import java.awt.GridBagConstraints;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
-import javax.swing.JDialog;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.border.LineBorder;
 
 import com.generator.java.ScriptGenerator;
 import com.handler.DataSaveHandler;
 import com.protocol.http.HttptHelper;
-import com.view.preference.AbstractPreferencesView;
+import com.view.util.ScrollPaneTextArea;
 import com.view.util.ViewModules;
 import com.common.Constants;
-import com.common.asserts.AssertEnum;
-import com.common.util.JsonUtil;
+import com.common.util.FormatUtil;
 
 import freemarker.template.TemplateException;
 
 @SuppressWarnings("serial")
-public class DataDetailView extends AbstractPreferencesView {
+public class GeneratorPanel extends JPanel implements ActionListener {
 	
 	private JLabel packageNameLabel, classNameLabel, classDescLabel, methodNameLabel, methodDescLabel, urlLabel, methodLabel, caseDescLabel, reqHeaderLabel, reqParamsLabel, statusCodeLabel, reasonPhraseLabel, rspHeaderLabel, rspBodyLabel;
 	private JTextField packageNameField, classNameField, methodNameField, urlField, methodField, reqParamsField, statusCodeField, reasonPhraseField;
-	private JTextArea classDescArea, methodDescArea, caseDescArea, reqHeaderArea, rspHeaderArea, rspBodyArea;
+	private ScrollPaneTextArea classDescArea, methodDescArea, caseDescArea, reqHeaderArea, rspHeaderArea, rspBodyArea;
 	private JCheckBox smokeScriptCheckBox;
+	private JComboBox<Object> typeComboBox;
 	private JButton applyButton;
 	
-	private String url, method, reqHeader, reqParams, statusCode, reasonPhrase, rspHeader, rspBody;
-	private Map<String, String> rspHeadMap;
+	private String[] types = {"TEXT", "JSON", "HTML"};
 	
-	@SuppressWarnings("unchecked")
-	public DataDetailView(Map<String, Object> dataMap) {
-		super(20, 10);
-		this.url = dataMap.get("url").toString();
-		this.method = dataMap.get("method").toString();
-		this.reqHeader = dataMap.get("reqHeader").toString();
-		this.reqParams = dataMap.get("reqParams").toString();
-		this.statusCode = dataMap.get("statusCode").toString();
-		this.reasonPhrase = dataMap.get("reasonPhrase").toString();
-		this.rspHeader = dataMap.get("rspHeader").toString();
-		this.rspBody = dataMap.get("rspBody").toString();
-		rspHeadMap = JsonUtil.jsonToMap(this.rspHeader);
+	private Map<String, Object> dataMap;
+	
+	public GeneratorPanel(Map<String, Object> dataMap) {
+		this.setBorder(new LineBorder(new Color(255, 200, 0), 2));
+		this.setLayout(ViewModules.getGridBagLayout(30, 10, 5, 5, 1.0, 1.0));
+		this.dataMap = dataMap;
+		
 		defineComponents();
 		layoutComponents();
 		initData();
 	}
 	
-	public static void showDialog(JFrame frame, Map<String, Object> map){
-		JDialog dialog = new JDialog(frame, "Data Detail");
-		dialog.setBackground(Color.LIGHT_GRAY);
-		dialog.setTitle("DataDetail");
-		dialog.setBounds(100, 100, 900, 600);
-		dialog.setVisible(true);
-		DataDetailView ddv = new DataDetailView(map);
-		JScrollPane jsp = new JScrollPane(ddv, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-		dialog.getContentPane().add(jsp);
-		dialog.setModal(true);
-		dialog.pack();
-	}
-
-	@Override
 	public void defineComponents() {
 		packageNameLabel = ViewModules.createJLabel("Test Package Name:", Color.BLACK);
 		classNameLabel = ViewModules.createJLabel("Test Class Name:", Color.BLACK);
@@ -99,19 +78,21 @@ public class DataDetailView extends AbstractPreferencesView {
 		statusCodeField = ViewModules.createTextField(20, "", true);
 		reasonPhraseField = ViewModules.createTextField(20, "", true);
 		
-		classDescArea = ViewModules.createTextArea("");
-		methodDescArea = ViewModules.createTextArea("");
-		caseDescArea = ViewModules.createTextArea("");
-		reqHeaderArea = ViewModules.createTextArea("");
-		rspHeaderArea = ViewModules.createTextArea("");
-		rspBodyArea = ViewModules.createTextArea("");
+		classDescArea = new ScrollPaneTextArea(2);
+		methodDescArea = new ScrollPaneTextArea(2);
+		caseDescArea = new ScrollPaneTextArea(2);
+		reqHeaderArea = new ScrollPaneTextArea(5);
+		rspHeaderArea = new ScrollPaneTextArea(5);
+		rspBodyArea = new ScrollPaneTextArea(10);
 		
 		smokeScriptCheckBox = ViewModules.createCheckBox("is Smoke Case", null);
+		typeComboBox = ViewModules.createComboBox(types);
+		typeComboBox.setBounds(0, 0, 100, 25);
+		System.out.println(packageNameLabel.getWidth() + ":" + packageNameLabel.getHeight());
 		
 		applyButton = ViewModules.createButton("GeneScript", "GENEJAVA", this);
 	}
 
-	@Override
 	public void layoutComponents() {
 		this.add(packageNameLabel, ViewModules.getGridBagConstraints(1, 1, 1, 1));
 		this.add(packageNameField, ViewModules.getGridBagConstraints(2, 1, 9, 1));
@@ -120,48 +101,57 @@ public class DataDetailView extends AbstractPreferencesView {
 		this.add(classNameField, ViewModules.getGridBagConstraints(2, 2, 9, 1));
 		
 		this.add(classDescLabel, ViewModules.getGridBagConstraints(1, 3, 1, 1));
-		this.add(classDescArea, ViewModules.getGridBagConstraints(2, 3, 9, 1));
+		this.add(classDescArea, ViewModules.getGridBagConstraints(1, 4, 10, 1));
 		
-		this.add(methodNameLabel, ViewModules.getGridBagConstraints(1, 4, 1, 1));
-		this.add(methodNameField, ViewModules.getGridBagConstraints(2, 4, 8, 1));
+		this.add(methodNameLabel, ViewModules.getGridBagConstraints(1, 5, 1, 1));
+		this.add(methodNameField, ViewModules.getGridBagConstraints(2, 5, 8, 1));
 		
-		this.add(smokeScriptCheckBox, ViewModules.getGridBagConstraints(10, 4, 1, 1));
+		this.add(smokeScriptCheckBox, ViewModules.getGridBagConstraints(10, 5, 1, 1));
 		
-		this.add(methodDescLabel, ViewModules.getGridBagConstraints(1, 5, 1, 1));
-		this.add(methodDescArea, ViewModules.getGridBagConstraints(2, 5, 9, 1));
+		this.add(methodDescLabel, ViewModules.getGridBagConstraints(1, 6, 1, 1));
+		this.add(methodDescArea, ViewModules.getGridBagConstraints(1, 7, 10, 1));
 		
-		this.add(urlLabel, ViewModules.getGridBagConstraints(1, 6, 1, 1));
-		this.add(urlField, ViewModules.getGridBagConstraints(2, 6, 7, 1));
+		this.add(urlLabel, ViewModules.getGridBagConstraints(1, 8, 1, 1));
+		this.add(urlField, ViewModules.getGridBagConstraints(2, 8, 7, 1));
 		
-		this.add(methodLabel, ViewModules.getGridBagConstraints(9, 6, 1, 1));
-		this.add(methodField, ViewModules.getGridBagConstraints(10, 6, 1, 1));
+		this.add(methodLabel, ViewModules.getGridBagConstraints(9, 8, 1, 1));
+		this.add(methodField, ViewModules.getGridBagConstraints(10, 8, 1, 1));
 		
-		this.add(caseDescLabel, ViewModules.getGridBagConstraints(1, 7, 1, 1));
-		this.add(caseDescArea, ViewModules.getGridBagConstraints(2, 7, 9, 1));
+		this.add(caseDescLabel, ViewModules.getGridBagConstraints(1, 9, 1, 1));
+		this.add(caseDescArea, ViewModules.getGridBagConstraints(1, 10, 10, 1));
 		
-		this.add(reqHeaderLabel, ViewModules.getGridBagConstraints(1, 8, 1, 1));
-		this.add(reqHeaderArea, ViewModules.getGridBagConstraints(2, 8, 9, 3));
+		this.add(reqHeaderLabel, ViewModules.getGridBagConstraints(1, 11, 1, 1));
+		this.add(reqHeaderArea, ViewModules.getGridBagConstraints(1, 12, 10, 3));
 		
-		this.add(reqParamsLabel, ViewModules.getGridBagConstraints(1, 11, 1, 1));
-		this.add(reqParamsField, ViewModules.getGridBagConstraints(2, 11, 9, 1));
+		this.add(reqParamsLabel, ViewModules.getGridBagConstraints(1, 15, 1, 1));
+		this.add(reqParamsField, ViewModules.getGridBagConstraints(1, 16, 10, 2));
 		
-		this.add(statusCodeLabel, ViewModules.getGridBagConstraints(1, 12, 1, 1));
-		this.add(statusCodeField, ViewModules.getGridBagConstraints(2, 12, 1, 1));
+		this.add(statusCodeLabel, ViewModules.getGridBagConstraints(1, 18, 1, 1));
+		this.add(statusCodeField, ViewModules.getGridBagConstraints(2, 18, 1, 1));
 		
-		this.add(reasonPhraseLabel, ViewModules.getGridBagConstraints(3, 12, 1, 1));
-		this.add(reasonPhraseField, ViewModules.getGridBagConstraints(4, 12, 7, 1));
+		this.add(reasonPhraseLabel, ViewModules.getGridBagConstraints(3, 18, 1, 1));
+		this.add(reasonPhraseField, ViewModules.getGridBagConstraints(4, 18, 7, 1));
 		
-		this.add(rspHeaderLabel, ViewModules.getGridBagConstraints(1, 13, 1, 1));
-		this.add(rspHeaderArea, ViewModules.getGridBagConstraints(2, 13, 9, 3));
+		this.add(rspHeaderLabel, ViewModules.getGridBagConstraints(1, 19, 1, 1));
+		this.add(rspHeaderArea, ViewModules.getGridBagConstraints(1, 20, 10, 3));
 		
-		this.add(rspBodyLabel, ViewModules.getGridBagConstraints(1, 16, 1, 1));
-		this.add(rspBodyArea, ViewModules.getGridBagConstraints(2, 16, 9, 4));
+		this.add(rspBodyLabel, ViewModules.getGridBagConstraints(1, 23, 1, 1));
+		this.add(typeComboBox, ViewModules.getGridBagConstraints(2, 23, 1, 1, GridBagConstraints.HORIZONTAL));
+		this.add(rspBodyArea, ViewModules.getGridBagConstraints(1, 24, 10, 4));
 		
-		this.add(applyButton, ViewModules.getGridBagConstraints(10, 20, 1, 1));
+		this.add(applyButton, ViewModules.getGridBagConstraints(10, 30, 1, 1));
 	}
 
-	@Override
 	public void initData() {
+		String url = dataMap.get("url").toString();
+		String method = dataMap.get("method").toString();
+		String reqHeader = dataMap.get("reqHeader").toString();
+		String reqParams = dataMap.get("reqParams").toString();
+		String statusCode = dataMap.get("statusCode").toString();
+		String reasonPhrase = dataMap.get("reasonPhrase").toString();
+		String rspHeader = dataMap.get("rspHeader").toString();
+		String rspBody = dataMap.get("rspBody").toString();
+		
 		packageNameField.setText(Constants.PROPS.getProperty("packageName"));
 		String methodName = HttptHelper.getInterfaceMethodName(url);
 		methodName = methodName.toUpperCase().substring(0, 1) + methodName.substring(1);
@@ -174,26 +164,48 @@ public class DataDetailView extends AbstractPreferencesView {
 		}
 		urlField.setText(url);
 		methodField.setText(method);
-		reqParamsField.setText(reqParams);
+		reqParamsField.setText(FormatUtil.formatJson(reqParams));
 		statusCodeField.setText(statusCode);
 		reasonPhraseField.setText(reasonPhrase);
 		
 		classDescArea.setText("test class description");
 		methodDescArea.setText("test method description");
 		caseDescArea.setText("case description");
-		reqHeaderArea.setText(reqHeader);
-		rspHeaderArea.setText(rspHeader);
+		reqHeaderArea.setText(FormatUtil.formatJson(reqHeader));
+		rspHeaderArea.setText(FormatUtil.formatJson(rspHeader));
 		rspBodyArea.setText(rspBody);
 		
 		String smokeScript = (null == Constants.PROPS.getProperty("smokeScript")) ? "false" : Constants.PROPS.getProperty("smokeScript");
 		boolean isChose = Boolean.valueOf((smokeScript.trim().length() > 0) ? smokeScript : "false");
 		smokeScriptCheckBox.setSelected(isChose);
+		
+		typeComboBox.setSelectedIndex(0);
+		typeComboBox.addItemListener(new ItemListener(){
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				switch(e.getItem().toString()){
+				case "JSON":
+					rspBodyArea.setText(FormatUtil.formatJson(rspBodyArea.getText()));
+					break;
+				case "HTML":
+					String text = rspBodyArea.getText();
+					try {
+						text = FormatUtil.formatHtml(text);
+					} catch (Exception e1) {
+						
+					}
+					rspBodyArea.setText(text);
+					break;
+				case "TEXT":
+					rspBodyArea.setText(FormatUtil.formatText(rspBodyArea.getText()));
+					break;
+				default:
+					break;
+				}
+			}
+		});
 	}
 	
-	@Override
-	public void saveSettings() {}
-
-	@Override
 	public void actionPerformed(ActionEvent e) {
 		switch(e.getActionCommand()){
 		case "GENEJAVA":
