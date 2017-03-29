@@ -4,10 +4,11 @@ import java.awt.BorderLayout;
 import java.util.Vector;
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
+
 import com.common.Constants;
 import com.view.mainframe.menu.FrameMenuBar;
 import com.view.mainframe.table.RowTableScrollPane;
+import com.view.util.StatusProgressPanel;
 import com.view.util.ViewModules;
 
 @SuppressWarnings("serial")
@@ -15,6 +16,7 @@ public class MainFrame extends JFrame {
 
 	private RowTableScrollPane scrollPane = null;
 	private FrameMenuBar menuBar;
+	public StatusProgressPanel progress;
 
 	private Vector<Vector<Object>> rows = new Vector<Vector<Object>>();
 	private String[] tableHead = {"ALL", "url", "method", "reqHeader", "reqParams", "statusCode", "reasonPhrase", "rspHeader", "rspBody", "Operate"};
@@ -32,8 +34,8 @@ public class MainFrame extends JFrame {
 		this.scrollPane = new RowTableScrollPane(this.getRows(), heads, this);
 		this.getContentPane().add(scrollPane, BorderLayout.CENTER);
 		
-		JLabel statusLabel = new JLabel("zhouyelin@cmhi.chinamobile.com");
-		this.getContentPane().add(statusLabel, BorderLayout.SOUTH);
+		progress = new StatusProgressPanel();
+		this.getContentPane().add(progress, BorderLayout.SOUTH);
 		this.setVisible(true);
 	}
 	

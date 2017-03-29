@@ -20,9 +20,12 @@ import com.view.preference.component.JcaptureSettingView;
 import com.view.preference.component.ScriptSettingView;
 import com.view.preference.component.WorkspaceSettingView;
 import com.view.util.FrameWindowAdapter;
+import com.view.util.StatusProgressPanel;
 
 @SuppressWarnings("serial")
 public class PreferenceFrame extends JFrame implements TreeSelectionListener {
+	
+	public StatusProgressPanel progress;
 	
 	private JTree tree = new JTree();
 	private CardLayout card = new CardLayout();
@@ -33,10 +36,12 @@ public class PreferenceFrame extends JFrame implements TreeSelectionListener {
 		this.setBackground(Color.LIGHT_GRAY);
 		this.setBounds(100, 100, 900, 600);
 		Container container = this.getContentPane();
+		progress = new StatusProgressPanel();
+		container.add(progress, BorderLayout.SOUTH);
 		this.panel = new JPanel(card);
-		this.panel.add("WorkspaceSetting", new WorkspaceSettingView());
-		this.panel.add("CaptureSetting", new JcaptureSettingView());
-		this.panel.add("JavaScriptSetting", new ScriptSettingView());
+		this.panel.add("WorkspaceSetting", new WorkspaceSettingView(this));
+		this.panel.add("CaptureSetting", new JcaptureSettingView(this));
+		this.panel.add("JavaScriptSetting", new ScriptSettingView(this));
 		card.show(this.panel, "WorkspaceSetting");
 		createTree();
 		JScrollPane jsp = new JScrollPane(this.panel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
@@ -47,7 +52,7 @@ public class PreferenceFrame extends JFrame implements TreeSelectionListener {
 		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		this.addWindowListener(new FrameWindowAdapter(parent, this));
 	}
-
+	
 	/**
 	 * Initialize the contents of the frame.
 	 */

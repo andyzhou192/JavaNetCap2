@@ -7,6 +7,8 @@ import org.apache.http.util.EntityUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.asserts.AssertResult;
+import com.asserts.Asserts;
 import com.data.provider.testng.ExcelDataProvider;
 
 /**
@@ -31,10 +33,15 @@ public class ${entity.className}<#if entity.superclass?has_content> extends ${en
 			
 			Assert.assertEquals(String.valueOf(rsp.getStatusLine().getStatusCode()), ${rspCode});
 			Assert.assertEquals(rsp.getStatusLine().getReasonPhrase(), ${reasonPhrase});
-			Assert.assertEquals(rsp.getAllHeaders().toString(), ${rspHeader});
-			Assert.assertEquals(EntityUtils.toString(rsp.getEntity()), ${rspBody});
-		}
-		catch(Exception e) {
+			if(null != ${rspHeader} && ${rspHeader}.trim().length() > 0){
+				AssertResult result = Asserts.assertJson(EntityUtils.toString(rsp.getEntity()), ${rspHeader});
+				Assert.assertTrue(result.isSucc(), result.getMessage());
+			}
+			if(null != ${rspBody} && ${rspBody}.trim().length() > 0){
+				AssertResult result = Asserts.assertJson(EntityUtils.toString(rsp.getEntity()), ${rspBody});
+				Assert.assertTrue(result.isSucc(), result.getMessage());
+			}
+		} catch(Exception e) {
 			Assert.fail(e.toString());
 		}finally{
 			LOGGER.info("########## " + ${caseId} + ": " + ${desc} + " ##########"+" END ##########");

@@ -206,11 +206,11 @@ public class AppWindow implements TreeSelectionListener {
         	break;
         case "Ethernet":
         	pane.removeAll();
-        	pane.add(new JcaptureSettingView());
+        	pane.add(new JcaptureSettingView(frame));
         	break;
         case "Java":
         	pane.removeAll();
-        	pane.add(new ScriptSettingView());
+        	pane.add(new ScriptSettingView(frame));
         	break;
         default:
         	break;

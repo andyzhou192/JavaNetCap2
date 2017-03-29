@@ -37,6 +37,14 @@
 			<directory>${project.build.directory}/exts</directory>
 			<outputDirectory>/exts</outputDirectory>
 		</fileSet>
+		<fileSet>
+			<directory>${project.build.directory}/img</directory>
+			<outputDirectory>/img</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>${project.build.directory}/theme</directory>
+			<outputDirectory>/theme</outputDirectory>
+		</fileSet>
 		<!-- 把项目的配置文件，打包进zip文件的conf目录 -->
 		<fileSet>
 			<directory>${project.build.directory}/conf</directory>

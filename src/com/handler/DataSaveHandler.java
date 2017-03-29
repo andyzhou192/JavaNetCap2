@@ -5,7 +5,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
 
-import com.common.data.excel.ExcelWriter;
+import com.common.helper.ExcelWriterHelper;
+import com.common.util.FileUtil;
 import com.common.util.LogUtil;
 
 import jxl.write.Label;
@@ -33,7 +34,10 @@ public class DataSaveHandler {
 	public synchronized void writeToExcel(String file, String sheetName, String[] columnNames) {
 		try {
 			File srcFile = new File(file);
-			ExcelWriter book = ExcelWriter.getBook(srcFile);
+			String parentPath = srcFile.getParent();
+			if(null != parentPath && !new File(parentPath).exists())
+				new File(parentPath).mkdirs();
+			ExcelWriterHelper book = ExcelWriterHelper.getBook(srcFile);
 			WritableSheet sheet = null;
 			if (null == book.getSheet(sheetName)) {
 				sheet = book.createSheet(sheetName, book.getNumberOfSheets());
@@ -60,7 +64,7 @@ public class DataSaveHandler {
 			sheet.addCell(new Label(9, rowCount, rspBody));
 			book.write();
 			book.close();
-			ExcelWriter.deleteTempFile(srcFile);
+			ExcelWriterHelper.deleteTempFile(srcFile);
 		} catch (WriteException | IOException e) {
 			e.printStackTrace();
 		}

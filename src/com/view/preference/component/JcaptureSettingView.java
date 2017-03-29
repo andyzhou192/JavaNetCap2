@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
@@ -29,9 +30,7 @@ import jpcap.JpcapCaptor;
 @SuppressWarnings({ "restriction", "serial" })
 public class JcaptureSettingView extends AbstractPreferencesView {
 
-	/**
-	 * Auto-generated main method to display this JDialog
-	 */
+	private JFrame parent;
 	private JLabel ethernetLabel, protocolLabel, promiscLabel, urlLabel, maxLengthLabel;
 	private JTextField caplenTextField, urlFilterField;
 	private JCheckBox promiscCheckBox;
@@ -39,8 +38,9 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 	private JRadioButton wholeRadioButton, headRadioButton, otherRadioButton;
 	private JButton applyButton;
 	
-	public JcaptureSettingView() {
+	public JcaptureSettingView(JFrame parent) {
 		super(10, 10);
+		this.parent = parent;
 		defineComponents();
 		layoutComponents();
 		initData();
@@ -177,7 +177,7 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 		boolean isSucc_05 = storeProperty("capture_url", urlFilterField.getText());
 		Constants.initProperties(Constants.DEF_SET_PROP_FILE);
 		boolean isSucc = isSucc_01 && isSucc_02 && isSucc_03 && isSucc_04 && isSucc_05;
-		ViewModules.showMessageDialog(null, "Properties saved : " + isSucc);
+		ViewModules.showMessageDialog(parent, "Properties saved : " + isSucc);
 	}
 	
 	/**

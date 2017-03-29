@@ -7,6 +7,8 @@ import java.io.InputStreamReader;
 import java.util.Properties;
 
 import com.common.util.LogUtil;
+import com.generator.AbstractGenerator;
+import com.generator.maven.ProjectInfo;
 
 /**
  * 
@@ -62,4 +64,6 @@ public final class Constants {
 			e.printStackTrace();
 		}
 	}
+	
+	public static ProjectInfo PROJECT_INFO = null;
 }

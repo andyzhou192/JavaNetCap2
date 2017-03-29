@@ -49,7 +49,11 @@ public class ActionListenerForMenu implements ActionListener {
 		case "IMPORT":
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
+					frame.progress.setStatus("Import Data From File...");
+					frame.progress.startProgress();
 					openFile(frame);
+					frame.progress.stopProgress();
+					frame.progress.setStatus("Data has imported!");
 				}
 			});
 			break;
@@ -59,14 +63,22 @@ public class ActionListenerForMenu implements ActionListener {
 		case "EXPORT":
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
+					frame.progress.setStatus("Export Data...");
+					frame.progress.startProgress();
 					saveDataToFile(frame, null, "data.dat", getDataFromTable(table));
+					frame.progress.stopProgress();
+					frame.progress.setStatus("Data has exported!");
 				}
 			});
 			break;
 		case "DELETE":
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
+					frame.progress.setStatus("Delete data...");
+					frame.progress.startProgress();
 					deleteSelectedData(frame);
+					frame.progress.stopProgress();
+					frame.progress.setStatus("Data has deleted!");
 				}
 			});
 			break;
@@ -86,6 +98,8 @@ public class ActionListenerForMenu implements ActionListener {
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
 					Netcaptor.startCapture(frame);
+					frame.progress.setStatus("Starting...");
+					frame.progress.startProgress();
 					frame.getFrameMenuBar().getStartItem().setEnabled(false);
 					frame.getFrameMenuBar().getStopItem().setEnabled(true);
 				}
@@ -95,6 +109,8 @@ public class ActionListenerForMenu implements ActionListener {
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
 					Netcaptor.stopCapture();
+					frame.progress.setStatus("Stopped!");
+					frame.progress.stopProgress();
 					frame.getFrameMenuBar().getStartItem().setEnabled(true);
 					frame.getFrameMenuBar().getStopItem().setEnabled(false);
 				}
@@ -103,8 +119,10 @@ public class ActionListenerForMenu implements ActionListener {
 		case "OPENSCRIPT":
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
+					frame.progress.setStatus("Open Script From File!");
 					Toolkit.getDefaultToolkit().setDynamicLayout(true);
 					new ScriptEditFrame(frame).setVisible(true);
+					frame.progress.setStatus("Script has opened");
 				}
 			});
 			break;

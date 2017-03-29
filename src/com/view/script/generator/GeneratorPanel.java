@@ -6,7 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,9 +15,11 @@ import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
+import com.generator.AbstractGenerator;
 import com.generator.java.ScriptGenerator;
 import com.handler.DataSaveHandler;
 import com.protocol.http.HttptHelper;
@@ -32,20 +33,23 @@ import freemarker.template.TemplateException;
 @SuppressWarnings("serial")
 public class GeneratorPanel extends JPanel implements ActionListener {
 	
-	private JLabel packageNameLabel, classNameLabel, classDescLabel, methodNameLabel, methodDescLabel, urlLabel, methodLabel, caseDescLabel, reqHeaderLabel, reqParamsLabel, statusCodeLabel, reasonPhraseLabel, rspHeaderLabel, rspBodyLabel;
-	private JTextField packageNameField, classNameField, methodNameField, urlField, methodField, reqParamsField, statusCodeField, reasonPhraseField;
-	private ScrollPaneTextArea classDescArea, methodDescArea, caseDescArea, reqHeaderArea, rspHeaderArea, rspBodyArea;
+	private JLabel packageNameLabel, classNameLabel, classDescLabel, testMethodNameLabel, testMethodDescLabel, urlLabel, httpMethodLabel, testCaseDescLabel, reqHeaderLabel, reqParamsLabel, statusCodeLabel, reasonPhraseLabel, rspHeaderLabel, rspBodyLabel;
+	private JTextField packageNameField, classNameField, testMethodNameField, urlField, httpMethodField, statusCodeField, reasonPhraseField;
+	private ScrollPaneTextArea classDescArea, testMethodDescArea, testCaseDescArea, rspBodyArea;
+	private ParameterTablePanel reqParamsArea, reqHeaderArea, rspHeaderArea;
 	private JCheckBox smokeScriptCheckBox;
 	private JComboBox<Object> typeComboBox;
 	private JButton applyButton;
 	
 	private String[] types = {"TEXT", "JSON", "HTML"};
 	
+	private GeneratorFrame parent;
 	private Map<String, Object> dataMap;
 	
-	public GeneratorPanel(Map<String, Object> dataMap) {
+	public GeneratorPanel(GeneratorFrame parent, Map<String, Object> dataMap) {
+		this.parent = parent;
 		this.setBorder(new LineBorder(new Color(255, 200, 0), 2));
-		this.setLayout(ViewModules.getGridBagLayout(30, 10, 5, 5, 1.0, 1.0));
+		this.setLayout(ViewModules.getGridBagLayout(40, 10, 5, 5, 1.0, 1.0));
 		this.dataMap = dataMap;
 		
 		defineComponents();
@@ -57,11 +61,11 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 		packageNameLabel = ViewModules.createJLabel("Test Package Name:", Color.BLACK);
 		classNameLabel = ViewModules.createJLabel("Test Class Name:", Color.BLACK);
 		classDescLabel = ViewModules.createJLabel("Test Class Desc:", Color.BLACK);
-		methodNameLabel = ViewModules.createJLabel("Test Method Name:", Color.BLACK);
-		methodDescLabel = ViewModules.createJLabel("Test Method Desc:", Color.BLACK);
+		testMethodNameLabel = ViewModules.createJLabel("Test Method Name:", Color.BLACK);
+		testMethodDescLabel = ViewModules.createJLabel("Test Method Desc:", Color.BLACK);
 		urlLabel = ViewModules.createJLabel("URL:", Color.BLACK);
-		methodLabel = ViewModules.createJLabel("Method:", Color.BLACK);
-		caseDescLabel = ViewModules.createJLabel("Test Case Desc:", Color.BLACK);
+		httpMethodLabel = ViewModules.createJLabel("Method:", Color.BLACK);
+		testCaseDescLabel = ViewModules.createJLabel("Test Case Desc:", Color.BLACK);
 		reqHeaderLabel = ViewModules.createJLabel("Request Header:", Color.BLACK);
 		reqParamsLabel = ViewModules.createJLabel("Request Params:", Color.BLACK);
 		statusCodeLabel = ViewModules.createJLabel("Status Code:", Color.BLACK);
@@ -71,19 +75,19 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 		
 		packageNameField = ViewModules.createTextField(20, "", true);
 		classNameField = ViewModules.createTextField(20, "", true);
-		methodNameField = ViewModules.createTextField(20, "", true);
+		testMethodNameField = ViewModules.createTextField(20, "", true);
 		urlField = ViewModules.createTextField(20, "", true);
-		methodField = ViewModules.createTextField(20, "", true);
-		reqParamsField = ViewModules.createTextField(20, "", true);
+		httpMethodField = ViewModules.createTextField(20, "", true);
 		statusCodeField = ViewModules.createTextField(20, "", true);
 		reasonPhraseField = ViewModules.createTextField(20, "", true);
 		
-		classDescArea = new ScrollPaneTextArea(2);
-		methodDescArea = new ScrollPaneTextArea(2);
-		caseDescArea = new ScrollPaneTextArea(2);
-		reqHeaderArea = new ScrollPaneTextArea(5);
-		rspHeaderArea = new ScrollPaneTextArea(5);
-		rspBodyArea = new ScrollPaneTextArea(10);
+		reqParamsArea = new ParameterTablePanel(parent, "");
+		classDescArea = new ScrollPaneTextArea(2, "");
+		testMethodDescArea = new ScrollPaneTextArea(2, "");
+		testCaseDescArea = new ScrollPaneTextArea(2, "");
+		reqHeaderArea = new ParameterTablePanel(parent, "");
+		rspHeaderArea = new ParameterTablePanel(parent, "");
+		rspBodyArea = new ScrollPaneTextArea(10, "");
 		
 		smokeScriptCheckBox = ViewModules.createCheckBox("is Smoke Case", null);
 		typeComboBox = ViewModules.createComboBox(types);
@@ -94,52 +98,73 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 	}
 
 	public void layoutComponents() {
-		this.add(packageNameLabel, ViewModules.getGridBagConstraints(1, 1, 1, 1));
-		this.add(packageNameField, ViewModules.getGridBagConstraints(2, 1, 9, 1));
+		JTabbedPane tabbedPane = new JTabbedPane();
+		tabbedPane.setTabPlacement(JTabbedPane.TOP);// 设置标签置放位置。
+		// script base info
+		JPanel scriptInfoPanel = ViewModules.createPanel("Script Base Info");
+		scriptInfoPanel.setLayout(ViewModules.getGridBagLayout(9, 10, 5, 5, 1.0, 1.0));
 		
-		this.add(classNameLabel, ViewModules.getGridBagConstraints(1, 2, 1, 1));
-		this.add(classNameField, ViewModules.getGridBagConstraints(2, 2, 9, 1));
+		scriptInfoPanel.add(packageNameLabel, ViewModules.getGridBagConstraints(1, 1, 1, 1));
+		scriptInfoPanel.add(packageNameField, ViewModules.getGridBagConstraints(2, 1, 9, 1));
 		
-		this.add(classDescLabel, ViewModules.getGridBagConstraints(1, 3, 1, 1));
-		this.add(classDescArea, ViewModules.getGridBagConstraints(1, 4, 10, 1));
+		scriptInfoPanel.add(classNameLabel, ViewModules.getGridBagConstraints(1, 2, 1, 1));
+		scriptInfoPanel.add(classNameField, ViewModules.getGridBagConstraints(2, 2, 9, 1));
 		
-		this.add(methodNameLabel, ViewModules.getGridBagConstraints(1, 5, 1, 1));
-		this.add(methodNameField, ViewModules.getGridBagConstraints(2, 5, 8, 1));
+		scriptInfoPanel.add(classDescLabel, ViewModules.getGridBagConstraints(1, 3, 1, 1));
+		scriptInfoPanel.add(classDescArea, ViewModules.getGridBagConstraints(1, 4, 10, 1));
 		
-		this.add(smokeScriptCheckBox, ViewModules.getGridBagConstraints(10, 5, 1, 1));
+		scriptInfoPanel.add(testMethodNameLabel, ViewModules.getGridBagConstraints(1, 5, 1, 1));
+		scriptInfoPanel.add(testMethodNameField, ViewModules.getGridBagConstraints(2, 5, 8, 1));
+		scriptInfoPanel.add(smokeScriptCheckBox, ViewModules.getGridBagConstraints(10, 5, 1, 1));
 		
-		this.add(methodDescLabel, ViewModules.getGridBagConstraints(1, 6, 1, 1));
-		this.add(methodDescArea, ViewModules.getGridBagConstraints(1, 7, 10, 1));
+		scriptInfoPanel.add(testMethodDescLabel, ViewModules.getGridBagConstraints(1, 6, 1, 1));
+		scriptInfoPanel.add(testMethodDescArea, ViewModules.getGridBagConstraints(1, 7, 10, 1));
 		
-		this.add(urlLabel, ViewModules.getGridBagConstraints(1, 8, 1, 1));
-		this.add(urlField, ViewModules.getGridBagConstraints(2, 8, 7, 1));
+		scriptInfoPanel.add(testCaseDescLabel, ViewModules.getGridBagConstraints(1, 8, 1, 1));
+		scriptInfoPanel.add(testCaseDescArea, ViewModules.getGridBagConstraints(1, 9, 10, 1));
 		
-		this.add(methodLabel, ViewModules.getGridBagConstraints(9, 8, 1, 1));
-		this.add(methodField, ViewModules.getGridBagConstraints(10, 8, 1, 1));
+		//this.add(scriptInfoPanel, ViewModules.getGridBagConstraints(1, 1, 10, 9));
+		tabbedPane.add("Script Base Info", scriptInfoPanel);
+		// request info
+		JPanel requestInfoPanel = ViewModules.createPanel("Request Info");
+		requestInfoPanel.setLayout(ViewModules.getGridBagLayout(13, 10, 5, 5, 1.0, 1.0));
 		
-		this.add(caseDescLabel, ViewModules.getGridBagConstraints(1, 9, 1, 1));
-		this.add(caseDescArea, ViewModules.getGridBagConstraints(1, 10, 10, 1));
+		requestInfoPanel.add(urlLabel, ViewModules.getGridBagConstraints(1, 1, 1, 1));
+		requestInfoPanel.add(urlField, ViewModules.getGridBagConstraints(2, 1, 7, 1));
 		
-		this.add(reqHeaderLabel, ViewModules.getGridBagConstraints(1, 11, 1, 1));
-		this.add(reqHeaderArea, ViewModules.getGridBagConstraints(1, 12, 10, 3));
+		requestInfoPanel.add(httpMethodLabel, ViewModules.getGridBagConstraints(9, 1, 1, 1));
+		requestInfoPanel.add(httpMethodField, ViewModules.getGridBagConstraints(10, 1, 1, 1));
 		
-		this.add(reqParamsLabel, ViewModules.getGridBagConstraints(1, 15, 1, 1));
-		this.add(reqParamsField, ViewModules.getGridBagConstraints(1, 16, 10, 2));
+		requestInfoPanel.add(reqParamsLabel, ViewModules.getGridBagConstraints(1, 2, 1, 1));
+		requestInfoPanel.add(reqParamsArea, ViewModules.getGridBagConstraints(1, 3, 10, 5));
 		
-		this.add(statusCodeLabel, ViewModules.getGridBagConstraints(1, 18, 1, 1));
-		this.add(statusCodeField, ViewModules.getGridBagConstraints(2, 18, 1, 1));
+		requestInfoPanel.add(reqHeaderLabel, ViewModules.getGridBagConstraints(1, 8, 1, 1));
+		requestInfoPanel.add(reqHeaderArea, ViewModules.getGridBagConstraints(1, 9, 10, 5));
 		
-		this.add(reasonPhraseLabel, ViewModules.getGridBagConstraints(3, 18, 1, 1));
-		this.add(reasonPhraseField, ViewModules.getGridBagConstraints(4, 18, 7, 1));
+		//this.add(requestInfoPanel, ViewModules.getGridBagConstraints(1, 10, 10, 13));
+		tabbedPane.add("Request Info", requestInfoPanel);
+		// response info
+		JPanel responseInfoPanel = ViewModules.createPanel("Response Info");
+		responseInfoPanel.setLayout(ViewModules.getGridBagLayout(13, 10, 5, 5, 1.0, 1.0));
 		
-		this.add(rspHeaderLabel, ViewModules.getGridBagConstraints(1, 19, 1, 1));
-		this.add(rspHeaderArea, ViewModules.getGridBagConstraints(1, 20, 10, 3));
+		responseInfoPanel.add(statusCodeLabel, ViewModules.getGridBagConstraints(1, 1, 1, 1));
+		responseInfoPanel.add(statusCodeField, ViewModules.getGridBagConstraints(2, 1, 1, 1));
 		
-		this.add(rspBodyLabel, ViewModules.getGridBagConstraints(1, 23, 1, 1));
-		this.add(typeComboBox, ViewModules.getGridBagConstraints(2, 23, 1, 1, GridBagConstraints.HORIZONTAL));
-		this.add(rspBodyArea, ViewModules.getGridBagConstraints(1, 24, 10, 4));
+		responseInfoPanel.add(reasonPhraseLabel, ViewModules.getGridBagConstraints(3, 1, 1, 1));
+		responseInfoPanel.add(reasonPhraseField, ViewModules.getGridBagConstraints(4, 1, 7, 1));
 		
-		this.add(applyButton, ViewModules.getGridBagConstraints(10, 30, 1, 1));
+		responseInfoPanel.add(rspHeaderLabel, ViewModules.getGridBagConstraints(1, 2, 1, 1));
+		responseInfoPanel.add(rspHeaderArea, ViewModules.getGridBagConstraints(1, 3, 10, 5));
+		
+		responseInfoPanel.add(rspBodyLabel, ViewModules.getGridBagConstraints(1, 8, 1, 1));
+		responseInfoPanel.add(typeComboBox, ViewModules.getGridBagConstraints(2, 8, 1, 1, GridBagConstraints.HORIZONTAL));
+		responseInfoPanel.add(rspBodyArea, ViewModules.getGridBagConstraints(1, 9, 10, 5));
+		
+		//this.add(responseInfoPanel, ViewModules.getGridBagConstraints(1, 24, 10, 13));
+		tabbedPane.add("Response Info", responseInfoPanel);
+		this.add(tabbedPane, ViewModules.getGridBagConstraints(1, 1, 10, 37));
+		// button
+		this.add(applyButton, ViewModules.getGridBagConstraints(10, 40, 1, 1));
 	}
 
 	public void initData() {
@@ -155,7 +180,7 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 		packageNameField.setText(Constants.PROPS.getProperty("packageName"));
 		String methodName = HttptHelper.getInterfaceMethodName(url);
 		methodName = methodName.toUpperCase().substring(0, 1) + methodName.substring(1);
-		methodNameField.setText("test" + methodName);
+		testMethodNameField.setText("test" + methodName);
 		if(null == methodName || methodName.trim().length() < 1){
 			classNameField.setText(Constants.PROPS.getProperty("className"));
 		} else {
@@ -163,16 +188,16 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 			classNameField.setText(className);
 		}
 		urlField.setText(url);
-		methodField.setText(method);
-		reqParamsField.setText(FormatUtil.formatJson(reqParams));
+		httpMethodField.setText(method);
+		reqParamsArea.setTableValues(reqParams);
 		statusCodeField.setText(statusCode);
 		reasonPhraseField.setText(reasonPhrase);
 		
 		classDescArea.setText("test class description");
-		methodDescArea.setText("test method description");
-		caseDescArea.setText("case description");
-		reqHeaderArea.setText(FormatUtil.formatJson(reqHeader));
-		rspHeaderArea.setText(FormatUtil.formatJson(rspHeader));
+		testMethodDescArea.setText("test method description");
+		testCaseDescArea.setText("case description");
+		reqHeaderArea.setTableValues(reqHeader);
+		rspHeaderArea.setTableValues(rspHeader);
 		rspBodyArea.setText(rspBody);
 		
 		String smokeScript = (null == Constants.PROPS.getProperty("smokeScript")) ? "false" : Constants.PROPS.getProperty("smokeScript");
@@ -209,22 +234,27 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		switch(e.getActionCommand()){
 		case "GENEJAVA":
-			boolean isSucc = createScript();
-			boolean isOK = createDataFile();
+			parent.progress.setStatus("Generate script...");
+			parent.progress.startProgress();
+			AbstractGenerator.initMavenProject();
+			boolean isSucc = createJavaFile();
+			boolean isOK = createExcelFile();
 			if(!isSucc){
-				ViewModules.showMessageDialog(this, "生成脚本文件失败");
+				ViewModules.showMessageDialog(this, "Generate Script Failed.");
 			} else if(!isOK){
-				ViewModules.showMessageDialog(this, "生成数据文件失败");
+				ViewModules.showMessageDialog(this, "Generate Data File Failed.");
 			} else {
-				ViewModules.showMessageDialog(this, "脚本及数据文件生成成功");
+				ViewModules.showMessageDialog(this, "Generate Script and Data File Success.");
 			}
+			parent.progress.stopProgress();
+			parent.progress.setStatus("Script has generated!");
 			break;
 		default:
 			break;
 		}
 	}
 
-	public boolean createScript(){
+	public boolean createJavaFile(){
 		String packageName = packageNameField.getText();
 		String className = classNameField.getText();
 		String classDesc = classDescArea.getText();
@@ -236,13 +266,13 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 			String templateDir = Constants.PROPS.getProperty("templateDir");
 			String templateFile = Constants.PROPS.getProperty("templateFile");
 			if(null == templateDir || templateDir.trim().length() == 0){
-				ViewModules.showMessageDialog(this, "模板文件存放目录不能为空");
+				ViewModules.showMessageDialog(this, "Template dir can not be null.");
 				return isSucc;
 			} else {
 				generator = new ScriptGenerator(templateDir, packageName, className);
 			}
 			if(null == templateFile || templateFile.trim().length() == 0){
-				ViewModules.showMessageDialog(this, "模板文件不能为空");
+				ViewModules.showMessageDialog(this, "Template file can not be null.");
 				return isSucc;
 			} else {
 				generator.setTemplate(templateFile);
@@ -258,45 +288,22 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 		return isSucc;
 	}
 
-	private boolean createDataFile() {
+	private boolean createExcelFile() {
 		Map<String, String> data = new HashMap<String, String>();
 		data.put("CaseID", "case-");
-		data.put("CaseDesc", caseDescArea.getText());
+		data.put("CaseDesc", testCaseDescArea.getText());
 		data.put("URL", urlField.getText());
-		data.put("Method", methodField.getText());
-		data.put("ReqHeader", reqHeaderArea.getText());
-		data.put("ReqParams", reqParamsField.getText());
+		data.put("Method", httpMethodField.getText());
+		data.put("ReqHeader", reqHeaderArea.getDataOfJsonString());
+		data.put("ReqParams", reqParamsArea.getDataOfJsonString());
 		data.put("StatusCode", statusCodeField.getText());
 		data.put("ReasonPhrase", reasonPhraseField.getText());
-		data.put("RspHeader", rspHeaderArea.getText());
+		data.put("RspHeader", rspHeaderArea.getDataOfJsonString());
 		data.put("RspBody", rspBodyArea.getText());
-		String file = getFilePath(packageNameField.getText(), classNameField.getText());
-		String sheetName = methodNameField.getText().trim();
+		String file = AbstractGenerator.getDataFilePath(packageNameField.getText(), classNameField.getText());
+		String sheetName = testMethodNameField.getText().trim();
 		(new DataSaveHandler(data)).writeToExcel(file, sheetName, HttptHelper.PARAM_NAMES);
 		return true;
 	}
 	
-	private String getFilePath(String packageName, String fileName){
-		String outDir = Constants.PROPS.getProperty("fileStoreDir").trim();
-		outDir = outDir.endsWith(File.separator) ? outDir : (outDir + File.separator);
-		packageName = (null != packageName && packageName.trim().length() > 0) ? packageName : Constants.PROPS.getProperty("packageName");
-		String packagePath = packageName.replace('.', '/').trim();
-		packagePath = packagePath.endsWith(File.separator) ? packagePath : (packagePath + File.separator);
-		fileName = (null != fileName && fileName.trim().length() > 0) ? fileName : (Constants.PROPS.getProperty("className") + "Test");
-		return outDir + packagePath + fileName + ".xls";
-	}
-	
-//	public static void main(String[] args) {
-//		java.util.HashMap<String, Object> map = new java.util.HashMap<String, Object>();
-//		map.put("URL", "11111111111");
-//		map.put("Method", "22222222222222");
-//		map.put("ReqHeader", "3333333333333333");
-//		map.put("ReqParams", "44444444444444444");
-//		map.put("StatusCode", "55555555555555555555");
-//		map.put("ReasonPhrase", "6666666666666666666666");
-//		map.put("RspHeader", "777777777777777777777");
-//		map.put("RspBody", "8888888888888888888");
-//		DataDetailView.showDialog(map);
-//	}
-
 }

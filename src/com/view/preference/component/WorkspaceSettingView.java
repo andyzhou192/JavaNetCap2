@@ -8,18 +8,27 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import com.common.Constants;
+import com.common.util.StringUtil;
+import com.generator.maven.MavenHelper;
+import com.generator.maven.ProjectInfo;
 import com.view.preference.AbstractPreferencesView;
+import com.view.preference.PreferenceFrame;
 import com.view.util.ViewModules;
 
 public class WorkspaceSettingView extends AbstractPreferencesView {
 
 	private static final long serialVersionUID = 1L;
+	private PreferenceFrame parent;
+	private JLabel workSpaceLabel;
 	private JTextField workSpaceTextField;
 	private JButton browseButton, applyButton;
-	private JLabel workSpaceLabel;
 	
-	public WorkspaceSettingView() {
+	private JLabel groupIdLabel, projectNameLabel, sourceDirLabel, testSourceDirLabel, resourceDirLabel, testResourceDirLabel;
+	private JTextField groupIdField, projectNameField, sourceDirField, testSourceDirField, resourceDirField, testResourceDirField;
+	
+	public WorkspaceSettingView(PreferenceFrame parent) {
 		super(10, 10);
+		this.parent = parent;
 		defineComponents();
 		layoutComponents();
 		initData();
@@ -32,6 +41,25 @@ public class WorkspaceSettingView extends AbstractPreferencesView {
 		workSpaceLabel = ViewModules.createJLabel("WorkSpace : ", Color.RED);
 		workSpaceTextField = ViewModules.createTextField(20, "", true);
 		browseButton = ViewModules.createButton("browse", "Browse", this);
+		
+		groupIdLabel = ViewModules.createJLabel("Group Id : ", Color.BLUE);
+		groupIdField = ViewModules.createTextField(20, "", true);
+		
+		projectNameLabel = ViewModules.createJLabel("Project Name : ", Color.BLUE);
+		projectNameField = ViewModules.createTextField(20, "", true);
+		
+		sourceDirLabel = ViewModules.createJLabel("Souece Dir : ", Color.BLUE);
+		sourceDirField = ViewModules.createTextField(20, "", true);
+	
+		testSourceDirLabel = ViewModules.createJLabel("Test Source Dir : ", Color.BLUE);
+		testSourceDirField = ViewModules.createTextField(20, "", true);
+		
+		resourceDirLabel = ViewModules.createJLabel("Resouece Dir : ", Color.BLUE);
+		resourceDirField = ViewModules.createTextField(20, "", true);
+		
+		testResourceDirLabel = ViewModules.createJLabel("Test Resource Dir : ", Color.BLUE);
+		testResourceDirField = ViewModules.createTextField(20, "", true);
+		
 		applyButton = ViewModules.createButton("Apply", "SaveWorkSpaceSetting", this);
 	}
 	
@@ -43,6 +71,21 @@ public class WorkspaceSettingView extends AbstractPreferencesView {
 		this.add(workSpaceTextField, ViewModules.getGridBagConstraints(2, 1, 8, 1));
 		this.add(browseButton, ViewModules.getGridBagConstraints(10, 1, 1, 1));
 		
+		this.add(groupIdLabel, ViewModules.getGridBagConstraints(1, 3, 1, 1));
+		this.add(groupIdField, ViewModules.getGridBagConstraints(2, 3, 4, 1));
+		this.add(projectNameLabel, ViewModules.getGridBagConstraints(6, 3, 1, 1));
+		this.add(projectNameField, ViewModules.getGridBagConstraints(7, 3, 4, 1));
+				        
+		this.add(sourceDirLabel, ViewModules.getGridBagConstraints(1, 4, 1, 1));
+		this.add(sourceDirField, ViewModules.getGridBagConstraints(2, 4, 4, 1));
+		this.add(resourceDirLabel, ViewModules.getGridBagConstraints(6, 4, 1, 1));
+		this.add(resourceDirField, ViewModules.getGridBagConstraints(7, 4, 4, 1));
+				    
+		this.add(testSourceDirLabel, ViewModules.getGridBagConstraints(1, 5, 1, 1));
+		this.add(testSourceDirField, ViewModules.getGridBagConstraints(2, 5, 4, 1));
+		this.add(testResourceDirLabel, ViewModules.getGridBagConstraints(6, 5, 1, 1));
+		this.add(testResourceDirField, ViewModules.getGridBagConstraints(7, 5, 4, 1));
+		
 		this.add(applyButton, ViewModules.getGridBagConstraints(10, 12, 1, 1));
 	}
 	
@@ -50,17 +93,67 @@ public class WorkspaceSettingView extends AbstractPreferencesView {
 	 * 初始化界面数据
 	 */
 	public void initData(){
-		String workSpaceValue = Constants.PROPS.getProperty("fileStoreDir");
+		parent.progress.setStatus("Initializing...");
+		parent.progress.startProgress();
+		String workSpaceValue = Constants.PROPS.getProperty("workspace");
 		workSpaceTextField.setText((null != workSpaceValue) ? workSpaceValue : "");
+		workSpaceTextField.setEnabled(false);
+		initProjectInfo(workSpaceValue);
+		parent.progress.stopProgress();
+		parent.progress.setStatus("Initialized!");
+	}
+	
+	private void initProjectInfo(String projectPath){
+		if(MavenHelper.isMavenProject(projectPath)){
+			String groupId = Constants.PROJECT_INFO.getGroupId();
+			String projectName = Constants.PROJECT_INFO.getProjectName();
+			String sourceDir = Constants.PROJECT_INFO.getSourceDir();
+			String testSourceDir = Constants.PROJECT_INFO.getTestResourceDir();
+			String resourceDir = Constants.PROJECT_INFO.getResourceDir();
+			String testResourceDir = Constants.PROJECT_INFO.getTestResourceDir();
+			
+			groupIdField.setText((null != groupId) ? groupId : MavenHelper.DefaultGroupId);
+			projectNameField.setText((null != projectName) ? projectName : MavenHelper.DefaultProjectName);
+			sourceDirField.setText((null != sourceDir) ? sourceDir : MavenHelper.DefaultSourceDir);
+			testSourceDirField.setText((null != testSourceDir) ? testSourceDir : MavenHelper.DefaultTestSourceDir);
+			resourceDirField.setText((null != resourceDir) ? resourceDir : MavenHelper.DefaultResourceDir);
+			testResourceDirField.setText((null != testResourceDir) ? testResourceDir : MavenHelper.DefaultTestResourceDir);
+		} else {
+			groupIdField.setText(MavenHelper.DefaultGroupId);
+			projectNameField.setText(MavenHelper.DefaultProjectName);
+			sourceDirField.setText(MavenHelper.DefaultSourceDir);
+			testSourceDirField.setText(MavenHelper.DefaultTestSourceDir);
+			resourceDirField.setText(MavenHelper.DefaultResourceDir);
+			testResourceDirField.setText(MavenHelper.DefaultTestResourceDir);
+		}
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		switch(e.getActionCommand()){
 		case "SaveWorkSpaceSetting":
-			saveSettings();
+			parent.progress.setStatus("Save data...");
+			parent.progress.startProgress();
+			if(null == Constants.PROJECT_INFO){
+				String path = workSpaceTextField.getText();
+				String groupId = groupIdField.getText();
+				String projectName = projectNameField.getText();
+				if(StringUtil.validate(path) && StringUtil.validate(groupId) && StringUtil.validate(projectName)){
+					String projectPath = MavenHelper.createMavenProject(path, groupId, projectName);
+					workSpaceTextField.setText(projectPath);
+					saveSettings();
+				} else {
+					ViewModules.showMessageDialog(parent, "WorkSpace, Group Id, Project Name can not be empty.");
+				}
+			} else {
+				saveSettings();
+			}
+			parent.progress.stopProgress();
+			parent.progress.setStatus("Data has saved!");
 			break;
 		case "Browse":
+			parent.progress.setStatus("Open workspace...");
+			parent.progress.startProgress();
 			JFileChooser chooser = new JFileChooser();             //设置选择器
 			//chooser.setMultiSelectionEnabled(true);             //设为多选
 			chooser.setDialogTitle("Please choose workspace");
@@ -69,7 +162,10 @@ public class WorkspaceSettingView extends AbstractPreferencesView {
 			if (returnVal == JFileChooser.APPROVE_OPTION) {          //如果符合文件类型
 				String filepath = chooser.getSelectedFile().getAbsolutePath();      //获取绝对路径
 				workSpaceTextField.setText(filepath);
+				initProjectInfo(filepath);
 			}
+			parent.progress.stopProgress();
+			parent.progress.setStatus("Open workspace...");
 			break;
 		default:
 			break;
@@ -81,10 +177,25 @@ public class WorkspaceSettingView extends AbstractPreferencesView {
 	 */
 	public void saveSettings(){
 		// 必填：生成的脚本文件包名，如：com.cmcc
-		boolean isSucc_01 = storeProperty("fileStoreDir", workSpaceTextField.getText());
-		Constants.initProperties(Constants.DEF_SET_PROP_FILE);
-		boolean isSucc = isSucc_01;
-		ViewModules.showMessageDialog(null, "Properties saved : " + isSucc);
+		
+		String groupId = groupIdField.getText();
+		String projectName = projectNameField.getText();
+		String sourceDir = sourceDirField.getText();
+		String testSourceDir = testSourceDirField.getText();
+		String resourceDir = resourceDirField.getText();
+		String testResourceDir = testResourceDirField.getText();
+		if(StringUtil.validate(groupId) && StringUtil.validate(projectName)){
+			Constants.PROJECT_INFO = new ProjectInfo(groupId, projectName, sourceDir, testSourceDir, resourceDir, testResourceDir);
+			boolean isSucc_01 = storeProperty("workspace", workSpaceTextField.getText());
+			
+			//boolean isSucc_02 = storeProperty("projectName", projectNameTextField.getText());
+			Constants.initProperties(Constants.DEF_SET_PROP_FILE);
+			boolean isSucc = isSucc_01;
+			ViewModules.showMessageDialog(parent, "Properties saved : " + isSucc);
+		} else{
+			ViewModules.showMessageDialog(parent, "WorkSpace, Group Id, Project Name can not be empty.");
+		}
+		
 	}
 	
 }

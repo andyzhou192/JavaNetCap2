@@ -218,7 +218,7 @@ public class ViewModules {
 	 * @return
 	 */
 	public static JTextArea createTextArea(String content){
-		JTextArea textArea = new JTextArea();
+		JTextArea textArea = new JTextArea(content);
 		textArea.setEditable(true);
 		textArea.setLineWrap(true);
 		textArea.setWrapStyleWord(true);
@@ -235,6 +235,15 @@ public class ViewModules {
 		JTextPane textPane = new JTextPane();
 		textPane.setText(content);
 		return textPane;
+	}
+	
+	public static JPanel createPanel(String title){
+		JPanel panel = new JPanel();
+		TitledBorder titleBorder = BorderFactory.createTitledBorder(title);
+		titleBorder.setTitleColor(Color.DARK_GRAY);
+		titleBorder.setTitleFont(new Font("", Font.ITALIC, 14));
+		panel.setBorder(titleBorder);
+		return panel;
 	}
 	
 	/**

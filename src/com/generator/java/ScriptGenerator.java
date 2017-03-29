@@ -47,31 +47,6 @@ public class ScriptGenerator extends AbstractGenerator {
 		return root;
 	}
 
-	/**
-	 * 创建.java文件所在路径 和 返回.java文件File对象
-	 * @param outDirFile 生成文件路径
-	 * @param javaPackage java包名
-	 * @param javaClassName java类名
-	 * @return
-	 */
-	public File getJavaFile(String packageName, String className) {
-		if(null == packageName || packageName.trim().length() < 1){
-			packageName = prop.getProperty("packageName"); 
-		} 
-		if(null == className || className.trim().length() < 1){
-			className = prop.getProperty("className");
-		}
-		File outDirFile = new File(prop.getProperty("fileStoreDir"));
-		if(!outDirFile.exists()){
-			outDirFile.mkdir();
-		}
-        String packageSubPath = packageName.replace('.', '/');
-        File packagePath = new File(outDirFile, packageSubPath);
-        File file = new File(packagePath, className + ".java");
-        if(!packagePath.exists()){
-        	packagePath.mkdirs();
-        }
-        return file;
-    }
+	
 	
 }

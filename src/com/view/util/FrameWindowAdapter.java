@@ -21,12 +21,12 @@ public class FrameWindowAdapter extends WindowAdapter {
 		if(null != parentFrame && null != currentFrame){
 			parentFrame.setEnabled(false);
 			currentFrame.setEnabled(true);
-			currentFrame.setAlwaysOnTop(true);
+			//currentFrame.setAlwaysOnTop(true);
 		}
 	}
 	
 	public void windowClosing(WindowEvent e) {
-		int operate = JOptionPane.showConfirmDialog(currentFrame, "Are you Sure ?");
+		int operate = JOptionPane.showConfirmDialog(currentFrame, "Are you Sure ?", "Confirm", JOptionPane.OK_CANCEL_OPTION);
 		if(operate == JOptionPane.YES_OPTION){
 			currentFrame.dispose();
 		}

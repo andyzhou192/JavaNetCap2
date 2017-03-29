@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
@@ -28,6 +29,7 @@ import com.view.util.ViewModules;
 @SuppressWarnings("serial")
 public class ScriptSettingView extends AbstractPreferencesView {
 
+	private JFrame parent;
 	private JLabel packageNameLabel, authorLabel, classDescLabel, classNameLabel, superClassLabel, paramNamesLabel, smokeScriptLabel, templateDirLabel, templateFileLabel;
 	private JTextField packageNameField, authorField, classDescField, classNameField, superClassField, paramNamesField, templateDirField;
 	private JCheckBox smokeScriptCheckBox;
@@ -35,8 +37,9 @@ public class ScriptSettingView extends AbstractPreferencesView {
 	private JComboBox<String> templateFileCombBox;
 	private DefaultComboBoxModel<String> combBoxModel;
 	
-	public ScriptSettingView() {
+	public ScriptSettingView(JFrame parent) {
 		super(10, 10);
+		this.parent = parent;
 		defineComponents();
 		layoutComponents();
 		initData();
@@ -202,7 +205,7 @@ public class ScriptSettingView extends AbstractPreferencesView {
 		boolean isSucc_09 = storeProperty("templateFile", templateFileCombBox.getSelectedItem().toString());
 		Constants.initProperties(Constants.DEF_SET_PROP_FILE);
 		boolean isSucc = isSucc_01 && isSucc_02 && isSucc_03 && isSucc_04 && isSucc_05 && isSucc_06 && isSucc_07 && isSucc_08 && isSucc_09;
-		ViewModules.showMessageDialog(null, "Properties saved : " + isSucc);
+		ViewModules.showMessageDialog(parent, "Properties saved : " + isSucc);
 	}
 	
 	public class MouseClickListener extends MouseAdapter {
