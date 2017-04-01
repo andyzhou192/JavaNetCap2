@@ -5,13 +5,13 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
-import com.common.Constants;
 import com.view.preference.AbstractPreferencesView;
+import com.view.preference.PreferenceFrame;
+import com.view.preference.PropertyHelper;
 import com.view.util.ViewModules;
 
 import jpcap.NetworkInterface;
@@ -30,7 +30,7 @@ import jpcap.JpcapCaptor;
 @SuppressWarnings({ "restriction", "serial" })
 public class JcaptureSettingView extends AbstractPreferencesView {
 
-	private JFrame parent;
+	private PreferenceFrame parent;
 	private JLabel ethernetLabel, protocolLabel, promiscLabel, urlLabel, maxLengthLabel;
 	private JTextField caplenTextField, urlFilterField;
 	private JCheckBox promiscCheckBox;
@@ -38,7 +38,7 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 	private JRadioButton wholeRadioButton, headRadioButton, otherRadioButton;
 	private JButton applyButton;
 	
-	public JcaptureSettingView(JFrame parent) {
+	public JcaptureSettingView(PreferenceFrame parent) {
 		super(10, 10);
 		this.parent = parent;
 		defineComponents();
@@ -55,11 +55,11 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 		protocolLabel = ViewModules.createJLabel("Capture Protocol:", Color.BLACK);
 		protocolLabel.setToolTipText("请选择捕获的协议");
 		promiscLabel = ViewModules.createJLabel("Promisc:", Color.BLACK); 
-		protocolLabel.setToolTipText("请选择是否采用混杂模式");
+		promiscLabel.setToolTipText("请选择是否采用混杂模式");
 		urlLabel = ViewModules.createJLabel("Capture Url:", Color.BLACK);
-		protocolLabel.setToolTipText("请填写待捕获的URL");
+		urlLabel.setToolTipText("请填写待捕获的URL");
 		maxLengthLabel = ViewModules.createJLabel("Max Length:", Color.BLACK);
-		protocolLabel.setToolTipText("请选择每次捕获数据的最大长度，大小在68~1514之间");
+		maxLengthLabel.setToolTipText("请选择每次捕获数据的最大长度，大小在68~1514之间");
 		
 		netJComboBox = ViewModules.createComboBox(getNetDeviceList());
 		proJComboBox = ViewModules.createComboBox(new String[]{"TCP"});
@@ -78,24 +78,13 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 	/**
 	 * 初始化界面数据
 	 */
-	@SuppressWarnings("null")
 	public void initData(){
-		String indexValue = Constants.PROPS.getProperty("net_devices_index");
-		int index = (null != indexValue || indexValue.trim().length() > 0) ? Integer.valueOf(indexValue.trim()) : 0;
-		netJComboBox.setSelectedIndex(index);
+		netJComboBox.setSelectedIndex(PropertyHelper.getNetDevicesIndex());
+		proJComboBox.setSelectedItem(PropertyHelper.getProtocolType());
+		promiscCheckBox.setSelected(PropertyHelper.getPromisc());
+		urlFilterField.setText(PropertyHelper.getCaptureUrl());
 		
-		String protocol = Constants.PROPS.getProperty("protocol_type");
-		proJComboBox.setSelectedItem((null != protocol || protocol.trim().length() > 0) ? protocol : "TCP");
-		
-		String promisc = Constants.PROPS.getProperty("promisc");
-		boolean isChose = Boolean.valueOf((null != promisc || promisc.trim().length() > 0) ? promisc : "false");
-		promiscCheckBox.setSelected(isChose);
-		
-		String url = Constants.PROPS.getProperty("capture_url");
-		urlFilterField.setText(null != url ? url : "");
-		
-		String len = Constants.PROPS.getProperty("capture_length");
-		int caplen = Integer.parseInt((null != len || len.trim().length() > 0) ? len : "1514");
+		int caplen = PropertyHelper.getCaptureLength();
 		if (caplen < 68 || caplen > 1514) {
 			caplenTextField.setText(String.valueOf(caplen));
 			otherRadioButton.setSelected(true);
@@ -149,7 +138,9 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 			caplenTextField.requestFocus();
 			break;
 		case "SaveCaptureSetting":
-			saveSettings();
+			parent.progress.startProgress("Save data...");
+			boolean isSucc = saveSettings();
+			parent.progress.stopProgress("Data save status : " + (isSucc ? "Success." : "Failed."));
 			break;
 		default:
 			break;
@@ -159,25 +150,25 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 	/**
 	 * 保存配置
 	 */
-	public void saveSettings(){
+	public boolean saveSettings(){
 		int caplen = Integer.parseInt(caplenTextField.getText());
 		if (caplen < 68 || caplen > 1514) {
 			ViewModules.showMessageDialog(null, "捕获长度必须介于 68 和 1514之间");
-			return;
+			return false;
 		}
 		// 网卡序号，默认为0
-		boolean isSucc_01 = storeProperty("net_devices_index", String.valueOf(netJComboBox.getSelectedIndex()));
+		PropertyHelper.setNetDevicesIndex(netJComboBox.getSelectedIndex());
 		// 是否混杂模式:true/false，默认false
-		boolean isSucc_02 = storeProperty("promisc", String.valueOf(promiscCheckBox.isSelected()));
+		PropertyHelper.setPromisc(promiscCheckBox.isSelected());
 		// 待捕获的协议类型，默认为tcp
-		boolean isSucc_03 = storeProperty("protocol_type", proJComboBox.getSelectedItem().toString());
+		PropertyHelper.setProtocolType(proJComboBox.getSelectedItem().toString());
 		// 待捕获的数据长度 ,捕获长度必须介于 68和1514之间的整数，默认为1514
-		boolean isSucc_04 = storeProperty("capture_length", String.valueOf(caplen));
+		PropertyHelper.setCaptureLength(caplen);
 		// 待捕获的URL，不含参数
-		boolean isSucc_05 = storeProperty("capture_url", urlFilterField.getText());
-		Constants.initProperties(Constants.DEF_SET_PROP_FILE);
-		boolean isSucc = isSucc_01 && isSucc_02 && isSucc_03 && isSucc_04 && isSucc_05;
-		ViewModules.showMessageDialog(parent, "Properties saved : " + isSucc);
+		PropertyHelper.setCaptureUrl(urlFilterField.getText());
+		boolean isSucc = PropertyHelper.storeProperties();
+		//ViewModules.showMessageDialog(parent, "Properties saved : " + isSucc);
+		return isSucc;
 	}
 	
 	/**

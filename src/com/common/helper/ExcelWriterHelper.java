@@ -16,6 +16,9 @@ import jxl.write.biff.WritableWorkbookImpl;
 public class ExcelWriterHelper extends WritableWorkbookImpl{
 	private static Class<?> cl = ExcelWriterHelper.class;
 	
+	public static FileInputStream fins;
+	public static Workbook wb;
+	
 	protected ExcelWriterHelper(OutputStream os, boolean cs, WorkbookSettings ws) throws IOException {
 		super(os, cs, ws);
 	}
@@ -57,8 +60,8 @@ public class ExcelWriterHelper extends WritableWorkbookImpl{
 		FileOutputStream fos = null;
 		try {
 			fos = new FileOutputStream(targetFile);
-			FileInputStream in = new FileInputStream(sourcefile); 
-			Workbook wb = Workbook.getWorkbook(in); // 获得原始文档  
+			fins = new FileInputStream(sourcefile); 
+			wb = Workbook.getWorkbook(fins); // 获得原始文档  
 //			ExcelReader wb = ExcelReader.getExcelReader(sourcefile.getPath());
 			excelWriter = new ExcelWriterHelper(fos, wb, true, ws); // 创建一个可读写的副本  
 		} catch (BiffException e) {
@@ -77,11 +80,19 @@ public class ExcelWriterHelper extends WritableWorkbookImpl{
 	}
 	
 	public static void deleteTempFile(File srcFile){
+		ExcelWriterHelper.wb.close();
+		ExcelWriterHelper.wb = null;
+		try {
+			ExcelWriterHelper.fins.close();
+			ExcelWriterHelper.fins = null;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		File tempFile = getTempFile(srcFile);
 		if(tempFile.exists()){
 			boolean isDel = srcFile.delete();
 			boolean isSucc = tempFile.renameTo(srcFile);
-			LogUtil.debug(cl, "is delete sourceFile:" + isDel + "; is rename ok:" + isSucc);
+			LogUtil.debug(cl, srcFile.getAbsolutePath() + " is delete : " + isDel + ";" + tempFile.getAbsolutePath() + " is renamed:" + isSucc);
 		}
 	}
 

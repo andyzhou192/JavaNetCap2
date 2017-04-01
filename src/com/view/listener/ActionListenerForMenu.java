@@ -49,11 +49,9 @@ public class ActionListenerForMenu implements ActionListener {
 		case "IMPORT":
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
-					frame.progress.setStatus("Import Data From File...");
-					frame.progress.startProgress();
+					frame.progress.startProgress("Import Data From File...");
 					openFile(frame);
-					frame.progress.stopProgress();
-					frame.progress.setStatus("Data has imported!");
+					frame.progress.stopProgress("Data has imported!");
 				}
 			});
 			break;
@@ -63,22 +61,18 @@ public class ActionListenerForMenu implements ActionListener {
 		case "EXPORT":
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
-					frame.progress.setStatus("Export Data...");
-					frame.progress.startProgress();
+					frame.progress.startProgress("Export Data...");
 					saveDataToFile(frame, null, "data.dat", getDataFromTable(table));
-					frame.progress.stopProgress();
-					frame.progress.setStatus("Data has exported!");
+					frame.progress.stopProgress("Data has exported!");
 				}
 			});
 			break;
 		case "DELETE":
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
-					frame.progress.setStatus("Delete data...");
-					frame.progress.startProgress();
+					frame.progress.startProgress("Delete data...");
 					deleteSelectedData(frame);
-					frame.progress.stopProgress();
-					frame.progress.setStatus("Data has deleted!");
+					frame.progress.stopProgress("Data has deleted!");
 				}
 			});
 			break;
@@ -87,7 +81,7 @@ public class ActionListenerForMenu implements ActionListener {
 				public void run() {
 					String title = "Exit Confirm Dialog";
 					String content = "Do you really need to exit the applicateion?";
-					int option = JOptionPane.showConfirmDialog(null, content, title, JOptionPane.YES_NO_CANCEL_OPTION);
+					int option = JOptionPane.showConfirmDialog(null, content, title, JOptionPane.YES_NO_OPTION);
 					if(option == JOptionPane.YES_OPTION){
 						frame.dispose();
 					}
@@ -98,8 +92,7 @@ public class ActionListenerForMenu implements ActionListener {
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
 					Netcaptor.startCapture(frame);
-					frame.progress.setStatus("Starting...");
-					frame.progress.startProgress();
+					frame.progress.startProgress("Capture Starting...");
 					frame.getFrameMenuBar().getStartItem().setEnabled(false);
 					frame.getFrameMenuBar().getStopItem().setEnabled(true);
 				}
@@ -109,8 +102,7 @@ public class ActionListenerForMenu implements ActionListener {
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
 					Netcaptor.stopCapture();
-					frame.progress.setStatus("Stopped!");
-					frame.progress.stopProgress();
+					frame.progress.stopProgress("Capture Stopped!");
 					frame.getFrameMenuBar().getStartItem().setEnabled(true);
 					frame.getFrameMenuBar().getStopItem().setEnabled(false);
 				}
@@ -148,7 +140,7 @@ public class ActionListenerForMenu implements ActionListener {
 		for(int i = 0; i < count; ){
 			JCheckBox checkBox = ((JCheckBox)(table.getValueAt(i, 0)));
 			if(checkBox.isSelected()){
-				frame.getScrollPane().deleteRowFromTable(frame.getRows(), i);
+				frame.getScrollPane().deleteRowFromTable(i);
 				flag++;
 			} else {
 				if(Integer.valueOf(checkBox.getText()) != (i + 1))
@@ -184,13 +176,13 @@ public class ActionListenerForMenu implements ActionListener {
 		classMap.put("rspHeader", JSONObject.class);
 		classMap.put("statusCode", int.class);
 		classMap.put("rspBody", JSONObject.class);
-		frame.getScrollPane().deleteRowFromTable(frame.getRows(), -1);
+		frame.getScrollPane().deleteRowFromTable(-1);
 		for(String data : dataList){
 			HttpDataBean bean = JsonUtil.jsonToBean(data, HttpDataBean.class, classMap);
 			if(null == bean)
 				ViewModules.showMessageDialog(null, "json To Bean has some error!");
 			else
-				frame.getScrollPane().addRowToTable(frame.getRows(), bean);
+				frame.getScrollPane().addRowToTable(bean);
 		}
 	}
 

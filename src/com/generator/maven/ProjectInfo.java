@@ -1,19 +1,30 @@
 package com.generator.maven;
 
-public class ProjectInfo {
-	
-	private String groupId, projectName, sourceDir, testSourceDir, resourceDir, testResourceDir;
+import com.common.util.StringUtil;
 
-	public ProjectInfo(MavenHelper helper) {
-		this.groupId = helper.getTextContent("/project/groupId");
-		this.projectName = helper.getTextContent("/project/artifactId");
-		this.sourceDir = helper.getTextContent("/project/build/sourceDirectory");
-		this.testSourceDir = helper.getTextContent("/project/build/testSourceDirectory");
-		this.resourceDir = helper.getTextContent("/project/build/resources/resource/directory");
-		this.testResourceDir = helper.getTextContent("/project/build/testResources/testResource/directory");
+public class ProjectInfo {
+
+	private String groupId = MavenPomHelper.Default_Group_Id;
+	private String projectName = MavenPomHelper.Default_Project_Name;
+	private String sourceDir = MavenPomHelper.Default_Source_Dir;
+	private String testSourceDir = MavenPomHelper.Default_Test_Source_Dir;
+	private String resourceDir = MavenPomHelper.Default_Resource_Dir;
+	private String testResourceDir = MavenPomHelper.Default_Test_Resource_Dir;
+
+	public ProjectInfo() {
 	}
-	
-	public ProjectInfo(String groupId, String projectName, String sourceDir, String testSourceDir, String resourceDir, String testResourceDir) {
+
+	public ProjectInfo(MavenPomHelper helper) {
+		this.groupId = helper.getText(MavenPomHelper.GroupId_PATH);
+		this.projectName = helper.getText(MavenPomHelper.ArtifactId_PATH);
+		this.sourceDir = helper.getText(MavenPomHelper.SOURCE_DIR_PATH);
+		this.testSourceDir = helper.getText(MavenPomHelper.TEST_SOURCE_DIR_PATH);
+		this.resourceDir = helper.getText(MavenPomHelper.RESOURCE_DIR_PATH);
+		this.testResourceDir = helper.getText(MavenPomHelper.TEST_RESOURCE_DIR_PATH);
+	}
+
+	public ProjectInfo(String groupId, String projectName, String sourceDir, String testSourceDir, String resourceDir,
+			String testResourceDir) {
 		this.groupId = groupId;
 		this.projectName = projectName;
 		this.sourceDir = sourceDir;
@@ -21,9 +32,9 @@ public class ProjectInfo {
 		this.resourceDir = resourceDir;
 		this.testResourceDir = testResourceDir;
 	}
-	
+
 	public String getGroupId() {
-		return (null != groupId) ? groupId : "";
+		return StringUtil.validate(groupId) ? groupId : MavenPomHelper.Default_Group_Id;
 	}
 
 	public void setGroupId(String groupId) {
@@ -31,7 +42,7 @@ public class ProjectInfo {
 	}
 
 	public String getProjectName() {
-		return (null != projectName) ? projectName : "";
+		return StringUtil.validate(projectName) ? projectName : MavenPomHelper.Default_Project_Name;
 	}
 
 	public void setProjectName(String projectName) {
@@ -39,9 +50,7 @@ public class ProjectInfo {
 	}
 
 	public String getSourceDir() {
-		if(null != sourceDir)
-			return sourceDir;
-		return MavenHelper.DefaultSourceDir;
+		return StringUtil.validate(sourceDir) ? sourceDir : MavenPomHelper.Default_Source_Dir;
 	}
 
 	public void setSourceDir(String sourceDir) {
@@ -49,9 +58,7 @@ public class ProjectInfo {
 	}
 
 	public String getTestSourceDir() {
-		if(null != testSourceDir)
-			return testSourceDir;
-		return MavenHelper.DefaultTestSourceDir;
+		return StringUtil.validate(testSourceDir) ? testSourceDir : MavenPomHelper.Default_Test_Source_Dir;
 	}
 
 	public void setTestSourceDir(String testSourceDir) {
@@ -59,9 +66,7 @@ public class ProjectInfo {
 	}
 
 	public String getResourceDir() {
-		if(null != resourceDir)
-			return resourceDir;
-		return MavenHelper.DefaultResourceDir;
+		return StringUtil.validate(resourceDir) ? resourceDir : MavenPomHelper.Default_Resource_Dir;
 	}
 
 	public void setResourceDir(String resourceDir) {
@@ -69,9 +74,7 @@ public class ProjectInfo {
 	}
 
 	public String getTestResourceDir() {
-		if(null != testResourceDir)
-			return testResourceDir;
-		return MavenHelper.DefaultTestResourceDir;
+		return StringUtil.validate(testResourceDir) ? testResourceDir : MavenPomHelper.Default_Test_Resource_Dir;
 	}
 
 	public void setTestResourceDir(String testResourceDir) {

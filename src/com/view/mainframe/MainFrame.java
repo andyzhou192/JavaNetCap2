@@ -5,9 +5,9 @@ import java.util.Vector;
 
 import javax.swing.JFrame;
 
-import com.common.Constants;
 import com.view.mainframe.menu.FrameMenuBar;
 import com.view.mainframe.table.RowTableScrollPane;
+import com.view.preference.PropertyHelper;
 import com.view.util.StatusProgressPanel;
 import com.view.util.ViewModules;
 
@@ -25,13 +25,13 @@ public class MainFrame extends JFrame {
 		super();
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setSize(600, 600);
-		Constants.initProperties(Constants.DEF_SET_PROP_FILE);
+		PropertyHelper.loadProperties();
 		
 		menuBar = new FrameMenuBar(this);
 		this.setJMenuBar(menuBar);
 		
 		Vector<Object> heads = ViewModules.createVector(this.getTableHead());
-		this.scrollPane = new RowTableScrollPane(this.getRows(), heads, this);
+		this.scrollPane = new RowTableScrollPane(this, this.getRows(), heads, this);
 		this.getContentPane().add(scrollPane, BorderLayout.CENTER);
 		
 		progress = new StatusProgressPanel();

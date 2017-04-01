@@ -27,14 +27,16 @@ public class StatusProgressPanel extends JPanel {
 		statusLabel.setText(status);
 	}
 	
-	public void startProgress(){
+	public void startProgress(String status){
+		statusLabel.setText(status);
 		progress.setStringPainted(false);  
 		progress.setIndeterminate(true);  
 	}
 	
-	public void stopProgress(){  
+	public void stopProgress(String status){  
 		progress.setIndeterminate(false);  
 		progress.setValue(100);  
+		statusLabel.setText(status);
     }
 
 }

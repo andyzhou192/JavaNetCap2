@@ -8,16 +8,8 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.Map;
 
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-
 import com.common.Constants;
-import com.common.util.FileUtil;
-import com.common.util.PropertiesUtil;
 import com.common.util.StringUtil;
-import com.generator.maven.MavenHelper;
-import com.generator.maven.ProjectInfo;
-
 import freemarker.core.ParseException;
 import freemarker.template.Configuration;
 import freemarker.template.DefaultObjectWrapper;
@@ -140,42 +132,11 @@ public abstract class AbstractGenerator {
 		}
         String packageSubPath = packageName.replace('.', '/');
         File packagePath = new File(outDirFile, packageSubPath);
-        File file = new File(packagePath, className + ".java");
         if(!packagePath.exists()){
         	packagePath.mkdirs();
         }
+        File file = new File(packagePath, className + ".java");
         return file;
     }
 	
-	public static void initMavenProject(){
-		String projectPath = Constants.PROPS.getProperty("workspace");
-		if(!StringUtil.validate(projectPath))
-			projectPath = new File("temp-src").getAbsolutePath();
-		File file = new File(projectPath, "pom.xml");
-		if(MavenHelper.isMavenProject(projectPath)){
-			MavenHelper helper = new MavenHelper(file);
-			Constants.PROJECT_INFO = new ProjectInfo(helper);
-			
-			File tempfile = new File("template/template_pom.xml");
-			MavenHelper temp = new MavenHelper(tempfile);
-			
-			NodeList tempDeps = temp.findNodes("/project/dependencies/dependency", null);
-			Node helperParent = helper.findSingleNode("/project/dependencies", null);
-			for(int i = 0; i < tempDeps.getLength(); i++){
-				String textContent = temp.findSingleNode("artifactId", tempDeps.item(i)).getTextContent();
-				Node result = helper.findSingleNode("/project/dependencies/dependency/artifactId[text()='" + textContent + "']", tempDeps.item(i));
-				if(null == result){
-					helper.appendChildern(helperParent, tempDeps.item(i));
-				}
-			}
-			FileUtil.copyFile("exts/server-interface-ats-1.0.0.jar", projectPath + "/libs/server-interface-ats-1.0.0.jar", false);
-		} else {
-			String groupId = MavenHelper.DefaultGroupId;
-			String projectName = MavenHelper.DefaultProjectName;
-			if(StringUtil.validate(projectPath) && StringUtil.validate(groupId) && StringUtil.validate(projectName)){
-				projectPath = MavenHelper.createMavenProject(projectPath, groupId, projectName);
-				PropertiesUtil.storeProperty(Constants.DEF_SET_PROP_FILE, "workspace", projectPath, "");
-			}
-		}
-	}
 }

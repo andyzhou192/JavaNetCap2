@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 
+import com.view.script.generator.component.GeneratorPanel;
 import com.view.util.FrameWindowAdapter;
 import com.view.util.StatusProgressPanel;
 

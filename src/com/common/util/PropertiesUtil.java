@@ -16,27 +16,50 @@ import java.util.Properties;
 public class PropertiesUtil {
 	private static Properties prop = new Properties();
 
-	public static String getProperty(String fileName, String proName) {
+	public static Properties loadProperties(String propertyFile){
 		try {
-			InputStream in = new BufferedInputStream(new FileInputStream(fileName + ".properties"));
+			InputStream in = new BufferedInputStream(new FileInputStream(propertyFile));
 			InputStreamReader inr = new InputStreamReader(in, "UTF-8");// 解决读取的内容乱码问题
 			prop.load(inr);
-			return prop.getProperty(proName);
+			return prop;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}
 	}
 	
-	public static boolean storeProperty(String file, String key, String value, String comments){
+	public static String getProperty(String propertyFile, String proName) {
+		PropertiesUtil.loadProperties(propertyFile);
+		return prop.getProperty(proName);
+	}
+	
+	public static boolean storeProperty(String propertyFile, String key, String value, String comments){
+		PropertiesUtil.loadProperties(propertyFile);
 		///保存属性到config.properties文件
 		try {
-			InputStream in = new BufferedInputStream(new FileInputStream(file));
-			InputStreamReader inr = new InputStreamReader(in, "UTF-8");// 解决读取的内容乱码问题
-			prop.load(inr);
 			//FileOutputStream oFile = new FileOutputStream(fileName + ".properties", true);//true表示追加打开
-			FileOutputStream fos = new FileOutputStream(file);
+			FileOutputStream fos = new FileOutputStream(propertyFile);
 			prop.setProperty(key, value);
+			prop.store(fos, comments);
+			fos.close();
+			return true;
+		} catch (IOException e) {
+			LogUtil.err(PropertiesUtil.class, e);
+		}
+		return false;
+	}
+	
+	public static boolean storeProperty(String propertyFile, Properties properties, String comments){
+		PropertiesUtil.loadProperties(propertyFile);
+		///保存属性到config.properties文件
+		try {
+			//FileOutputStream oFile = new FileOutputStream(fileName + ".properties", true);//true表示追加打开
+			FileOutputStream fos = new FileOutputStream(propertyFile);
+			for(Object key : properties.keySet()){
+				String name = String.valueOf(key);
+				String value = String.valueOf(properties.get(key));
+				prop.setProperty(name, value);
+			}
 			prop.store(fos, comments);
 			fos.close();
 			return true;

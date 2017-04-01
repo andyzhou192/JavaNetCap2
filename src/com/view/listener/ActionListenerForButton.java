@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.Map;
 
 import javax.swing.JTable;
+import javax.swing.SwingUtilities;
 
 import com.view.mainframe.MainFrame;
 import com.view.mainframe.table.RowTableScrollPane;
@@ -26,8 +27,12 @@ public class ActionListenerForButton implements ActionListener {
 		this.table = frame.getScrollPane().getTable();
 		switch(e.getActionCommand()){
 		case "DETAIL":
-			Map<String, Object> dataMap = scrollPane.getRowData(table.getSelectedRow());
-			new GeneratorFrame(frame, dataMap);
+			SwingUtilities.invokeLater(new Runnable() {
+				public void run() {
+					Map<String, Object> dataMap = scrollPane.getRowData(table.getSelectedRow());
+					new GeneratorFrame(frame, dataMap);
+				}
+			});
 			break;
 		default:
 			break;

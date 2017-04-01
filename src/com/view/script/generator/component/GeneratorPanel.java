@@ -1,4 +1,4 @@
-package com.view.script.generator;
+package com.view.script.generator.component;
 
 import java.awt.Color;
 import java.awt.GridBagConstraints;
@@ -14,6 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
@@ -21,8 +22,10 @@ import javax.swing.border.LineBorder;
 
 import com.generator.AbstractGenerator;
 import com.generator.java.ScriptGenerator;
+import com.generator.maven.MavenPomHelper;
 import com.handler.DataSaveHandler;
 import com.protocol.http.HttptHelper;
+import com.view.script.generator.GeneratorFrame;
 import com.view.util.ScrollPaneTextArea;
 import com.view.util.ViewModules;
 import com.common.Constants;
@@ -234,9 +237,8 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		switch(e.getActionCommand()){
 		case "GENEJAVA":
-			parent.progress.setStatus("Generate script...");
-			parent.progress.startProgress();
-			AbstractGenerator.initMavenProject();
+			parent.progress.startProgress("Generate script...");
+			MavenPomHelper.initMavenProject();
 			boolean isSucc = createJavaFile();
 			boolean isOK = createExcelFile();
 			if(!isSucc){
@@ -246,8 +248,7 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 			} else {
 				ViewModules.showMessageDialog(this, "Generate Script and Data File Success.");
 			}
-			parent.progress.stopProgress();
-			parent.progress.setStatus("Script has generated!");
+			parent.progress.stopProgress("Script has generated!");
 			break;
 		default:
 			break;
@@ -270,6 +271,12 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 				return isSucc;
 			} else {
 				generator = new ScriptGenerator(templateDir, packageName, className);
+				if(generator.targetFile.exists()){
+					String msg = generator.targetFile.getAbsolutePath() + "has exist, would you want to cover it?";
+					int option = JOptionPane.showConfirmDialog(parent, msg, "ConfirmDialog", JOptionPane.YES_NO_OPTION);
+					if(option != JOptionPane.YES_OPTION)
+						return true;
+				}
 			}
 			if(null == templateFile || templateFile.trim().length() == 0){
 				ViewModules.showMessageDialog(this, "Template file can not be null.");

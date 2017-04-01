@@ -45,7 +45,7 @@ public class DataQueues {
         	if (bean != null && isValidReq(bean.getUrl())) {
             	LogUtil.debug(cl, bean.toJson());
             	if(null != this.frame)
-            		frame.getScrollPane().addRowToTable(frame.getRows(), bean);
+            		frame.getScrollPane().addRowToTable(bean);
             }
         }
     }

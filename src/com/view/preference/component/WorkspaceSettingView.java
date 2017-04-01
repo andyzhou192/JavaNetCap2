@@ -1,6 +1,7 @@
 package com.view.preference.component;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -8,11 +9,11 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import com.common.Constants;
-import com.common.util.StringUtil;
-import com.generator.maven.MavenHelper;
+import com.generator.maven.MavenPomHelper;
 import com.generator.maven.ProjectInfo;
 import com.view.preference.AbstractPreferencesView;
 import com.view.preference.PreferenceFrame;
+import com.view.preference.PropertyHelper;
 import com.view.util.ViewModules;
 
 public class WorkspaceSettingView extends AbstractPreferencesView {
@@ -71,6 +72,7 @@ public class WorkspaceSettingView extends AbstractPreferencesView {
 		this.add(workSpaceTextField, ViewModules.getGridBagConstraints(2, 1, 8, 1));
 		this.add(browseButton, ViewModules.getGridBagConstraints(10, 1, 1, 1));
 		
+		// The values of the following fields are obtained by pom.xml parsing and are not stored in the property file
 		this.add(groupIdLabel, ViewModules.getGridBagConstraints(1, 3, 1, 1));
 		this.add(groupIdField, ViewModules.getGridBagConstraints(2, 3, 4, 1));
 		this.add(projectNameLabel, ViewModules.getGridBagConstraints(6, 3, 1, 1));
@@ -93,109 +95,89 @@ public class WorkspaceSettingView extends AbstractPreferencesView {
 	 * 初始化界面数据
 	 */
 	public void initData(){
-		parent.progress.setStatus("Initializing...");
-		parent.progress.startProgress();
-		String workSpaceValue = Constants.PROPS.getProperty("workspace");
-		workSpaceTextField.setText((null != workSpaceValue) ? workSpaceValue : "");
+		parent.progress.startProgress("Initialization in progress...");
+		workSpaceTextField.setText(PropertyHelper.getWorkspace());
 		workSpaceTextField.setEnabled(false);
-		initProjectInfo(workSpaceValue);
-		parent.progress.stopProgress();
-		parent.progress.setStatus("Initialized!");
+		initProjectInfo(PropertyHelper.getWorkspace());
+		parent.progress.stopProgress("Initialization completed!");
 	}
 	
 	private void initProjectInfo(String projectPath){
-		if(MavenHelper.isMavenProject(projectPath)){
-			String groupId = Constants.PROJECT_INFO.getGroupId();
-			String projectName = Constants.PROJECT_INFO.getProjectName();
-			String sourceDir = Constants.PROJECT_INFO.getSourceDir();
-			String testSourceDir = Constants.PROJECT_INFO.getTestResourceDir();
-			String resourceDir = Constants.PROJECT_INFO.getResourceDir();
-			String testResourceDir = Constants.PROJECT_INFO.getTestResourceDir();
-			
-			groupIdField.setText((null != groupId) ? groupId : MavenHelper.DefaultGroupId);
-			projectNameField.setText((null != projectName) ? projectName : MavenHelper.DefaultProjectName);
-			sourceDirField.setText((null != sourceDir) ? sourceDir : MavenHelper.DefaultSourceDir);
-			testSourceDirField.setText((null != testSourceDir) ? testSourceDir : MavenHelper.DefaultTestSourceDir);
-			resourceDirField.setText((null != resourceDir) ? resourceDir : MavenHelper.DefaultResourceDir);
-			testResourceDirField.setText((null != testResourceDir) ? testResourceDir : MavenHelper.DefaultTestResourceDir);
+		if(MavenPomHelper.hasPomXml(projectPath)){
+			if(null == Constants.PROJECT_INFO)
+				MavenPomHelper.parsePomXml(projectPath);
 		} else {
-			groupIdField.setText(MavenHelper.DefaultGroupId);
-			projectNameField.setText(MavenHelper.DefaultProjectName);
-			sourceDirField.setText(MavenHelper.DefaultSourceDir);
-			testSourceDirField.setText(MavenHelper.DefaultTestSourceDir);
-			resourceDirField.setText(MavenHelper.DefaultResourceDir);
-			testResourceDirField.setText(MavenHelper.DefaultTestResourceDir);
+			Constants.PROJECT_INFO = new ProjectInfo();
 		}
+		String groupId = Constants.PROJECT_INFO.getGroupId();
+		String projectName = Constants.PROJECT_INFO.getProjectName();
+		String sourceDir = Constants.PROJECT_INFO.getSourceDir();
+		String testSourceDir = Constants.PROJECT_INFO.getTestResourceDir();
+		String resourceDir = Constants.PROJECT_INFO.getResourceDir();
+		String testResourceDir = Constants.PROJECT_INFO.getTestResourceDir();
+		groupIdField.setText(groupId);
+		projectNameField.setText(projectName);
+		sourceDirField.setText(sourceDir);
+		testSourceDirField.setText(testSourceDir);
+		resourceDirField.setText(resourceDir);
+		testResourceDirField.setText(testResourceDir);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		switch(e.getActionCommand()){
 		case "SaveWorkSpaceSetting":
-			parent.progress.setStatus("Save data...");
-			parent.progress.startProgress();
-			if(null == Constants.PROJECT_INFO){
-				String path = workSpaceTextField.getText();
-				String groupId = groupIdField.getText();
-				String projectName = projectNameField.getText();
-				if(StringUtil.validate(path) && StringUtil.validate(groupId) && StringUtil.validate(projectName)){
-					String projectPath = MavenHelper.createMavenProject(path, groupId, projectName);
-					workSpaceTextField.setText(projectPath);
-					saveSettings();
-				} else {
-					ViewModules.showMessageDialog(parent, "WorkSpace, Group Id, Project Name can not be empty.");
-				}
-			} else {
-				saveSettings();
-			}
-			parent.progress.stopProgress();
-			parent.progress.setStatus("Data has saved!");
+			parent.progress.startProgress("Save data...");
+			boolean isSucc = saveSettings();
+			parent.progress.stopProgress("Data save status : " + (isSucc ? "Success." : "Failed."));
 			break;
 		case "Browse":
-			parent.progress.setStatus("Open workspace...");
-			parent.progress.startProgress();
-			JFileChooser chooser = new JFileChooser();             //设置选择器
-			//chooser.setMultiSelectionEnabled(true);             //设为多选
-			chooser.setDialogTitle("Please choose workspace");
-			chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-			int returnVal = chooser.showOpenDialog(browseButton);        //是否打开文件选择框
-			if (returnVal == JFileChooser.APPROVE_OPTION) {          //如果符合文件类型
-				String filepath = chooser.getSelectedFile().getAbsolutePath();      //获取绝对路径
+			parent.progress.startProgress("Open workspace...");
+			String filepath = chooseSingleDir(browseButton);
+			if(null != filepath){
 				workSpaceTextField.setText(filepath);
 				initProjectInfo(filepath);
 			}
-			parent.progress.stopProgress();
-			parent.progress.setStatus("Open workspace...");
+			parent.progress.stopProgress("Open workspace...");
 			break;
 		default:
 			break;
 		}
 	}
 	
+	private String chooseSingleDir(Component parent){
+		String filepath = null;
+		JFileChooser chooser = new JFileChooser();             //设置选择器
+		//chooser.setMultiSelectionEnabled(true);             //设为多选
+		chooser.setDialogTitle("Please choose workspace");
+		chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+		int returnVal = chooser.showOpenDialog(parent);        //是否打开文件选择框
+		if (returnVal == JFileChooser.APPROVE_OPTION) {          //如果符合文件类型
+			filepath = chooser.getSelectedFile().getAbsolutePath();      //获取绝对路径
+		}
+		return filepath;
+	}
+	
 	/**
 	 * 保存配置
 	 */
-	public void saveSettings(){
+	public boolean saveSettings(){
 		// 必填：生成的脚本文件包名，如：com.cmcc
-		
 		String groupId = groupIdField.getText();
 		String projectName = projectNameField.getText();
 		String sourceDir = sourceDirField.getText();
 		String testSourceDir = testSourceDirField.getText();
 		String resourceDir = resourceDirField.getText();
 		String testResourceDir = testResourceDirField.getText();
-		if(StringUtil.validate(groupId) && StringUtil.validate(projectName)){
-			Constants.PROJECT_INFO = new ProjectInfo(groupId, projectName, sourceDir, testSourceDir, resourceDir, testResourceDir);
-			boolean isSucc_01 = storeProperty("workspace", workSpaceTextField.getText());
-			
-			//boolean isSucc_02 = storeProperty("projectName", projectNameTextField.getText());
-			Constants.initProperties(Constants.DEF_SET_PROP_FILE);
-			boolean isSucc = isSucc_01;
-			ViewModules.showMessageDialog(parent, "Properties saved : " + isSucc);
-		} else{
-			ViewModules.showMessageDialog(parent, "WorkSpace, Group Id, Project Name can not be empty.");
-		}
 		
+		Constants.PROJECT_INFO = new ProjectInfo(groupId, projectName, sourceDir, testSourceDir, resourceDir, testResourceDir);
+		PropertyHelper.setWorkspace(workSpaceTextField.getText());
+		boolean isSucc = PropertyHelper.storeProperties();
+		
+		String projectPath = MavenPomHelper.initMavenProject();
+		workSpaceTextField.setText(projectPath);
+		//ViewModules.showMessageDialog(parent, "Properties saved : " + isSucc);
+		return isSucc;
 	}
 	
 }

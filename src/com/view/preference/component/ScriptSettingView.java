@@ -11,14 +11,14 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
-import com.common.Constants;
 import com.view.preference.AbstractPreferencesView;
+import com.view.preference.PreferenceFrame;
+import com.view.preference.PropertyHelper;
 import com.view.util.ViewModules;
 
 /**
@@ -29,7 +29,7 @@ import com.view.util.ViewModules;
 @SuppressWarnings("serial")
 public class ScriptSettingView extends AbstractPreferencesView {
 
-	private JFrame parent;
+	private PreferenceFrame parent;
 	private JLabel packageNameLabel, authorLabel, classDescLabel, classNameLabel, superClassLabel, paramNamesLabel, smokeScriptLabel, templateDirLabel, templateFileLabel;
 	private JTextField packageNameField, authorField, classDescField, classNameField, superClassField, paramNamesField, templateDirField;
 	private JCheckBox smokeScriptCheckBox;
@@ -37,7 +37,7 @@ public class ScriptSettingView extends AbstractPreferencesView {
 	private JComboBox<String> templateFileCombBox;
 	private DefaultComboBoxModel<String> combBoxModel;
 	
-	public ScriptSettingView(JFrame parent) {
+	public ScriptSettingView(PreferenceFrame parent) {
 		super(10, 10);
 		this.parent = parent;
 		defineComponents();
@@ -48,29 +48,17 @@ public class ScriptSettingView extends AbstractPreferencesView {
 	/**
 	 * 初始化界面数据
 	 */
-	@SuppressWarnings("null")
 	public void initData(){
-		String packageName = Constants.PROPS.getProperty("packageName");
-		String author = Constants.PROPS.getProperty("author");
-		String classDesc = Constants.PROPS.getProperty("classDesc");
-		String className = Constants.PROPS.getProperty("className");
-		String superclass = Constants.PROPS.getProperty("superClass");
-		String paramNames = Constants.PROPS.getProperty("paramNames");
-		String smokeScript = Constants.PROPS.getProperty("smokeScript");
-		boolean isChose = Boolean.valueOf((null != smokeScript || smokeScript.trim().length() > 0) ? smokeScript : "false");
-		String templateDir = Constants.PROPS.getProperty("templateDir");
-		String templateFile = Constants.PROPS.getProperty("templateFile");
-		
-		smokeScriptCheckBox.setSelected(isChose);
-		packageNameField.setText((null != packageName) ? packageName : "");
-		authorField.setText((null != author) ? author : "");
-		classDescField.setText((null != classDesc) ? classDesc : "");
-		classNameField.setText((null != className) ? className : "");
-		superClassField.setText((null != superclass) ? superclass : "");
-		paramNamesField.setText((null != paramNames) ? paramNames : "");
-		templateDirField.setText((null != templateDir) ? templateDir : "");
+		packageNameField.setText(PropertyHelper.getPackageName());
+		authorField.setText(PropertyHelper.getAuthor());
+		classDescField.setText(PropertyHelper.getClassDesc());
+		classNameField.setText(PropertyHelper.getClassName());
+		superClassField.setText(PropertyHelper.getSuperClass());
+		paramNamesField.setText(PropertyHelper.getParamNames());
+		smokeScriptCheckBox.setSelected(PropertyHelper.getSmokeScript());
+		templateDirField.setText(PropertyHelper.getTemplateDir());
 		updateFileList();
-		templateFileCombBox.setSelectedItem((null != templateFile) ? templateFile : "");
+		templateFileCombBox.setSelectedItem(PropertyHelper.getTemplateFile());
 	}
 	
 	/**
@@ -163,7 +151,9 @@ public class ScriptSettingView extends AbstractPreferencesView {
 	public void actionPerformed(ActionEvent evt) {
 		switch(evt.getActionCommand()){
 		case "SaveScriptSetting":
-			saveSettings();
+			parent.progress.startProgress("Save data...");
+			boolean isSucc = saveSettings();
+			parent.progress.stopProgress("Data save status : " + (isSucc ? "Success." : "Failed."));
 			break;
 		case "Browse":
 			JFileChooser chooser = new JFileChooser();             //设置选择器
@@ -184,28 +174,26 @@ public class ScriptSettingView extends AbstractPreferencesView {
 	/**
 	 * 保存配置
 	 */
-	public void saveSettings(){
+	public boolean saveSettings(){
 		// 必填：生成的脚本文件包名，如：com.cmcc
-		boolean isSucc_01 = storeProperty("packageName", packageNameField.getText());
+		PropertyHelper.setPackageName(packageNameField.getText());
 		// 选填：生成的脚本作者，不填时使用电脑当前用户
-		boolean isSucc_02 = storeProperty("author", authorField.getText());
+		PropertyHelper.setAuthor(authorField.getText());
 		// 选填：生成的脚本描述
-		boolean isSucc_03 = storeProperty("classDesc", classDescField.getText());
+		PropertyHelper.setClassDesc(classDescField.getText());
 		// 必填：生成的脚本类名，建议首字母大写
-		boolean isSucc_04 = storeProperty("className", classNameField.getText());
+		PropertyHelper.setClassName(classNameField.getText());
 		// 选填：生成的脚本继承的父类，设置是请加上包名，如：org.apache.http.HttpResponse
-		boolean isSucc_05 = storeProperty("superClass", superClassField.getText());
+		PropertyHelper.setSuperClass(superClassField.getText());
 		// 必填，测试方法的变量名称，多个值时用,分隔
-		boolean isSucc_06 = storeProperty("paramNames", paramNamesField.getText());
+		PropertyHelper.setParamNames(paramNamesField.getText());
 		// 选填，测试方法是否为冒烟测试脚本，值为true或false,默认false
-		boolean isSucc_07 = storeProperty("smokeScript", String.valueOf(smokeScriptCheckBox.isSelected()));
+		PropertyHelper.setSmokeScript(smokeScriptCheckBox.isSelected());
 		// 必填，模板文件的存储目录，可以是项目中的相对路径
-		boolean isSucc_08 = storeProperty("templateDir", templateDirField.getText());
+		PropertyHelper.setTemplateDir(templateDirField.getText());
 		// 必填，模板文件名称，包括后缀名
-		boolean isSucc_09 = storeProperty("templateFile", templateFileCombBox.getSelectedItem().toString());
-		Constants.initProperties(Constants.DEF_SET_PROP_FILE);
-		boolean isSucc = isSucc_01 && isSucc_02 && isSucc_03 && isSucc_04 && isSucc_05 && isSucc_06 && isSucc_07 && isSucc_08 && isSucc_09;
-		ViewModules.showMessageDialog(parent, "Properties saved : " + isSucc);
+		PropertyHelper.setTemplateFile(templateFileCombBox.getSelectedItem().toString());
+		return PropertyHelper.storeProperties();
 	}
 	
 	public class MouseClickListener extends MouseAdapter {

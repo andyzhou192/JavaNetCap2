@@ -47,7 +47,7 @@ public class FileUtil {
 		}
 		return false;
 	}
-
+	
 	/**
 	 * 删除单个文件
 	 * 
@@ -56,14 +56,13 @@ public class FileUtil {
 	 * @return 单个文件删除成功返回true，否则返回false
 	 */
 	public static boolean deleteFile(String sPath) {
-		boolean flag = false;
+		boolean result = false;
 		File file = new File(sPath);
 		// 路径为文件且不为空则进行删除
 		if (file.isFile() && file.exists()) {
-			file.delete();
-			flag = true;
+			result = file.delete();
 		}
-		return flag;
+		return result;
 	}
 
 	/**
@@ -109,10 +108,10 @@ public class FileUtil {
 		}
 	}
 
-	public static boolean deleteFolder(String url) {
+	public static boolean delete(String url) {
 		java.io.File file = new java.io.File(url);
 		if (!file.exists()) {
-			return false;
+			return true;
 		}
 		if (file.isFile()) {
 			file.delete();
@@ -121,8 +120,7 @@ public class FileUtil {
 			java.io.File[] files = file.listFiles();
 			for (int i = 0; i < files.length; i++) {
 				String root = files[i].getAbsolutePath();// 得到子文件或文件夹的绝对路径
-				// System.out.println(root);
-				deleteFolder(root);
+				delete(root);
 			}
 			file.delete();
 			return true;

@@ -1,4 +1,4 @@
-package com.view.script.generator;
+package com.view.script.generator.component;
 
 import java.awt.Color;
 import java.awt.Dimension;

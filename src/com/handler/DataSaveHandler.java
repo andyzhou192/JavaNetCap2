@@ -35,7 +35,7 @@ public class DataSaveHandler {
 		try {
 			File srcFile = new File(file);
 			String parentPath = srcFile.getParent();
-			if(null != parentPath && !new File(parentPath).exists())
+			if(null != parentPath && !FileUtil.fileIsExists(parentPath))
 				new File(parentPath).mkdirs();
 			ExcelWriterHelper book = ExcelWriterHelper.getBook(srcFile);
 			WritableSheet sheet = null;

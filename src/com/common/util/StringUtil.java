@@ -3,6 +3,7 @@ package com.common.util;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -91,15 +92,6 @@ public class StringUtil {
     }
 
 	/**
-	 * 判断字符串是否为空
-	 * @param str
-	 * @return
-	 */
-	public static boolean isEmpty(String str) {
-		return (null == str || str.length() < 1) ? true : false;
-	}
-
-	/**
 	 * 判断字符串是否null
 	 * @param str
 	 * @return
@@ -114,7 +106,7 @@ public class StringUtil {
 	 * @param strings
 	 * @return
 	 */
-	public static String joinStr(String joinSymbol, String... strings) {
+	public static String assembleStr(String joinSymbol, String... strings) {
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < strings.length; ++i) {
 			if (i == strings.length - 1) {
@@ -125,6 +117,33 @@ public class StringUtil {
 		}
 		return sb.toString();
 	}
+	
+	/**
+	 * 
+	 * @param strings
+	 * @return
+	 */
+	public static String assembleStrWithSpace(String... strings){
+		return StringUtil.assembleStr(" ", strings);
+	}
+	
+	/**
+	 * 将指定的字符串按给定的顺序组装成一个相对路径，以File.separator分割
+	 * @param paths
+	 * @return
+	 */
+	public static String assembleRelativeFilePath(String...paths){
+		return StringUtil.assembleStr(File.separator, paths);
+	}
+	
+	/**
+	 * 将指定的字符串按给定的顺序组装成一个相对路径，以File.separator分割
+	 * @param paths
+	 * @return
+	 */
+	public static String assembleRootFilePath(String...paths){
+		return File.separator + StringUtil.assembleStr(File.separator, paths);
+	}
 
 	/**
 	 * 将Map使用指定的字符（joinSymbol）连接起来
@@ -132,8 +151,8 @@ public class StringUtil {
 	 * @param params
 	 * @return
 	 */
-	public static String joinStr(String joinSymbol, Map<String, String> params) {
-		return joinStr(joinSymbol, params, true);
+	public static String assembleStr(String joinSymbol, Map<String, String> params) {
+		return assembleStr(joinSymbol, params, true);
 	}
 
 	/**
@@ -143,7 +162,7 @@ public class StringUtil {
 	 * @param urlEncode 是否采用urlEncode编码
 	 * @return
 	 */
-	public static String joinStr(String join, Map<String, String> params, boolean urlEncode) {
+	public static String assembleStr(String join, Map<String, String> params, boolean urlEncode) {
 		StringBuilder sb = new StringBuilder();
 
 		for (Entry<String, String> entry : params.entrySet()) {

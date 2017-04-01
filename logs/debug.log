@@ -1,872 +1,849 @@
-2017-03-29 08:43:29  [ main:0 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\conf\setting.properties
-2017-03-29 08:44:49  [ AWT-EventQueue-0:80495 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\conf\setting.properties
-2017-03-29 09:00:19  [ main:1 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\conf\setting.properties
-2017-03-29 09:01:28  [ AWT-EventQueue-0:69059 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\conf\setting.properties
-2017-03-29 09:13:22  [ main:0 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\conf\setting.properties
-2017-03-29 09:14:46  [ AWT-EventQueue-0:83971 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\conf\setting.properties
-2017-03-29 09:35:58  [ main:0 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\conf\setting.properties
-2017-03-29 09:38:14  [ AWT-EventQueue-0:135897 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\conf\setting.properties
-2017-03-29 09:54:50  [ main:0 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\conf\setting.properties
-2017-03-29 10:25:35  [ main:0 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\conf\setting.properties
-2017-03-29 11:26:30  [ main:0 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\conf\setting.properties
-2017-03-29 11:40:39  [ main:0 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\conf\setting.properties
-2017-03-29 11:54:37  [ main:0 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\conf\setting.properties
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65525 ] - [ DEBUG ]  Setting default value: false
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65525 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65526 ] - [ DEBUG ]      No conversion required, value is already a Boolean
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65530 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65531 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65531 ] - [ DEBUG ]      Converted to Byte value '0'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65532 ] - [ DEBUG ]  Setting default value:  
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65532 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65532 ] - [ DEBUG ]      No conversion required, value is already a Character
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65534 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65534 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65535 ] - [ DEBUG ]      Converted to Double value '0.0'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65538 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65539 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65539 ] - [ DEBUG ]      Converted to Float value '0.0'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65540 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65540 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65540 ] - [ DEBUG ]      No conversion required, value is already a Integer
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65542 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65543 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65543 ] - [ DEBUG ]      Converted to Long value '0'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65546 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65546 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65547 ] - [ DEBUG ]      Converted to Short value '0'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65549 ] - [ DEBUG ]  Setting default value: 0.0
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65549 ] - [ DEBUG ]  Converting 'BigDecimal' value '0.0' to type 'BigDecimal'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65549 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65550 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65551 ] - [ DEBUG ]  Converting 'BigInteger' value '0' to type 'BigInteger'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65551 ] - [ DEBUG ]      No conversion required, value is already a BigInteger
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65551 ] - [ DEBUG ]  Setting default value: false
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65551 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65551 ] - [ DEBUG ]      No conversion required, value is already a Boolean
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65556 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65556 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65556 ] - [ DEBUG ]      Converted to Byte value '0'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65556 ] - [ DEBUG ]  Setting default value:  
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65556 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65557 ] - [ DEBUG ]      No conversion required, value is already a Character
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65557 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65557 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65557 ] - [ DEBUG ]      Converted to Double value '0.0'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65557 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65557 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65557 ] - [ DEBUG ]      Converted to Float value '0.0'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65557 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65558 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65558 ] - [ DEBUG ]      No conversion required, value is already a Integer
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65558 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65559 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65559 ] - [ DEBUG ]      Converted to Long value '0'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65559 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65559 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65559 ] - [ DEBUG ]      Converted to Short value '0'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65565 ] - [ DEBUG ]  Setting default value: 
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65565 ] - [ DEBUG ]  Converting 'String' value '' to type 'String'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65658 ] - [ DEBUG ]  Setting default value: [Z@3c49928b
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65659 ] - [ DEBUG ]  Converting 'boolean[]' value '[Z@3c49928b' to type 'boolean[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65659 ] - [ DEBUG ]      No conversion required, value is already a boolean[]
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65659 ] - [ DEBUG ]  Setting default value: [B@5e089612
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65659 ] - [ DEBUG ]  Converting 'byte[]' value '[B@5e089612' to type 'byte[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65659 ] - [ DEBUG ]      No conversion required, value is already a byte[]
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65659 ] - [ DEBUG ]  Setting default value: [C@3b7b8489
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65659 ] - [ DEBUG ]  Converting 'char[]' value '[C@3b7b8489' to type 'char[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65659 ] - [ DEBUG ]      No conversion required, value is already a char[]
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65660 ] - [ DEBUG ]  Setting default value: [D@39dc86bf
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65660 ] - [ DEBUG ]  Converting 'double[]' value '[D@39dc86bf' to type 'double[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65660 ] - [ DEBUG ]      No conversion required, value is already a double[]
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65660 ] - [ DEBUG ]  Setting default value: [F@497186c5
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65660 ] - [ DEBUG ]  Converting 'float[]' value '[F@497186c5' to type 'float[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65660 ] - [ DEBUG ]      No conversion required, value is already a float[]
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65660 ] - [ DEBUG ]  Setting default value: [I@53d321ff
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65660 ] - [ DEBUG ]  Converting 'int[]' value '[I@53d321ff' to type 'int[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65660 ] - [ DEBUG ]      No conversion required, value is already a int[]
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65661 ] - [ DEBUG ]  Setting default value: [J@34eba8c0
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65661 ] - [ DEBUG ]  Converting 'long[]' value '[J@34eba8c0' to type 'long[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65661 ] - [ DEBUG ]      No conversion required, value is already a long[]
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65661 ] - [ DEBUG ]  Setting default value: [S@695f299c
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65661 ] - [ DEBUG ]  Converting 'short[]' value '[S@695f299c' to type 'short[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65661 ] - [ DEBUG ]      No conversion required, value is already a short[]
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65661 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigDecimal;@2c5ddddc
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65661 ] - [ DEBUG ]  Converting 'BigDecimal[]' value '[Ljava.math.BigDecimal;@2c5ddddc' to type 'BigDecimal[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65661 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal[]
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65661 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigInteger;@66cbcd71
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65661 ] - [ DEBUG ]  Converting 'BigInteger[]' value '[Ljava.math.BigInteger;@66cbcd71' to type 'BigInteger[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65662 ] - [ DEBUG ]      No conversion required, value is already a BigInteger[]
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65662 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Boolean;@f8fd4c0
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65662 ] - [ DEBUG ]  Converting 'Boolean[]' value '[Ljava.lang.Boolean;@f8fd4c0' to type 'Boolean[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65662 ] - [ DEBUG ]      No conversion required, value is already a Boolean[]
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65662 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Byte;@1f8c0f64
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65662 ] - [ DEBUG ]  Converting 'Byte[]' value '[Ljava.lang.Byte;@1f8c0f64' to type 'Byte[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65662 ] - [ DEBUG ]      No conversion required, value is already a Byte[]
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65662 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Character;@5d7d8274
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65662 ] - [ DEBUG ]  Converting 'Character[]' value '[Ljava.lang.Character;@5d7d8274' to type 'Character[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65662 ] - [ DEBUG ]      No conversion required, value is already a Character[]
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65662 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Double;@65656cef
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65663 ] - [ DEBUG ]  Converting 'Double[]' value '[Ljava.lang.Double;@65656cef' to type 'Double[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65663 ] - [ DEBUG ]      No conversion required, value is already a Double[]
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65663 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Float;@143d8d57
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65663 ] - [ DEBUG ]  Converting 'Float[]' value '[Ljava.lang.Float;@143d8d57' to type 'Float[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65663 ] - [ DEBUG ]      No conversion required, value is already a Float[]
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65663 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Integer;@6bb5479b
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65663 ] - [ DEBUG ]  Converting 'Integer[]' value '[Ljava.lang.Integer;@6bb5479b' to type 'Integer[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65663 ] - [ DEBUG ]      No conversion required, value is already a Integer[]
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65663 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Long;@5a6a16bb
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65663 ] - [ DEBUG ]  Converting 'Long[]' value '[Ljava.lang.Long;@5a6a16bb' to type 'Long[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65663 ] - [ DEBUG ]      No conversion required, value is already a Long[]
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65664 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Short;@14a60b0d
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65664 ] - [ DEBUG ]  Converting 'Short[]' value '[Ljava.lang.Short;@14a60b0d' to type 'Short[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65664 ] - [ DEBUG ]      No conversion required, value is already a Short[]
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65664 ] - [ DEBUG ]  Setting default value: [Ljava.lang.String;@6c897bfb
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65664 ] - [ DEBUG ]  Converting 'String[]' value '[Ljava.lang.String;@6c897bfb' to type 'String[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65664 ] - [ DEBUG ]      No conversion required, value is already a String[]
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65664 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Class;@2d41706e
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65664 ] - [ DEBUG ]  Converting 'Class[]' value '[Ljava.lang.Class;@2d41706e' to type 'Class[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65664 ] - [ DEBUG ]      No conversion required, value is already a Class[]
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65664 ] - [ DEBUG ]  Setting default value: [Ljava.util.Date;@279474b3
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65664 ] - [ DEBUG ]  Converting 'Date[]' value '[Ljava.util.Date;@279474b3' to type 'Date[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65664 ] - [ DEBUG ]      No conversion required, value is already a Date[]
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65665 ] - [ DEBUG ]  Setting default value: [Ljava.util.Calendar;@243f080e
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65665 ] - [ DEBUG ]  Converting 'Calendar[]' value '[Ljava.util.Calendar;@243f080e' to type 'Calendar[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65665 ] - [ DEBUG ]      No conversion required, value is already a Calendar[]
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65665 ] - [ DEBUG ]  Setting default value: [Ljava.io.File;@66e03f3
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65665 ] - [ DEBUG ]  Converting 'java.io.File[]' value '[Ljava.io.File;@66e03f3' to type 'java.io.File[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65665 ] - [ DEBUG ]      No conversion required, value is already a java.io.File[]
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65665 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Date;@2e1ea8a5
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65665 ] - [ DEBUG ]  Converting 'java.sql.Date[]' value '[Ljava.sql.Date;@2e1ea8a5' to type 'java.sql.Date[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65665 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Date[]
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65666 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Time;@4691342
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65666 ] - [ DEBUG ]  Converting 'java.sql.Time[]' value '[Ljava.sql.Time;@4691342' to type 'java.sql.Time[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65666 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Time[]
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65666 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Timestamp;@4047eb07
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65666 ] - [ DEBUG ]  Converting 'java.sql.Timestamp[]' value '[Ljava.sql.Timestamp;@4047eb07' to type 'java.sql.Timestamp[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65666 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Timestamp[]
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65666 ] - [ DEBUG ]  Setting default value: [Ljava.net.URL;@9a88144
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65666 ] - [ DEBUG ]  Converting 'java.net.URL[]' value '[Ljava.net.URL;@9a88144' to type 'java.net.URL[]'
-2017-03-29 11:55:42  [ AWT-EventQueue-0:65666 ] - [ DEBUG ]      No conversion required, value is already a java.net.URL[]
-2017-03-29 11:55:51  [ AWT-EventQueue-0:74506 ] - [ DEBUG ]  Couldn't find template in cache for "HttpTestScriptEntity.ftlh"("zh_CN", UTF-8, parsed); will try to load it.
-2017-03-29 11:55:51  [ AWT-EventQueue-0:74508 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity_zh_CN.ftlh"): Not found
-2017-03-29 11:55:51  [ AWT-EventQueue-0:74511 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity_zh.ftlh"): Not found
-2017-03-29 11:55:51  [ AWT-EventQueue-0:74512 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity.ftlh"): Found
-2017-03-29 11:55:51  [ AWT-EventQueue-0:74514 ] - [ DEBUG ]  Loading template for "HttpTestScriptEntity.ftlh"("zh_CN", UTF-8, parsed) from "D:\\workspace\\JavaNetCap2\\template\\HttpTestScriptEntity.ftlh"
-2017-03-29 11:55:52  [ AWT-EventQueue-0:75290 ] - [ DEBUG ]  sourceFile:D:\workspace\JavaNetCap2\temp-src\Test02\src\test\resources\com\cmcc\test\LogoutTest.xls; targetFile:D:\workspace\JavaNetCap2\temp-src\Test02\src\test\resources\com\cmcc\test\LogoutTest-temp.xls
-2017-03-29 11:57:16  [ AWT-EventQueue-0:159007 ] - [ DEBUG ]  Couldn't find template in cache for "HttpTestScriptEntity.ftlh"("zh_CN", UTF-8, parsed); will try to load it.
-2017-03-29 11:57:16  [ AWT-EventQueue-0:159007 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity_zh_CN.ftlh"): Not found
-2017-03-29 11:57:16  [ AWT-EventQueue-0:159008 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity_zh.ftlh"): Not found
-2017-03-29 11:57:16  [ AWT-EventQueue-0:159008 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity.ftlh"): Found
-2017-03-29 11:57:16  [ AWT-EventQueue-0:159008 ] - [ DEBUG ]  Loading template for "HttpTestScriptEntity.ftlh"("zh_CN", UTF-8, parsed) from "D:\\workspace\\JavaNetCap2\\template\\HttpTestScriptEntity.ftlh"
-2017-03-29 11:57:16  [ AWT-EventQueue-0:159039 ] - [ DEBUG ]  sourceFile:D:\workspace\JavaNetCap2\temp-src\Test02\src\test\resources\com\cmcc\test\LogoutTest.xls; targetFile:D:\workspace\JavaNetCap2\temp-src\Test02\src\test\resources\com\cmcc\test\LogoutTest-temp.xls
-2017-03-29 13:09:20  [ main:0 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\conf\setting.properties
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125595 ] - [ DEBUG ]  Setting default value: false
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125595 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125595 ] - [ DEBUG ]      No conversion required, value is already a Boolean
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125599 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125600 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125600 ] - [ DEBUG ]      Converted to Byte value '0'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125601 ] - [ DEBUG ]  Setting default value:  
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125601 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125601 ] - [ DEBUG ]      No conversion required, value is already a Character
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125602 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125603 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125603 ] - [ DEBUG ]      Converted to Double value '0.0'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125604 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125604 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125604 ] - [ DEBUG ]      Converted to Float value '0.0'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125605 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125606 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125606 ] - [ DEBUG ]      No conversion required, value is already a Integer
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125607 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125607 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125607 ] - [ DEBUG ]      Converted to Long value '0'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125608 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125608 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125609 ] - [ DEBUG ]      Converted to Short value '0'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125610 ] - [ DEBUG ]  Setting default value: 0.0
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125611 ] - [ DEBUG ]  Converting 'BigDecimal' value '0.0' to type 'BigDecimal'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125611 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125612 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125612 ] - [ DEBUG ]  Converting 'BigInteger' value '0' to type 'BigInteger'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125612 ] - [ DEBUG ]      No conversion required, value is already a BigInteger
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125612 ] - [ DEBUG ]  Setting default value: false
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125612 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125612 ] - [ DEBUG ]      No conversion required, value is already a Boolean
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125613 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125613 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125613 ] - [ DEBUG ]      Converted to Byte value '0'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125613 ] - [ DEBUG ]  Setting default value:  
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125613 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125613 ] - [ DEBUG ]      No conversion required, value is already a Character
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125613 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125613 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125613 ] - [ DEBUG ]      Converted to Double value '0.0'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125613 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125614 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125614 ] - [ DEBUG ]      Converted to Float value '0.0'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125614 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125614 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125614 ] - [ DEBUG ]      No conversion required, value is already a Integer
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125614 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125614 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125614 ] - [ DEBUG ]      Converted to Long value '0'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125614 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125615 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125615 ] - [ DEBUG ]      Converted to Short value '0'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125617 ] - [ DEBUG ]  Setting default value: 
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125617 ] - [ DEBUG ]  Converting 'String' value '' to type 'String'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125630 ] - [ DEBUG ]  Setting default value: [Z@216cd649
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125630 ] - [ DEBUG ]  Converting 'boolean[]' value '[Z@216cd649' to type 'boolean[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125630 ] - [ DEBUG ]      No conversion required, value is already a boolean[]
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125631 ] - [ DEBUG ]  Setting default value: [B@501dcc69
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125631 ] - [ DEBUG ]  Converting 'byte[]' value '[B@501dcc69' to type 'byte[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125631 ] - [ DEBUG ]      No conversion required, value is already a byte[]
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125631 ] - [ DEBUG ]  Setting default value: [C@39c91396
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125631 ] - [ DEBUG ]  Converting 'char[]' value '[C@39c91396' to type 'char[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125631 ] - [ DEBUG ]      No conversion required, value is already a char[]
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125631 ] - [ DEBUG ]  Setting default value: [D@7be9aec
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125631 ] - [ DEBUG ]  Converting 'double[]' value '[D@7be9aec' to type 'double[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125631 ] - [ DEBUG ]      No conversion required, value is already a double[]
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125632 ] - [ DEBUG ]  Setting default value: [F@4027dacc
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125632 ] - [ DEBUG ]  Converting 'float[]' value '[F@4027dacc' to type 'float[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125632 ] - [ DEBUG ]      No conversion required, value is already a float[]
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125632 ] - [ DEBUG ]  Setting default value: [I@7e672825
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125632 ] - [ DEBUG ]  Converting 'int[]' value '[I@7e672825' to type 'int[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125632 ] - [ DEBUG ]      No conversion required, value is already a int[]
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125632 ] - [ DEBUG ]  Setting default value: [J@f43d1dc
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125632 ] - [ DEBUG ]  Converting 'long[]' value '[J@f43d1dc' to type 'long[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125632 ] - [ DEBUG ]      No conversion required, value is already a long[]
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125632 ] - [ DEBUG ]  Setting default value: [S@7cd94322
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125633 ] - [ DEBUG ]  Converting 'short[]' value '[S@7cd94322' to type 'short[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125633 ] - [ DEBUG ]      No conversion required, value is already a short[]
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125633 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigDecimal;@25617cf
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125633 ] - [ DEBUG ]  Converting 'BigDecimal[]' value '[Ljava.math.BigDecimal;@25617cf' to type 'BigDecimal[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125633 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal[]
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125633 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigInteger;@453721a0
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125633 ] - [ DEBUG ]  Converting 'BigInteger[]' value '[Ljava.math.BigInteger;@453721a0' to type 'BigInteger[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125633 ] - [ DEBUG ]      No conversion required, value is already a BigInteger[]
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125633 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Boolean;@54ebc5eb
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125634 ] - [ DEBUG ]  Converting 'Boolean[]' value '[Ljava.lang.Boolean;@54ebc5eb' to type 'Boolean[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125634 ] - [ DEBUG ]      No conversion required, value is already a Boolean[]
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125634 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Byte;@621d4c07
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125634 ] - [ DEBUG ]  Converting 'Byte[]' value '[Ljava.lang.Byte;@621d4c07' to type 'Byte[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125634 ] - [ DEBUG ]      No conversion required, value is already a Byte[]
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125634 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Character;@50c7d7e4
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125634 ] - [ DEBUG ]  Converting 'Character[]' value '[Ljava.lang.Character;@50c7d7e4' to type 'Character[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125634 ] - [ DEBUG ]      No conversion required, value is already a Character[]
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125634 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Double;@2c81d67d
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125634 ] - [ DEBUG ]  Converting 'Double[]' value '[Ljava.lang.Double;@2c81d67d' to type 'Double[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125634 ] - [ DEBUG ]      No conversion required, value is already a Double[]
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125635 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Float;@26cf9a9b
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125635 ] - [ DEBUG ]  Converting 'Float[]' value '[Ljava.lang.Float;@26cf9a9b' to type 'Float[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125635 ] - [ DEBUG ]      No conversion required, value is already a Float[]
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125635 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Integer;@2eba9731
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125635 ] - [ DEBUG ]  Converting 'Integer[]' value '[Ljava.lang.Integer;@2eba9731' to type 'Integer[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125635 ] - [ DEBUG ]      No conversion required, value is already a Integer[]
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125635 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Long;@402c1df5
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125635 ] - [ DEBUG ]  Converting 'Long[]' value '[Ljava.lang.Long;@402c1df5' to type 'Long[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125635 ] - [ DEBUG ]      No conversion required, value is already a Long[]
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125636 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Short;@62bc09b3
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125636 ] - [ DEBUG ]  Converting 'Short[]' value '[Ljava.lang.Short;@62bc09b3' to type 'Short[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125636 ] - [ DEBUG ]      No conversion required, value is already a Short[]
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125636 ] - [ DEBUG ]  Setting default value: [Ljava.lang.String;@38fd5c3d
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125636 ] - [ DEBUG ]  Converting 'String[]' value '[Ljava.lang.String;@38fd5c3d' to type 'String[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125636 ] - [ DEBUG ]      No conversion required, value is already a String[]
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125636 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Class;@4204470c
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125636 ] - [ DEBUG ]  Converting 'Class[]' value '[Ljava.lang.Class;@4204470c' to type 'Class[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125636 ] - [ DEBUG ]      No conversion required, value is already a Class[]
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125637 ] - [ DEBUG ]  Setting default value: [Ljava.util.Date;@6267290c
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125637 ] - [ DEBUG ]  Converting 'Date[]' value '[Ljava.util.Date;@6267290c' to type 'Date[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125637 ] - [ DEBUG ]      No conversion required, value is already a Date[]
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125637 ] - [ DEBUG ]  Setting default value: [Ljava.util.Calendar;@32daf1e9
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125637 ] - [ DEBUG ]  Converting 'Calendar[]' value '[Ljava.util.Calendar;@32daf1e9' to type 'Calendar[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125637 ] - [ DEBUG ]      No conversion required, value is already a Calendar[]
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125637 ] - [ DEBUG ]  Setting default value: [Ljava.io.File;@972909c
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125637 ] - [ DEBUG ]  Converting 'java.io.File[]' value '[Ljava.io.File;@972909c' to type 'java.io.File[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125638 ] - [ DEBUG ]      No conversion required, value is already a java.io.File[]
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125638 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Date;@2ebf1eb4
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125638 ] - [ DEBUG ]  Converting 'java.sql.Date[]' value '[Ljava.sql.Date;@2ebf1eb4' to type 'java.sql.Date[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125638 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Date[]
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125638 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Time;@56d3c255
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125638 ] - [ DEBUG ]  Converting 'java.sql.Time[]' value '[Ljava.sql.Time;@56d3c255' to type 'java.sql.Time[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125638 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Time[]
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125639 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Timestamp;@34a8b085
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125639 ] - [ DEBUG ]  Converting 'java.sql.Timestamp[]' value '[Ljava.sql.Timestamp;@34a8b085' to type 'java.sql.Timestamp[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125639 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Timestamp[]
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125639 ] - [ DEBUG ]  Setting default value: [Ljava.net.URL;@75fe61f2
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125639 ] - [ DEBUG ]  Converting 'java.net.URL[]' value '[Ljava.net.URL;@75fe61f2' to type 'java.net.URL[]'
-2017-03-29 13:11:25  [ AWT-EventQueue-0:125639 ] - [ DEBUG ]      No conversion required, value is already a java.net.URL[]
-2017-03-29 13:40:44  [ main:0 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\conf\setting.properties
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6488 ] - [ DEBUG ]  Setting default value: false
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6488 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6489 ] - [ DEBUG ]      No conversion required, value is already a Boolean
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6493 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6493 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6494 ] - [ DEBUG ]      Converted to Byte value '0'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6501 ] - [ DEBUG ]  Setting default value:  
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6501 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6501 ] - [ DEBUG ]      No conversion required, value is already a Character
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6503 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6503 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6503 ] - [ DEBUG ]      Converted to Double value '0.0'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6504 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6505 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6505 ] - [ DEBUG ]      Converted to Float value '0.0'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6506 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6506 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6506 ] - [ DEBUG ]      No conversion required, value is already a Integer
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6508 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6508 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6508 ] - [ DEBUG ]      Converted to Long value '0'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6510 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6510 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6510 ] - [ DEBUG ]      Converted to Short value '0'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6512 ] - [ DEBUG ]  Setting default value: 0.0
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6512 ] - [ DEBUG ]  Converting 'BigDecimal' value '0.0' to type 'BigDecimal'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6512 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6513 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6514 ] - [ DEBUG ]  Converting 'BigInteger' value '0' to type 'BigInteger'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6514 ] - [ DEBUG ]      No conversion required, value is already a BigInteger
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6514 ] - [ DEBUG ]  Setting default value: false
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6514 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6514 ] - [ DEBUG ]      No conversion required, value is already a Boolean
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6514 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6514 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6514 ] - [ DEBUG ]      Converted to Byte value '0'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6515 ] - [ DEBUG ]  Setting default value:  
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6515 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6515 ] - [ DEBUG ]      No conversion required, value is already a Character
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6515 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6515 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6515 ] - [ DEBUG ]      Converted to Double value '0.0'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6515 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6515 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6515 ] - [ DEBUG ]      Converted to Float value '0.0'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6516 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6516 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6516 ] - [ DEBUG ]      No conversion required, value is already a Integer
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6516 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6516 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6516 ] - [ DEBUG ]      Converted to Long value '0'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6516 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6516 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6516 ] - [ DEBUG ]      Converted to Short value '0'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6519 ] - [ DEBUG ]  Setting default value: 
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6519 ] - [ DEBUG ]  Converting 'String' value '' to type 'String'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6534 ] - [ DEBUG ]  Setting default value: [Z@41abb667
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6534 ] - [ DEBUG ]  Converting 'boolean[]' value '[Z@41abb667' to type 'boolean[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6534 ] - [ DEBUG ]      No conversion required, value is already a boolean[]
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6534 ] - [ DEBUG ]  Setting default value: [B@1e1f406d
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6534 ] - [ DEBUG ]  Converting 'byte[]' value '[B@1e1f406d' to type 'byte[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6534 ] - [ DEBUG ]      No conversion required, value is already a byte[]
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6535 ] - [ DEBUG ]  Setting default value: [C@7c8a4464
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6535 ] - [ DEBUG ]  Converting 'char[]' value '[C@7c8a4464' to type 'char[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6535 ] - [ DEBUG ]      No conversion required, value is already a char[]
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6535 ] - [ DEBUG ]  Setting default value: [D@7c42ed64
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6535 ] - [ DEBUG ]  Converting 'double[]' value '[D@7c42ed64' to type 'double[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6535 ] - [ DEBUG ]      No conversion required, value is already a double[]
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6535 ] - [ DEBUG ]  Setting default value: [F@60466405
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6535 ] - [ DEBUG ]  Converting 'float[]' value '[F@60466405' to type 'float[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6536 ] - [ DEBUG ]      No conversion required, value is already a float[]
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6536 ] - [ DEBUG ]  Setting default value: [I@4be4c48
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6536 ] - [ DEBUG ]  Converting 'int[]' value '[I@4be4c48' to type 'int[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6536 ] - [ DEBUG ]      No conversion required, value is already a int[]
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6536 ] - [ DEBUG ]  Setting default value: [J@2a3981df
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6536 ] - [ DEBUG ]  Converting 'long[]' value '[J@2a3981df' to type 'long[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6536 ] - [ DEBUG ]      No conversion required, value is already a long[]
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6536 ] - [ DEBUG ]  Setting default value: [S@41fb6031
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6536 ] - [ DEBUG ]  Converting 'short[]' value '[S@41fb6031' to type 'short[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6537 ] - [ DEBUG ]      No conversion required, value is already a short[]
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6537 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigDecimal;@124e5247
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6537 ] - [ DEBUG ]  Converting 'BigDecimal[]' value '[Ljava.math.BigDecimal;@124e5247' to type 'BigDecimal[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6537 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal[]
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6537 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigInteger;@6464804a
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6537 ] - [ DEBUG ]  Converting 'BigInteger[]' value '[Ljava.math.BigInteger;@6464804a' to type 'BigInteger[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6537 ] - [ DEBUG ]      No conversion required, value is already a BigInteger[]
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6537 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Boolean;@2b5d260
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6537 ] - [ DEBUG ]  Converting 'Boolean[]' value '[Ljava.lang.Boolean;@2b5d260' to type 'Boolean[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6538 ] - [ DEBUG ]      No conversion required, value is already a Boolean[]
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6538 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Byte;@1855c0ef
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6538 ] - [ DEBUG ]  Converting 'Byte[]' value '[Ljava.lang.Byte;@1855c0ef' to type 'Byte[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6538 ] - [ DEBUG ]      No conversion required, value is already a Byte[]
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6538 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Character;@78e975c8
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6538 ] - [ DEBUG ]  Converting 'Character[]' value '[Ljava.lang.Character;@78e975c8' to type 'Character[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6538 ] - [ DEBUG ]      No conversion required, value is already a Character[]
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6538 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Double;@384fcc4f
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6538 ] - [ DEBUG ]  Converting 'Double[]' value '[Ljava.lang.Double;@384fcc4f' to type 'Double[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6539 ] - [ DEBUG ]      No conversion required, value is already a Double[]
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6539 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Float;@14c52ff4
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6539 ] - [ DEBUG ]  Converting 'Float[]' value '[Ljava.lang.Float;@14c52ff4' to type 'Float[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6539 ] - [ DEBUG ]      No conversion required, value is already a Float[]
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6539 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Integer;@2221c73b
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6539 ] - [ DEBUG ]  Converting 'Integer[]' value '[Ljava.lang.Integer;@2221c73b' to type 'Integer[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6539 ] - [ DEBUG ]      No conversion required, value is already a Integer[]
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6539 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Long;@1155a182
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6539 ] - [ DEBUG ]  Converting 'Long[]' value '[Ljava.lang.Long;@1155a182' to type 'Long[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6539 ] - [ DEBUG ]      No conversion required, value is already a Long[]
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6540 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Short;@57be2a53
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6540 ] - [ DEBUG ]  Converting 'Short[]' value '[Ljava.lang.Short;@57be2a53' to type 'Short[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6540 ] - [ DEBUG ]      No conversion required, value is already a Short[]
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6540 ] - [ DEBUG ]  Setting default value: [Ljava.lang.String;@6a3915df
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6540 ] - [ DEBUG ]  Converting 'String[]' value '[Ljava.lang.String;@6a3915df' to type 'String[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6540 ] - [ DEBUG ]      No conversion required, value is already a String[]
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6540 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Class;@468d1fbc
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6540 ] - [ DEBUG ]  Converting 'Class[]' value '[Ljava.lang.Class;@468d1fbc' to type 'Class[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6540 ] - [ DEBUG ]      No conversion required, value is already a Class[]
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6541 ] - [ DEBUG ]  Setting default value: [Ljava.util.Date;@7ae8ef5e
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6541 ] - [ DEBUG ]  Converting 'Date[]' value '[Ljava.util.Date;@7ae8ef5e' to type 'Date[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6541 ] - [ DEBUG ]      No conversion required, value is already a Date[]
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6541 ] - [ DEBUG ]  Setting default value: [Ljava.util.Calendar;@7e97df44
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6541 ] - [ DEBUG ]  Converting 'Calendar[]' value '[Ljava.util.Calendar;@7e97df44' to type 'Calendar[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6541 ] - [ DEBUG ]      No conversion required, value is already a Calendar[]
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6541 ] - [ DEBUG ]  Setting default value: [Ljava.io.File;@6d66c89d
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6541 ] - [ DEBUG ]  Converting 'java.io.File[]' value '[Ljava.io.File;@6d66c89d' to type 'java.io.File[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6541 ] - [ DEBUG ]      No conversion required, value is already a java.io.File[]
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6542 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Date;@24fabe6d
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6542 ] - [ DEBUG ]  Converting 'java.sql.Date[]' value '[Ljava.sql.Date;@24fabe6d' to type 'java.sql.Date[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6542 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Date[]
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6542 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Time;@7efaf4e1
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6542 ] - [ DEBUG ]  Converting 'java.sql.Time[]' value '[Ljava.sql.Time;@7efaf4e1' to type 'java.sql.Time[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6542 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Time[]
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6543 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Timestamp;@547b3298
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6543 ] - [ DEBUG ]  Converting 'java.sql.Timestamp[]' value '[Ljava.sql.Timestamp;@547b3298' to type 'java.sql.Timestamp[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6543 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Timestamp[]
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6543 ] - [ DEBUG ]  Setting default value: [Ljava.net.URL;@2047fd15
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6543 ] - [ DEBUG ]  Converting 'java.net.URL[]' value '[Ljava.net.URL;@2047fd15' to type 'java.net.URL[]'
-2017-03-29 13:40:50  [ AWT-EventQueue-0:6543 ] - [ DEBUG ]      No conversion required, value is already a java.net.URL[]
-2017-03-29 14:31:45  [ main:0 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\conf\setting.properties
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607425 ] - [ DEBUG ]  Setting default value: false
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607425 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607425 ] - [ DEBUG ]      No conversion required, value is already a Boolean
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607429 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607429 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607430 ] - [ DEBUG ]      Converted to Byte value '0'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607431 ] - [ DEBUG ]  Setting default value:  
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607431 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607431 ] - [ DEBUG ]      No conversion required, value is already a Character
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607432 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607432 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607432 ] - [ DEBUG ]      Converted to Double value '0.0'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607433 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607434 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607434 ] - [ DEBUG ]      Converted to Float value '0.0'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607435 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607435 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607435 ] - [ DEBUG ]      No conversion required, value is already a Integer
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607436 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607437 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607437 ] - [ DEBUG ]      Converted to Long value '0'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607438 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607438 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607438 ] - [ DEBUG ]      Converted to Short value '0'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607440 ] - [ DEBUG ]  Setting default value: 0.0
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607440 ] - [ DEBUG ]  Converting 'BigDecimal' value '0.0' to type 'BigDecimal'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607440 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607442 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607442 ] - [ DEBUG ]  Converting 'BigInteger' value '0' to type 'BigInteger'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607442 ] - [ DEBUG ]      No conversion required, value is already a BigInteger
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607442 ] - [ DEBUG ]  Setting default value: false
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607443 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607443 ] - [ DEBUG ]      No conversion required, value is already a Boolean
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607443 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607443 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607444 ] - [ DEBUG ]      Converted to Byte value '0'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607444 ] - [ DEBUG ]  Setting default value:  
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607444 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607444 ] - [ DEBUG ]      No conversion required, value is already a Character
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607444 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607444 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607444 ] - [ DEBUG ]      Converted to Double value '0.0'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607445 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607445 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607445 ] - [ DEBUG ]      Converted to Float value '0.0'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607445 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607445 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607445 ] - [ DEBUG ]      No conversion required, value is already a Integer
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607445 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607446 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607446 ] - [ DEBUG ]      Converted to Long value '0'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607446 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607446 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607446 ] - [ DEBUG ]      Converted to Short value '0'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607447 ] - [ DEBUG ]  Setting default value: 
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607447 ] - [ DEBUG ]  Converting 'String' value '' to type 'String'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607460 ] - [ DEBUG ]  Setting default value: [Z@216cd649
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607460 ] - [ DEBUG ]  Converting 'boolean[]' value '[Z@216cd649' to type 'boolean[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607460 ] - [ DEBUG ]      No conversion required, value is already a boolean[]
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607461 ] - [ DEBUG ]  Setting default value: [B@501dcc69
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607461 ] - [ DEBUG ]  Converting 'byte[]' value '[B@501dcc69' to type 'byte[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607461 ] - [ DEBUG ]      No conversion required, value is already a byte[]
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607461 ] - [ DEBUG ]  Setting default value: [C@39c91396
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607461 ] - [ DEBUG ]  Converting 'char[]' value '[C@39c91396' to type 'char[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607461 ] - [ DEBUG ]      No conversion required, value is already a char[]
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607461 ] - [ DEBUG ]  Setting default value: [D@7be9aec
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607461 ] - [ DEBUG ]  Converting 'double[]' value '[D@7be9aec' to type 'double[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607461 ] - [ DEBUG ]      No conversion required, value is already a double[]
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607462 ] - [ DEBUG ]  Setting default value: [F@4027dacc
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607462 ] - [ DEBUG ]  Converting 'float[]' value '[F@4027dacc' to type 'float[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607462 ] - [ DEBUG ]      No conversion required, value is already a float[]
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607462 ] - [ DEBUG ]  Setting default value: [I@7e672825
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607462 ] - [ DEBUG ]  Converting 'int[]' value '[I@7e672825' to type 'int[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607462 ] - [ DEBUG ]      No conversion required, value is already a int[]
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607462 ] - [ DEBUG ]  Setting default value: [J@f43d1dc
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607462 ] - [ DEBUG ]  Converting 'long[]' value '[J@f43d1dc' to type 'long[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607462 ] - [ DEBUG ]      No conversion required, value is already a long[]
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607463 ] - [ DEBUG ]  Setting default value: [S@7cd94322
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607463 ] - [ DEBUG ]  Converting 'short[]' value '[S@7cd94322' to type 'short[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607463 ] - [ DEBUG ]      No conversion required, value is already a short[]
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607463 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigDecimal;@25617cf
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607463 ] - [ DEBUG ]  Converting 'BigDecimal[]' value '[Ljava.math.BigDecimal;@25617cf' to type 'BigDecimal[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607463 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal[]
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607463 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigInteger;@453721a0
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607463 ] - [ DEBUG ]  Converting 'BigInteger[]' value '[Ljava.math.BigInteger;@453721a0' to type 'BigInteger[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607463 ] - [ DEBUG ]      No conversion required, value is already a BigInteger[]
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607463 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Boolean;@54ebc5eb
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607463 ] - [ DEBUG ]  Converting 'Boolean[]' value '[Ljava.lang.Boolean;@54ebc5eb' to type 'Boolean[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607464 ] - [ DEBUG ]      No conversion required, value is already a Boolean[]
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607464 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Byte;@621d4c07
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607464 ] - [ DEBUG ]  Converting 'Byte[]' value '[Ljava.lang.Byte;@621d4c07' to type 'Byte[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607464 ] - [ DEBUG ]      No conversion required, value is already a Byte[]
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607464 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Character;@50c7d7e4
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607464 ] - [ DEBUG ]  Converting 'Character[]' value '[Ljava.lang.Character;@50c7d7e4' to type 'Character[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607464 ] - [ DEBUG ]      No conversion required, value is already a Character[]
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607464 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Double;@2c81d67d
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607464 ] - [ DEBUG ]  Converting 'Double[]' value '[Ljava.lang.Double;@2c81d67d' to type 'Double[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607464 ] - [ DEBUG ]      No conversion required, value is already a Double[]
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607464 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Float;@26cf9a9b
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607465 ] - [ DEBUG ]  Converting 'Float[]' value '[Ljava.lang.Float;@26cf9a9b' to type 'Float[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607465 ] - [ DEBUG ]      No conversion required, value is already a Float[]
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607465 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Integer;@2eba9731
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607465 ] - [ DEBUG ]  Converting 'Integer[]' value '[Ljava.lang.Integer;@2eba9731' to type 'Integer[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607465 ] - [ DEBUG ]      No conversion required, value is already a Integer[]
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607465 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Long;@402c1df5
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607465 ] - [ DEBUG ]  Converting 'Long[]' value '[Ljava.lang.Long;@402c1df5' to type 'Long[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607465 ] - [ DEBUG ]      No conversion required, value is already a Long[]
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607468 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Short;@62bc09b3
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607468 ] - [ DEBUG ]  Converting 'Short[]' value '[Ljava.lang.Short;@62bc09b3' to type 'Short[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607468 ] - [ DEBUG ]      No conversion required, value is already a Short[]
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607468 ] - [ DEBUG ]  Setting default value: [Ljava.lang.String;@38fd5c3d
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607468 ] - [ DEBUG ]  Converting 'String[]' value '[Ljava.lang.String;@38fd5c3d' to type 'String[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607468 ] - [ DEBUG ]      No conversion required, value is already a String[]
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607468 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Class;@4204470c
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607468 ] - [ DEBUG ]  Converting 'Class[]' value '[Ljava.lang.Class;@4204470c' to type 'Class[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607469 ] - [ DEBUG ]      No conversion required, value is already a Class[]
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607469 ] - [ DEBUG ]  Setting default value: [Ljava.util.Date;@6267290c
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607469 ] - [ DEBUG ]  Converting 'Date[]' value '[Ljava.util.Date;@6267290c' to type 'Date[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607469 ] - [ DEBUG ]      No conversion required, value is already a Date[]
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607469 ] - [ DEBUG ]  Setting default value: [Ljava.util.Calendar;@32daf1e9
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607469 ] - [ DEBUG ]  Converting 'Calendar[]' value '[Ljava.util.Calendar;@32daf1e9' to type 'Calendar[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607469 ] - [ DEBUG ]      No conversion required, value is already a Calendar[]
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607469 ] - [ DEBUG ]  Setting default value: [Ljava.io.File;@972909c
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607469 ] - [ DEBUG ]  Converting 'java.io.File[]' value '[Ljava.io.File;@972909c' to type 'java.io.File[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607470 ] - [ DEBUG ]      No conversion required, value is already a java.io.File[]
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607470 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Date;@2ebf1eb4
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607470 ] - [ DEBUG ]  Converting 'java.sql.Date[]' value '[Ljava.sql.Date;@2ebf1eb4' to type 'java.sql.Date[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607470 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Date[]
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607470 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Time;@56d3c255
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607470 ] - [ DEBUG ]  Converting 'java.sql.Time[]' value '[Ljava.sql.Time;@56d3c255' to type 'java.sql.Time[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607470 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Time[]
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607471 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Timestamp;@34a8b085
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607471 ] - [ DEBUG ]  Converting 'java.sql.Timestamp[]' value '[Ljava.sql.Timestamp;@34a8b085' to type 'java.sql.Timestamp[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607471 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Timestamp[]
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607471 ] - [ DEBUG ]  Setting default value: [Ljava.net.URL;@75fe61f2
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607471 ] - [ DEBUG ]  Converting 'java.net.URL[]' value '[Ljava.net.URL;@75fe61f2' to type 'java.net.URL[]'
-2017-03-29 14:41:52  [ AWT-EventQueue-0:607471 ] - [ DEBUG ]      No conversion required, value is already a java.net.URL[]
-2017-03-29 14:42:43  [ AWT-EventQueue-0:658249 ] - [ DEBUG ]  Couldn't find template in cache for "HttpTestScriptEntity.ftlh"("zh_CN", UTF-8, parsed); will try to load it.
-2017-03-29 14:42:43  [ AWT-EventQueue-0:658252 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity_zh_CN.ftlh"): Not found
-2017-03-29 14:42:43  [ AWT-EventQueue-0:658255 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity_zh.ftlh"): Not found
-2017-03-29 14:42:43  [ AWT-EventQueue-0:658255 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity.ftlh"): Found
-2017-03-29 14:42:43  [ AWT-EventQueue-0:658258 ] - [ DEBUG ]  Loading template for "HttpTestScriptEntity.ftlh"("zh_CN", UTF-8, parsed) from "D:\\workspace\\JavaNetCap2\\template\\HttpTestScriptEntity.ftlh"
-2017-03-29 14:42:46  [ AWT-EventQueue-0:660563 ] - [ DEBUG ]  sourceFile:D:\workspace\JavaNetCap2\temp-src\Test02\src\test\resources\com\cmcc\test\LogoutTest.xls; targetFile:D:\workspace\JavaNetCap2\temp-src\Test02\src\test\resources\com\cmcc\test\LogoutTest-temp.xls
-2017-03-29 16:08:34  [ main:0 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\conf\setting.properties
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21879 ] - [ DEBUG ]  Setting default value: false
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21880 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21880 ] - [ DEBUG ]      No conversion required, value is already a Boolean
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21886 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21886 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21886 ] - [ DEBUG ]      Converted to Byte value '0'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21888 ] - [ DEBUG ]  Setting default value:  
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21888 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21888 ] - [ DEBUG ]      No conversion required, value is already a Character
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21890 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21890 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21890 ] - [ DEBUG ]      Converted to Double value '0.0'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21891 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21891 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21892 ] - [ DEBUG ]      Converted to Float value '0.0'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21893 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21893 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21893 ] - [ DEBUG ]      No conversion required, value is already a Integer
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21895 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21895 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21895 ] - [ DEBUG ]      Converted to Long value '0'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21896 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21896 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21897 ] - [ DEBUG ]      Converted to Short value '0'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21898 ] - [ DEBUG ]  Setting default value: 0.0
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21899 ] - [ DEBUG ]  Converting 'BigDecimal' value '0.0' to type 'BigDecimal'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21899 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21900 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21900 ] - [ DEBUG ]  Converting 'BigInteger' value '0' to type 'BigInteger'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21900 ] - [ DEBUG ]      No conversion required, value is already a BigInteger
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21901 ] - [ DEBUG ]  Setting default value: false
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21901 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21901 ] - [ DEBUG ]      No conversion required, value is already a Boolean
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21901 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21901 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21901 ] - [ DEBUG ]      Converted to Byte value '0'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21901 ] - [ DEBUG ]  Setting default value:  
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21901 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21901 ] - [ DEBUG ]      No conversion required, value is already a Character
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21901 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21902 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21902 ] - [ DEBUG ]      Converted to Double value '0.0'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21902 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21902 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21902 ] - [ DEBUG ]      Converted to Float value '0.0'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21902 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21902 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21902 ] - [ DEBUG ]      No conversion required, value is already a Integer
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21902 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21902 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21903 ] - [ DEBUG ]      Converted to Long value '0'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21903 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21903 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21903 ] - [ DEBUG ]      Converted to Short value '0'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21905 ] - [ DEBUG ]  Setting default value: 
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21905 ] - [ DEBUG ]  Converting 'String' value '' to type 'String'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21929 ] - [ DEBUG ]  Setting default value: [Z@2abe5506
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21929 ] - [ DEBUG ]  Converting 'boolean[]' value '[Z@2abe5506' to type 'boolean[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21929 ] - [ DEBUG ]      No conversion required, value is already a boolean[]
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21930 ] - [ DEBUG ]  Setting default value: [B@588bca44
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21930 ] - [ DEBUG ]  Converting 'byte[]' value '[B@588bca44' to type 'byte[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21930 ] - [ DEBUG ]      No conversion required, value is already a byte[]
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21931 ] - [ DEBUG ]  Setting default value: [C@79c89e56
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21932 ] - [ DEBUG ]  Converting 'char[]' value '[C@79c89e56' to type 'char[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21932 ] - [ DEBUG ]      No conversion required, value is already a char[]
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21932 ] - [ DEBUG ]  Setting default value: [D@33c617a3
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21933 ] - [ DEBUG ]  Converting 'double[]' value '[D@33c617a3' to type 'double[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21933 ] - [ DEBUG ]      No conversion required, value is already a double[]
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21933 ] - [ DEBUG ]  Setting default value: [F@6b0862b8
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21933 ] - [ DEBUG ]  Converting 'float[]' value '[F@6b0862b8' to type 'float[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21934 ] - [ DEBUG ]      No conversion required, value is already a float[]
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21934 ] - [ DEBUG ]  Setting default value: [I@6d574c77
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21934 ] - [ DEBUG ]  Converting 'int[]' value '[I@6d574c77' to type 'int[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21934 ] - [ DEBUG ]      No conversion required, value is already a int[]
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21935 ] - [ DEBUG ]  Setting default value: [J@505055a5
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21935 ] - [ DEBUG ]  Converting 'long[]' value '[J@505055a5' to type 'long[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21935 ] - [ DEBUG ]      No conversion required, value is already a long[]
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21935 ] - [ DEBUG ]  Setting default value: [S@53282b03
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21935 ] - [ DEBUG ]  Converting 'short[]' value '[S@53282b03' to type 'short[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21935 ] - [ DEBUG ]      No conversion required, value is already a short[]
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21935 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigDecimal;@7b9d9e7c
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21935 ] - [ DEBUG ]  Converting 'BigDecimal[]' value '[Ljava.math.BigDecimal;@7b9d9e7c' to type 'BigDecimal[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21935 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal[]
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21936 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigInteger;@2c7e418c
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21936 ] - [ DEBUG ]  Converting 'BigInteger[]' value '[Ljava.math.BigInteger;@2c7e418c' to type 'BigInteger[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21936 ] - [ DEBUG ]      No conversion required, value is already a BigInteger[]
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21936 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Boolean;@7e51c4db
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21936 ] - [ DEBUG ]  Converting 'Boolean[]' value '[Ljava.lang.Boolean;@7e51c4db' to type 'Boolean[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21936 ] - [ DEBUG ]      No conversion required, value is already a Boolean[]
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21936 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Byte;@6c339821
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21936 ] - [ DEBUG ]  Converting 'Byte[]' value '[Ljava.lang.Byte;@6c339821' to type 'Byte[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21936 ] - [ DEBUG ]      No conversion required, value is already a Byte[]
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21936 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Character;@7b4a95a5
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21937 ] - [ DEBUG ]  Converting 'Character[]' value '[Ljava.lang.Character;@7b4a95a5' to type 'Character[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21937 ] - [ DEBUG ]      No conversion required, value is already a Character[]
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21937 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Double;@25e6d961
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21937 ] - [ DEBUG ]  Converting 'Double[]' value '[Ljava.lang.Double;@25e6d961' to type 'Double[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21937 ] - [ DEBUG ]      No conversion required, value is already a Double[]
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21937 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Float;@55e1b61a
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21937 ] - [ DEBUG ]  Converting 'Float[]' value '[Ljava.lang.Float;@55e1b61a' to type 'Float[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21937 ] - [ DEBUG ]      No conversion required, value is already a Float[]
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21937 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Integer;@2563de17
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21937 ] - [ DEBUG ]  Converting 'Integer[]' value '[Ljava.lang.Integer;@2563de17' to type 'Integer[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21938 ] - [ DEBUG ]      No conversion required, value is already a Integer[]
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21938 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Long;@a2b80a3
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21938 ] - [ DEBUG ]  Converting 'Long[]' value '[Ljava.lang.Long;@a2b80a3' to type 'Long[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21938 ] - [ DEBUG ]      No conversion required, value is already a Long[]
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21938 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Short;@19156d56
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21938 ] - [ DEBUG ]  Converting 'Short[]' value '[Ljava.lang.Short;@19156d56' to type 'Short[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21938 ] - [ DEBUG ]      No conversion required, value is already a Short[]
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21938 ] - [ DEBUG ]  Setting default value: [Ljava.lang.String;@411c4908
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21938 ] - [ DEBUG ]  Converting 'String[]' value '[Ljava.lang.String;@411c4908' to type 'String[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21938 ] - [ DEBUG ]      No conversion required, value is already a String[]
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21939 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Class;@7ab4a45a
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21939 ] - [ DEBUG ]  Converting 'Class[]' value '[Ljava.lang.Class;@7ab4a45a' to type 'Class[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21939 ] - [ DEBUG ]      No conversion required, value is already a Class[]
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21939 ] - [ DEBUG ]  Setting default value: [Ljava.util.Date;@2c4c0d37
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21939 ] - [ DEBUG ]  Converting 'Date[]' value '[Ljava.util.Date;@2c4c0d37' to type 'Date[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21939 ] - [ DEBUG ]      No conversion required, value is already a Date[]
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21939 ] - [ DEBUG ]  Setting default value: [Ljava.util.Calendar;@3d76f4f4
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21939 ] - [ DEBUG ]  Converting 'Calendar[]' value '[Ljava.util.Calendar;@3d76f4f4' to type 'Calendar[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21939 ] - [ DEBUG ]      No conversion required, value is already a Calendar[]
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21940 ] - [ DEBUG ]  Setting default value: [Ljava.io.File;@2ed68da1
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21940 ] - [ DEBUG ]  Converting 'java.io.File[]' value '[Ljava.io.File;@2ed68da1' to type 'java.io.File[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21940 ] - [ DEBUG ]      No conversion required, value is already a java.io.File[]
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21940 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Date;@37ce585e
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21940 ] - [ DEBUG ]  Converting 'java.sql.Date[]' value '[Ljava.sql.Date;@37ce585e' to type 'java.sql.Date[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21941 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Date[]
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21941 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Time;@3741f0ea
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21941 ] - [ DEBUG ]  Converting 'java.sql.Time[]' value '[Ljava.sql.Time;@3741f0ea' to type 'java.sql.Time[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21941 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Time[]
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21941 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Timestamp;@615cbb90
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21941 ] - [ DEBUG ]  Converting 'java.sql.Timestamp[]' value '[Ljava.sql.Timestamp;@615cbb90' to type 'java.sql.Timestamp[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21941 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Timestamp[]
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21941 ] - [ DEBUG ]  Setting default value: [Ljava.net.URL;@72323801
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21942 ] - [ DEBUG ]  Converting 'java.net.URL[]' value '[Ljava.net.URL;@72323801' to type 'java.net.URL[]'
-2017-03-29 16:08:56  [ AWT-EventQueue-0:21942 ] - [ DEBUG ]      No conversion required, value is already a java.net.URL[]
-2017-03-29 16:09:11  [ AWT-EventQueue-0:37073 ] - [ DEBUG ]  Couldn't find template in cache for "HttpTestScriptEntity.ftlh"("zh_CN", UTF-8, parsed); will try to load it.
-2017-03-29 16:09:11  [ AWT-EventQueue-0:37076 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity_zh_CN.ftlh"): Not found
-2017-03-29 16:09:11  [ AWT-EventQueue-0:37079 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity_zh.ftlh"): Not found
-2017-03-29 16:09:11  [ AWT-EventQueue-0:37079 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity.ftlh"): Found
-2017-03-29 16:09:11  [ AWT-EventQueue-0:37082 ] - [ DEBUG ]  Loading template for "HttpTestScriptEntity.ftlh"("zh_CN", UTF-8, parsed) from "D:\\workspace\\JavaNetCap2\\template\\HttpTestScriptEntity.ftlh"
-2017-03-29 16:09:12  [ AWT-EventQueue-0:38006 ] - [ DEBUG ]  sourceFile:D:\workspace\JavaNetCap2\temp-src\Test02\src\test\resources\com\cmcc\test\LogoutTest.xls; targetFile:D:\workspace\JavaNetCap2\temp-src\Test02\src\test\resources\com\cmcc\test\LogoutTest-temp.xls
-2017-03-29 16:09:13  [ AWT-EventQueue-0:38649 ] - [ DEBUG ]  is delete sourceFile:true; is rename ok:true
-2017-03-29 17:43:18  [ main:0 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\conf\setting.properties
-2017-03-29 17:43:46  [ AWT-EventQueue-0:27992 ] - [ DEBUG ]  Setting default value: false
-2017-03-29 17:43:46  [ AWT-EventQueue-0:27993 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:27993 ] - [ DEBUG ]      No conversion required, value is already a Boolean
-2017-03-29 17:43:46  [ AWT-EventQueue-0:27998 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 17:43:46  [ AWT-EventQueue-0:27998 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:27999 ] - [ DEBUG ]      Converted to Byte value '0'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28000 ] - [ DEBUG ]  Setting default value:  
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28000 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28000 ] - [ DEBUG ]      No conversion required, value is already a Character
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28002 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28002 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28002 ] - [ DEBUG ]      Converted to Double value '0.0'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28003 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28004 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28004 ] - [ DEBUG ]      Converted to Float value '0.0'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28005 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28006 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28006 ] - [ DEBUG ]      No conversion required, value is already a Integer
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28008 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28008 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28008 ] - [ DEBUG ]      Converted to Long value '0'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28010 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28010 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28010 ] - [ DEBUG ]      Converted to Short value '0'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28012 ] - [ DEBUG ]  Setting default value: 0.0
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28012 ] - [ DEBUG ]  Converting 'BigDecimal' value '0.0' to type 'BigDecimal'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28012 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28013 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28013 ] - [ DEBUG ]  Converting 'BigInteger' value '0' to type 'BigInteger'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28014 ] - [ DEBUG ]      No conversion required, value is already a BigInteger
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28014 ] - [ DEBUG ]  Setting default value: false
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28014 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28014 ] - [ DEBUG ]      No conversion required, value is already a Boolean
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28014 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28014 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28014 ] - [ DEBUG ]      Converted to Byte value '0'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28014 ] - [ DEBUG ]  Setting default value:  
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28014 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28015 ] - [ DEBUG ]      No conversion required, value is already a Character
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28015 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28015 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28015 ] - [ DEBUG ]      Converted to Double value '0.0'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28015 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28015 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28015 ] - [ DEBUG ]      Converted to Float value '0.0'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28015 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28015 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28015 ] - [ DEBUG ]      No conversion required, value is already a Integer
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28016 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28016 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28016 ] - [ DEBUG ]      Converted to Long value '0'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28016 ] - [ DEBUG ]  Setting default value: 0
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28016 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28016 ] - [ DEBUG ]      Converted to Short value '0'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28018 ] - [ DEBUG ]  Setting default value: 
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28018 ] - [ DEBUG ]  Converting 'String' value '' to type 'String'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28102 ] - [ DEBUG ]  Setting default value: [Z@2c74526f
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28102 ] - [ DEBUG ]  Converting 'boolean[]' value '[Z@2c74526f' to type 'boolean[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28102 ] - [ DEBUG ]      No conversion required, value is already a boolean[]
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28102 ] - [ DEBUG ]  Setting default value: [B@63d8dca9
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28103 ] - [ DEBUG ]  Converting 'byte[]' value '[B@63d8dca9' to type 'byte[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28103 ] - [ DEBUG ]      No conversion required, value is already a byte[]
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28103 ] - [ DEBUG ]  Setting default value: [C@5398ef52
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28103 ] - [ DEBUG ]  Converting 'char[]' value '[C@5398ef52' to type 'char[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28103 ] - [ DEBUG ]      No conversion required, value is already a char[]
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28103 ] - [ DEBUG ]  Setting default value: [D@54766f1
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28103 ] - [ DEBUG ]  Converting 'double[]' value '[D@54766f1' to type 'double[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28103 ] - [ DEBUG ]      No conversion required, value is already a double[]
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28104 ] - [ DEBUG ]  Setting default value: [F@baeab1c
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28104 ] - [ DEBUG ]  Converting 'float[]' value '[F@baeab1c' to type 'float[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28104 ] - [ DEBUG ]      No conversion required, value is already a float[]
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28104 ] - [ DEBUG ]  Setting default value: [I@2e360354
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28104 ] - [ DEBUG ]  Converting 'int[]' value '[I@2e360354' to type 'int[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28104 ] - [ DEBUG ]      No conversion required, value is already a int[]
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28104 ] - [ DEBUG ]  Setting default value: [J@3a408bbf
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28104 ] - [ DEBUG ]  Converting 'long[]' value '[J@3a408bbf' to type 'long[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28104 ] - [ DEBUG ]      No conversion required, value is already a long[]
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28105 ] - [ DEBUG ]  Setting default value: [S@40e12e8
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28105 ] - [ DEBUG ]  Converting 'short[]' value '[S@40e12e8' to type 'short[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28105 ] - [ DEBUG ]      No conversion required, value is already a short[]
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28105 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigDecimal;@7a86af3e
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28106 ] - [ DEBUG ]  Converting 'BigDecimal[]' value '[Ljava.math.BigDecimal;@7a86af3e' to type 'BigDecimal[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28106 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal[]
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28106 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigInteger;@64b42f99
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28106 ] - [ DEBUG ]  Converting 'BigInteger[]' value '[Ljava.math.BigInteger;@64b42f99' to type 'BigInteger[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28107 ] - [ DEBUG ]      No conversion required, value is already a BigInteger[]
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28107 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Boolean;@5a974dc3
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28107 ] - [ DEBUG ]  Converting 'Boolean[]' value '[Ljava.lang.Boolean;@5a974dc3' to type 'Boolean[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28107 ] - [ DEBUG ]      No conversion required, value is already a Boolean[]
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28107 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Byte;@2e7a8d2b
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28107 ] - [ DEBUG ]  Converting 'Byte[]' value '[Ljava.lang.Byte;@2e7a8d2b' to type 'Byte[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28107 ] - [ DEBUG ]      No conversion required, value is already a Byte[]
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28107 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Character;@61ca2885
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28107 ] - [ DEBUG ]  Converting 'Character[]' value '[Ljava.lang.Character;@61ca2885' to type 'Character[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28107 ] - [ DEBUG ]      No conversion required, value is already a Character[]
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28107 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Double;@24c70bc2
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28108 ] - [ DEBUG ]  Converting 'Double[]' value '[Ljava.lang.Double;@24c70bc2' to type 'Double[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28108 ] - [ DEBUG ]      No conversion required, value is already a Double[]
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28108 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Float;@44deb3cc
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28108 ] - [ DEBUG ]  Converting 'Float[]' value '[Ljava.lang.Float;@44deb3cc' to type 'Float[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28108 ] - [ DEBUG ]      No conversion required, value is already a Float[]
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28108 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Integer;@3e377da9
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28108 ] - [ DEBUG ]  Converting 'Integer[]' value '[Ljava.lang.Integer;@3e377da9' to type 'Integer[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28108 ] - [ DEBUG ]      No conversion required, value is already a Integer[]
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28108 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Long;@e89e4ea
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28109 ] - [ DEBUG ]  Converting 'Long[]' value '[Ljava.lang.Long;@e89e4ea' to type 'Long[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28109 ] - [ DEBUG ]      No conversion required, value is already a Long[]
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28109 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Short;@128c77e2
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28109 ] - [ DEBUG ]  Converting 'Short[]' value '[Ljava.lang.Short;@128c77e2' to type 'Short[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28109 ] - [ DEBUG ]      No conversion required, value is already a Short[]
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28109 ] - [ DEBUG ]  Setting default value: [Ljava.lang.String;@237de6ac
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28109 ] - [ DEBUG ]  Converting 'String[]' value '[Ljava.lang.String;@237de6ac' to type 'String[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28109 ] - [ DEBUG ]      No conversion required, value is already a String[]
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28109 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Class;@26a21d5f
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28110 ] - [ DEBUG ]  Converting 'Class[]' value '[Ljava.lang.Class;@26a21d5f' to type 'Class[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28110 ] - [ DEBUG ]      No conversion required, value is already a Class[]
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28110 ] - [ DEBUG ]  Setting default value: [Ljava.util.Date;@67cd13d5
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28110 ] - [ DEBUG ]  Converting 'Date[]' value '[Ljava.util.Date;@67cd13d5' to type 'Date[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28110 ] - [ DEBUG ]      No conversion required, value is already a Date[]
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28110 ] - [ DEBUG ]  Setting default value: [Ljava.util.Calendar;@5a8b8752
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28110 ] - [ DEBUG ]  Converting 'Calendar[]' value '[Ljava.util.Calendar;@5a8b8752' to type 'Calendar[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28110 ] - [ DEBUG ]      No conversion required, value is already a Calendar[]
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28110 ] - [ DEBUG ]  Setting default value: [Ljava.io.File;@6329d459
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28110 ] - [ DEBUG ]  Converting 'java.io.File[]' value '[Ljava.io.File;@6329d459' to type 'java.io.File[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28111 ] - [ DEBUG ]      No conversion required, value is already a java.io.File[]
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28111 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Date;@920ae21
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28111 ] - [ DEBUG ]  Converting 'java.sql.Date[]' value '[Ljava.sql.Date;@920ae21' to type 'java.sql.Date[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28111 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Date[]
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28111 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Time;@613ba093
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28111 ] - [ DEBUG ]  Converting 'java.sql.Time[]' value '[Ljava.sql.Time;@613ba093' to type 'java.sql.Time[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28111 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Time[]
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28112 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Timestamp;@5a8aa3c6
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28112 ] - [ DEBUG ]  Converting 'java.sql.Timestamp[]' value '[Ljava.sql.Timestamp;@5a8aa3c6' to type 'java.sql.Timestamp[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28112 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Timestamp[]
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28112 ] - [ DEBUG ]  Setting default value: [Ljava.net.URL;@43434917
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28112 ] - [ DEBUG ]  Converting 'java.net.URL[]' value '[Ljava.net.URL;@43434917' to type 'java.net.URL[]'
-2017-03-29 17:43:46  [ AWT-EventQueue-0:28112 ] - [ DEBUG ]      No conversion required, value is already a java.net.URL[]
-2017-03-29 17:44:01  [ AWT-EventQueue-0:42833 ] - [ DEBUG ]  Couldn't find template in cache for "HttpTestScriptEntity.ftlh"("zh_CN", UTF-8, parsed); will try to load it.
-2017-03-29 17:44:01  [ AWT-EventQueue-0:42836 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity_zh_CN.ftlh"): Not found
-2017-03-29 17:44:01  [ AWT-EventQueue-0:42839 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity_zh.ftlh"): Not found
-2017-03-29 17:44:01  [ AWT-EventQueue-0:42839 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity.ftlh"): Found
-2017-03-29 17:44:01  [ AWT-EventQueue-0:42842 ] - [ DEBUG ]  Loading template for "HttpTestScriptEntity.ftlh"("zh_CN", UTF-8, parsed) from "D:\\workspace\\JavaNetCap2\\template\\HttpTestScriptEntity.ftlh"
-2017-03-29 17:44:02  [ AWT-EventQueue-0:44201 ] - [ DEBUG ]  sourceFile:D:\workspace\JavaNetCap2\temp-src\Test02\src\test\resources\com\cmcc\test\LogoutTest.xls; targetFile:D:\workspace\JavaNetCap2\temp-src\Test02\src\test\resources\com\cmcc\test\LogoutTest-temp.xls
-2017-03-29 17:44:03  [ AWT-EventQueue-0:44923 ] - [ DEBUG ]  is delete sourceFile:false; is rename ok:false
+2017-04-01 11:00:05  [ main:0 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\conf\setting.properties
+2017-04-01 11:12:38  [ AWT-EventQueue-0:753123 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\temp-src\Test02\pom.xml
+2017-04-01 11:27:11  [ main:0 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\conf\setting.properties
+2017-04-01 11:27:14  [ AWT-EventQueue-0:3022 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\temp-src\Test02\pom.xml
+2017-04-01 11:27:32  [ AWT-EventQueue-0:20651 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\temp-src\Test02\pom.xml
+2017-04-01 11:27:54  [ AWT-EventQueue-0:42867 ] - [ DEBUG ]  Capture Thread is started...
+2017-04-01 11:27:56  [ AWT-EventQueue-0:45364 ] - [ DEBUG ]  Capture Thread is stoped...
+2017-04-01 11:27:59  [ AWT-EventQueue-0:48000 ] - [ DEBUG ]  Capture Thread is started...
+2017-04-01 11:28:01  [ AWT-EventQueue-0:49903 ] - [ DEBUG ]  Capture Thread is stoped...
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58888 ] - [ DEBUG ]  Setting default value: false
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58888 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58888 ] - [ DEBUG ]      No conversion required, value is already a Boolean
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58888 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58888 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58888 ] - [ DEBUG ]      Converted to Byte value '0'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58888 ] - [ DEBUG ]  Setting default value:  
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58888 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58888 ] - [ DEBUG ]      No conversion required, value is already a Character
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58888 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58888 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58888 ] - [ DEBUG ]      Converted to Double value '0.0'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58888 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58888 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58888 ] - [ DEBUG ]      Converted to Float value '0.0'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]      No conversion required, value is already a Integer
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]      Converted to Long value '0'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]      Converted to Short value '0'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Setting default value: 0.0
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Converting 'BigDecimal' value '0.0' to type 'BigDecimal'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Converting 'BigInteger' value '0' to type 'BigInteger'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]      No conversion required, value is already a BigInteger
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Setting default value: false
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]      No conversion required, value is already a Boolean
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]      Converted to Byte value '0'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Setting default value:  
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]      No conversion required, value is already a Character
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]      Converted to Double value '0.0'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]      Converted to Float value '0.0'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]      No conversion required, value is already a Integer
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]      Converted to Long value '0'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]      Converted to Short value '0'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Setting default value: 
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58903 ] - [ DEBUG ]  Converting 'String' value '' to type 'String'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [Z@71366554
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'boolean[]' value '[Z@71366554' to type 'boolean[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a boolean[]
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [B@5f50fd43
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'byte[]' value '[B@5f50fd43' to type 'byte[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a byte[]
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [C@1702e331
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'char[]' value '[C@1702e331' to type 'char[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a char[]
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [D@4da0938d
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'double[]' value '[D@4da0938d' to type 'double[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a double[]
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [F@f7e43a8
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'float[]' value '[F@f7e43a8' to type 'float[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a float[]
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [I@579c0de1
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'int[]' value '[I@579c0de1' to type 'int[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a int[]
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [J@57076748
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'long[]' value '[J@57076748' to type 'long[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a long[]
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [S@1e72aade
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'short[]' value '[S@1e72aade' to type 'short[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a short[]
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigDecimal;@636cc9bb
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'BigDecimal[]' value '[Ljava.math.BigDecimal;@636cc9bb' to type 'BigDecimal[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal[]
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigInteger;@54a83332
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'BigInteger[]' value '[Ljava.math.BigInteger;@54a83332' to type 'BigInteger[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a BigInteger[]
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Boolean;@38f923c8
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'Boolean[]' value '[Ljava.lang.Boolean;@38f923c8' to type 'Boolean[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a Boolean[]
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Byte;@33565a53
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'Byte[]' value '[Ljava.lang.Byte;@33565a53' to type 'Byte[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a Byte[]
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Character;@36727c93
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'Character[]' value '[Ljava.lang.Character;@36727c93' to type 'Character[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a Character[]
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Double;@2356f8cc
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'Double[]' value '[Ljava.lang.Double;@2356f8cc' to type 'Double[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a Double[]
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Float;@5240680d
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'Float[]' value '[Ljava.lang.Float;@5240680d' to type 'Float[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a Float[]
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Integer;@53c524d4
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'Integer[]' value '[Ljava.lang.Integer;@53c524d4' to type 'Integer[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a Integer[]
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Long;@76765cdb
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'Long[]' value '[Ljava.lang.Long;@76765cdb' to type 'Long[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a Long[]
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Short;@62f25a41
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'Short[]' value '[Ljava.lang.Short;@62f25a41' to type 'Short[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a Short[]
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [Ljava.lang.String;@33a35612
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'String[]' value '[Ljava.lang.String;@33a35612' to type 'String[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a String[]
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Class;@493a3736
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'Class[]' value '[Ljava.lang.Class;@493a3736' to type 'Class[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a Class[]
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [Ljava.util.Date;@d6e2a4e
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'Date[]' value '[Ljava.util.Date;@d6e2a4e' to type 'Date[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a Date[]
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [Ljava.util.Calendar;@54849393
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'Calendar[]' value '[Ljava.util.Calendar;@54849393' to type 'Calendar[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a Calendar[]
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [Ljava.io.File;@305fe235
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'java.io.File[]' value '[Ljava.io.File;@305fe235' to type 'java.io.File[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a java.io.File[]
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Date;@4f49d87b
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'java.sql.Date[]' value '[Ljava.sql.Date;@4f49d87b' to type 'java.sql.Date[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Date[]
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Time;@308aa5b3
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'java.sql.Time[]' value '[Ljava.sql.Time;@308aa5b3' to type 'java.sql.Time[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Time[]
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Timestamp;@f11c05
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'java.sql.Timestamp[]' value '[Ljava.sql.Timestamp;@f11c05' to type 'java.sql.Timestamp[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Timestamp[]
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Setting default value: [Ljava.net.URL;@476bbe3b
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]  Converting 'java.net.URL[]' value '[Ljava.net.URL;@476bbe3b' to type 'java.net.URL[]'
+2017-04-01 11:28:10  [ AWT-EventQueue-0:58966 ] - [ DEBUG ]      No conversion required, value is already a java.net.URL[]
+2017-04-01 11:28:16  [ AWT-EventQueue-0:65188 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\temp-src\Test02\pom.xml
+2017-04-01 11:28:20  [ AWT-EventQueue-0:68435 ] - [ DEBUG ]  sourceFile:D:\workspace\JavaNetCap2\temp-src\Test02\src\test\resources\com\cmcc\test\LogoutTest.xls; targetFile:D:\workspace\JavaNetCap2\temp-src\Test02\src\test\resources\com\cmcc\test\LogoutTest-temp.xls
+2017-04-01 11:28:20  [ AWT-EventQueue-0:69278 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\temp-src\Test02\src\test\resources\com\cmcc\test\LogoutTest.xls is delete : true;D:\workspace\JavaNetCap2\temp-src\Test02\src\test\resources\com\cmcc\test\LogoutTest-temp.xls is renamed:true
+2017-04-01 11:51:54  [ main:0 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\conf\setting.properties
+2017-04-01 11:52:08  [ AWT-EventQueue-0:14117 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\temp-src\Test02\pom.xml
+2017-04-01 11:52:13  [ AWT-EventQueue-0:18936 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\temp-src\Test02\pom.xml
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32057 ] - [ DEBUG ]  Setting default value: false
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32058 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32058 ] - [ DEBUG ]      No conversion required, value is already a Boolean
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32067 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32067 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32067 ] - [ DEBUG ]      Converted to Byte value '0'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32068 ] - [ DEBUG ]  Setting default value:  
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32068 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32069 ] - [ DEBUG ]      No conversion required, value is already a Character
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32069 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32070 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32070 ] - [ DEBUG ]      Converted to Double value '0.0'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32071 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32071 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32071 ] - [ DEBUG ]      Converted to Float value '0.0'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32074 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32074 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32074 ] - [ DEBUG ]      No conversion required, value is already a Integer
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32077 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32077 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32077 ] - [ DEBUG ]      Converted to Long value '0'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32078 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32078 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32079 ] - [ DEBUG ]      Converted to Short value '0'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32080 ] - [ DEBUG ]  Setting default value: 0.0
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32080 ] - [ DEBUG ]  Converting 'BigDecimal' value '0.0' to type 'BigDecimal'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32080 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32081 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32082 ] - [ DEBUG ]  Converting 'BigInteger' value '0' to type 'BigInteger'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32082 ] - [ DEBUG ]      No conversion required, value is already a BigInteger
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32082 ] - [ DEBUG ]  Setting default value: false
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32082 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32082 ] - [ DEBUG ]      No conversion required, value is already a Boolean
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32082 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32082 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32082 ] - [ DEBUG ]      Converted to Byte value '0'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32083 ] - [ DEBUG ]  Setting default value:  
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32083 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32083 ] - [ DEBUG ]      No conversion required, value is already a Character
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32084 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32084 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32084 ] - [ DEBUG ]      Converted to Double value '0.0'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32084 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32084 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32084 ] - [ DEBUG ]      Converted to Float value '0.0'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32084 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32084 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32085 ] - [ DEBUG ]      No conversion required, value is already a Integer
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32085 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32085 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32085 ] - [ DEBUG ]      Converted to Long value '0'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32085 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32085 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32085 ] - [ DEBUG ]      Converted to Short value '0'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32086 ] - [ DEBUG ]  Setting default value: 
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32086 ] - [ DEBUG ]  Converting 'String' value '' to type 'String'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32097 ] - [ DEBUG ]  Setting default value: [Z@1dad51b2
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32097 ] - [ DEBUG ]  Converting 'boolean[]' value '[Z@1dad51b2' to type 'boolean[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32097 ] - [ DEBUG ]      No conversion required, value is already a boolean[]
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32098 ] - [ DEBUG ]  Setting default value: [B@451a6e1c
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32098 ] - [ DEBUG ]  Converting 'byte[]' value '[B@451a6e1c' to type 'byte[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32098 ] - [ DEBUG ]      No conversion required, value is already a byte[]
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32098 ] - [ DEBUG ]  Setting default value: [C@617be663
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32098 ] - [ DEBUG ]  Converting 'char[]' value '[C@617be663' to type 'char[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32098 ] - [ DEBUG ]      No conversion required, value is already a char[]
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32098 ] - [ DEBUG ]  Setting default value: [D@c9ee520
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32098 ] - [ DEBUG ]  Converting 'double[]' value '[D@c9ee520' to type 'double[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32098 ] - [ DEBUG ]      No conversion required, value is already a double[]
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32099 ] - [ DEBUG ]  Setting default value: [F@7b4905c0
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32099 ] - [ DEBUG ]  Converting 'float[]' value '[F@7b4905c0' to type 'float[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32099 ] - [ DEBUG ]      No conversion required, value is already a float[]
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32099 ] - [ DEBUG ]  Setting default value: [I@6db5fe3b
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32099 ] - [ DEBUG ]  Converting 'int[]' value '[I@6db5fe3b' to type 'int[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32099 ] - [ DEBUG ]      No conversion required, value is already a int[]
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32099 ] - [ DEBUG ]  Setting default value: [J@53c34510
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32099 ] - [ DEBUG ]  Converting 'long[]' value '[J@53c34510' to type 'long[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32099 ] - [ DEBUG ]      No conversion required, value is already a long[]
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32100 ] - [ DEBUG ]  Setting default value: [S@288f1dad
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32100 ] - [ DEBUG ]  Converting 'short[]' value '[S@288f1dad' to type 'short[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32100 ] - [ DEBUG ]      No conversion required, value is already a short[]
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32100 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigDecimal;@1b5b6a79
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32100 ] - [ DEBUG ]  Converting 'BigDecimal[]' value '[Ljava.math.BigDecimal;@1b5b6a79' to type 'BigDecimal[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32100 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal[]
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32100 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigInteger;@59dd0b0f
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32100 ] - [ DEBUG ]  Converting 'BigInteger[]' value '[Ljava.math.BigInteger;@59dd0b0f' to type 'BigInteger[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32100 ] - [ DEBUG ]      No conversion required, value is already a BigInteger[]
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32101 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Boolean;@107f3ee1
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32101 ] - [ DEBUG ]  Converting 'Boolean[]' value '[Ljava.lang.Boolean;@107f3ee1' to type 'Boolean[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32101 ] - [ DEBUG ]      No conversion required, value is already a Boolean[]
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32101 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Byte;@40cd3b36
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32101 ] - [ DEBUG ]  Converting 'Byte[]' value '[Ljava.lang.Byte;@40cd3b36' to type 'Byte[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32101 ] - [ DEBUG ]      No conversion required, value is already a Byte[]
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32101 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Character;@599f4
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32101 ] - [ DEBUG ]  Converting 'Character[]' value '[Ljava.lang.Character;@599f4' to type 'Character[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32101 ] - [ DEBUG ]      No conversion required, value is already a Character[]
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32101 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Double;@31b17f88
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32102 ] - [ DEBUG ]  Converting 'Double[]' value '[Ljava.lang.Double;@31b17f88' to type 'Double[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32102 ] - [ DEBUG ]      No conversion required, value is already a Double[]
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32102 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Float;@5850d769
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32102 ] - [ DEBUG ]  Converting 'Float[]' value '[Ljava.lang.Float;@5850d769' to type 'Float[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32102 ] - [ DEBUG ]      No conversion required, value is already a Float[]
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32102 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Integer;@716d53de
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32102 ] - [ DEBUG ]  Converting 'Integer[]' value '[Ljava.lang.Integer;@716d53de' to type 'Integer[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32102 ] - [ DEBUG ]      No conversion required, value is already a Integer[]
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32102 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Long;@5d0bbe3e
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32102 ] - [ DEBUG ]  Converting 'Long[]' value '[Ljava.lang.Long;@5d0bbe3e' to type 'Long[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32103 ] - [ DEBUG ]      No conversion required, value is already a Long[]
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32103 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Short;@677cc728
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32103 ] - [ DEBUG ]  Converting 'Short[]' value '[Ljava.lang.Short;@677cc728' to type 'Short[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32104 ] - [ DEBUG ]      No conversion required, value is already a Short[]
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32104 ] - [ DEBUG ]  Setting default value: [Ljava.lang.String;@39c9bf31
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32120 ] - [ DEBUG ]  Converting 'String[]' value '[Ljava.lang.String;@39c9bf31' to type 'String[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32121 ] - [ DEBUG ]      No conversion required, value is already a String[]
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32121 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Class;@22a1e875
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32121 ] - [ DEBUG ]  Converting 'Class[]' value '[Ljava.lang.Class;@22a1e875' to type 'Class[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32121 ] - [ DEBUG ]      No conversion required, value is already a Class[]
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32121 ] - [ DEBUG ]  Setting default value: [Ljava.util.Date;@225b4851
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32121 ] - [ DEBUG ]  Converting 'Date[]' value '[Ljava.util.Date;@225b4851' to type 'Date[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32121 ] - [ DEBUG ]      No conversion required, value is already a Date[]
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32121 ] - [ DEBUG ]  Setting default value: [Ljava.util.Calendar;@57db9dc0
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32121 ] - [ DEBUG ]  Converting 'Calendar[]' value '[Ljava.util.Calendar;@57db9dc0' to type 'Calendar[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32122 ] - [ DEBUG ]      No conversion required, value is already a Calendar[]
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32122 ] - [ DEBUG ]  Setting default value: [Ljava.io.File;@2f5f3cd
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32122 ] - [ DEBUG ]  Converting 'java.io.File[]' value '[Ljava.io.File;@2f5f3cd' to type 'java.io.File[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32122 ] - [ DEBUG ]      No conversion required, value is already a java.io.File[]
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32123 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Date;@56fe1ce5
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32123 ] - [ DEBUG ]  Converting 'java.sql.Date[]' value '[Ljava.sql.Date;@56fe1ce5' to type 'java.sql.Date[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32123 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Date[]
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32124 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Time;@20df9e94
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32124 ] - [ DEBUG ]  Converting 'java.sql.Time[]' value '[Ljava.sql.Time;@20df9e94' to type 'java.sql.Time[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32124 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Time[]
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32124 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Timestamp;@5e003f76
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32124 ] - [ DEBUG ]  Converting 'java.sql.Timestamp[]' value '[Ljava.sql.Timestamp;@5e003f76' to type 'java.sql.Timestamp[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32124 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Timestamp[]
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32124 ] - [ DEBUG ]  Setting default value: [Ljava.net.URL;@4453b79e
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32124 ] - [ DEBUG ]  Converting 'java.net.URL[]' value '[Ljava.net.URL;@4453b79e' to type 'java.net.URL[]'
+2017-04-01 11:52:26  [ AWT-EventQueue-0:32124 ] - [ DEBUG ]      No conversion required, value is already a java.net.URL[]
+2017-04-01 11:52:29  [ AWT-EventQueue-0:35160 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\temp-src\Test02\pom.xml
+2017-04-01 11:52:33  [ AWT-EventQueue-0:39060 ] - [ DEBUG ]  sourceFile:D:\workspace\JavaNetCap2\temp-src\Test02\src\test\resources\com\cmcc\test\LogoutTest.xls; targetFile:D:\workspace\JavaNetCap2\temp-src\Test02\src\test\resources\com\cmcc\test\LogoutTest-temp.xls
+2017-04-01 11:52:34  [ AWT-EventQueue-0:39731 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\temp-src\Test02\src\test\resources\com\cmcc\test\LogoutTest.xls is delete : true;D:\workspace\JavaNetCap2\temp-src\Test02\src\test\resources\com\cmcc\test\LogoutTest-temp.xls is renamed:true
+2017-04-01 11:52:44  [ AWT-EventQueue-0:49762 ] - [ DEBUG ]  Capture Thread is started...
+2017-04-01 11:52:47  [ AWT-EventQueue-0:53022 ] - [ DEBUG ]  Capture Thread is stoped...
+2017-04-01 11:52:50  [ Thread-3:55300 ] - [ DEBUG ]  received packet number : 0
+2017-04-01 11:52:50  [ AWT-EventQueue-0:55877 ] - [ DEBUG ]  Capture Thread is started...
+2017-04-01 11:52:53  [ AWT-EventQueue-0:59169 ] - [ DEBUG ]  Capture Thread is stoped...
+2017-04-01 12:23:13  [ main:0 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\conf\setting.properties
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4304 ] - [ DEBUG ]  Setting default value: false
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4304 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4304 ] - [ DEBUG ]      No conversion required, value is already a Boolean
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]      Converted to Byte value '0'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]  Setting default value:  
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]      No conversion required, value is already a Character
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]      Converted to Double value '0.0'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]      Converted to Float value '0.0'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]      No conversion required, value is already a Integer
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]      Converted to Long value '0'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]      Converted to Short value '0'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]  Setting default value: 0.0
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]  Converting 'BigDecimal' value '0.0' to type 'BigDecimal'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]  Converting 'BigInteger' value '0' to type 'BigInteger'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]      No conversion required, value is already a BigInteger
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]  Setting default value: false
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]      No conversion required, value is already a Boolean
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4319 ] - [ DEBUG ]      Converted to Byte value '0'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]  Setting default value:  
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]      No conversion required, value is already a Character
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]      Converted to Double value '0.0'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]      Converted to Float value '0.0'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]      No conversion required, value is already a Integer
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]      Converted to Long value '0'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]      Converted to Short value '0'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]  Setting default value: 
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]  Converting 'String' value '' to type 'String'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]  Setting default value: [Z@4fcdf385
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]  Converting 'boolean[]' value '[Z@4fcdf385' to type 'boolean[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]      No conversion required, value is already a boolean[]
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]  Setting default value: [B@7eb801a4
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]  Converting 'byte[]' value '[B@7eb801a4' to type 'byte[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]      No conversion required, value is already a byte[]
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]  Setting default value: [C@5e36c626
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]  Converting 'char[]' value '[C@5e36c626' to type 'char[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4335 ] - [ DEBUG ]      No conversion required, value is already a char[]
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Setting default value: [D@23ad0347
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Converting 'double[]' value '[D@23ad0347' to type 'double[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]      No conversion required, value is already a double[]
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Setting default value: [F@35c9d6c
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Converting 'float[]' value '[F@35c9d6c' to type 'float[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]      No conversion required, value is already a float[]
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Setting default value: [I@3dd70982
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Converting 'int[]' value '[I@3dd70982' to type 'int[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]      No conversion required, value is already a int[]
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Setting default value: [J@55b8ffe8
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Converting 'long[]' value '[J@55b8ffe8' to type 'long[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]      No conversion required, value is already a long[]
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Setting default value: [S@1ec47923
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Converting 'short[]' value '[S@1ec47923' to type 'short[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]      No conversion required, value is already a short[]
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigDecimal;@7994206a
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Converting 'BigDecimal[]' value '[Ljava.math.BigDecimal;@7994206a' to type 'BigDecimal[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal[]
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigInteger;@7c8aadc3
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Converting 'BigInteger[]' value '[Ljava.math.BigInteger;@7c8aadc3' to type 'BigInteger[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]      No conversion required, value is already a BigInteger[]
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Boolean;@6e5f4a05
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Converting 'Boolean[]' value '[Ljava.lang.Boolean;@6e5f4a05' to type 'Boolean[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]      No conversion required, value is already a Boolean[]
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Byte;@53ef2b8c
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Converting 'Byte[]' value '[Ljava.lang.Byte;@53ef2b8c' to type 'Byte[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]      No conversion required, value is already a Byte[]
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Character;@ba0d6eb
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Converting 'Character[]' value '[Ljava.lang.Character;@ba0d6eb' to type 'Character[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]      No conversion required, value is already a Character[]
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Double;@22ed86e9
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Converting 'Double[]' value '[Ljava.lang.Double;@22ed86e9' to type 'Double[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]      No conversion required, value is already a Double[]
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Float;@3676ffd3
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Converting 'Float[]' value '[Ljava.lang.Float;@3676ffd3' to type 'Float[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]      No conversion required, value is already a Float[]
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Integer;@1c6f01da
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Converting 'Integer[]' value '[Ljava.lang.Integer;@1c6f01da' to type 'Integer[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]      No conversion required, value is already a Integer[]
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Long;@11758b32
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Converting 'Long[]' value '[Ljava.lang.Long;@11758b32' to type 'Long[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]      No conversion required, value is already a Long[]
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Short;@5f618d3b
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Converting 'Short[]' value '[Ljava.lang.Short;@5f618d3b' to type 'Short[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]      No conversion required, value is already a Short[]
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Setting default value: [Ljava.lang.String;@5e686963
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Converting 'String[]' value '[Ljava.lang.String;@5e686963' to type 'String[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]      No conversion required, value is already a String[]
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Class;@3aedc2a5
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Converting 'Class[]' value '[Ljava.lang.Class;@3aedc2a5' to type 'Class[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]      No conversion required, value is already a Class[]
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Setting default value: [Ljava.util.Date;@7fcf2d1
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Converting 'Date[]' value '[Ljava.util.Date;@7fcf2d1' to type 'Date[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]      No conversion required, value is already a Date[]
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Setting default value: [Ljava.util.Calendar;@4919f7c6
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Converting 'Calendar[]' value '[Ljava.util.Calendar;@4919f7c6' to type 'Calendar[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]      No conversion required, value is already a Calendar[]
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Setting default value: [Ljava.io.File;@7d3fffb7
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Converting 'java.io.File[]' value '[Ljava.io.File;@7d3fffb7' to type 'java.io.File[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]      No conversion required, value is already a java.io.File[]
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Date;@122ae06f
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Converting 'java.sql.Date[]' value '[Ljava.sql.Date;@122ae06f' to type 'java.sql.Date[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Date[]
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Time;@22089fd5
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Converting 'java.sql.Time[]' value '[Ljava.sql.Time;@22089fd5' to type 'java.sql.Time[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Time[]
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Timestamp;@2fb0c1bd
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Converting 'java.sql.Timestamp[]' value '[Ljava.sql.Timestamp;@2fb0c1bd' to type 'java.sql.Timestamp[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Timestamp[]
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Setting default value: [Ljava.net.URL;@2979cb16
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]  Converting 'java.net.URL[]' value '[Ljava.net.URL;@2979cb16' to type 'java.net.URL[]'
+2017-04-01 12:23:17  [ AWT-EventQueue-0:4350 ] - [ DEBUG ]      No conversion required, value is already a java.net.URL[]
+2017-04-01 12:48:04  [ main:0 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\conf\setting.properties
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88264 ] - [ DEBUG ]  Setting default value: false
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88264 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88264 ] - [ DEBUG ]      No conversion required, value is already a Boolean
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88264 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88264 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88264 ] - [ DEBUG ]      Converted to Byte value '0'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88264 ] - [ DEBUG ]  Setting default value:  
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88264 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88264 ] - [ DEBUG ]      No conversion required, value is already a Character
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88264 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88264 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88264 ] - [ DEBUG ]      Converted to Double value '0.0'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88264 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88264 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88264 ] - [ DEBUG ]      Converted to Float value '0.0'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88264 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88264 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88264 ] - [ DEBUG ]      No conversion required, value is already a Integer
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88264 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]      Converted to Long value '0'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]      Converted to Short value '0'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]  Setting default value: 0.0
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]  Converting 'BigDecimal' value '0.0' to type 'BigDecimal'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]  Converting 'BigInteger' value '0' to type 'BigInteger'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]      No conversion required, value is already a BigInteger
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]  Setting default value: false
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]      No conversion required, value is already a Boolean
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]      Converted to Byte value '0'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]  Setting default value:  
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]      No conversion required, value is already a Character
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]      Converted to Double value '0.0'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]      Converted to Float value '0.0'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]      No conversion required, value is already a Integer
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]      Converted to Long value '0'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]      Converted to Short value '0'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]  Setting default value: 
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88279 ] - [ DEBUG ]  Converting 'String' value '' to type 'String'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [Z@11b88b3
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'boolean[]' value '[Z@11b88b3' to type 'boolean[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a boolean[]
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [B@7b40be1
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'byte[]' value '[B@7b40be1' to type 'byte[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a byte[]
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [C@25bb5f0e
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'char[]' value '[C@25bb5f0e' to type 'char[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a char[]
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [D@37820d48
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'double[]' value '[D@37820d48' to type 'double[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a double[]
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [F@6a01551b
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'float[]' value '[F@6a01551b' to type 'float[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a float[]
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [I@4dcdb0b9
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'int[]' value '[I@4dcdb0b9' to type 'int[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a int[]
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [J@32f1d521
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'long[]' value '[J@32f1d521' to type 'long[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a long[]
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [S@15be767a
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'short[]' value '[S@15be767a' to type 'short[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a short[]
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigDecimal;@7577405b
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'BigDecimal[]' value '[Ljava.math.BigDecimal;@7577405b' to type 'BigDecimal[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal[]
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigInteger;@551f6e34
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'BigInteger[]' value '[Ljava.math.BigInteger;@551f6e34' to type 'BigInteger[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a BigInteger[]
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Boolean;@69fbf16b
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'Boolean[]' value '[Ljava.lang.Boolean;@69fbf16b' to type 'Boolean[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a Boolean[]
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Byte;@f905788
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'Byte[]' value '[Ljava.lang.Byte;@f905788' to type 'Byte[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a Byte[]
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Character;@40aabbb9
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'Character[]' value '[Ljava.lang.Character;@40aabbb9' to type 'Character[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a Character[]
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Double;@6eea1356
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'Double[]' value '[Ljava.lang.Double;@6eea1356' to type 'Double[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a Double[]
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Float;@582cc749
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'Float[]' value '[Ljava.lang.Float;@582cc749' to type 'Float[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a Float[]
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Integer;@558de7d3
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'Integer[]' value '[Ljava.lang.Integer;@558de7d3' to type 'Integer[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a Integer[]
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Long;@40efe9a8
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'Long[]' value '[Ljava.lang.Long;@40efe9a8' to type 'Long[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a Long[]
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Short;@7ea13240
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'Short[]' value '[Ljava.lang.Short;@7ea13240' to type 'Short[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a Short[]
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [Ljava.lang.String;@4009a452
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'String[]' value '[Ljava.lang.String;@4009a452' to type 'String[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a String[]
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Class;@7a8070ff
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'Class[]' value '[Ljava.lang.Class;@7a8070ff' to type 'Class[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a Class[]
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [Ljava.util.Date;@451d64ae
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'Date[]' value '[Ljava.util.Date;@451d64ae' to type 'Date[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a Date[]
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [Ljava.util.Calendar;@3fff7452
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'Calendar[]' value '[Ljava.util.Calendar;@3fff7452' to type 'Calendar[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a Calendar[]
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [Ljava.io.File;@6817c8a0
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'java.io.File[]' value '[Ljava.io.File;@6817c8a0' to type 'java.io.File[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a java.io.File[]
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Date;@554549d5
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'java.sql.Date[]' value '[Ljava.sql.Date;@554549d5' to type 'java.sql.Date[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Date[]
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Time;@4a6f016e
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'java.sql.Time[]' value '[Ljava.sql.Time;@4a6f016e' to type 'java.sql.Time[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Time[]
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Timestamp;@43a309f7
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'java.sql.Timestamp[]' value '[Ljava.sql.Timestamp;@43a309f7' to type 'java.sql.Timestamp[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Timestamp[]
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Setting default value: [Ljava.net.URL;@319afbae
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]  Converting 'java.net.URL[]' value '[Ljava.net.URL;@319afbae' to type 'java.net.URL[]'
+2017-04-01 12:49:32  [ AWT-EventQueue-0:88295 ] - [ DEBUG ]      No conversion required, value is already a java.net.URL[]
+2017-04-01 12:55:16  [ main:0 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\conf\setting.properties
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6223 ] - [ DEBUG ]  Setting default value: false
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6223 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6223 ] - [ DEBUG ]      No conversion required, value is already a Boolean
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]      Converted to Byte value '0'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]  Setting default value:  
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]      No conversion required, value is already a Character
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]      Converted to Double value '0.0'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]      Converted to Float value '0.0'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]      No conversion required, value is already a Integer
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]      Converted to Long value '0'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]      Converted to Short value '0'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]  Setting default value: 0.0
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]  Converting 'BigDecimal' value '0.0' to type 'BigDecimal'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]  Converting 'BigInteger' value '0' to type 'BigInteger'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]      No conversion required, value is already a BigInteger
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]  Setting default value: false
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]      No conversion required, value is already a Boolean
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6238 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6254 ] - [ DEBUG ]      Converted to Byte value '0'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6254 ] - [ DEBUG ]  Setting default value:  
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6254 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6254 ] - [ DEBUG ]      No conversion required, value is already a Character
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6254 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6254 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6254 ] - [ DEBUG ]      Converted to Double value '0.0'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6254 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6254 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6254 ] - [ DEBUG ]      Converted to Float value '0.0'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6254 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6254 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6254 ] - [ DEBUG ]      No conversion required, value is already a Integer
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6254 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6254 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6254 ] - [ DEBUG ]      Converted to Long value '0'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6254 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6254 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6254 ] - [ DEBUG ]      Converted to Short value '0'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6254 ] - [ DEBUG ]  Setting default value: 
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6254 ] - [ DEBUG ]  Converting 'String' value '' to type 'String'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [Z@375f78ae
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'boolean[]' value '[Z@375f78ae' to type 'boolean[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a boolean[]
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [B@a458236
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'byte[]' value '[B@a458236' to type 'byte[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a byte[]
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [C@71a78292
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'char[]' value '[C@71a78292' to type 'char[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a char[]
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [D@3921af3f
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'double[]' value '[D@3921af3f' to type 'double[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a double[]
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [F@75f73abd
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'float[]' value '[F@75f73abd' to type 'float[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a float[]
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [I@53055207
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'int[]' value '[I@53055207' to type 'int[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a int[]
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [J@1efbe9e7
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'long[]' value '[J@1efbe9e7' to type 'long[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a long[]
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [S@2a97f550
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'short[]' value '[S@2a97f550' to type 'short[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a short[]
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigDecimal;@6679106d
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'BigDecimal[]' value '[Ljava.math.BigDecimal;@6679106d' to type 'BigDecimal[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal[]
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigInteger;@1f15e3cf
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'BigInteger[]' value '[Ljava.math.BigInteger;@1f15e3cf' to type 'BigInteger[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a BigInteger[]
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Boolean;@5ee0951b
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'Boolean[]' value '[Ljava.lang.Boolean;@5ee0951b' to type 'Boolean[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a Boolean[]
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Byte;@4bc8c6e2
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'Byte[]' value '[Ljava.lang.Byte;@4bc8c6e2' to type 'Byte[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a Byte[]
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Character;@659c5d8e
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'Character[]' value '[Ljava.lang.Character;@659c5d8e' to type 'Character[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a Character[]
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Double;@55a7c169
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'Double[]' value '[Ljava.lang.Double;@55a7c169' to type 'Double[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a Double[]
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Float;@f35ce8b
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'Float[]' value '[Ljava.lang.Float;@f35ce8b' to type 'Float[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a Float[]
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Integer;@247f659
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'Integer[]' value '[Ljava.lang.Integer;@247f659' to type 'Integer[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a Integer[]
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Long;@5b0abb2
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'Long[]' value '[Ljava.lang.Long;@5b0abb2' to type 'Long[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a Long[]
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Short;@6e779ee4
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'Short[]' value '[Ljava.lang.Short;@6e779ee4' to type 'Short[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a Short[]
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [Ljava.lang.String;@4f175437
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'String[]' value '[Ljava.lang.String;@4f175437' to type 'String[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a String[]
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Class;@72df86b2
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'Class[]' value '[Ljava.lang.Class;@72df86b2' to type 'Class[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a Class[]
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [Ljava.util.Date;@72324e60
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'Date[]' value '[Ljava.util.Date;@72324e60' to type 'Date[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a Date[]
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [Ljava.util.Calendar;@552320bb
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'Calendar[]' value '[Ljava.util.Calendar;@552320bb' to type 'Calendar[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a Calendar[]
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [Ljava.io.File;@3be6d2ed
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'java.io.File[]' value '[Ljava.io.File;@3be6d2ed' to type 'java.io.File[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a java.io.File[]
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Date;@18d6d863
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'java.sql.Date[]' value '[Ljava.sql.Date;@18d6d863' to type 'java.sql.Date[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Date[]
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Time;@312bf318
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'java.sql.Time[]' value '[Ljava.sql.Time;@312bf318' to type 'java.sql.Time[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Time[]
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Timestamp;@126cfc53
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'java.sql.Timestamp[]' value '[Ljava.sql.Timestamp;@126cfc53' to type 'java.sql.Timestamp[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Timestamp[]
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Setting default value: [Ljava.net.URL;@4890ba13
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]  Converting 'java.net.URL[]' value '[Ljava.net.URL;@4890ba13' to type 'java.net.URL[]'
+2017-04-01 12:55:23  [ AWT-EventQueue-0:6270 ] - [ DEBUG ]      No conversion required, value is already a java.net.URL[]
+2017-04-01 13:05:29  [ main:0 ] - [ DEBUG ]  D:\workspace\JavaNetCap2\conf\setting.properties
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121443 ] - [ DEBUG ]  Setting default value: false
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121443 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121443 ] - [ DEBUG ]      No conversion required, value is already a Boolean
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121443 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121443 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121443 ] - [ DEBUG ]      Converted to Byte value '0'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121443 ] - [ DEBUG ]  Setting default value:  
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121443 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121443 ] - [ DEBUG ]      No conversion required, value is already a Character
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]      Converted to Double value '0.0'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]      Converted to Float value '0.0'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]      No conversion required, value is already a Integer
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]      Converted to Long value '0'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]      Converted to Short value '0'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Setting default value: 0.0
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Converting 'BigDecimal' value '0.0' to type 'BigDecimal'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Converting 'BigInteger' value '0' to type 'BigInteger'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]      No conversion required, value is already a BigInteger
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Setting default value: false
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]      No conversion required, value is already a Boolean
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]      Converted to Byte value '0'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Setting default value:  
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]      No conversion required, value is already a Character
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]      Converted to Double value '0.0'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]      Converted to Float value '0.0'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]      No conversion required, value is already a Integer
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]      Converted to Long value '0'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Setting default value: 0
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]      Converted to Short value '0'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Setting default value: 
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121458 ] - [ DEBUG ]  Converting 'String' value '' to type 'String'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Setting default value: [Z@4fcdf385
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Converting 'boolean[]' value '[Z@4fcdf385' to type 'boolean[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]      No conversion required, value is already a boolean[]
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Setting default value: [B@7eb801a4
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Converting 'byte[]' value '[B@7eb801a4' to type 'byte[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]      No conversion required, value is already a byte[]
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Setting default value: [C@5e36c626
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Converting 'char[]' value '[C@5e36c626' to type 'char[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]      No conversion required, value is already a char[]
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Setting default value: [D@23ad0347
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Converting 'double[]' value '[D@23ad0347' to type 'double[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]      No conversion required, value is already a double[]
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Setting default value: [F@35c9d6c
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Converting 'float[]' value '[F@35c9d6c' to type 'float[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]      No conversion required, value is already a float[]
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Setting default value: [I@3dd70982
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Converting 'int[]' value '[I@3dd70982' to type 'int[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]      No conversion required, value is already a int[]
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Setting default value: [J@55b8ffe8
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Converting 'long[]' value '[J@55b8ffe8' to type 'long[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]      No conversion required, value is already a long[]
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Setting default value: [S@1ec47923
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Converting 'short[]' value '[S@1ec47923' to type 'short[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]      No conversion required, value is already a short[]
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigDecimal;@7994206a
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Converting 'BigDecimal[]' value '[Ljava.math.BigDecimal;@7994206a' to type 'BigDecimal[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal[]
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigInteger;@7c8aadc3
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Converting 'BigInteger[]' value '[Ljava.math.BigInteger;@7c8aadc3' to type 'BigInteger[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]      No conversion required, value is already a BigInteger[]
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Boolean;@6e5f4a05
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Converting 'Boolean[]' value '[Ljava.lang.Boolean;@6e5f4a05' to type 'Boolean[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]      No conversion required, value is already a Boolean[]
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Byte;@53ef2b8c
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Converting 'Byte[]' value '[Ljava.lang.Byte;@53ef2b8c' to type 'Byte[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]      No conversion required, value is already a Byte[]
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Character;@ba0d6eb
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Converting 'Character[]' value '[Ljava.lang.Character;@ba0d6eb' to type 'Character[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]      No conversion required, value is already a Character[]
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Double;@22ed86e9
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Converting 'Double[]' value '[Ljava.lang.Double;@22ed86e9' to type 'Double[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]      No conversion required, value is already a Double[]
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Float;@3676ffd3
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Converting 'Float[]' value '[Ljava.lang.Float;@3676ffd3' to type 'Float[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]      No conversion required, value is already a Float[]
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Integer;@1c6f01da
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Converting 'Integer[]' value '[Ljava.lang.Integer;@1c6f01da' to type 'Integer[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]      No conversion required, value is already a Integer[]
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Long;@11758b32
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Converting 'Long[]' value '[Ljava.lang.Long;@11758b32' to type 'Long[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]      No conversion required, value is already a Long[]
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Short;@5f618d3b
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Converting 'Short[]' value '[Ljava.lang.Short;@5f618d3b' to type 'Short[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]      No conversion required, value is already a Short[]
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Setting default value: [Ljava.lang.String;@5e686963
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]  Converting 'String[]' value '[Ljava.lang.String;@5e686963' to type 'String[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121474 ] - [ DEBUG ]      No conversion required, value is already a String[]
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121490 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Class;@3aedc2a5
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121490 ] - [ DEBUG ]  Converting 'Class[]' value '[Ljava.lang.Class;@3aedc2a5' to type 'Class[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121490 ] - [ DEBUG ]      No conversion required, value is already a Class[]
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121490 ] - [ DEBUG ]  Setting default value: [Ljava.util.Date;@7fcf2d1
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121490 ] - [ DEBUG ]  Converting 'Date[]' value '[Ljava.util.Date;@7fcf2d1' to type 'Date[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121490 ] - [ DEBUG ]      No conversion required, value is already a Date[]
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121490 ] - [ DEBUG ]  Setting default value: [Ljava.util.Calendar;@4919f7c6
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121490 ] - [ DEBUG ]  Converting 'Calendar[]' value '[Ljava.util.Calendar;@4919f7c6' to type 'Calendar[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121490 ] - [ DEBUG ]      No conversion required, value is already a Calendar[]
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121490 ] - [ DEBUG ]  Setting default value: [Ljava.io.File;@7d3fffb7
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121490 ] - [ DEBUG ]  Converting 'java.io.File[]' value '[Ljava.io.File;@7d3fffb7' to type 'java.io.File[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121490 ] - [ DEBUG ]      No conversion required, value is already a java.io.File[]
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121490 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Date;@122ae06f
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121490 ] - [ DEBUG ]  Converting 'java.sql.Date[]' value '[Ljava.sql.Date;@122ae06f' to type 'java.sql.Date[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121490 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Date[]
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121490 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Time;@22089fd5
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121490 ] - [ DEBUG ]  Converting 'java.sql.Time[]' value '[Ljava.sql.Time;@22089fd5' to type 'java.sql.Time[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121490 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Time[]
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121490 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Timestamp;@2fb0c1bd
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121490 ] - [ DEBUG ]  Converting 'java.sql.Timestamp[]' value '[Ljava.sql.Timestamp;@2fb0c1bd' to type 'java.sql.Timestamp[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121490 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Timestamp[]
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121490 ] - [ DEBUG ]  Setting default value: [Ljava.net.URL;@2979cb16
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121490 ] - [ DEBUG ]  Converting 'java.net.URL[]' value '[Ljava.net.URL;@2979cb16' to type 'java.net.URL[]'
+2017-04-01 13:07:31  [ AWT-EventQueue-0:121490 ] - [ DEBUG ]      No conversion required, value is already a java.net.URL[]
