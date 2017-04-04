@@ -10,6 +10,8 @@ import java.util.Map;
 
 import com.common.Constants;
 import com.common.util.StringUtil;
+import com.view.preference.PropertyHelper;
+
 import freemarker.core.ParseException;
 import freemarker.template.Configuration;
 import freemarker.template.DefaultObjectWrapper;
@@ -82,7 +84,7 @@ public abstract class AbstractGenerator {
 	 * @return
 	 */
 	public abstract Map<String, Object> createDataModel(String packageName, String className, String classDesc, boolean isSmoke,
-			String[] params);
+			String scriptEntity, String[] params);
 	
 	/**
 	 * 步骤四：合并 模板 和 数据模型, 创建.java类文件
@@ -101,10 +103,10 @@ public abstract class AbstractGenerator {
 	}
 
 	public static String getDataFilePath(String packageName, String fileName){
-		String outDir = new File(Constants.PROPS.getProperty("workspace"), Constants.PROJECT_INFO.getTestResourceDir()).getAbsolutePath();
+		String outDir = new File(PropertyHelper.getWorkspace(), Constants.PROJECT_INFO.getTestResourceDir()).getAbsolutePath();
 		String packagePath = (StringUtil.validate(packageName) ? packageName : Constants.PROJECT_INFO.getGroupId()).replace('.', '/');
 		String fileDir = new File(outDir, packagePath).getAbsolutePath();
-		fileName = (StringUtil.validate(fileName) ? fileName : (Constants.PROPS.getProperty("className") + "Test"));
+		fileName = (StringUtil.validate(fileName) ? fileName : (PropertyHelper.getClassName() + "Test"));
 		String file = new File(fileDir, fileName + ".xls").getAbsolutePath();
 //		if(!FileUtil.fileIsExists(file))
 //			FileUtil.createFile(fileName, ".xls", fileDir);
@@ -120,12 +122,12 @@ public abstract class AbstractGenerator {
 	 */
 	public File getJavaFile(String packageName, String className) {
 		if(null == packageName || packageName.trim().length() < 1){
-			packageName = Constants.PROPS.getProperty("packageName"); 
+			packageName = PropertyHelper.getPackageName(); 
 		} 
 		if(null == className || className.trim().length() < 1){
-			className = Constants.PROPS.getProperty("className");
+			className = PropertyHelper.getClassName();
 		}
-		String filePath = Constants.PROPS.getProperty("workspace");
+		String filePath = PropertyHelper.getWorkspace();
 		File outDirFile = new File(filePath, Constants.PROJECT_INFO.getTestSourceDir());
 		if(!outDirFile.exists()){
 			outDirFile.mkdir();

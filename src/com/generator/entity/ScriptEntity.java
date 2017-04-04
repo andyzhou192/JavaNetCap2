@@ -14,6 +14,8 @@ public class ScriptEntity {
 	private String classDesc = "Description: ";
 	// 实体类名
 	private String className;
+	// 测试方法名
+	private String methodName;
 	// 父类名
 	private String superclass;
 	// 参数集合
@@ -78,6 +80,14 @@ public class ScriptEntity {
 
 	public void setSmokeScript(boolean smokeScript) {
 		this.smokeScript = smokeScript;
+	}
+
+	public String getMethodName() {
+		return methodName;
+	}
+
+	public void setMethodName(String methodName) {
+		this.methodName = methodName;
 	}
 
 }

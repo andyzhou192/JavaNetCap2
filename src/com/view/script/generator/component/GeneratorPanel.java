@@ -25,10 +25,10 @@ import com.generator.java.ScriptGenerator;
 import com.generator.maven.MavenPomHelper;
 import com.handler.DataSaveHandler;
 import com.protocol.http.HttptHelper;
+import com.view.preference.PropertyHelper;
 import com.view.script.generator.GeneratorFrame;
 import com.view.util.ScrollPaneTextArea;
 import com.view.util.ViewModules;
-import com.common.Constants;
 import com.common.util.FormatUtil;
 
 import freemarker.template.TemplateException;
@@ -37,7 +37,7 @@ import freemarker.template.TemplateException;
 public class GeneratorPanel extends JPanel implements ActionListener {
 	
 	private JLabel packageNameLabel, classNameLabel, classDescLabel, testMethodNameLabel, testMethodDescLabel, urlLabel, httpMethodLabel, testCaseDescLabel, reqHeaderLabel, reqParamsLabel, statusCodeLabel, reasonPhraseLabel, rspHeaderLabel, rspBodyLabel;
-	private JTextField packageNameField, classNameField, testMethodNameField, urlField, httpMethodField, statusCodeField, reasonPhraseField;
+	private JTextField packageNameField, classNameField, methodNameField, urlField, httpMethodField, statusCodeField, reasonPhraseField;
 	private ScrollPaneTextArea classDescArea, testMethodDescArea, testCaseDescArea, rspBodyArea;
 	private ParameterTablePanel reqParamsArea, reqHeaderArea, rspHeaderArea;
 	private JCheckBox smokeScriptCheckBox;
@@ -78,7 +78,7 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 		
 		packageNameField = ViewModules.createTextField(20, "", true);
 		classNameField = ViewModules.createTextField(20, "", true);
-		testMethodNameField = ViewModules.createTextField(20, "", true);
+		methodNameField = ViewModules.createTextField(20, "", true);
 		urlField = ViewModules.createTextField(20, "", true);
 		httpMethodField = ViewModules.createTextField(20, "", true);
 		statusCodeField = ViewModules.createTextField(20, "", true);
@@ -95,7 +95,6 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 		smokeScriptCheckBox = ViewModules.createCheckBox("is Smoke Case", null);
 		typeComboBox = ViewModules.createComboBox(types);
 		typeComboBox.setBounds(0, 0, 100, 25);
-		System.out.println(packageNameLabel.getWidth() + ":" + packageNameLabel.getHeight());
 		
 		applyButton = ViewModules.createButton("GeneScript", "GENEJAVA", this);
 	}
@@ -117,7 +116,7 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 		scriptInfoPanel.add(classDescArea, ViewModules.getGridBagConstraints(1, 4, 10, 1));
 		
 		scriptInfoPanel.add(testMethodNameLabel, ViewModules.getGridBagConstraints(1, 5, 1, 1));
-		scriptInfoPanel.add(testMethodNameField, ViewModules.getGridBagConstraints(2, 5, 8, 1));
+		scriptInfoPanel.add(methodNameField, ViewModules.getGridBagConstraints(2, 5, 8, 1));
 		scriptInfoPanel.add(smokeScriptCheckBox, ViewModules.getGridBagConstraints(10, 5, 1, 1));
 		
 		scriptInfoPanel.add(testMethodDescLabel, ViewModules.getGridBagConstraints(1, 6, 1, 1));
@@ -180,12 +179,12 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 		String rspHeader = dataMap.get("rspHeader").toString();
 		String rspBody = dataMap.get("rspBody").toString();
 		
-		packageNameField.setText(Constants.PROPS.getProperty("packageName"));
+		packageNameField.setText(PropertyHelper.getPackageName());
 		String methodName = HttptHelper.getInterfaceMethodName(url);
 		methodName = methodName.toUpperCase().substring(0, 1) + methodName.substring(1);
-		testMethodNameField.setText("test" + methodName);
+		methodNameField.setText("test" + methodName);
 		if(null == methodName || methodName.trim().length() < 1){
-			classNameField.setText(Constants.PROPS.getProperty("className"));
+			classNameField.setText(PropertyHelper.getClassName());
 		} else {
 			String className = methodName + "Test";
 			classNameField.setText(className);
@@ -203,9 +202,7 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 		rspHeaderArea.setTableValues(rspHeader);
 		rspBodyArea.setText(rspBody);
 		
-		String smokeScript = (null == Constants.PROPS.getProperty("smokeScript")) ? "false" : Constants.PROPS.getProperty("smokeScript");
-		boolean isChose = Boolean.valueOf((smokeScript.trim().length() > 0) ? smokeScript : "false");
-		smokeScriptCheckBox.setSelected(isChose);
+		smokeScriptCheckBox.setSelected(PropertyHelper.getSmokeScript());
 		
 		typeComboBox.setSelectedIndex(0);
 		typeComboBox.addItemListener(new ItemListener(){
@@ -257,15 +254,16 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 
 	public boolean createJavaFile(){
 		String packageName = packageNameField.getText();
-		String className = classNameField.getText();
+		String className = classNameField.getText().trim();
 		String classDesc = classDescArea.getText();
+		String methodName = methodNameField.getText().trim();
 		boolean isSmoke = smokeScriptCheckBox.isSelected();
 		String[] params = HttptHelper.PARAM_NAMES;
 		boolean isSucc = false;
 		ScriptGenerator generator = null;
 		try {
-			String templateDir = Constants.PROPS.getProperty("templateDir");
-			String templateFile = Constants.PROPS.getProperty("templateFile");
+			String templateDir = PropertyHelper.getTemplateDir();
+			String templateFile = PropertyHelper.getTemplateFile();
 			if(null == templateDir || templateDir.trim().length() == 0){
 				ViewModules.showMessageDialog(this, "Template dir can not be null.");
 				return isSucc;
@@ -284,7 +282,7 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 			} else {
 				generator.setTemplate(templateFile);
 			}
-			Map<String, Object> dataModel = generator.createDataModel(packageName, className, classDesc, isSmoke, params);
+			Map<String, Object> dataModel = generator.createDataModel(packageName, className, classDesc, isSmoke, methodName, params);
 			generator.generateFile(dataModel, generator.targetFile);
 			isSucc = true;
 		} catch (IOException e) {
@@ -308,7 +306,7 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 		data.put("RspHeader", rspHeaderArea.getDataOfJsonString());
 		data.put("RspBody", rspBodyArea.getText());
 		String file = AbstractGenerator.getDataFilePath(packageNameField.getText(), classNameField.getText());
-		String sheetName = testMethodNameField.getText().trim();
+		String sheetName = methodNameField.getText().trim();
 		(new DataSaveHandler(data)).writeToExcel(file, sheetName, HttptHelper.PARAM_NAMES);
 		return true;
 	}

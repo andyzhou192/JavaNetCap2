@@ -2,7 +2,6 @@ package com.netcap.captor;
 
 import java.io.IOException;
 
-import com.common.Constants;
 import com.common.util.LogUtil;
 import com.view.mainframe.MainFrame;
 import com.view.preference.PropertyHelper;
@@ -23,12 +22,12 @@ public class Netcaptor {
 	 */
 	public static JpcapCaptor getJpcapCaptor() {
 		JpcapCaptor jpcap = null;
-		int net_devices_index = Integer.valueOf(Constants.PROPS.getProperty(PropertyHelper.NET_DEVICES_INDEX));
-		int caplen = Integer.valueOf(Constants.PROPS.getProperty(PropertyHelper.CAPTURE_LENGTH));
-		boolean isPromisc = Boolean.valueOf(Constants.PROPS.getProperty(PropertyHelper.PROMISC));
+		int net_devices_index = PropertyHelper.getNetDevicesIndex();
+		int caplen = PropertyHelper.getCaptureLength();
+		boolean isPromisc = PropertyHelper.getPromisc();
 		try {
 			jpcap = JpcapCaptor.openDevice(JpcapCaptor.getDeviceList()[net_devices_index], caplen, isPromisc, 5000);
-			jpcap.setFilter(Constants.PROPS.getProperty(PropertyHelper.PROTOCOL_TYPE).toLowerCase(), true);
+			jpcap.setFilter(PropertyHelper.getProtocolType().toLowerCase(), true);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -65,7 +64,6 @@ public class Netcaptor {
 	public static void stopCapture() {
 		Netcaptor.exit = true;
 		Netcaptor.captureThread = null;
-        System.out.println("线程退出!");
 		LogUtil.debug(cl, "Capture Thread is stoped...");
 	}
 	

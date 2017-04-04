@@ -18,52 +18,74 @@ public class PacketReceiverImpl implements PacketReceiver {
 	private static String rspData = "";
 	private MainFrame frame;
 	private static int contentLen = -1000;
+	private long startTime;
 	
 	public PacketReceiverImpl(MainFrame frame){
 		this.frame = frame;
 	}
 	
 	public void receivePacket(Packet packet) {
-		TCPPacket tcpPacket = (TCPPacket) packet;
-		String data = new String(tcpPacket.data);
-		if(null != data && data.length() > 0) {
-			String method = HttptHelper.checkHttpRequest(data);
-			if(method != null){
-				reqData = data;
-				rspData = "";
-			} else {
-				if(HttptHelper.isFirstResponse(data)){
-					if("head".equalsIgnoreCase(method)){
-						rspData = rspData + new String(tcpPacket.data);
-						dealData();
-						return;
-					} else {
-						contentLen = HttptHelper.getContentLenth(data);
-					}
-				} else if(rspData.length() == 0){
-					reqData = reqData + new String(tcpPacket.data);
-					return;
-				}
-				if(contentLen == -1){
-					rspData = rspData + new String(tcpPacket.data);
-					dealData();
-				} else if(contentLen == -2){
-					if(HttptHelper.isLastChunk(data)){
-						dealData();
-					} else{
-						rspData = rspData + new String(tcpPacket.data);
-					}
-				} else {
-					contentLen = contentLen - (new String(tcpPacket.data)).length();
-					if(contentLen < 1){
-						rspData = rspData + new String(tcpPacket.data);
-						dealData();
-					}
-				}
-			}
+		startTime = System.currentTimeMillis();
+		if(packet instanceof TCPPacket){
+			TCPPacket tcpPacket = (TCPPacket) packet;
+			String data = new String(tcpPacket.data);
+			assemblePacket(data);
 		}
 	}
 	
+	private void assemblePacket(String data) {
+		if(null != data && data.length() > 0) {
+			String method = HttptHelper.checkHttpRequest(data);
+			if(method != null){
+				if(reqData.length() > 0){
+					dealData();
+				}
+				reqData = data;
+				rspData = "";
+			} else {
+				assembleRspPacket(data, method);
+			}
+		}
+	}
+
+	private void assembleRspPacket(String data, String method) {
+		if(HttptHelper.isFirstResponse(data)){
+			if("head".equalsIgnoreCase(method)){
+				rspData = rspData + data;
+				dealData();
+				return;
+			} else {
+				contentLen = HttptHelper.getContentLenth(data);
+			}
+		} else if(rspData.length() == 0){ // 如果非首个响应数据包，且此时响应数据为空，则该包属于请求包
+			reqData = reqData + data;
+			return;
+		}
+		System.out.println(" data length =====>" + data.length());
+		System.out.println(" contentLen =====>" + contentLen);
+		if(contentLen == -1){
+			rspData = rspData + data;
+			dealData();
+		} else if(contentLen == -2){
+			if(HttptHelper.isLastChunk(data)){
+				dealData();
+			} else{
+				rspData = rspData + data;
+			}
+		} else {
+			//contentLen = contentLen - data.length();
+			rspData = rspData + data;
+			System.out.println("rspData.length ---------> " + rspData.length());
+			System.out.println("rspData : " + rspData);
+			long endTime = System.currentTimeMillis();
+			if(contentLen <= rspData.length()){
+				dealData();
+			} else if((endTime - startTime) > 30 * 1000){
+				dealData();
+			}
+		}
+	}
+
 	private void dealData() {
 		LogUtil.debug(cl, "begin to show and save data...");
 		AsyncHandler handler = new AsyncHandler();

@@ -3,11 +3,11 @@ package com.netcap.handler;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.common.Constants;
 import com.common.util.LogUtil;
 import com.protocol.http.HttptHelper;
 import com.protocol.http.bean.HttpDataBean;
 import com.view.mainframe.MainFrame;
+import com.view.preference.PropertyHelper;
 
 public class DataQueues {
 
@@ -51,7 +51,7 @@ public class DataQueues {
     }
     
     public static boolean isValidReq(String url){
-    	String captureUrl = Constants.PROPS.getProperty("capture_url");
+    	String captureUrl = PropertyHelper.getCaptureUrl();
     	if(null == url || url.endsWith(".js") || url.endsWith(".css") || url.endsWith(".png"))
     		return false;
     	else if(null == captureUrl || url.contains(captureUrl)){

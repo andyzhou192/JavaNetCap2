@@ -22,13 +22,15 @@ public class HttptHelper {
 	
 	public final static String[] PARAM_NAMES = {"CaseID", "CaseDesc", "Method", "URL","ReqHeader","ReqParams","StatusCode","ReasonPhrase","RspHeader","RspBody"};
 	
+	@SuppressWarnings("deprecation")
 	public static HttpDataBean getDataBean(String reqData, String rspData) {
 		HttpDataBean bean = new HttpDataBean();
 		try {
-			reqData = URLDecoder.decode(reqData, "utf-8");
-			rspData = URLDecoder.decode(rspData, "utf-8");
+			reqData = URLDecoder.decode(reqData.replaceAll("%(?![0-9a-fA-F]{2})", "%25"), "utf-8");
+			rspData = URLDecoder.decode(rspData.replaceAll("%(?![0-9a-fA-F]{2})", "%25"), "utf-8");
 		} catch (UnsupportedEncodingException e) {
-			
+			reqData = URLDecoder.decode(reqData.replaceAll("%(?![0-9a-fA-F]{2})", "%25"));
+			rspData = URLDecoder.decode(rspData.replaceAll("%(?![0-9a-fA-F]{2})", "%25"));
 		} finally {
 			initRequestData(bean, reqData);
 			initResponseData(bean, rspData);
@@ -46,7 +48,7 @@ public class HttptHelper {
 		String[] data = requestData.trim().substring(index).split(HttptHelper.CRLF + HttptHelper.CRLF);
 		int startIndex = data[0].toUpperCase().indexOf("HOST" + HttptHelper.NVSeparator) + ("HOST" + HttptHelper.NVSeparator).length();
 		String host = data[0].substring(startIndex).split(HttptHelper.CRLF)[0].trim();
-		bean.setUrl(host + uri);
+		bean.setUrl("http://" + host + uri);
 		if(StringUtil.validate(data[0])){
 			JSONObject requestHeader = new JSONObject();
 			for(String nv : data[0].split(HttptHelper.CRLF)){
