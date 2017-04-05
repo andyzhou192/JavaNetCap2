@@ -30,8 +30,12 @@
 			<outputDirectory>/template</outputDirectory>
 		</fileSet>
 		<fileSet>
-			<directory>${project.build.directory}/temp-src</directory>
-			<outputDirectory>/temp-src</outputDirectory>
+			<directory>${project.build.directory}/projects</directory>
+			<outputDirectory>/projects</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>${project.build.directory}/data</directory>
+			<outputDirectory>/data</outputDirectory>
 		</fileSet>
 		<fileSet>
 			<directory>${project.build.directory}/exts</directory>
