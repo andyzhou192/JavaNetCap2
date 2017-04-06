@@ -20,35 +20,7 @@
 	</dependencySets>
 
 	<fileSets>
-		<!-- 把项目相关的说明文件，打包进zip文件的根目录 -->
-		<fileSet>
-			<directory>${project.build.directory}/logs</directory>
-			<outputDirectory>/logs</outputDirectory>
-		</fileSet>
-		<fileSet>
-			<directory>${project.build.directory}/template</directory>
-			<outputDirectory>/template</outputDirectory>
-		</fileSet>
-		<fileSet>
-			<directory>${project.build.directory}/projects</directory>
-			<outputDirectory>/projects</outputDirectory>
-		</fileSet>
-		<fileSet>
-			<directory>${project.build.directory}/data</directory>
-			<outputDirectory>/data</outputDirectory>
-		</fileSet>
-		<fileSet>
-			<directory>${project.build.directory}/exts</directory>
-			<outputDirectory>/exts</outputDirectory>
-		</fileSet>
-		<fileSet>
-			<directory>${project.build.directory}/img</directory>
-			<outputDirectory>/img</outputDirectory>
-		</fileSet>
-		<fileSet>
-			<directory>${project.build.directory}/theme</directory>
-			<outputDirectory>/theme</outputDirectory>
-		</fileSet>
+		<!-- 把项目相关的资源文件，打包进zip文件的根目录 -->
 		<!-- 把项目的配置文件，打包进zip文件的conf目录 -->
 		<fileSet>
 			<directory>${project.build.directory}/conf</directory>
@@ -57,6 +29,42 @@
 				<include>*.xml</include>
 				<include>*.properties</include>
 			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>${project.build.directory}/data</directory>
+			<outputDirectory>/data</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>${project.build.directory}/img</directory>
+			<outputDirectory>/img</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>${project.build.directory}/libs</directory>
+			<outputDirectory>/libs</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>${project.build.directory}/logs</directory>
+			<outputDirectory>/logs</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>${project.build.directory}/maven</directory>
+			<outputDirectory>/maven</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>${project.build.directory}/projects</directory>
+			<outputDirectory>/projects</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>${project.build.directory}/software</directory>
+			<outputDirectory>/software</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>${project.build.directory}/template</directory>
+			<outputDirectory>/template</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>${project.build.directory}/theme</directory>
+			<outputDirectory>/theme</outputDirectory>
 		</fileSet>
 		<!-- 把项目自己编译出来的jar文件，打包进zip文件的根目录 -->
 		<fileSet>
