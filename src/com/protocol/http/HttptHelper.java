@@ -119,7 +119,7 @@ public class HttptHelper {
 			}
 			bean.setRspHeader(responseHeader);
 		}
-		bean.setRspBody(data.length > 2 ? data[1] : "");
+		bean.setRspBody(data.length > 1 ? data[1] : "");
 	}
 	
 	public static String checkHttpRequest(String data){

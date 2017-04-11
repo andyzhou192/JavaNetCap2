@@ -16,13 +16,13 @@ import jxl.write.WriteException;
 public class DataSaveHandler {
 	private static Class<?> cl = DataSaveHandler.class;
 
-	private String caseId, caseDesc, url, method, reqHeader, reqParams, statusCode, reasonPhrase, rspHeader, rspBody;
+	private String caseId, caseDesc, method, url, reqHeader, reqParams, statusCode, reasonPhrase, rspHeader, rspBody;
 
 	public DataSaveHandler(Map<String, String> dataMap) {
 		this.caseId = dataMap.get("CaseID").toString();
 		this.caseDesc = dataMap.get("CaseDesc").toString();
-		this.url = dataMap.get("URL").toString();
 		this.method = dataMap.get("Method").toString();
+		this.url = dataMap.get("URL").toString();
 		this.reqHeader = dataMap.get("ReqHeader").toString();
 		this.reqParams = dataMap.get("ReqParams").toString();
 		this.statusCode = dataMap.get("StatusCode").toString();
@@ -54,8 +54,8 @@ public class DataSaveHandler {
 			}
 			sheet.addCell(new Label(0, rowCount, caseId + rowCount));
 			sheet.addCell(new Label(1, rowCount, caseDesc));
-			sheet.addCell(new Label(2, rowCount, url));
-			sheet.addCell(new Label(3, rowCount, method));
+			sheet.addCell(new Label(2, rowCount, method));
+			sheet.addCell(new Label(3, rowCount, url));
 			sheet.addCell(new Label(4, rowCount, reqHeader));
 			sheet.addCell(new Label(5, rowCount, reqParams));
 			sheet.addCell(new Label(6, rowCount, statusCode));

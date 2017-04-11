@@ -2,6 +2,7 @@ package com.view.preference.component;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -59,7 +60,7 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 		urlLabel = ViewModules.createJLabel("Capture Url:", Color.BLACK);
 		urlLabel.setToolTipText("请填写待捕获的URL");
 		maxLengthLabel = ViewModules.createJLabel("Max Length:", Color.BLACK);
-		maxLengthLabel.setToolTipText("请选择每次捕获数据的最大长度，大小在68~1514之间");
+		maxLengthLabel.setToolTipText("请选择每次捕获数据的最大长度，大小在68~6656之间");
 		
 		netJComboBox = ViewModules.createComboBox(getNetDeviceList());
 		proJComboBox = ViewModules.createComboBox(new String[]{"TCP"});
@@ -70,7 +71,7 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 		otherRadioButton = ViewModules.createRadioButton("Other", "OTHER", this);
 		// 把单选框加到一个组中以确保一个组中的单选框只能单选
 		ViewModules.createButtonGroup(wholeRadioButton, headRadioButton, otherRadioButton);
-		caplenTextField = ViewModules.createTextField(20, "1514", false);
+		caplenTextField = ViewModules.createTextField(20, "6656", false);
 		
 		applyButton = ViewModules.createButton("Apply", "SaveCaptureSetting", this);
 	}
@@ -85,14 +86,14 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 		urlFilterField.setText(PropertyHelper.getCaptureUrl());
 		
 		int caplen = PropertyHelper.getCaptureLength();
-		if (caplen < 68 || caplen > 1514) {
+		if (caplen < 68 || caplen > 6656) {
 			caplenTextField.setText(String.valueOf(caplen));
 			otherRadioButton.setSelected(true);
 		} else if(caplen == 68){
 			caplenTextField.setText(String.valueOf(caplen));
 			headRadioButton.setSelected(true);
 		} else {
-			caplenTextField.setText(String.valueOf(1514));
+			caplenTextField.setText(String.valueOf(6656));
 			wholeRadioButton.setSelected(true);
 		}
 	}
@@ -125,7 +126,7 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 	public void actionPerformed(ActionEvent evt) {
 		switch(evt.getActionCommand()){
 		case "WHOLE":
-			caplenTextField.setText("1514");
+			caplenTextField.setText("6656");
 			caplenTextField.setEnabled(false);
 			break;
 		case "HEAD":
@@ -152,8 +153,8 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 	 */
 	public boolean saveSettings(){
 		int caplen = Integer.parseInt(caplenTextField.getText());
-		if (caplen < 68 || caplen > 1514) {
-			ViewModules.showMessageDialog(null, "捕获长度必须介于 68 和 1514之间");
+		if (caplen < 68 || caplen > 6656) {
+			ViewModules.showMessageDialog(null, "捕获长度必须介于 68 和 6656之间");
 			return false;
 		}
 		// 网卡序号，默认为0
@@ -162,7 +163,7 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 		PropertyHelper.setPromisc(promiscCheckBox.isSelected());
 		// 待捕获的协议类型，默认为tcp
 		PropertyHelper.setProtocolType(proJComboBox.getSelectedItem().toString());
-		// 待捕获的数据长度 ,捕获长度必须介于 68和1514之间的整数，默认为1514
+		// 待捕获的数据长度 ,捕获长度必须介于 68和6656之间的整数，默认为6656
 		PropertyHelper.setCaptureLength(caplen);
 		// 待捕获的URL，不含参数
 		PropertyHelper.setCaptureUrl(urlFilterField.getText());
@@ -188,10 +189,49 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 		}
 	}
 	
-//	public static void main(String[] args) {
-//		JFrame frame = new JFrame();
-//		JcaptureSettingView inst = new JcaptureSettingView(frame);
-//		inst.setVisible(true);
+//	public static void main(String[] args) throws java.net.SocketException {
+////		JFrame frame = new JFrame();
+////		JcaptureSettingView inst = new JcaptureSettingView(frame);
+////		inst.setVisible(true);
+//		java.util.Enumeration<java.net.NetworkInterface> e = java.net.NetworkInterface
+//				.getNetworkInterfaces();
+//		while (e.hasMoreElements()) {
+//			java.net.NetworkInterface ni = e.nextElement();
+////			System.out.println("displayname: " + ni.getDisplayName());
+////			System.out.println("name: " + ni.getName());
+////			System.out.println("MTU: " + ni.getMTU());
+////			System.out.println("Loopback: " + ni.isLoopback());
+////			System.out.println("Virtual: " + ni.isVirtual());
+////			System.out.println("Up: " + ni.isUp());
+////			System.out.println("PointToPoint: " + ni.isPointToPoint());
+//			java.util.Enumeration<java.net.InetAddress> addresses = ni.getInetAddresses();
+//			while (addresses.hasMoreElements()) {
+//				String ip = addresses.nextElement().getHostAddress();
+//				if(ip.contains("."))
+//					System.out.println(ip);
+//			}
+////			byte[] mac = ni.getHardwareAddress();
+////			if (mac != null)
+////				displayMac(mac);
+////			else
+////				System.out.println("mac is null");
+//			System.out.println("-----");
+//		}
 //	}
+//	
+//	public static void displayMac(byte[] mac) {
+//		for (int i = 0; i < mac.length; i++) {
+//			byte b = mac[i];
+//			int intValue = 0;
+//			if (b >= 0)
+//				intValue = b;
+//			else
+//				intValue = 256 + b;
+//			System.out.print(Integer.toHexString(intValue));
+//			if (i != mac.length - 1)
+//				System.out.print("-");
+//		}
+//		System.out.println();
+//	}    
 
 }

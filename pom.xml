@@ -105,7 +105,7 @@
 			<!-- Control resource file copy -->
 			<resource>
 				<directory>${project.basedir}</directory>
-				<targetPath>${project.build.directory}</targetPath>
+				<!-- targetPath>${project.build.directory}</targetPath> -->
 				<excludes>
 					<exclude>**/*.java</exclude>
 				</excludes>

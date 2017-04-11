@@ -3846,3 +3846,1021 @@
 2017-04-04 20:01:03  [ Thread-2:597320 ] - [ DEBUG ]  received packet number : 0
 2017-04-04 20:01:08  [ Thread-2:602813 ] - [ DEBUG ]  received packet number : 0
 2017-04-04 20:01:14  [ Thread-2:608305 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:01:23  [ main:0 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\conf\setting.properties
+2017-04-11 16:01:53  [ AWT-EventQueue-0:29656 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\projects\Test02\pom.xml
+2017-04-11 16:24:05  [ main:0 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\conf\setting.properties
+2017-04-11 16:24:10  [ AWT-EventQueue-0:5195 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\projects\Test02\pom.xml
+2017-04-11 16:27:50  [ AWT-EventQueue-0:225307 ] - [ DEBUG ]  Capture Thread is started...
+2017-04-11 16:27:56  [ Thread-2:230771 ] - [ DEBUG ]  received packet number : 9
+2017-04-11 16:28:01  [ Thread-2:236264 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:28:07  [ Thread-2:241694 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:28:12  [ Thread-2:247170 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:28:18  [ Thread-2:252678 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:28:21  [ AWT-EventQueue-0:256242 ] - [ DEBUG ]  Capture Thread is stoped...
+2017-04-11 16:28:23  [ AWT-EventQueue-0:257510 ] - [ DEBUG ]  Capture Thread is started...
+2017-04-11 16:28:23  [ Thread-2:258156 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:28:42  [ main:0 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\conf\setting.properties
+2017-04-11 16:28:46  [ AWT-EventQueue-0:4778 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\projects\Test02\pom.xml
+2017-04-11 16:29:08  [ AWT-EventQueue-0:26268 ] - [ DEBUG ]  Capture Thread is started...
+2017-04-11 16:29:13  [ Thread-2:31779 ] - [ DEBUG ]  received packet number : 1
+2017-04-11 16:29:19  [ Thread-2:37299 ] - [ DEBUG ]  received packet number : 13
+2017-04-11 16:29:25  [ Thread-2:42870 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:29:30  [ Thread-2:48300 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:32:04  [ main:0 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\conf\setting.properties
+2017-04-11 16:32:07  [ AWT-EventQueue-0:2583 ] - [ DEBUG ]  Capture Thread is started...
+2017-04-11 16:32:12  [ Thread-2:8048 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:32:18  [ Thread-2:13504 ] - [ DEBUG ]  received packet number : 9
+2017-04-11 16:32:23  [ Thread-2:18974 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:32:29  [ Thread-2:24432 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:32:34  [ Thread-2:29892 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:32:35  [ AWT-EventQueue-0:30565 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\projects\Test02\pom.xml
+2017-04-11 16:32:39  [ Thread-2:35398 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:32:45  [ Thread-2:40831 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:32:50  [ Thread-2:46310 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:32:56  [ Thread-2:51749 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:33:01  [ Thread-2:57226 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:33:26  [ main:0 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\conf\setting.properties
+2017-04-11 16:33:29  [ AWT-EventQueue-0:2685 ] - [ DEBUG ]  Capture Thread is started...
+2017-04-11 16:33:34  [ Thread-2:8161 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:33:57  [ Thread-2:31051 ] - [ DEBUG ]  received packet number : 9
+2017-04-11 16:34:02  [ Thread-2:36452 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:34:08  [ Thread-2:41881 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:34:13  [ Thread-2:47343 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:34:19  [ Thread-2:52802 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:34:24  [ Thread-2:58262 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:34:30  [ Thread-2:63703 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:34:35  [ Thread-2:69138 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:34:40  [ Thread-2:74598 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:34:46  [ Thread-2:80047 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:34:51  [ Thread-2:85456 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:34:57  [ Thread-2:90889 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:35:02  [ Thread-2:96348 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:35:08  [ Thread-2:101806 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:35:13  [ Thread-2:107221 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:35:18  [ Thread-2:112639 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:35:24  [ Thread-2:118104 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:35:29  [ Thread-2:123561 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:35:35  [ Thread-2:129015 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:35:40  [ Thread-2:134430 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:35:46  [ Thread-2:139875 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:35:51  [ Thread-2:145272 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:35:57  [ Thread-2:150704 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:36:02  [ Thread-2:156164 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:36:07  [ Thread-2:161595 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:36:13  [ Thread-2:167024 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:36:18  [ Thread-2:172466 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:36:21  [ main:0 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\conf\setting.properties
+2017-04-11 16:36:24  [ Thread-2:177913 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:36:24  [ AWT-EventQueue-0:3360 ] - [ DEBUG ]  Capture Thread is started...
+2017-04-11 16:36:30  [ Thread-2:8850 ] - [ DEBUG ]  begin to show and save data...
+2017-04-11 16:36:30  [ Thread-3:8850 ] - [ DEBUG ]  wait...
+2017-04-11 16:36:30  [ Thread-2:8850 ] - [ DEBUG ]  received packet number : 9
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Setting default value: false
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]      No conversion required, value is already a Boolean
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]      Converted to Byte value '0'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Setting default value:  
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]      No conversion required, value is already a Character
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]      Converted to Double value '0.0'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]      Converted to Float value '0.0'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]      No conversion required, value is already a Integer
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]      Converted to Long value '0'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]      Converted to Short value '0'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Setting default value: 0.0
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Converting 'BigDecimal' value '0.0' to type 'BigDecimal'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Converting 'BigInteger' value '0' to type 'BigInteger'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]      No conversion required, value is already a BigInteger
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Setting default value: false
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]      No conversion required, value is already a Boolean
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]      Converted to Byte value '0'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Setting default value:  
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]      No conversion required, value is already a Character
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]      Converted to Double value '0.0'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]      Converted to Float value '0.0'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]      No conversion required, value is already a Integer
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]      Converted to Long value '0'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]      Converted to Short value '0'
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Setting default value: 
+2017-04-11 16:36:30  [ Thread-3:8944 ] - [ DEBUG ]  Converting 'String' value '' to type 'String'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [Z@5545ddac
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'boolean[]' value '[Z@5545ddac' to type 'boolean[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a boolean[]
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [B@1e1b0ab9
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'byte[]' value '[B@1e1b0ab9' to type 'byte[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a byte[]
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [C@33324c93
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'char[]' value '[C@33324c93' to type 'char[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a char[]
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [D@72f2a532
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'double[]' value '[D@72f2a532' to type 'double[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a double[]
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [F@9a1ae7d
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'float[]' value '[F@9a1ae7d' to type 'float[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a float[]
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [I@4fa92332
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'int[]' value '[I@4fa92332' to type 'int[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a int[]
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [J@6e5ea880
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'long[]' value '[J@6e5ea880' to type 'long[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a long[]
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [S@9e25b4c
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'short[]' value '[S@9e25b4c' to type 'short[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a short[]
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigDecimal;@d34de4b
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'BigDecimal[]' value '[Ljava.math.BigDecimal;@d34de4b' to type 'BigDecimal[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal[]
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigInteger;@b82cc6c
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'BigInteger[]' value '[Ljava.math.BigInteger;@b82cc6c' to type 'BigInteger[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a BigInteger[]
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Boolean;@10836f34
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'Boolean[]' value '[Ljava.lang.Boolean;@10836f34' to type 'Boolean[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a Boolean[]
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Byte;@b207e53
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'Byte[]' value '[Ljava.lang.Byte;@b207e53' to type 'Byte[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a Byte[]
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Character;@20cd3ffa
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'Character[]' value '[Ljava.lang.Character;@20cd3ffa' to type 'Character[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a Character[]
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Double;@3db17623
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'Double[]' value '[Ljava.lang.Double;@3db17623' to type 'Double[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a Double[]
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Float;@36c0546e
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'Float[]' value '[Ljava.lang.Float;@36c0546e' to type 'Float[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a Float[]
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Integer;@3e1a6603
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'Integer[]' value '[Ljava.lang.Integer;@3e1a6603' to type 'Integer[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a Integer[]
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Long;@7761bcd5
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'Long[]' value '[Ljava.lang.Long;@7761bcd5' to type 'Long[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a Long[]
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Short;@4157dc74
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'Short[]' value '[Ljava.lang.Short;@4157dc74' to type 'Short[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a Short[]
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [Ljava.lang.String;@75009314
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'String[]' value '[Ljava.lang.String;@75009314' to type 'String[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a String[]
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Class;@18c7c9c9
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'Class[]' value '[Ljava.lang.Class;@18c7c9c9' to type 'Class[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a Class[]
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [Ljava.util.Date;@623a4910
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'Date[]' value '[Ljava.util.Date;@623a4910' to type 'Date[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a Date[]
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [Ljava.util.Calendar;@6c9835d6
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'Calendar[]' value '[Ljava.util.Calendar;@6c9835d6' to type 'Calendar[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a Calendar[]
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [Ljava.io.File;@7af59282
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'java.io.File[]' value '[Ljava.io.File;@7af59282' to type 'java.io.File[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a java.io.File[]
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Date;@4664cdca
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'java.sql.Date[]' value '[Ljava.sql.Date;@4664cdca' to type 'java.sql.Date[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Date[]
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Time;@63174ff7
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'java.sql.Time[]' value '[Ljava.sql.Time;@63174ff7' to type 'java.sql.Time[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Time[]
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Timestamp;@130de91b
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'java.sql.Timestamp[]' value '[Ljava.sql.Timestamp;@130de91b' to type 'java.sql.Timestamp[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Timestamp[]
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Setting default value: [Ljava.net.URL;@7a7eb062
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]  Converting 'java.net.URL[]' value '[Ljava.net.URL;@7a7eb062' to type 'java.net.URL[]'
+2017-04-11 16:36:30  [ Thread-3:8976 ] - [ DEBUG ]      No conversion required, value is already a java.net.URL[]
+2017-04-11 16:36:30  [ Thread-3:9007 ] - [ DEBUG ]  {"reqHeader":{"Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Host":"172.23.23.97","User-Agent":"Apache-HttpClient/4.5.2 (Java/1.8.0_66)"},"protocol":"HTTP","method":"POST","reqParams":{"loginName":"18867103603","loginPassword":"123456789","type":"1"},"reasonPhrase":"OK","rspHeader":{"Server":"nginx","Date":"Tue, 11 Apr 2017 08:36:27 GMT","Content-Type":"application/json;charset=UTF-8","Content-Length":"145","Connection":"keep-alive","Set-Cookie":"JSESSIONID=631DE836AB8B1574D8D3A2E56004C327; Path=/ems_cmcc/; HttpOnly","Access-Control-Allow-Origin":"*"},"protocolVersion":"HTTP/1.1","rspBody":"","url":"http://172.23.23.97/ems_cmcc/new/getEnterprise","statusCode":200}
+2017-04-11 16:36:32  [ Thread-2:186323 ] - [ DEBUG ]  begin to show and save data...
+2017-04-11 16:36:32  [ Thread-3:186339 ] - [ DEBUG ]  wait...
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: false
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      No conversion required, value is already a Boolean
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      Converted to Byte value '0'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value:  
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      No conversion required, value is already a Character
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      Converted to Double value '0.0'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      Converted to Float value '0.0'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      No conversion required, value is already a Integer
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      Converted to Long value '0'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      Converted to Short value '0'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: 0.0
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'BigDecimal' value '0.0' to type 'BigDecimal'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'BigInteger' value '0' to type 'BigInteger'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      No conversion required, value is already a BigInteger
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: false
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      No conversion required, value is already a Boolean
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      Converted to Byte value '0'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value:  
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      No conversion required, value is already a Character
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      Converted to Double value '0.0'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      Converted to Float value '0.0'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      No conversion required, value is already a Integer
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      Converted to Long value '0'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      Converted to Short value '0'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: 
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'String' value '' to type 'String'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: [Z@2849a018
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'boolean[]' value '[Z@2849a018' to type 'boolean[]'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      No conversion required, value is already a boolean[]
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: [B@4713776e
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'byte[]' value '[B@4713776e' to type 'byte[]'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      No conversion required, value is already a byte[]
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: [C@2f0e6440
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'char[]' value '[C@2f0e6440' to type 'char[]'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      No conversion required, value is already a char[]
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: [D@4a5d5e1
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'double[]' value '[D@4a5d5e1' to type 'double[]'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      No conversion required, value is already a double[]
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: [F@6109ec0d
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'float[]' value '[F@6109ec0d' to type 'float[]'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      No conversion required, value is already a float[]
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: [I@3d7d4f45
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'int[]' value '[I@3d7d4f45' to type 'int[]'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      No conversion required, value is already a int[]
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: [J@618d10ce
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'long[]' value '[J@618d10ce' to type 'long[]'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      No conversion required, value is already a long[]
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: [S@4b2dcbc3
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'short[]' value '[S@4b2dcbc3' to type 'short[]'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      No conversion required, value is already a short[]
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigDecimal;@656a3f2f
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'BigDecimal[]' value '[Ljava.math.BigDecimal;@656a3f2f' to type 'BigDecimal[]'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal[]
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigInteger;@323a43a0
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'BigInteger[]' value '[Ljava.math.BigInteger;@323a43a0' to type 'BigInteger[]'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      No conversion required, value is already a BigInteger[]
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Boolean;@3b383e49
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Converting 'Boolean[]' value '[Ljava.lang.Boolean;@3b383e49' to type 'Boolean[]'
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]      No conversion required, value is already a Boolean[]
+2017-04-11 16:36:32  [ Thread-3:186449 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Byte;@1eee893e
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Converting 'Byte[]' value '[Ljava.lang.Byte;@1eee893e' to type 'Byte[]'
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]      No conversion required, value is already a Byte[]
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Character;@2ac95e8b
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Converting 'Character[]' value '[Ljava.lang.Character;@2ac95e8b' to type 'Character[]'
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]      No conversion required, value is already a Character[]
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Double;@4a8e2f31
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Converting 'Double[]' value '[Ljava.lang.Double;@4a8e2f31' to type 'Double[]'
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]      No conversion required, value is already a Double[]
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Float;@303e8a5f
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Converting 'Float[]' value '[Ljava.lang.Float;@303e8a5f' to type 'Float[]'
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]      No conversion required, value is already a Float[]
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Integer;@5af3421f
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Converting 'Integer[]' value '[Ljava.lang.Integer;@5af3421f' to type 'Integer[]'
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]      No conversion required, value is already a Integer[]
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Long;@3a2e62cc
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Converting 'Long[]' value '[Ljava.lang.Long;@3a2e62cc' to type 'Long[]'
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]      No conversion required, value is already a Long[]
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Short;@162351f
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Converting 'Short[]' value '[Ljava.lang.Short;@162351f' to type 'Short[]'
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]      No conversion required, value is already a Short[]
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Setting default value: [Ljava.lang.String;@454a3b1e
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Converting 'String[]' value '[Ljava.lang.String;@454a3b1e' to type 'String[]'
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]      No conversion required, value is already a String[]
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Class;@5e97a12
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Converting 'Class[]' value '[Ljava.lang.Class;@5e97a12' to type 'Class[]'
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]      No conversion required, value is already a Class[]
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Setting default value: [Ljava.util.Date;@4c985061
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Converting 'Date[]' value '[Ljava.util.Date;@4c985061' to type 'Date[]'
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]      No conversion required, value is already a Date[]
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Setting default value: [Ljava.util.Calendar;@48c41c6d
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Converting 'Calendar[]' value '[Ljava.util.Calendar;@48c41c6d' to type 'Calendar[]'
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]      No conversion required, value is already a Calendar[]
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Setting default value: [Ljava.io.File;@8269572
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Converting 'java.io.File[]' value '[Ljava.io.File;@8269572' to type 'java.io.File[]'
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]      No conversion required, value is already a java.io.File[]
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Date;@46db6918
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Converting 'java.sql.Date[]' value '[Ljava.sql.Date;@46db6918' to type 'java.sql.Date[]'
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Date[]
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Time;@360b1e2b
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Converting 'java.sql.Time[]' value '[Ljava.sql.Time;@360b1e2b' to type 'java.sql.Time[]'
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Time[]
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Timestamp;@17b4ab7b
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Converting 'java.sql.Timestamp[]' value '[Ljava.sql.Timestamp;@17b4ab7b' to type 'java.sql.Timestamp[]'
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Timestamp[]
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Setting default value: [Ljava.net.URL;@76ad76df
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]  Converting 'java.net.URL[]' value '[Ljava.net.URL;@76ad76df' to type 'java.net.URL[]'
+2017-04-11 16:36:32  [ Thread-3:186465 ] - [ DEBUG ]      No conversion required, value is already a java.net.URL[]
+2017-04-11 16:36:32  [ Thread-3:186480 ] - [ DEBUG ]  {"reqHeader":{"Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Host":"172.23.23.97","User-Agent":"Apache-HttpClient/4.5.2 (Java/1.8.0_66)"},"protocol":"HTTP","method":"POST","reqParams":{"loginName":"18867103603","loginPassword":"123456789","type":"1"},"reasonPhrase":"OK","rspHeader":{"Server":"nginx","Date":"Tue, 11 Apr 2017 08:33:34 GMT","Content-Type":"application/json;charset=UTF-8","Content-Length":"145","Connection":"keep-alive","Set-Cookie":"JSESSIONID=A1EB1A1BEFB0E4FA926DA4E973FE0F3B; Path=/ems_cmcc/; HttpOnly","Access-Control-Allow-Origin":"*"},"protocolVersion":"HTTP/1.1","rspBody":"","url":"http://172.23.23.97/ems_cmcc/new/getEnterprise","statusCode":200}
+2017-04-11 16:36:34  [ Thread-2:188396 ] - [ DEBUG ]  received packet number : 9
+2017-04-11 16:36:35  [ Thread-2:14326 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:36:40  [ Thread-2:193856 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:36:41  [ Thread-2:19820 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:36:45  [ Thread-2:199315 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:36:46  [ Thread-2:25342 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:36:51  [ Thread-2:204784 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:37:04  [ main:0 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\conf\setting.properties
+2017-04-11 16:37:06  [ AWT-EventQueue-0:2210 ] - [ DEBUG ]  Capture Thread is started...
+2017-04-11 16:37:12  [ Thread-2:7782 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:37:17  [ Thread-2:13291 ] - [ DEBUG ]  begin to show and save data...
+2017-04-11 16:37:17  [ Thread-2:13291 ] - [ DEBUG ]  received packet number : 9
+2017-04-11 16:37:17  [ Thread-3:13291 ] - [ DEBUG ]  wait...
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: false
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a Boolean
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      Converted to Byte value '0'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value:  
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a Character
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      Converted to Double value '0.0'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      Converted to Float value '0.0'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a Integer
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      Converted to Long value '0'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      Converted to Short value '0'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: 0.0
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'BigDecimal' value '0.0' to type 'BigDecimal'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'BigInteger' value '0' to type 'BigInteger'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a BigInteger
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: false
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a Boolean
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      Converted to Byte value '0'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value:  
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a Character
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      Converted to Double value '0.0'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      Converted to Float value '0.0'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a Integer
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      Converted to Long value '0'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      Converted to Short value '0'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: 
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'String' value '' to type 'String'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [Z@647b9340
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'boolean[]' value '[Z@647b9340' to type 'boolean[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a boolean[]
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [B@3a1b994d
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'byte[]' value '[B@3a1b994d' to type 'byte[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a byte[]
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [C@6e1a2219
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'char[]' value '[C@6e1a2219' to type 'char[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a char[]
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [D@1fa6758c
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'double[]' value '[D@1fa6758c' to type 'double[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a double[]
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [F@277f04ab
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'float[]' value '[F@277f04ab' to type 'float[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a float[]
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [I@414820f8
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'int[]' value '[I@414820f8' to type 'int[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a int[]
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [J@7e7dd822
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'long[]' value '[J@7e7dd822' to type 'long[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a long[]
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [S@525bd874
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'short[]' value '[S@525bd874' to type 'short[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a short[]
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigDecimal;@ddec4c8
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'BigDecimal[]' value '[Ljava.math.BigDecimal;@ddec4c8' to type 'BigDecimal[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal[]
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigInteger;@d116a6b
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'BigInteger[]' value '[Ljava.math.BigInteger;@d116a6b' to type 'BigInteger[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a BigInteger[]
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Boolean;@1dbd0f23
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Boolean[]' value '[Ljava.lang.Boolean;@1dbd0f23' to type 'Boolean[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a Boolean[]
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Byte;@1129fc98
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Byte[]' value '[Ljava.lang.Byte;@1129fc98' to type 'Byte[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a Byte[]
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Character;@6a2a92f1
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Character[]' value '[Ljava.lang.Character;@6a2a92f1' to type 'Character[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a Character[]
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Double;@6c6eefed
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Double[]' value '[Ljava.lang.Double;@6c6eefed' to type 'Double[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a Double[]
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Float;@19df3154
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Float[]' value '[Ljava.lang.Float;@19df3154' to type 'Float[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a Float[]
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Integer;@47ccc3cb
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Integer[]' value '[Ljava.lang.Integer;@47ccc3cb' to type 'Integer[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a Integer[]
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Long;@794f7cd9
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Long[]' value '[Ljava.lang.Long;@794f7cd9' to type 'Long[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a Long[]
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Short;@6245f59a
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Short[]' value '[Ljava.lang.Short;@6245f59a' to type 'Short[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a Short[]
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [Ljava.lang.String;@2f02d17
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'String[]' value '[Ljava.lang.String;@2f02d17' to type 'String[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a String[]
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Class;@23836419
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Class[]' value '[Ljava.lang.Class;@23836419' to type 'Class[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a Class[]
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [Ljava.util.Date;@21a86d04
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Date[]' value '[Ljava.util.Date;@21a86d04' to type 'Date[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a Date[]
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [Ljava.util.Calendar;@6f97b59d
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'Calendar[]' value '[Ljava.util.Calendar;@6f97b59d' to type 'Calendar[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a Calendar[]
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [Ljava.io.File;@352e2062
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'java.io.File[]' value '[Ljava.io.File;@352e2062' to type 'java.io.File[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a java.io.File[]
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Date;@6eee22dc
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'java.sql.Date[]' value '[Ljava.sql.Date;@6eee22dc' to type 'java.sql.Date[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Date[]
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Time;@18877c63
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'java.sql.Time[]' value '[Ljava.sql.Time;@18877c63' to type 'java.sql.Time[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Time[]
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Timestamp;@1fdfe81
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'java.sql.Timestamp[]' value '[Ljava.sql.Timestamp;@1fdfe81' to type 'java.sql.Timestamp[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Timestamp[]
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Setting default value: [Ljava.net.URL;@d2e4a52
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]  Converting 'java.net.URL[]' value '[Ljava.net.URL;@d2e4a52' to type 'java.net.URL[]'
+2017-04-11 16:37:17  [ Thread-3:13370 ] - [ DEBUG ]      No conversion required, value is already a java.net.URL[]
+2017-04-11 16:37:17  [ Thread-3:13385 ] - [ DEBUG ]  {"reqHeader":{"Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Host":"172.23.23.97","User-Agent":"Apache-HttpClient/4.5.2 (Java/1.8.0_66)"},"protocol":"HTTP","method":"POST","reqParams":{"loginName":"18867103603","loginPassword":"123456789","type":"1"},"reasonPhrase":"OK","rspHeader":{"Server":"nginx","Date":"Tue, 11 Apr 2017 08:37:11 GMT","Content-Type":"application/json;charset=UTF-8","Content-Length":"145","Connection":"keep-alive","Set-Cookie":"JSESSIONID=77ADB3D34986CAE75F93197ABA0E6FCB; Path=/ems_cmcc/; HttpOnly","Access-Control-Allow-Origin":"*"},"protocolVersion":"HTTP/1.1","rspBody":"","url":"http://172.23.23.97/ems_cmcc/new/getEnterprise","statusCode":200}
+2017-04-11 16:37:22  [ Thread-2:18733 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:37:28  [ Thread-2:24178 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:37:33  [ Thread-2:29648 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:37:39  [ Thread-2:35112 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:43:23  [ main:0 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\conf\setting.properties
+2017-04-11 16:43:26  [ AWT-EventQueue-0:2498 ] - [ DEBUG ]  Capture Thread is started...
+2017-04-11 16:43:37  [ Thread-2:13480 ] - [ DEBUG ]  begin to show and save data...
+2017-04-11 16:43:37  [ Thread-3:13480 ] - [ DEBUG ]  wait...
+2017-04-11 16:43:37  [ Thread-2:13480 ] - [ DEBUG ]  received packet number : 9
+2017-04-11 16:43:42  [ Thread-2:18971 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:43:48  [ Thread-2:24482 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:43:53  [ Thread-2:29953 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:43:59  [ Thread-2:35414 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:44:04  [ Thread-2:40927 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:44:10  [ Thread-2:46382 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:44:15  [ Thread-2:51846 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:44:21  [ Thread-2:57309 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:44:26  [ Thread-2:62735 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:44:32  [ Thread-2:68188 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:44:37  [ Thread-2:73611 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:44:43  [ Thread-2:79055 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:44:48  [ Thread-2:84615 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:44:54  [ Thread-2:90056 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:44:59  [ Thread-2:95499 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:45:04  [ Thread-2:100945 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:45:57  [ main:0 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\conf\setting.properties
+2017-04-11 16:46:00  [ AWT-EventQueue-0:2331 ] - [ DEBUG ]  Capture Thread is started...
+2017-04-11 16:46:05  [ Thread-2:7826 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:46:11  [ Thread-2:13334 ] - [ DEBUG ]  begin to show and save data...
+2017-04-11 16:46:11  [ Thread-3:13334 ] - [ DEBUG ]  wait...
+2017-04-11 16:46:11  [ Thread-2:13334 ] - [ DEBUG ]  received packet number : 9
+2017-04-11 16:46:11  [ Thread-3:13413 ] - [ DEBUG ]  Setting default value: false
+2017-04-11 16:46:11  [ Thread-3:13413 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
+2017-04-11 16:46:11  [ Thread-3:13413 ] - [ DEBUG ]      No conversion required, value is already a Boolean
+2017-04-11 16:46:11  [ Thread-3:13413 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:46:11  [ Thread-3:13413 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
+2017-04-11 16:46:11  [ Thread-3:13413 ] - [ DEBUG ]      Converted to Byte value '0'
+2017-04-11 16:46:11  [ Thread-3:13413 ] - [ DEBUG ]  Setting default value:  
+2017-04-11 16:46:11  [ Thread-3:13413 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a Character
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      Converted to Double value '0.0'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      Converted to Float value '0.0'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a Integer
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      Converted to Long value '0'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      Converted to Short value '0'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: 0.0
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'BigDecimal' value '0.0' to type 'BigDecimal'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'BigInteger' value '0' to type 'BigInteger'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a BigInteger
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: false
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a Boolean
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      Converted to Byte value '0'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value:  
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a Character
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      Converted to Double value '0.0'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      Converted to Float value '0.0'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a Integer
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      Converted to Long value '0'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      Converted to Short value '0'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: 
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'String' value '' to type 'String'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [Z@658e48de
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'boolean[]' value '[Z@658e48de' to type 'boolean[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a boolean[]
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [B@3f22d9ff
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'byte[]' value '[B@3f22d9ff' to type 'byte[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a byte[]
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [C@16b56ed
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'char[]' value '[C@16b56ed' to type 'char[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a char[]
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [D@86c109c
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'double[]' value '[D@86c109c' to type 'double[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a double[]
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [F@1f3361f7
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'float[]' value '[F@1f3361f7' to type 'float[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a float[]
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [I@36f7becf
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'int[]' value '[I@36f7becf' to type 'int[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a int[]
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [J@6df04ac2
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'long[]' value '[J@6df04ac2' to type 'long[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a long[]
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [S@5705f10
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'short[]' value '[S@5705f10' to type 'short[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a short[]
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigDecimal;@148ba90
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'BigDecimal[]' value '[Ljava.math.BigDecimal;@148ba90' to type 'BigDecimal[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal[]
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigInteger;@a427db0
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'BigInteger[]' value '[Ljava.math.BigInteger;@a427db0' to type 'BigInteger[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a BigInteger[]
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Boolean;@650b8060
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'Boolean[]' value '[Ljava.lang.Boolean;@650b8060' to type 'Boolean[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a Boolean[]
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Byte;@6204cb0e
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'Byte[]' value '[Ljava.lang.Byte;@6204cb0e' to type 'Byte[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a Byte[]
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Character;@26dc61e4
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'Character[]' value '[Ljava.lang.Character;@26dc61e4' to type 'Character[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a Character[]
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Double;@3f6a3772
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'Double[]' value '[Ljava.lang.Double;@3f6a3772' to type 'Double[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a Double[]
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Float;@6dbb87f
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'Float[]' value '[Ljava.lang.Float;@6dbb87f' to type 'Float[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a Float[]
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Integer;@42c34f11
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'Integer[]' value '[Ljava.lang.Integer;@42c34f11' to type 'Integer[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a Integer[]
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Long;@7d5c5ec
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'Long[]' value '[Ljava.lang.Long;@7d5c5ec' to type 'Long[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a Long[]
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Short;@696ab3c3
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'Short[]' value '[Ljava.lang.Short;@696ab3c3' to type 'Short[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a Short[]
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [Ljava.lang.String;@3229e6d1
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'String[]' value '[Ljava.lang.String;@3229e6d1' to type 'String[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a String[]
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Class;@6a4a9c42
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'Class[]' value '[Ljava.lang.Class;@6a4a9c42' to type 'Class[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a Class[]
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [Ljava.util.Date;@4319de42
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'Date[]' value '[Ljava.util.Date;@4319de42' to type 'Date[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a Date[]
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [Ljava.util.Calendar;@2b3f70c
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'Calendar[]' value '[Ljava.util.Calendar;@2b3f70c' to type 'Calendar[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a Calendar[]
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [Ljava.io.File;@31c3e18c
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'java.io.File[]' value '[Ljava.io.File;@31c3e18c' to type 'java.io.File[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a java.io.File[]
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Date;@5f3d39f2
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'java.sql.Date[]' value '[Ljava.sql.Date;@5f3d39f2' to type 'java.sql.Date[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Date[]
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Time;@63772f4d
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'java.sql.Time[]' value '[Ljava.sql.Time;@63772f4d' to type 'java.sql.Time[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Time[]
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Timestamp;@4aee788c
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'java.sql.Timestamp[]' value '[Ljava.sql.Timestamp;@4aee788c' to type 'java.sql.Timestamp[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Timestamp[]
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Setting default value: [Ljava.net.URL;@6e968459
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]  Converting 'java.net.URL[]' value '[Ljava.net.URL;@6e968459' to type 'java.net.URL[]'
+2017-04-11 16:46:11  [ Thread-3:13428 ] - [ DEBUG ]      No conversion required, value is already a java.net.URL[]
+2017-04-11 16:46:11  [ Thread-3:13444 ] - [ DEBUG ]  {"reqHeader":{"Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Host":"172.23.23.97","User-Agent":"Apache-HttpClient/4.5.2 (Java/1.8.0_66)"},"protocol":"HTTP","method":"POST","reqParams":{"loginName":"18867103603","loginPassword":"123456789","type":"1"},"reasonPhrase":"OK","rspHeader":{"Server":"nginx","Date":"Tue, 11 Apr 2017 08:46:05 GMT","Content-Type":"application/json;charset=UTF-8","Content-Length":"145","Connection":"keep-alive","Set-Cookie":"JSESSIONID=8FB7651BA0D833902B0862F1EA41BCE6; Path=/ems_cmcc/; HttpOnly","Access-Control-Allow-Origin":"*"},"protocolVersion":"HTTP/1.1","rspBody":{"flag":"1","msg":[{"city":"杭州","enterpriseCode":"2346150430","enterpriseName":"中国移动（测试环境）","logoUrl":"","province":""}]},"url":"http://172.23.23.97/ems_cmcc/new/getEnterprise","statusCode":200}
+2017-04-11 16:46:16  [ Thread-2:18814 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:46:21  [ Thread-2:24303 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:46:22  [ AWT-EventQueue-0:25013 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\projects\Test02\pom.xml
+2017-04-11 16:46:22  [ AWT-EventQueue-0:25218 ] - [ DEBUG ]  sourceFile:D:\work\workspace\JavaNetCap2\projects\Test02\src\test\resources\com\cmcc\test\GetEnterpriseTest.xls; targetFile:D:\work\workspace\JavaNetCap2\projects\Test02\src\test\resources\com\cmcc\test\GetEnterpriseTest-temp.xls
+2017-04-11 16:46:27  [ Thread-2:29811 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:46:33  [ Thread-2:35354 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:46:38  [ Thread-2:40905 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:46:44  [ Thread-2:46381 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:46:49  [ Thread-2:51945 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:46:55  [ Thread-2:57443 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:47:00  [ Thread-2:62969 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:47:06  [ Thread-2:68413 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:47:11  [ Thread-2:73857 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:47:14  [ AWT-EventQueue-0:77089 ] - [ DEBUG ]  Capture Thread is stoped...
+2017-04-11 16:47:17  [ Thread-2:79337 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 16:50:00  [ AWT-EventQueue-0:242921 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\projects\Test02\pom.xml
+2017-04-11 16:50:00  [ AWT-EventQueue-0:242968 ] - [ DEBUG ]  Couldn't find template in cache for "HttpTestScriptEntity.ftlh"("zh_CN", UTF-8, parsed); will try to load it.
+2017-04-11 16:50:00  [ AWT-EventQueue-0:242968 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity_zh_CN.ftlh"): Not found
+2017-04-11 16:50:00  [ AWT-EventQueue-0:242968 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity_zh.ftlh"): Not found
+2017-04-11 16:50:00  [ AWT-EventQueue-0:242968 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity.ftlh"): Found
+2017-04-11 16:50:00  [ AWT-EventQueue-0:242968 ] - [ DEBUG ]  Loading template for "HttpTestScriptEntity.ftlh"("zh_CN", UTF-8, parsed) from "D:\\work\\workspace\\JavaNetCap2\\template\\HttpTestScriptEntity.ftlh"
+2017-04-11 16:50:00  [ AWT-EventQueue-0:243124 ] - [ DEBUG ]  sourceFile:D:\work\workspace\JavaNetCap2\projects\Test02\src\test\resources\com\cmcc\test\GetEnterpriseTest.xls; targetFile:D:\work\workspace\JavaNetCap2\projects\Test02\src\test\resources\com\cmcc\test\GetEnterpriseTest-temp.xls
+2017-04-11 16:50:01  [ AWT-EventQueue-0:243328 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\projects\Test02\src\test\resources\com\cmcc\test\GetEnterpriseTest.xls is delete : true;D:\work\workspace\JavaNetCap2\projects\Test02\src\test\resources\com\cmcc\test\GetEnterpriseTest-temp.xls is renamed:true
+2017-04-11 17:32:49  [ main:0 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\conf\setting.properties
+2017-04-11 17:32:54  [ AWT-EventQueue-0:4584 ] - [ DEBUG ]  Capture Thread is started...
+2017-04-11 17:33:00  [ Thread-2:10138 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 17:33:05  [ Thread-2:15786 ] - [ DEBUG ]  begin to show and save data...
+2017-04-11 17:33:05  [ Thread-3:15786 ] - [ DEBUG ]  wait...
+2017-04-11 17:33:05  [ Thread-2:15786 ] - [ DEBUG ]  received packet number : 9
+2017-04-11 17:33:05  [ Thread-3:15877 ] - [ DEBUG ]  Setting default value: false
+2017-04-11 17:33:05  [ Thread-3:15877 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
+2017-04-11 17:33:05  [ Thread-3:15877 ] - [ DEBUG ]      No conversion required, value is already a Boolean
+2017-04-11 17:33:05  [ Thread-3:15877 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 17:33:05  [ Thread-3:15877 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
+2017-04-11 17:33:05  [ Thread-3:15877 ] - [ DEBUG ]      Converted to Byte value '0'
+2017-04-11 17:33:05  [ Thread-3:15877 ] - [ DEBUG ]  Setting default value:  
+2017-04-11 17:33:05  [ Thread-3:15877 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
+2017-04-11 17:33:05  [ Thread-3:15877 ] - [ DEBUG ]      No conversion required, value is already a Character
+2017-04-11 17:33:05  [ Thread-3:15877 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 17:33:05  [ Thread-3:15877 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
+2017-04-11 17:33:05  [ Thread-3:15877 ] - [ DEBUG ]      Converted to Double value '0.0'
+2017-04-11 17:33:05  [ Thread-3:15877 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 17:33:05  [ Thread-3:15877 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
+2017-04-11 17:33:05  [ Thread-3:15877 ] - [ DEBUG ]      Converted to Float value '0.0'
+2017-04-11 17:33:05  [ Thread-3:15877 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 17:33:05  [ Thread-3:15877 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
+2017-04-11 17:33:05  [ Thread-3:15877 ] - [ DEBUG ]      No conversion required, value is already a Integer
+2017-04-11 17:33:05  [ Thread-3:15877 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 17:33:05  [ Thread-3:15877 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
+2017-04-11 17:33:05  [ Thread-3:15877 ] - [ DEBUG ]      Converted to Long value '0'
+2017-04-11 17:33:05  [ Thread-3:15877 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 17:33:05  [ Thread-3:15877 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
+2017-04-11 17:33:05  [ Thread-3:15877 ] - [ DEBUG ]      Converted to Short value '0'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: 0.0
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'BigDecimal' value '0.0' to type 'BigDecimal'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'BigInteger' value '0' to type 'BigInteger'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a BigInteger
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: false
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a Boolean
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      Converted to Byte value '0'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value:  
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a Character
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      Converted to Double value '0.0'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      Converted to Float value '0.0'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a Integer
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      Converted to Long value '0'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      Converted to Short value '0'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: 
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'String' value '' to type 'String'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [Z@9c4b3ac
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'boolean[]' value '[Z@9c4b3ac' to type 'boolean[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a boolean[]
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [B@25834608
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'byte[]' value '[B@25834608' to type 'byte[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a byte[]
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [C@5f80c0dc
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'char[]' value '[C@5f80c0dc' to type 'char[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a char[]
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [D@be9d7b8
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'double[]' value '[D@be9d7b8' to type 'double[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a double[]
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [F@279c5cba
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'float[]' value '[F@279c5cba' to type 'float[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a float[]
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [I@1890ed47
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'int[]' value '[I@1890ed47' to type 'int[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a int[]
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [J@41cf58a9
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'long[]' value '[J@41cf58a9' to type 'long[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a long[]
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [S@4de133f
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'short[]' value '[S@4de133f' to type 'short[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a short[]
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigDecimal;@4162e692
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'BigDecimal[]' value '[Ljava.math.BigDecimal;@4162e692' to type 'BigDecimal[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal[]
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigInteger;@5e87d12c
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'BigInteger[]' value '[Ljava.math.BigInteger;@5e87d12c' to type 'BigInteger[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a BigInteger[]
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Boolean;@65b6d045
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'Boolean[]' value '[Ljava.lang.Boolean;@65b6d045' to type 'Boolean[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a Boolean[]
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Byte;@11056027
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'Byte[]' value '[Ljava.lang.Byte;@11056027' to type 'Byte[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a Byte[]
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Character;@478542e3
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'Character[]' value '[Ljava.lang.Character;@478542e3' to type 'Character[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a Character[]
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Double;@276be58e
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'Double[]' value '[Ljava.lang.Double;@276be58e' to type 'Double[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a Double[]
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Float;@740c2dde
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'Float[]' value '[Ljava.lang.Float;@740c2dde' to type 'Float[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a Float[]
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Integer;@4e327f20
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'Integer[]' value '[Ljava.lang.Integer;@4e327f20' to type 'Integer[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a Integer[]
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Long;@234dbe5f
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'Long[]' value '[Ljava.lang.Long;@234dbe5f' to type 'Long[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a Long[]
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Short;@5b72782d
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'Short[]' value '[Ljava.lang.Short;@5b72782d' to type 'Short[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a Short[]
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [Ljava.lang.String;@4e05dc40
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'String[]' value '[Ljava.lang.String;@4e05dc40' to type 'String[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a String[]
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Class;@131371df
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'Class[]' value '[Ljava.lang.Class;@131371df' to type 'Class[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a Class[]
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [Ljava.util.Date;@5d628aa4
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'Date[]' value '[Ljava.util.Date;@5d628aa4' to type 'Date[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a Date[]
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [Ljava.util.Calendar;@759e1b1a
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'Calendar[]' value '[Ljava.util.Calendar;@759e1b1a' to type 'Calendar[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a Calendar[]
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [Ljava.io.File;@34758340
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'java.io.File[]' value '[Ljava.io.File;@34758340' to type 'java.io.File[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a java.io.File[]
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Date;@6de297b4
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'java.sql.Date[]' value '[Ljava.sql.Date;@6de297b4' to type 'java.sql.Date[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Date[]
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Time;@503412d5
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'java.sql.Time[]' value '[Ljava.sql.Time;@503412d5' to type 'java.sql.Time[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Time[]
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Timestamp;@4968f337
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'java.sql.Timestamp[]' value '[Ljava.sql.Timestamp;@4968f337' to type 'java.sql.Timestamp[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Timestamp[]
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Setting default value: [Ljava.net.URL;@6e961d34
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]  Converting 'java.net.URL[]' value '[Ljava.net.URL;@6e961d34' to type 'java.net.URL[]'
+2017-04-11 17:33:05  [ Thread-3:15893 ] - [ DEBUG ]      No conversion required, value is already a java.net.URL[]
+2017-04-11 17:33:05  [ Thread-3:15908 ] - [ DEBUG ]  {"reqHeader":{"Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Host":"172.23.23.97","User-Agent":"Apache-HttpClient/4.5.2 (Java/1.8.0_66)"},"protocol":"HTTP","method":"POST","reqParams":{"loginName":"18867103603","loginPassword":"123456789","type":"1"},"reasonPhrase":"OK","rspHeader":{"Server":"nginx","Date":"Tue, 11 Apr 2017 09:33:00 GMT","Content-Type":"application/json;charset=UTF-8","Content-Length":"145","Connection":"keep-alive","Set-Cookie":"JSESSIONID=9742BFEEC827362037A5F8A57779FE0B; Path=/ems_cmcc/; HttpOnly","Access-Control-Allow-Origin":"*"},"protocolVersion":"HTTP/1.1","rspBody":{"flag":"1","msg":[{"city":"杭州","enterpriseCode":"2346150430","enterpriseName":"中国移动（测试环境）","logoUrl":"","province":""}]},"url":"http://172.23.23.97/ems_cmcc/new/getEnterprise","statusCode":200}
+2017-04-11 17:33:11  [ Thread-2:21265 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 17:33:13  [ AWT-EventQueue-0:23368 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\projects\Test02\pom.xml
+2017-04-11 17:33:14  [ AWT-EventQueue-0:24968 ] - [ DEBUG ]  Couldn't find template in cache for "HttpTestScriptEntity.ftlh"("zh_CN", UTF-8, parsed); will try to load it.
+2017-04-11 17:33:14  [ AWT-EventQueue-0:24984 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity_zh_CN.ftlh"): Not found
+2017-04-11 17:33:14  [ AWT-EventQueue-0:24984 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity_zh.ftlh"): Not found
+2017-04-11 17:33:14  [ AWT-EventQueue-0:24984 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity.ftlh"): Found
+2017-04-11 17:33:14  [ AWT-EventQueue-0:24984 ] - [ DEBUG ]  Loading template for "HttpTestScriptEntity.ftlh"("zh_CN", UTF-8, parsed) from "D:\\work\\workspace\\JavaNetCap2\\template\\HttpTestScriptEntity.ftlh"
+2017-04-11 17:33:14  [ AWT-EventQueue-0:25108 ] - [ DEBUG ]  sourceFile:D:\work\workspace\JavaNetCap2\projects\Test02\src\test\resources\com\cmcc\test\GetEnterpriseTest.xls; targetFile:D:\work\workspace\JavaNetCap2\projects\Test02\src\test\resources\com\cmcc\test\GetEnterpriseTest-temp.xls
+2017-04-11 17:33:15  [ AWT-EventQueue-0:25311 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\projects\Test02\src\test\resources\com\cmcc\test\GetEnterpriseTest.xls is delete : true;D:\work\workspace\JavaNetCap2\projects\Test02\src\test\resources\com\cmcc\test\GetEnterpriseTest-temp.xls is renamed:true
+2017-04-11 17:33:16  [ Thread-2:26837 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 17:33:22  [ Thread-2:32282 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 17:33:23  [ AWT-EventQueue-0:33960 ] - [ DEBUG ]  Capture Thread is stoped...
+2017-04-11 17:33:27  [ Thread-2:37787 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 17:38:52  [ main:15 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\conf\setting.properties
+2017-04-11 17:38:54  [ AWT-EventQueue-0:2496 ] - [ DEBUG ]  Capture Thread is started...
+2017-04-11 17:39:00  [ Thread-2:7982 ] - [ DEBUG ]  begin to show and save data...
+2017-04-11 17:39:00  [ Thread-3:7982 ] - [ DEBUG ]  wait...
+2017-04-11 17:39:00  [ Thread-2:7982 ] - [ DEBUG ]  received packet number : 9
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Setting default value: false
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]      No conversion required, value is already a Boolean
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]      Converted to Byte value '0'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Setting default value:  
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]      No conversion required, value is already a Character
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]      Converted to Double value '0.0'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]      Converted to Float value '0.0'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]      No conversion required, value is already a Integer
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]      Converted to Long value '0'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]      Converted to Short value '0'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Setting default value: 0.0
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Converting 'BigDecimal' value '0.0' to type 'BigDecimal'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Converting 'BigInteger' value '0' to type 'BigInteger'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]      No conversion required, value is already a BigInteger
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Setting default value: false
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Converting 'Boolean' value 'false' to type 'Boolean'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]      No conversion required, value is already a Boolean
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Byte'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]      Converted to Byte value '0'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Setting default value:  
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Converting 'Character' value ' ' to type 'Character'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]      No conversion required, value is already a Character
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Double'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]      Converted to Double value '0.0'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Float'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]      Converted to Float value '0.0'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Integer'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]      No conversion required, value is already a Integer
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Long'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]      Converted to Long value '0'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Setting default value: 0
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Converting 'Integer' value '0' to type 'Short'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]      Converted to Short value '0'
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Setting default value: 
+2017-04-11 17:39:00  [ Thread-3:8068 ] - [ DEBUG ]  Converting 'String' value '' to type 'String'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [Z@53fa6bf9
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'boolean[]' value '[Z@53fa6bf9' to type 'boolean[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a boolean[]
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [B@34b2f983
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'byte[]' value '[B@34b2f983' to type 'byte[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a byte[]
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [C@42f1776c
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'char[]' value '[C@42f1776c' to type 'char[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a char[]
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [D@1b25ba33
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'double[]' value '[D@1b25ba33' to type 'double[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a double[]
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [F@1b80af0d
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'float[]' value '[F@1b80af0d' to type 'float[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a float[]
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [I@38dd231f
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'int[]' value '[I@38dd231f' to type 'int[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a int[]
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [J@715e697f
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'long[]' value '[J@715e697f' to type 'long[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a long[]
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [S@471cb145
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'short[]' value '[S@471cb145' to type 'short[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a short[]
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigDecimal;@597a966c
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'BigDecimal[]' value '[Ljava.math.BigDecimal;@597a966c' to type 'BigDecimal[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a BigDecimal[]
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [Ljava.math.BigInteger;@8ee8387
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'BigInteger[]' value '[Ljava.math.BigInteger;@8ee8387' to type 'BigInteger[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a BigInteger[]
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Boolean;@a790674
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'Boolean[]' value '[Ljava.lang.Boolean;@a790674' to type 'Boolean[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a Boolean[]
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Byte;@28cd18e7
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'Byte[]' value '[Ljava.lang.Byte;@28cd18e7' to type 'Byte[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a Byte[]
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Character;@25893264
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'Character[]' value '[Ljava.lang.Character;@25893264' to type 'Character[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a Character[]
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Double;@59077fe9
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'Double[]' value '[Ljava.lang.Double;@59077fe9' to type 'Double[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a Double[]
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Float;@1b0f981b
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'Float[]' value '[Ljava.lang.Float;@1b0f981b' to type 'Float[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a Float[]
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Integer;@5bc5b1bd
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'Integer[]' value '[Ljava.lang.Integer;@5bc5b1bd' to type 'Integer[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a Integer[]
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Long;@37b3a2b3
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'Long[]' value '[Ljava.lang.Long;@37b3a2b3' to type 'Long[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a Long[]
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Short;@55297b9b
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'Short[]' value '[Ljava.lang.Short;@55297b9b' to type 'Short[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a Short[]
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [Ljava.lang.String;@3281ee65
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'String[]' value '[Ljava.lang.String;@3281ee65' to type 'String[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a String[]
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [Ljava.lang.Class;@443fe9d1
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'Class[]' value '[Ljava.lang.Class;@443fe9d1' to type 'Class[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a Class[]
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [Ljava.util.Date;@6eb37ddf
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'Date[]' value '[Ljava.util.Date;@6eb37ddf' to type 'Date[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a Date[]
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [Ljava.util.Calendar;@4d970c89
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'Calendar[]' value '[Ljava.util.Calendar;@4d970c89' to type 'Calendar[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a Calendar[]
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [Ljava.io.File;@3f5d31a
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'java.io.File[]' value '[Ljava.io.File;@3f5d31a' to type 'java.io.File[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a java.io.File[]
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Date;@472b2573
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'java.sql.Date[]' value '[Ljava.sql.Date;@472b2573' to type 'java.sql.Date[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Date[]
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Time;@7404f471
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'java.sql.Time[]' value '[Ljava.sql.Time;@7404f471' to type 'java.sql.Time[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Time[]
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [Ljava.sql.Timestamp;@344e84d2
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'java.sql.Timestamp[]' value '[Ljava.sql.Timestamp;@344e84d2' to type 'java.sql.Timestamp[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a java.sql.Timestamp[]
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Setting default value: [Ljava.net.URL;@1a898f28
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]  Converting 'java.net.URL[]' value '[Ljava.net.URL;@1a898f28' to type 'java.net.URL[]'
+2017-04-11 17:39:00  [ Thread-3:8083 ] - [ DEBUG ]      No conversion required, value is already a java.net.URL[]
+2017-04-11 17:39:00  [ Thread-3:8099 ] - [ DEBUG ]  {"reqHeader":{"Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Host":"172.23.23.97","User-Agent":"Apache-HttpClient/4.5.2 (Java/1.8.0_66)"},"protocol":"HTTP","method":"POST","reqParams":{"loginName":"18867103603","loginPassword":"123456789","type":"1"},"reasonPhrase":"OK","rspHeader":{"Server":"nginx","Date":"Tue, 11 Apr 2017 09:38:57 GMT","Content-Type":"application/json;charset=UTF-8","Content-Length":"145","Connection":"keep-alive","Set-Cookie":"JSESSIONID=3C6D5B483C3D7B22464CD8D4F9137CC4; Path=/ems_cmcc/; HttpOnly","Access-Control-Allow-Origin":"*"},"protocolVersion":"HTTP/1.1","rspBody":{"flag":"1","msg":[{"city":"杭州","enterpriseCode":"2346150430","enterpriseName":"中国移动（测试环境）","logoUrl":"","province":""}]},"url":"http://172.23.23.97/ems_cmcc/new/getEnterprise","statusCode":200}
+2017-04-11 17:39:05  [ Thread-2:13453 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 17:39:06  [ AWT-EventQueue-0:13688 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\projects\Test02\pom.xml
+2017-04-11 17:39:07  [ AWT-EventQueue-0:15624 ] - [ DEBUG ]  Couldn't find template in cache for "HttpTestScriptEntity.ftlh"("zh_CN", UTF-8, parsed); will try to load it.
+2017-04-11 17:39:07  [ AWT-EventQueue-0:15624 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity_zh_CN.ftlh"): Not found
+2017-04-11 17:39:07  [ AWT-EventQueue-0:15624 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity_zh.ftlh"): Not found
+2017-04-11 17:39:07  [ AWT-EventQueue-0:15624 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity.ftlh"): Found
+2017-04-11 17:39:07  [ AWT-EventQueue-0:15624 ] - [ DEBUG ]  Loading template for "HttpTestScriptEntity.ftlh"("zh_CN", UTF-8, parsed) from "D:\\work\\workspace\\JavaNetCap2\\template\\HttpTestScriptEntity.ftlh"
+2017-04-11 17:39:08  [ AWT-EventQueue-0:15748 ] - [ DEBUG ]  sourceFile:D:\work\workspace\JavaNetCap2\projects\Test02\src\test\resources\com\cmcc\test\GetEnterpriseTest.xls; targetFile:D:\work\workspace\JavaNetCap2\projects\Test02\src\test\resources\com\cmcc\test\GetEnterpriseTest-temp.xls
+2017-04-11 17:39:08  [ AWT-EventQueue-0:15952 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\projects\Test02\src\test\resources\com\cmcc\test\GetEnterpriseTest.xls is delete : true;D:\work\workspace\JavaNetCap2\projects\Test02\src\test\resources\com\cmcc\test\GetEnterpriseTest-temp.xls is renamed:true
+2017-04-11 17:39:11  [ Thread-2:18940 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 17:39:14  [ AWT-EventQueue-0:21986 ] - [ DEBUG ]  Capture Thread is stoped...
+2017-04-11 17:39:16  [ Thread-2:24481 ] - [ DEBUG ]  received packet number : 0
+2017-04-11 17:40:07  [ AWT-EventQueue-0:75151 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\projects\Test02\pom.xml
+2017-04-11 17:40:08  [ AWT-EventQueue-0:76547 ] - [ DEBUG ]  Couldn't find template in cache for "HttpTestScriptEntity.ftlh"("zh_CN", UTF-8, parsed); will try to load it.
+2017-04-11 17:40:08  [ AWT-EventQueue-0:76547 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity_zh_CN.ftlh"): Not found
+2017-04-11 17:40:08  [ AWT-EventQueue-0:76547 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity_zh.ftlh"): Not found
+2017-04-11 17:40:08  [ AWT-EventQueue-0:76547 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity.ftlh"): Found
+2017-04-11 17:40:08  [ AWT-EventQueue-0:76547 ] - [ DEBUG ]  Loading template for "HttpTestScriptEntity.ftlh"("zh_CN", UTF-8, parsed) from "D:\\work\\workspace\\JavaNetCap2\\template\\HttpTestScriptEntity.ftlh"
+2017-04-11 17:40:08  [ AWT-EventQueue-0:76578 ] - [ DEBUG ]  sourceFile:D:\work\workspace\JavaNetCap2\projects\Test02\src\test\resources\com\cmcc\test\GetEnterpriseTest.xls; targetFile:D:\work\workspace\JavaNetCap2\projects\Test02\src\test\resources\com\cmcc\test\GetEnterpriseTest-temp.xls
+2017-04-11 17:40:09  [ AWT-EventQueue-0:76760 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\projects\Test02\src\test\resources\com\cmcc\test\GetEnterpriseTest.xls is delete : true;D:\work\workspace\JavaNetCap2\projects\Test02\src\test\resources\com\cmcc\test\GetEnterpriseTest-temp.xls is renamed:true
+2017-04-11 17:41:04  [ AWT-EventQueue-0:131907 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\projects\Test02\pom.xml
+2017-04-11 17:41:05  [ AWT-EventQueue-0:133163 ] - [ DEBUG ]  Couldn't find template in cache for "HttpTestScriptEntity.ftlh"("zh_CN", UTF-8, parsed); will try to load it.
+2017-04-11 17:41:05  [ AWT-EventQueue-0:133163 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity_zh_CN.ftlh"): Not found
+2017-04-11 17:41:05  [ AWT-EventQueue-0:133163 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity_zh.ftlh"): Not found
+2017-04-11 17:41:05  [ AWT-EventQueue-0:133163 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("HttpTestScriptEntity.ftlh"): Found
+2017-04-11 17:41:05  [ AWT-EventQueue-0:133163 ] - [ DEBUG ]  Loading template for "HttpTestScriptEntity.ftlh"("zh_CN", UTF-8, parsed) from "D:\\work\\workspace\\JavaNetCap2\\template\\HttpTestScriptEntity.ftlh"
+2017-04-11 17:41:05  [ AWT-EventQueue-0:133179 ] - [ DEBUG ]  sourceFile:D:\work\workspace\JavaNetCap2\projects\Test02\src\test\resources\com\cmcc\test\GetEnterpriseTest.xls; targetFile:D:\work\workspace\JavaNetCap2\projects\Test02\src\test\resources\com\cmcc\test\GetEnterpriseTest-temp.xls
+2017-04-11 17:41:05  [ AWT-EventQueue-0:133336 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\projects\Test02\src\test\resources\com\cmcc\test\GetEnterpriseTest.xls is delete : true;D:\work\workspace\JavaNetCap2\projects\Test02\src\test\resources\com\cmcc\test\GetEnterpriseTest-temp.xls is renamed:true

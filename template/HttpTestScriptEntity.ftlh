@@ -25,8 +25,8 @@ public class ${entity.className}<#if entity.superclass?has_content> extends ${en
     /********** test method ***********/
     @Test(<#if entity.smokeScript>groups={"SMOKE"}, </#if>dataProvider="defaultMethod", dataProviderClass=ExcelDataProvider.class)
     public void ${entity.methodName}(<#list entity.paramNames as paramName>String ${paramName}<#if paramName_has_next>, </#if></#list>) {
-			<#assign caseId = entity.paramNames[0], desc = entity.paramNames[1], url = entity.paramNames[2],
-				method = entity.paramNames[3], reqHeader = entity.paramNames[4], reqParams = entity.paramNames[5], 
+			<#assign caseId = entity.paramNames[0], desc = entity.paramNames[1], method = entity.paramNames[2],
+				url = entity.paramNames[3], reqHeader = entity.paramNames[4], reqParams = entity.paramNames[5], 
 				rspCode = entity.paramNames[6], reasonPhrase = entity.paramNames[7],
 				rspHeader = entity.paramNames[8], rspBody = entity.paramNames[9] />
     	LOGGER.info("########## " + ${caseId} + ": " + ${desc} + " ##########"+" BEGIN ##########");
@@ -37,7 +37,7 @@ public class ${entity.className}<#if entity.superclass?has_content> extends ${en
 			Assert.assertEquals(String.valueOf(rsp.getStatusLine().getStatusCode()), ${rspCode});
 			Assert.assertEquals(rsp.getStatusLine().getReasonPhrase(), ${reasonPhrase});
 			if(null != ${rspHeader} && ${rspHeader}.trim().length() > 0){
-				AssertResult result = Asserts.assertJson(EntityUtils.toString(rsp.getEntity()), ${rspHeader});
+				AssertResult result = Asserts.assertJson(client.convertHeards2Json(rsp.getAllHeaders()), RspHeader);
 				Assert.assertTrue(result.isSucc(), result.getMessage());
 			}
 			if(null != ${rspBody} && ${rspBody}.trim().length() > 0){
