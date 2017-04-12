@@ -4,6 +4,7 @@ package com.netcap.captor;
 //import com.netcap.handler.AsyncHandler;
 //import com.netcap.handler.DataQueues;
 import com.netcap.handler.PacketAsyncHandler;
+import com.netcap.handler.PacketQueues;
 //import com.protocol.http.HttptHelper;
 import com.view.mainframe.MainFrame;
 
@@ -33,16 +34,17 @@ public class PacketReceiverImpl implements PacketReceiver {
 	 */
 	@Override
 	public void receivePacket(Packet packet) {
-		PacketAsyncHandler handler = new PacketAsyncHandler();
-		handler.setFrame(frame);
-		if(null != packet.data && packet.data.length > 0)
-			PacketAsyncHandler.add(packet);
-		if(null == packetHandlerThread){
-			packetHandlerThread = new Thread(handler);
-			packetHandlerThread.start();
-		} else if(!packetHandlerThread.isAlive()){
-			packetHandlerThread.start();
+		if(null != packet.data && packet.data.length > 0){
+			startPacketThread();
+			PacketQueues.Task task = new PacketQueues.Task(packet);
+			PacketQueues.add(task);
 		}
+//		if(null == packetHandlerThread){
+//			packetHandlerThread = new Thread(new PacketAsyncHandler(frame));
+//			packetHandlerThread.start();
+//		} else if(!packetHandlerThread.isAlive()){
+//			packetHandlerThread.start();
+//		}
 //		if(packet instanceof TCPPacket && null != packet.data && packet.data.length > 0){
 //			TCPPacket tcpPacket = (TCPPacket) packet;
 //			String data = new String(tcpPacket.data);
@@ -121,20 +123,21 @@ public class PacketReceiverImpl implements PacketReceiver {
 //		rspData = "";
 //	}
 //	
-//	/**
-//	 * 
-//	 */
-//	private void startDealDataThread(){
-//		if(null == dealDataThread){
-//			AsyncHandler handler = new AsyncHandler();
-//			handler.setFrame(this.frame);
-//			//开启线程执行队列中的任务，那就是先到先得了
-//			dealDataThread = new Thread(handler);
-//			dealDataThread.start();
-//		} else if(!dealDataThread.isAlive()){
-//			dealDataThread.start();
-//		}
-//		
-//	}
+	/**
+	 * 
+	 */
+	private void startPacketThread(){
+		if(null == packetHandlerThread){
+			PacketAsyncHandler handler = new PacketAsyncHandler(this.frame);
+			//开启线程执行队列中的任务，那就是先到先得了
+			packetHandlerThread = new Thread(handler);
+			packetHandlerThread.start();
+		} else if(!packetHandlerThread.isAlive()){
+			packetHandlerThread.start();
+		} else {
+			//packetHandlerThread.notifyAll();
+		}
+		
+	}
 
 }

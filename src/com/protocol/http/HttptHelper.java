@@ -52,7 +52,8 @@ public class HttptHelper {
 	 */
 	private static void initRequestData(HttpDataBean bean, String requestData){
 		int index = requestData.indexOf(HttptHelper.CRLF);
-		String requestLine = requestData.trim().substring(0, index);
+		if(index < 0) return;
+		String requestLine = requestData.substring(0, index);
 		bean.setMethod(requestLine.trim().split(HttptHelper.SP)[0]);
 		String[] uriStr = requestLine.trim().split(HttptHelper.SP)[1].split(HttptHelper.QUES);
 		String uri = uriStr[0];
