@@ -35,7 +35,8 @@ public class PacketReceiverImpl implements PacketReceiver {
 	public void receivePacket(Packet packet) {
 		PacketAsyncHandler handler = new PacketAsyncHandler();
 		handler.setFrame(frame);
-		PacketAsyncHandler.add(packet);
+		if(null != packet.data && packet.data.length > 0)
+			PacketAsyncHandler.add(packet);
 		if(null == packetHandlerThread){
 			packetHandlerThread = new Thread(handler);
 			packetHandlerThread.start();

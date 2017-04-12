@@ -1,5 +1,6 @@
 package com.netcap.handler;
 
+import java.nio.charset.Charset;
 import java.util.LinkedList;
 
 import com.common.util.LogUtil;
@@ -40,7 +41,7 @@ public class PacketAsyncHandler implements Runnable {
                     LogUtil.debug(cl, "wait...");
                 }
                 Packet packet = PacketAsyncHandler.packetQueue.removeLast();
-                if(packet instanceof TCPPacket && null != packet.data && packet.data.length > 0){
+                if(packet instanceof TCPPacket){
         			TCPPacket tcpPacket = (TCPPacket) packet;
         			String data = new String(tcpPacket.data);
         			assemblePacket(data);
@@ -51,7 +52,6 @@ public class PacketAsyncHandler implements Runnable {
 	
 	private static String reqData = "";
 	private static String rspData = "";
-
 	private static int contentLen = -1000;
 	
 	/**
@@ -59,6 +59,7 @@ public class PacketAsyncHandler implements Runnable {
 	 * @param data
 	 */
 	private void assemblePacket(String data) {
+		System.out.println("---->" + data);
 		String method = HttptHelper.checkHttpRequest(data);
 		if(method != null){
 			if(reqData.length() > 0){
@@ -85,7 +86,7 @@ public class PacketAsyncHandler implements Runnable {
 			} else {
 				contentLen = HttptHelper.getContentLenth(data);
 			}
-		} else if(rspData.length() == 0){ // 如果非首个响应数据包，且此时响应数据为空，则该包属于请求包
+		} else if(rspData.length() < 1){ // 如果非首个响应数据包，且此时响应数据为空，则该包属于请求包
 			reqData = reqData + data;
 			return;
 		} else {
@@ -102,9 +103,12 @@ public class PacketAsyncHandler implements Runnable {
 			}
 		} else {
 			rspData = rspData + data;
+			int rspDataLength = rspData.getBytes(Charset.forName("utf-8")).length;
 			LogUtil.debug(cl, "reqData ---------> " + reqData);
 			LogUtil.debug(cl, "rspData =========> " + rspData);
-			if(contentLen <= rspData.getBytes().length){
+			LogUtil.debug(cl, "contentLen ---------> " + contentLen);
+			LogUtil.debug(cl, "rspDataLength =========> " + rspDataLength);
+			if(contentLen <= rspDataLength){
 				dealData();
 			} else{
 				LogUtil.debug(cl, "response data has not complete...");
@@ -121,8 +125,6 @@ public class PacketAsyncHandler implements Runnable {
         //添加一个任务
 		DataQueues.Task t =new DataQueues.Task(reqData, rspData);
 		DataQueues.add(t); //执行该方法，激活所有对应队列，那两个线程就会开始执行啦
-		//reqData = ""; 
-		//rspData = "";
 	}
 
 	private Thread dealDataThread = null;

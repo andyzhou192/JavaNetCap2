@@ -23,7 +23,7 @@
 		<!-- 把项目相关的资源文件，打包进zip文件的根目录 -->
 		<!-- 把项目的配置文件，打包进zip文件的conf目录 -->
 		<fileSet>
-			<directory>${project.build.directory}/conf</directory>
+			<directory>/conf</directory>
 			<outputDirectory>/conf</outputDirectory>
 			<includes>
 				<include>*.xml</include>
@@ -31,44 +31,44 @@
 			</includes>
 		</fileSet>
 		<fileSet>
-			<directory>${project.build.directory}/data</directory>
+			<directory>/data</directory>
 			<outputDirectory>/data</outputDirectory>
 		</fileSet>
 		<fileSet>
-			<directory>${project.build.directory}/img</directory>
+			<directory>/img</directory>
 			<outputDirectory>/img</outputDirectory>
 		</fileSet>
 		<fileSet>
-			<directory>${project.build.directory}/libs</directory>
+			<directory>/libs</directory>
 			<outputDirectory>/libs</outputDirectory>
 		</fileSet>
 		<fileSet>
-			<directory>${project.build.directory}/logs</directory>
+			<directory>/logs</directory>
 			<outputDirectory>/logs</outputDirectory>
 		</fileSet>
 		<fileSet>
-			<directory>${project.build.directory}/maven</directory>
+			<directory>/maven</directory>
 			<outputDirectory>/maven</outputDirectory>
 		</fileSet>
 		<fileSet>
-			<directory>${project.build.directory}/projects</directory>
+			<directory>/projects</directory>
 			<outputDirectory>/projects</outputDirectory>
 		</fileSet>
 		<fileSet>
-			<directory>${project.build.directory}/software</directory>
+			<directory>/software</directory>
 			<outputDirectory>/software</outputDirectory>
 		</fileSet>
 		<fileSet>
-			<directory>${project.build.directory}/template</directory>
+			<directory>/template</directory>
 			<outputDirectory>/template</outputDirectory>
 		</fileSet>
 		<fileSet>
-			<directory>${project.build.directory}/theme</directory>
+			<directory>/theme</directory>
 			<outputDirectory>/theme</outputDirectory>
 		</fileSet>
 		<!-- 把项目自己编译出来的jar文件，打包进zip文件的根目录 -->
 		<fileSet>
-			<directory>${project.build.directory}</directory>
+			<directory>target</directory>
 			<outputDirectory></outputDirectory>
 			<includes>
 				<include>*.jar</include>

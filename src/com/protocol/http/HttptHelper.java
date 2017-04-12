@@ -151,9 +151,10 @@ public class HttptHelper {
 	 **/
 	public static String checkHttpRequest(String data){
 		String method = null;
-		if(data.length() > 1){
+		if(data.length() > 1 && data.indexOf(HttptHelper.CRLF) > 0){
+			String[] requestLine = data.substring(0, data.indexOf(HttptHelper.CRLF)).split(HttptHelper.SP);
 			for(String m : HttpMethods){
-				if(data.split(HttptHelper.SP)[0].trim().equals(m)){
+				if(requestLine[0].trim().equalsIgnoreCase(m)){
 					method = m;
 					break;
 				}
