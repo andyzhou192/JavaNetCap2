@@ -13,6 +13,7 @@ import javax.swing.JTextField;
 import com.view.preference.AbstractPreferencesView;
 import com.view.preference.PreferenceFrame;
 import com.view.preference.PropertyHelper;
+import com.view.util.ScrollPaneTextArea;
 import com.view.util.ViewModules;
 
 import jpcap.NetworkInterface;
@@ -33,14 +34,15 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 
 	private PreferenceFrame parent;
 	private JLabel ethernetLabel, protocolLabel, promiscLabel, urlLabel, maxLengthLabel;
-	private JTextField caplenTextField, urlFilterField;
+	private JTextField caplenTextField;
+	private ScrollPaneTextArea urlFilterArea;
 	private JCheckBox promiscCheckBox;
 	private JComboBox<?> netJComboBox, proJComboBox;
 	private JRadioButton wholeRadioButton, headRadioButton, otherRadioButton;
 	private JButton applyButton;
 	
 	public JcaptureSettingView(PreferenceFrame parent) {
-		super(10, 10);
+		super(11, 10);
 		this.parent = parent;
 		defineComponents();
 		layoutComponents();
@@ -57,7 +59,7 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 		protocolLabel.setToolTipText("请选择捕获的协议");
 		promiscLabel = ViewModules.createJLabel("Promisc:", Color.BLACK); 
 		promiscLabel.setToolTipText("请选择是否采用混杂模式");
-		urlLabel = ViewModules.createJLabel("Capture Url:", Color.BLACK);
+		urlLabel = ViewModules.createJLabel("Capture Url:(Multiple addresses are separated by ',')", Color.BLACK);
 		urlLabel.setToolTipText("请填写待捕获的URL");
 		maxLengthLabel = ViewModules.createJLabel("Max Length:", Color.BLACK);
 		maxLengthLabel.setToolTipText("请选择每次捕获数据的最大长度，大小在68~6656之间");
@@ -65,7 +67,7 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 		netJComboBox = ViewModules.createComboBox(getNetDeviceList());
 		proJComboBox = ViewModules.createComboBox(new String[]{"TCP"});
 		promiscCheckBox = ViewModules.createCheckBox("Yes", null);
-		urlFilterField = ViewModules.createTextField(20, "", true);
+		urlFilterArea = new ScrollPaneTextArea(5, "");
 		wholeRadioButton = ViewModules.createRadioButton("Whole Data", "WHOLE", this);
 		headRadioButton = ViewModules.createRadioButton("Only Head", "HEAD", this);
 		otherRadioButton = ViewModules.createRadioButton("Other", "OTHER", this);
@@ -83,7 +85,7 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 		netJComboBox.setSelectedIndex(PropertyHelper.getNetDevicesIndex());
 		proJComboBox.setSelectedItem(PropertyHelper.getProtocolType());
 		promiscCheckBox.setSelected(PropertyHelper.getPromisc());
-		urlFilterField.setText(PropertyHelper.getCaptureUrl());
+		urlFilterArea.setText(PropertyHelper.getCaptureUrl());
 		
 		int caplen = PropertyHelper.getCaptureLength();
 		if (caplen < 68 || caplen > 6656) {
@@ -112,15 +114,15 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 		this.add(promiscCheckBox, ViewModules.getGridBagConstraints(2, 3, 9, 1));
 		
 		this.add(urlLabel, ViewModules.getGridBagConstraints(1, 4, 1, 1));
-		this.add(urlFilterField, ViewModules.getGridBagConstraints(2, 4, 9, 1));
+		this.add(urlFilterArea, ViewModules.getGridBagConstraints(1, 5, 10, 5));
 		
-		this.add(maxLengthLabel, ViewModules.getGridBagConstraints(1, 5, 2, 1));
-		this.add(wholeRadioButton, ViewModules.getGridBagConstraints(3, 5, 2, 1));
-		this.add(headRadioButton, ViewModules.getGridBagConstraints(5, 5, 2, 1));
-		this.add(otherRadioButton, ViewModules.getGridBagConstraints(7, 5, 2, 1));
-		this.add(caplenTextField, ViewModules.getGridBagConstraints(9, 5, 2, 1));
+		this.add(maxLengthLabel, ViewModules.getGridBagConstraints(1, 10, 2, 1));
+		this.add(wholeRadioButton, ViewModules.getGridBagConstraints(3, 10, 2, 1));
+		this.add(headRadioButton, ViewModules.getGridBagConstraints(5, 10, 2, 1));
+		this.add(otherRadioButton, ViewModules.getGridBagConstraints(7, 10, 2, 1));
+		this.add(caplenTextField, ViewModules.getGridBagConstraints(9, 10, 2, 1));
 		
-		this.add(applyButton, ViewModules.getGridBagConstraints(10, 10, 1, 1));
+		this.add(applyButton, ViewModules.getGridBagConstraints(10, 11, 1, 1));
 	}
 
 	public void actionPerformed(ActionEvent evt) {
@@ -166,7 +168,7 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 		// 待捕获的数据长度 ,捕获长度必须介于 68和6656之间的整数，默认为6656
 		PropertyHelper.setCaptureLength(caplen);
 		// 待捕获的URL，不含参数
-		PropertyHelper.setCaptureUrl(urlFilterField.getText());
+		PropertyHelper.setCaptureUrl(urlFilterArea.getText());
 		boolean isSucc = PropertyHelper.storeProperties();
 		//ViewModules.showMessageDialog(parent, "Properties saved : " + isSucc);
 		return isSucc;

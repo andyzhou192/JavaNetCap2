@@ -1,9 +1,8 @@
 package com.netcap.handler;
 
 import java.util.LinkedList;
-import java.util.List;
-
 import com.common.util.LogUtil;
+import com.common.util.StringUtil;
 import com.protocol.http.HttptHelper;
 import com.protocol.http.bean.HttpDataBean;
 import com.view.mainframe.MainFrame;
@@ -11,7 +10,7 @@ import com.view.preference.PropertyHelper;
 
 public class DataQueues {
 
-	public static List<Task> queue = new LinkedList<Task>();
+	public static LinkedList<Task> queue = new LinkedList<Task>();
 	
     /**
      * 假如 参数t 为任务
@@ -19,7 +18,7 @@ public class DataQueues {
      */
     public static void add (Task t){
         synchronized (DataQueues.queue) {
-        	DataQueues.queue.add(t); //添加任务
+        	DataQueues.queue.addFirst(t); //添加任务
         	DataQueues.queue.notifyAll();//激活该队列对应的执行线程，全部Run起来
         }
     }
@@ -40,6 +39,9 @@ public class DataQueues {
     		this.rspData = rspData;
     	}
     	
+    	/**
+    	 * 
+    	 */
         public void dataProcess(){
         	HttpDataBean bean = HttptHelper.getDataBean(reqData, rspData);
         	if (bean != null && isValidReq(bean.getUrl())) {
@@ -50,14 +52,27 @@ public class DataQueues {
         }
     }
     
+    /**
+     * 
+     * @param url
+     * @return
+     */
     public static boolean isValidReq(String url){
     	String captureUrl = PropertyHelper.getCaptureUrl();
-    	if(null == url || url.endsWith(".js") || url.endsWith(".css") || url.endsWith(".png"))
+    	if(null == url || url.endsWith(".js") || url.endsWith(".css") || url.endsWith(".png")){
     		return false;
-    	else if(null == captureUrl || url.contains(captureUrl)){
-    		return true;
+    	}else {
+    		if(StringUtil.isEmpty(captureUrl) || StringUtil.isBlank(captureUrl)){
+    			return true;
+    		} else {
+    			for(String address : captureUrl.split(",")){
+    				if(url.contains(address.trim()))
+    					return true;
+    			} 
+    			return false;
+    		}
+    			
     	}
-		return false;
     }
 
 }

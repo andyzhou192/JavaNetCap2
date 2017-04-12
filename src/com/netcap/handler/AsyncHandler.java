@@ -29,7 +29,7 @@ public class AsyncHandler implements Runnable {
                     }
                     LogUtil.debug(cl, "wait...");
                 }
-                DataQueues.Task t= DataQueues.queue.remove(0); //得到第一个
+                DataQueues.Task t= DataQueues.queue.removeLast(); //得到第一个
                 t.setFrame(this.frame);
                 t.dataProcess(); //执行该任务
             }

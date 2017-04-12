@@ -30,6 +30,7 @@ import com.view.script.generator.GeneratorFrame;
 import com.view.util.ScrollPaneTextArea;
 import com.view.util.ViewModules;
 import com.common.util.FormatUtil;
+import com.common.util.StringUtil;
 
 import freemarker.template.TemplateException;
 
@@ -170,14 +171,14 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 	}
 
 	public void initData() {
-		String url = dataMap.get("url").toString();
-		String method = dataMap.get("method").toString();
-		String reqHeader = dataMap.get("reqHeader").toString();
-		String reqParams = dataMap.get("reqParams").toString();
-		String statusCode = dataMap.get("statusCode").toString();
-		String reasonPhrase = dataMap.get("reasonPhrase").toString();
-		String rspHeader = dataMap.get("rspHeader").toString();
-		String rspBody = dataMap.get("rspBody").toString();
+		String url = StringUtil.toString(dataMap.get("url"));
+		String method = StringUtil.toString(dataMap.get("method"));
+		String reqHeader = StringUtil.toString(dataMap.get("reqHeader"));
+		String reqParams = StringUtil.toString(dataMap.get("reqParams"));
+		String statusCode = StringUtil.toString(dataMap.get("statusCode"));
+		String reasonPhrase = StringUtil.toString(dataMap.get("reasonPhrase"));
+		String rspHeader = StringUtil.toString(dataMap.get("rspHeader"));
+		String rspBody = StringUtil.toString(dataMap.get("rspBody"));
 		
 		packageNameField.setText(PropertyHelper.getPackageName());
 		String methodName = HttptHelper.getInterfaceMethodName(url);

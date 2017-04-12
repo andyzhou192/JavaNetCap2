@@ -269,6 +269,17 @@ public class StringUtil {
         }  
 		return result;
 	}
+	
+	/**
+	 * 
+	 * @param obj
+	 * @return
+	 */
+	public static String toString(Object obj){
+		if(null == obj)
+			return null;
+		return String.valueOf(obj);
+	}
 
 	// public static void main(String[] args) {
 	// // TODO Auto-generated method stub
