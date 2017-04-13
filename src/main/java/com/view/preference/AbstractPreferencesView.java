@@ -10,11 +10,13 @@ import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
 import com.common.Constants;
+import com.common.util.LogUtil;
 import com.common.util.PropertiesUtil;
 import com.view.util.ViewModules;
 
 @SuppressWarnings("serial")
 public abstract class AbstractPreferencesView extends JPanel implements ActionListener {
+	private Class<?> cl = AbstractPreferencesView.class;
 	
 	public AbstractPreferencesView(int rowNum, int columnNum){
 		this.setBorder(new LineBorder(new Color(255, 200, 0), 2));
@@ -47,12 +49,11 @@ public abstract class AbstractPreferencesView extends JPanel implements ActionLi
 	}
 	
 	/**
-	 * 递归获取指定路径下的所有文件
+	 * 递归获取指定路径下的所有文件的绝对路径
 	 * @param path
 	 * @return
 	 */
 	public String[] traverseFolder(String path) {
-		String[] files;
 		List<String> fileList = new ArrayList<String>();
         File folder = new File(path);
         if (folder.exists()) {
@@ -68,8 +69,18 @@ public abstract class AbstractPreferencesView extends JPanel implements ActionLi
                     }
                 }
             }
+        } else {
+        	LogUtil.err(cl, "template dir is not exist : " + path);
         }
-        files = (String[]) fileList.toArray(new String[]{""});
-		return files;
+        return fileList.toArray(new String[]{});
     }
+	
+	public String[] getTemplateFiles(){
+		String[] temps = traverseFolder(Constants.DEFAULT_TEMPLATE_SCRIPT_DIR);
+		int beginIndex = new File(Constants.DEFAULT_TEMPLATE_SCRIPT_DIR).getAbsolutePath().length() + 1;
+		String[] files = new String[temps.length];
+        for(int i = 0; i < temps.length; i++)
+        	files[i] = temps[i].substring(beginIndex);
+		return files;
+	}
 }

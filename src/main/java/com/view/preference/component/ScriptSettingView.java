@@ -2,19 +2,18 @@ package com.view.preference.component;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.io.File;
+//import java.awt.event.MouseAdapter;
+//import java.awt.event.MouseEvent;
+//import java.io.File;
 
-import javax.swing.DefaultComboBoxModel;
+//import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
-import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
+//import javax.swing.event.DocumentEvent;
+//import javax.swing.event.DocumentListener;
 
 import com.view.preference.AbstractPreferencesView;
 import com.view.preference.PreferenceFrame;
@@ -30,12 +29,12 @@ import com.view.util.ViewModules;
 public class ScriptSettingView extends AbstractPreferencesView {
 
 	private PreferenceFrame parent;
-	private JLabel packageNameLabel, authorLabel, classDescLabel, classNameLabel, superClassLabel, paramNamesLabel, smokeScriptLabel, templateDirLabel, templateFileLabel;
-	private JTextField packageNameField, authorField, classDescField, classNameField, superClassField, paramNamesField, templateDirField;
+	private JLabel packageNameLabel, authorLabel, classDescLabel, classNameLabel, superClassLabel, paramNamesLabel, smokeScriptLabel/**, templateDirLabel**/, templateFileLabel;
+	private JTextField packageNameField, authorField, classDescField, classNameField, superClassField, paramNamesField/**, templateDirField**/;
 	private JCheckBox smokeScriptCheckBox;
-	private JButton browseButton, applyButton;
+	private JButton /**browseButton,**/ applyButton;
 	private JComboBox<String> templateFileCombBox;
-	private DefaultComboBoxModel<String> combBoxModel;
+//	private DefaultComboBoxModel<String> combBoxModel;
 	
 	public ScriptSettingView(PreferenceFrame parent) {
 		super(10, 10);
@@ -43,22 +42,6 @@ public class ScriptSettingView extends AbstractPreferencesView {
 		defineComponents();
 		layoutComponents();
 		initData();
-	}
-	
-	/**
-	 * 初始化界面数据
-	 */
-	public void initData(){
-		packageNameField.setText(PropertyHelper.getPackageName());
-		authorField.setText(PropertyHelper.getAuthor());
-		classDescField.setText(PropertyHelper.getClassDesc());
-		classNameField.setText(PropertyHelper.getClassName());
-		superClassField.setText(PropertyHelper.getSuperClass());
-		paramNamesField.setText(PropertyHelper.getParamNames());
-		smokeScriptCheckBox.setSelected(PropertyHelper.getSmokeScript());
-		templateDirField.setText(PropertyHelper.getTemplateDir());
-		updateFileList();
-		templateFileCombBox.setSelectedItem(PropertyHelper.getTemplateFile());
 	}
 	
 	/**
@@ -79,8 +62,8 @@ public class ScriptSettingView extends AbstractPreferencesView {
 		paramNamesLabel.setToolTipText("生成的测试脚本的测试方法的参数名称,多个以','分隔");
 		smokeScriptLabel = ViewModules.createJLabel("smokeScript:", Color.BLACK);
 		smokeScriptLabel.setToolTipText("生成的测试脚本的测试方法是否是冒烟脚本");
-		templateDirLabel = ViewModules.createJLabel("templateDir:", Color.RED);
-		templateDirLabel.setToolTipText("生成测试脚本的模板文件存放目录");
+//		templateDirLabel = ViewModules.createJLabel("templateDir:", Color.RED);
+//		templateDirLabel.setToolTipText("生成测试脚本的模板文件存放目录");
 		templateFileLabel = ViewModules.createJLabel("templateFile:", Color.RED);
 		templateFileLabel.setToolTipText("生成测试脚本的模板文件");
 		
@@ -91,26 +74,15 @@ public class ScriptSettingView extends AbstractPreferencesView {
 		superClassField = ViewModules.createTextField(20, "", true);
 		paramNamesField = ViewModules.createTextField(20, "", true);
 		smokeScriptCheckBox = ViewModules.createCheckBox("Yes", null);
-		templateDirField = ViewModules.createTextField(20, "", true);
-		browseButton = ViewModules.createButton("browse", "Browse", this);
+//		templateDirField = ViewModules.createTextField(20, "", true);
+//		browseButton = ViewModules.createButton("browse", "Browse", this);
 //		templateDirField.getDocument().addDocumentListener(new DocumentChangeListener());
-		combBoxModel = new DefaultComboBoxModel<String>();
-		templateFileCombBox = new JComboBox<String>(combBoxModel);
-		templateFileCombBox.addMouseListener(new MouseClickListener());
+//		combBoxModel = new DefaultComboBoxModel<String>();
+		//templateFileCombBox = new JComboBox<String>(combBoxModel);
+		templateFileCombBox = new JComboBox<String>(getTemplateFiles());
+//		templateFileCombBox.addMouseListener(new MouseClickListener());
 		
 		applyButton = ViewModules.createButton("Apply", "SaveScriptSetting", this);
-	}
-	
-	public void updateFileList(){
-		String path = templateDirField.getText().trim();
-		path = path.endsWith(File.separator) ? path : path + File.separator;
-		String[] fileNameArray = traverseFolder(path);
-		combBoxModel.removeAllElements();
-		for(String file : fileNameArray){
-			if(null == file) continue;
-			combBoxModel.addElement(file.substring(file.indexOf(path) + path.length()));
-		}
-		templateFileCombBox.updateUI();
 	}
 	
 	/**
@@ -138,15 +110,43 @@ public class ScriptSettingView extends AbstractPreferencesView {
 		this.add(smokeScriptLabel, ViewModules.getGridBagConstraints(1, 7, 1, 1));
 		this.add(smokeScriptCheckBox, ViewModules.getGridBagConstraints(2, 7, 9, 1));
 
-		this.add(templateDirLabel, ViewModules.getGridBagConstraints(1, 8, 1, 1));
-		this.add(templateDirField, ViewModules.getGridBagConstraints(2, 8, 8, 1));
-		this.add(browseButton, ViewModules.getGridBagConstraints(10, 8, 1, 1));
+//		this.add(templateDirLabel, ViewModules.getGridBagConstraints(1, 8, 1, 1));
+//		this.add(templateDirField, ViewModules.getGridBagConstraints(2, 8, 8, 1));
+//		this.add(browseButton, ViewModules.getGridBagConstraints(10, 8, 1, 1));
 		
-		this.add(templateFileLabel, ViewModules.getGridBagConstraints(1, 9, 1, 1));
-		this.add(templateFileCombBox, ViewModules.getGridBagConstraints(2, 9, 9, 1));
+		this.add(templateFileLabel, ViewModules.getGridBagConstraints(1, 8, 1, 1));
+		this.add(templateFileCombBox, ViewModules.getGridBagConstraints(2, 8, 9, 1));
 		
 		this.add(applyButton, ViewModules.getGridBagConstraints(10, 10, 1, 1));
 	}
+	
+	/**
+	 * 初始化界面数据
+	 */
+	public void initData(){
+		packageNameField.setText(PropertyHelper.getPackageName());
+		authorField.setText(PropertyHelper.getAuthor());
+		classDescField.setText(PropertyHelper.getClassDesc());
+		classNameField.setText(PropertyHelper.getClassName());
+		superClassField.setText(PropertyHelper.getSuperClass());
+		paramNamesField.setText(PropertyHelper.getParamNames());
+		smokeScriptCheckBox.setSelected(PropertyHelper.getSmokeScript());
+		//templateDirField.setText(PropertyHelper.getTemplateDir());
+//		updateFileList();
+		templateFileCombBox.setSelectedItem(PropertyHelper.getTemplateFile());
+	}
+	
+//	public void updateFileList(){
+//		String path = Constants.DEFAULT_TEMPLATE_SCRIPT_DIR;//templateDirField.getText().trim();
+//		String[] fileNameArray = traverseFolder(path);
+//		combBoxModel.removeAllElements();
+//		for(String file : fileNameArray){
+//			if(null == file) continue;
+//			combBoxModel.addElement(file.substring(file.indexOf(path) + path.length()));
+//		}
+//		templateFileCombBox.updateUI();
+//	}
+	
 
 	public void actionPerformed(ActionEvent evt) {
 		switch(evt.getActionCommand()){
@@ -155,17 +155,17 @@ public class ScriptSettingView extends AbstractPreferencesView {
 			boolean isSucc = saveSettings();
 			parent.progress.stopProgress("Data save status : " + (isSucc ? "Success." : "Failed."));
 			break;
-		case "Browse":
-			JFileChooser chooser = new JFileChooser();             //设置选择器
-			//chooser.setMultiSelectionEnabled(true);             //设为多选
-			chooser.setDialogTitle("Please choose workspace");
-			chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-			int returnVal = chooser.showOpenDialog(browseButton);        //是否打开文件选择框
-			if (returnVal == JFileChooser.APPROVE_OPTION) {          //如果符合文件类型
-				String filepath = chooser.getSelectedFile().getAbsolutePath();      //获取绝对路径
-				templateDirField.setText(filepath);
-			}
-			break;
+//		case "Browse":
+//			JFileChooser chooser = new JFileChooser();             //设置选择器
+//			//chooser.setMultiSelectionEnabled(true);             //设为多选
+//			chooser.setDialogTitle("Please choose workspace");
+//			chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+//			int returnVal = chooser.showOpenDialog(browseButton);        //是否打开文件选择框
+//			if (returnVal == JFileChooser.APPROVE_OPTION) {          //如果符合文件类型
+//				String filepath = chooser.getSelectedFile().getAbsolutePath();      //获取绝对路径
+//				templateDirField.setText(filepath);
+//			}
+//			break;
 		default:
 			break;
 		}
@@ -190,36 +190,36 @@ public class ScriptSettingView extends AbstractPreferencesView {
 		// 选填，测试方法是否为冒烟测试脚本，值为true或false,默认false
 		PropertyHelper.setSmokeScript(smokeScriptCheckBox.isSelected());
 		// 必填，模板文件的存储目录，可以是项目中的相对路径
-		PropertyHelper.setTemplateDir(templateDirField.getText());
+//		PropertyHelper.setTemplateDir(templateDirField.getText());
 		// 必填，模板文件名称，包括后缀名
 		PropertyHelper.setTemplateFile(templateFileCombBox.getSelectedItem().toString());
 		return PropertyHelper.storeProperties();
 	}
 	
-	public class MouseClickListener extends MouseAdapter {
-		public void mouseClicked(MouseEvent e) {
-			if(e.getComponent() instanceof JComboBox)
-				updateFileList();
-		}
-	}
-	
-	public class DocumentChangeListener implements DocumentListener{
-		@Override
-		public void insertUpdate(DocumentEvent e) {
-			updateFileList();
-		}
-
-		@Override
-		public void removeUpdate(DocumentEvent e) {
-			updateFileList();
-		}
-
-		@Override
-		public void changedUpdate(DocumentEvent e) {
-			updateFileList();
-		}
-		
-	}
+//	public class MouseClickListener extends MouseAdapter {
+//		public void mouseClicked(MouseEvent e) {
+//			if(e.getComponent() instanceof JComboBox)
+//				updateFileList();
+//		}
+//	}
+//	
+//	public class DocumentChangeListener implements DocumentListener{
+//		@Override
+//		public void insertUpdate(DocumentEvent e) {
+//			updateFileList();
+//		}
+//
+//		@Override
+//		public void removeUpdate(DocumentEvent e) {
+//			updateFileList();
+//		}
+//
+//		@Override
+//		public void changedUpdate(DocumentEvent e) {
+//			updateFileList();
+//		}
+//		
+//	}
 	
 //	public static void main(String[] args) {
 //		JFrame jf=new JFrame();

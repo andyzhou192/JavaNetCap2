@@ -51,7 +51,7 @@ public class ScriptEditPane extends JRootPane implements HyperlinkListener, Synt
 		this.scrollPane = new RTextScrollPane(textArea, true);
 		Gutter gutter = scrollPane.getGutter();
 		gutter.setBookmarkingEnabled(true);
-		gutter.setBookmarkIcon(new ImageIcon(Constants.BOOKMARK_ICON)); // "img/bookmark.png"
+		gutter.setBookmarkIcon(new ImageIcon(Constants.BOOKMARK_ICON)); // "/img/bookmark.png"
 		this.getContentPane().add(scrollPane);
 		ErrorStrip errorStrip = new ErrorStrip(textArea);
 		this.getContentPane().add(errorStrip, BorderLayout.LINE_END);
