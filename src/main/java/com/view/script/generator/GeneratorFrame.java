@@ -2,11 +2,11 @@ package com.view.script.generator;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.util.Map;
 
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 
+import com.generator.bean.DataForJavaBean;
 import com.view.script.generator.component.GeneratorPanel;
 import com.view.util.FrameWindowAdapter;
 import com.view.util.StatusProgressPanel;
@@ -16,11 +16,11 @@ public class GeneratorFrame extends JFrame {
 
 	public StatusProgressPanel progress;
 	
-	public GeneratorFrame(JFrame parent, Map<String, Object> map){
+	public GeneratorFrame(JFrame parent, DataForJavaBean dataBean){
 		this.setTitle("Data Detail");
 		this.setBackground(Color.LIGHT_GRAY);
 		this.setBounds(100, 100, 1000, 600);
-		JScrollPane scrollPane = new JScrollPane(new GeneratorPanel(this, map));
+		JScrollPane scrollPane = new JScrollPane(new GeneratorPanel(this, dataBean));
 		this.getContentPane().add(scrollPane, BorderLayout.CENTER);
 		progress = new StatusProgressPanel();
 		this.getContentPane().add(progress, BorderLayout.SOUTH);

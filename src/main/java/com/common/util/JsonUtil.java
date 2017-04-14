@@ -41,6 +41,12 @@ public class JsonUtil {
 		return bean;
 	}
 	
+	public static JSONObject getJson(Object obj){
+		if(null == obj)
+			return null;
+		return JSONObject.fromObject(obj);
+	}
+	
 	/**
 	 * 
 	 * @param jsonString

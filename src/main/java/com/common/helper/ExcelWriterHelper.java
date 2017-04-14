@@ -80,7 +80,8 @@ public class ExcelWriterHelper extends WritableWorkbookImpl{
 	}
 	
 	public static void deleteTempFile(File srcFile){
-		ExcelWriterHelper.wb.close();
+		if(null != ExcelWriterHelper.wb)
+			ExcelWriterHelper.wb.close();
 		ExcelWriterHelper.wb = null;
 		try {
 			ExcelWriterHelper.fins.close();

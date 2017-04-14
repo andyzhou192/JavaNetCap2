@@ -2,8 +2,6 @@ package com.view.mainframe.table;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Vector;
 
 import javax.swing.JButton;
@@ -16,6 +14,9 @@ import javax.swing.SwingUtilities;
 import javax.swing.event.TableModelEvent;
 import javax.swing.table.DefaultTableModel;
 
+import com.common.util.JsonUtil;
+import com.common.util.StringUtil;
+import com.generator.bean.DataForJavaBean;
 import com.protocol.http.bean.HttpDataBean;
 import com.view.listener.ActionListenerForButton;
 import com.view.mainframe.MainFrame;
@@ -130,8 +131,8 @@ public class RowTableScrollPane extends JScrollPane {
 				// 该操作需要做的事
 				SwingUtilities.invokeLater(new Runnable() {
 					public void run() {
-						Map<String, Object> dataMap = getRowData(table.getSelectedRow());
-						new GeneratorFrame(parent, dataMap);
+						DataForJavaBean dataBean = getRowData(table.getSelectedRow());
+						new GeneratorFrame(parent, dataBean);
 					}
 				});
 			}
@@ -141,14 +142,22 @@ public class RowTableScrollPane extends JScrollPane {
 		return popupMenu;
 	}
 	
-	public Map<String, Object> getRowData(int rowIndex){
-		Map<String, Object> map = new HashMap<String, Object>();
-		for(int i = 0; i < this.getTable().getColumnCount(); i++){
-			String key = this.getTable().getModel().getColumnName(i);
-			Object value = this.getTable().getModel().getValueAt(rowIndex, i);
-			map.put(key, value);
-		}
-		return map;
+	/**
+	 * 获取主视图表中数据
+	 * @param rowIndex
+	 * @return
+	 */
+	public DataForJavaBean getRowData(int rowIndex){
+		DataForJavaBean dataBean = new DataForJavaBean();
+		dataBean.setUrl(StringUtil.toString(this.getTable().getModel().getValueAt(rowIndex, 1)));
+		dataBean.setMethod(StringUtil.toString(this.getTable().getModel().getValueAt(rowIndex, 2)));
+		dataBean.setReqHeader(JsonUtil.getJson(this.getTable().getModel().getValueAt(rowIndex, 3)));
+		dataBean.setReqParams(JsonUtil.getJson(this.getTable().getModel().getValueAt(rowIndex, 4)));
+		dataBean.setStatusCode(Integer.valueOf(StringUtil.toString(this.getTable().getModel().getValueAt(rowIndex, 5))));
+		dataBean.setReasonPhrase(StringUtil.toString(this.getTable().getModel().getValueAt(rowIndex, 6)));
+		dataBean.setRspHeader(JsonUtil.getJson(this.getTable().getModel().getValueAt(rowIndex, 7)));
+		dataBean.setRspBody(StringUtil.toString(this.getTable().getModel().getValueAt(rowIndex, 8)));
+		return dataBean;
 	}
 	
 	/**

@@ -2,11 +2,10 @@ package com.view.listener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Map;
-
 import javax.swing.JTable;
 import javax.swing.SwingUtilities;
 
+import com.generator.bean.DataForJavaBean;
 import com.view.mainframe.MainFrame;
 import com.view.mainframe.table.RowTableScrollPane;
 import com.view.script.generator.GeneratorFrame;
@@ -29,8 +28,8 @@ public class ActionListenerForButton implements ActionListener {
 		case "DETAIL":
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
-					Map<String, Object> dataMap = scrollPane.getRowData(table.getSelectedRow());
-					new GeneratorFrame(frame, dataMap);
+					DataForJavaBean dataBean = scrollPane.getRowData(table.getSelectedRow());
+					new GeneratorFrame(frame, dataBean);
 				}
 			});
 			break;
