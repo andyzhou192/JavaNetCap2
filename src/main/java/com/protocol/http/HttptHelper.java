@@ -3,13 +3,19 @@ package com.protocol.http;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 
+import jpcap.packet.TCPPacket;
+
 import com.common.asserts.Assert;
+import com.common.util.ArrayUtil;
+import com.common.util.LogUtil;
 import com.common.util.StringUtil;
 import com.protocol.http.bean.HttpDataBean;
 
 import net.sf.json.JSONObject;
 
+@SuppressWarnings("restriction")
 public class HttptHelper {
+	private static Class<?> cl = HttptHelper.class;
 
 	public static String[] HttpMethods = {"POST", "GET", "PUT", "DELETE", "OPTIONS", "HEAD", "TRACE", "CONNECT"};
 	public final static String SP = " ";
@@ -181,7 +187,8 @@ public class HttptHelper {
 	 * 
 	 * @param data
 	 **/
-	public static int getContentLenth(String data){
+	public static int getContentLenth(TCPPacket tcpPacket){
+		String data = new String(tcpPacket.data);
 		int result = -1000;
 		if(isIgnoreEntity(data)){
 			result = -1;
@@ -190,6 +197,8 @@ public class HttptHelper {
 		} else {
 			int begin = data.indexOf("Content-Length" + HttptHelper.NVSeparator) + ("Content-Length" + HttptHelper.NVSeparator).length();
 			int headerLen = data.split(HttptHelper.BLANK_LINE)[0].getBytes().length;
+			LogUtil.debug(cl, "data head------>" + data.substring(0, headerLen));
+			LogUtil.debug(cl, "Packet.data head------>" + new String(ArrayUtil.copyOfRange(tcpPacket.data, 0, headerLen)));
 			String lenValue = data.substring(begin).split(HttptHelper.CRLF)[0].trim();
 			result = headerLen + Integer.valueOf(lenValue.length() > 0 ? lenValue : "0");
 		}

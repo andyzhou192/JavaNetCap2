@@ -1,6 +1,5 @@
 package com.netcap.handler;
 
-import java.nio.charset.Charset;
 import java.util.LinkedList;
 
 import com.common.util.LogUtil;
@@ -43,6 +42,7 @@ public class PacketQueues {
     	private static String reqData = "";
     	private static String rspData = "";
     	private static int contentLen = -1000;
+    	private static int packetDataLen = 0;
 
     	public Task(Packet packet){
     		this.packet = packet;
@@ -54,8 +54,8 @@ public class PacketQueues {
         public void packetProcess(){
         	if(packet instanceof TCPPacket){
     			TCPPacket tcpPacket = (TCPPacket) packet;
-    			String data = new String(tcpPacket.data);
-    			assemblePacket(data);
+//    			String data = new String(tcpPacket.data);
+    			assemblePacket(tcpPacket);
     		}
         }
         
@@ -63,16 +63,17 @@ public class PacketQueues {
     	 * 
     	 * @param data
     	 */
-    	private void assemblePacket(String data) {
+    	private void assemblePacket(TCPPacket tcpPacket) {
+    		String data = new String(tcpPacket.data);
     		String method = HttptHelper.checkHttpRequest(data);
     		if(method != null){
-//    			if(reqData.length() > 0){
-//    				dealData();
-//    			}
+    			if(reqData.length() > 0 && rspData.length() > 0){
+    				dealData();
+    			}
     			reqData = data;
     			rspData = "";
     		} else {
-    			assembleRspPacket(data, method);
+    			assembleRspPacket(tcpPacket, method);
     		}
     	}
 
@@ -81,14 +82,15 @@ public class PacketQueues {
     	 * @param data
     	 * @param method
     	 */
-    	private void assembleRspPacket(String data, String method) {
+    	private void assembleRspPacket(TCPPacket tcpPacket, String method) {
+    		String data = new String(tcpPacket.data);
     		if(HttptHelper.isFirstResponse(data)){
     			if("head".equalsIgnoreCase(method)){
     				rspData = data;
     				dealData();
     				return;
     			} else {
-    				contentLen = HttptHelper.getContentLenth(data);
+    				contentLen = HttptHelper.getContentLenth(tcpPacket);
     			}
     		} else if(rspData.length() < 1){ // 如果非首个响应数据包，且此时响应数据为空，则该包属于请求包
     			reqData = reqData + data;
@@ -106,13 +108,13 @@ public class PacketQueues {
     				rspData = rspData + data;
     			}
     		} else {
+    			packetDataLen = packetDataLen + tcpPacket.data.length;
     			rspData = rspData + data;
-    			int rspDataLength = rspData.getBytes(Charset.forName("utf-8")).length;
-    			LogUtil.debug(cl, "reqData ---------> " + reqData);
-    			LogUtil.debug(cl, "rspData =========> " + rspData);
     			LogUtil.debug(cl, "contentLen ---------> " + contentLen);
-    			LogUtil.debug(cl, "rspDataLength =========> " + rspDataLength);
-    			if(contentLen <= rspDataLength){
+    			LogUtil.debug(cl, "packetDataLen =========> " + packetDataLen);
+    			if(contentLen <= packetDataLen){
+    				LogUtil.debug(cl, "reqData ---------> " + reqData);
+    				LogUtil.debug(cl, "rspData =========> " + rspData);
     				dealData();
     			} else{
     				LogUtil.debug(cl, "response data has not complete...");
@@ -131,6 +133,7 @@ public class PacketQueues {
     		DataQueues.add(t); //执行该方法，激活所有对应队列，那两个线程就会开始执行啦
     		reqData = "";
     		rspData = "";
+    		packetDataLen = 0;
     	}
 
     	private Thread dealDataThread = null;
