@@ -171,24 +171,36 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 	}
 
 	public void initData() {
-		String url = StringUtil.toString(dataMap.get("url"));
-		String method = StringUtil.toString(dataMap.get("method"));
-		String reqHeader = StringUtil.toString(dataMap.get("reqHeader"));
-		String reqParams = StringUtil.toString(dataMap.get("reqParams"));
-		String statusCode = StringUtil.toString(dataMap.get("statusCode"));
-		String reasonPhrase = StringUtil.toString(dataMap.get("reasonPhrase"));
-		String rspHeader = StringUtil.toString(dataMap.get("rspHeader"));
-		String rspBody = StringUtil.toString(dataMap.get("rspBody"));
+		String url = "";
+		String method = "";
+		String reqHeader = "";
+		String reqParams = "";
+		String statusCode = "";
+		String reasonPhrase = "";
+		String rspHeader = "";
+		String rspBody = "";
+		if(null != dataMap){
+			url = StringUtil.toString(dataMap.get("url"));
+			method = StringUtil.toString(dataMap.get("method"));
+			reqHeader = StringUtil.toString(dataMap.get("reqHeader"));
+			reqParams = StringUtil.toString(dataMap.get("reqParams"));
+			statusCode = StringUtil.toString(dataMap.get("statusCode"));
+			reasonPhrase = StringUtil.toString(dataMap.get("reasonPhrase"));
+			rspHeader = StringUtil.toString(dataMap.get("rspHeader"));
+			rspBody = StringUtil.toString(dataMap.get("rspBody"));
+		}
 		
 		packageNameField.setText(PropertyHelper.getPackageName());
-		String methodName = HttptHelper.getInterfaceMethodName(url);
-		methodName = methodName.toUpperCase().substring(0, 1) + methodName.substring(1);
-		methodNameField.setText("test" + methodName);
-		if(null == methodName || methodName.trim().length() < 1){
-			classNameField.setText(PropertyHelper.getClassName());
-		} else {
-			String className = methodName + "Test";
-			classNameField.setText(className);
+		if(StringUtil.validate(url)){
+			String methodName = HttptHelper.getInterfaceMethodName(url);
+			methodName = methodName.toUpperCase().substring(0, 1) + methodName.substring(1);
+			methodNameField.setText("test" + methodName);
+			if(null == methodName || methodName.trim().length() < 1){
+				classNameField.setText(PropertyHelper.getClassName());
+			} else {
+				String className = methodName + "Test";
+				classNameField.setText(className);
+			}
 		}
 		urlField.setText(url);
 		httpMethodField.setText(method);

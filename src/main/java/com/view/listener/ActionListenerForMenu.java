@@ -17,6 +17,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.SwingUtilities;
+
 import com.common.util.JsonUtil;
 import com.common.util.LogUtil;
 import com.netcap.captor.Netcaptor;
@@ -25,6 +26,7 @@ import com.view.mainframe.MainFrame;
 import com.view.mainframe.table.RowTableScrollPane;
 import com.view.preference.PreferenceFrame;
 import com.view.script.editor.ScriptEditFrame;
+import com.view.script.generator.GeneratorFrame;
 import com.view.util.ViewDataHandler;
 import com.view.util.ViewModules;
 
@@ -55,9 +57,6 @@ public class ActionListenerForMenu implements ActionListener {
 				}
 			});
 			break;
-//		case "SAVE":
-//			saveDataToFile(frame, frame.getTitle(), getDataFromTable(table));
-//			break;
 		case "EXPORT":
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
@@ -114,6 +113,18 @@ public class ActionListenerForMenu implements ActionListener {
 					frame.progress.setStatus("Open Script From File!");
 					Toolkit.getDefaultToolkit().setDynamicLayout(true);
 					new ScriptEditFrame(frame).setVisible(true);
+					frame.progress.setStatus("Script has opened");
+				}
+			});
+			break;
+		case "GENESCRIPT":
+			
+			break;
+		case "CREATESCRIPT":
+			SwingUtilities.invokeLater(new Runnable() {
+				public void run() {
+					frame.progress.setStatus("Open Script From File!");
+					new GeneratorFrame(frame, null);
 					frame.progress.setStatus("Script has opened");
 				}
 			});
