@@ -4,16 +4,14 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
 import java.awt.BorderLayout;
+
 import javax.swing.JSeparator;
 import javax.swing.JTree;
 import javax.swing.JLabel;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeSelectionModel;
-
-import com.view.preference.component.JcaptureSettingView;
-import com.view.preference.component.ScriptSettingView;
-
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.border.LineBorder;
 import javax.swing.event.TreeSelectionEvent;
@@ -21,18 +19,23 @@ import javax.swing.event.TreeSelectionListener;
 
 import java.awt.Color;
 import java.awt.Container;
+
 import javax.swing.JCheckBox;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
+
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+@SuppressWarnings("unused")
 public class AppWindow implements TreeSelectionListener {
 
 	private JFrame frame;

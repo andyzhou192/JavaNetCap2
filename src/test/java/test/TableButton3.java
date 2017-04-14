@@ -22,6 +22,7 @@ import javax.swing.table.DefaultTableModel;
  * 
  * @author __USER__
  */
+@SuppressWarnings({ "unused", "serial" })
 public class TableButton3 extends javax.swing.JFrame {
 
 	public TableButton3() {
@@ -47,7 +48,6 @@ public class TableButton3 extends javax.swing.JFrame {
 
 	}
 
-	@SuppressWarnings("serial")
 	public class ButtonColumn extends AbstractCellEditor implements TableCellRenderer, TableCellEditor, ActionListener {
 		JTable table;
 		JButton renderButton;
