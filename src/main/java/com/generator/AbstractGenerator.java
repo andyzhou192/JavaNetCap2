@@ -9,8 +9,11 @@ import java.io.Writer;
 import java.util.Map;
 
 import com.common.Constants;
+import com.common.util.LogUtil;
 import com.common.util.StringUtil;
+import com.generator.bean.ScriptForJavaBean;
 import com.view.preference.PropertyHelper;
+import com.view.util.ViewModules;
 
 import freemarker.core.ParseException;
 import freemarker.template.Configuration;
@@ -28,6 +31,7 @@ import freemarker.template.Version;
  *
  */
 public abstract class AbstractGenerator {
+	private Class<?> cl = AbstractGenerator.class;
 	
 	public String Java_File_Path = "src/test/java";
 	public String Data_File_Path = "src/test/resources";
@@ -40,23 +44,28 @@ public abstract class AbstractGenerator {
 	 * @param templateDir 模板文件存放根目录
 	 * @throws IOException
 	 */
-	public AbstractGenerator(String templateDir) throws IOException{
+	public AbstractGenerator(String templateDir) {
 		this.cfg = createConf(templateDir);
 	}
 	
-	public AbstractGenerator() throws IOException{
-	}
-
 	/**
 	 * 步骤一：指定 模板文件从何处加载的数据源，这里设置一个文件目录
 	 * @param templateDir 模板文件存放目录
 	 * @return
 	 * @throws IOException
 	 */
-	public Configuration createConf(String templateDir) throws IOException {
+	public Configuration createConf(String templateDir) {
+		if(null == templateDir || templateDir.trim().length() == 0){
+			ViewModules.showMessageDialog(null, "Template dir can not be null.");
+		}
 		Version version = Configuration.VERSION_2_3_23;
 		Configuration cfg = new Configuration(version);	
-		cfg.setDirectoryForTemplateLoading(new File(templateDir));
+		try {
+			cfg.setDirectoryForTemplateLoading(new File(templateDir));
+		} catch (IOException e) {
+			ViewModules.showMessageDialog(null, "Template dir can not be null.");
+			LogUtil.err(cl, e);
+		}
 		cfg.setDefaultEncoding("UTF-8");
 		cfg.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
         cfg.setLogTemplateExceptions(false);
@@ -83,8 +92,7 @@ public abstract class AbstractGenerator {
 	 * 步骤三：创建 数据模型
 	 * @return
 	 */
-	public abstract Map<String, Object> createDataModel(String packageName, String className, String classDesc, boolean isSmoke,
-			String scriptEntity, String[] params);
+	public abstract Map<String, Object> createDataModel(ScriptForJavaBean bean);
 	
 	/**
 	 * 步骤四：合并 模板 和 数据模型, 创建.java类文件

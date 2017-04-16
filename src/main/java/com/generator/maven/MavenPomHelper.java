@@ -71,6 +71,8 @@ public class MavenPomHelper extends Dom4jXmlHelper {
 			projectPath = Constants.DEFAULT_PROJECT_DIR;
 		File file = new File(projectPath, POM);
 		LogUtil.debug(cl, file.getAbsolutePath());
+		if(!file.exists())
+			MavenPomHelper.initMavenProject();
 		Constants.PROJECT_INFO = new ProjectInfo(new MavenPomHelper(file));
 		MavenPomHelper.mergePomXml(file.getAbsolutePath(), Constants.TEMPLATE_POM);
 		String targetJar = StringUtil.assembleRelativeFilePath(projectPath, Constants.HTTP_TEST_JAR);
@@ -124,13 +126,15 @@ public class MavenPomHelper extends Dom4jXmlHelper {
 	 * @return
 	 */
 	public static String createMavenProject(String path){
-		if(null != Constants.PROJECT_INFO)
+		if(null == Constants.PROJECT_INFO)
 			Constants.PROJECT_INFO = new ProjectInfo();
 		String groupId = Constants.PROJECT_INFO.getGroupId();
 		String projectName = Constants.PROJECT_INFO.getProjectName();
 		
 		if(!StringUtil.validate(path))
 			path = Constants.DEFAULT_PROJECT_DIR;
+		if(!new File(path).exists())
+			new File(path).mkdirs();
 		String disk = path.substring(0, path.indexOf(":"));
 		String paths = path.substring(path.indexOf(":") + 1);
 		

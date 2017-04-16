@@ -43,6 +43,15 @@ public class StringUtil {
 //	}
 	
 	/**
+	 * 字符串首字母大写
+	 * @param str
+	 * @return
+	 */
+	public static String upperCaseFirstLetter(String str){
+		return str.toUpperCase().substring(0, 1) + str.substring(1);
+	}
+	
+	/**
 	 * 验证字符串是否为非空串和非空格串
 	 * @param str
 	 * @return
@@ -278,7 +287,7 @@ public class StringUtil {
 	public static String toString(Object obj){
 		if(null == obj)
 			return null;
-		return String.valueOf(obj);
+		return String.valueOf(obj).trim();
 	}
 	
 	public static String getIpv4(String str){

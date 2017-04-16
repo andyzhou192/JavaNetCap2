@@ -6,21 +6,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
 import com.generator.AbstractGenerator;
+import com.generator.bean.DataForJavaBean;
+import com.generator.bean.ScriptForJavaBean;
 import com.generator.java.ScriptGenerator;
 import com.generator.maven.MavenPomHelper;
 import com.handler.DataSaveHandler;
@@ -30,9 +28,8 @@ import com.view.script.generator.GeneratorFrame;
 import com.view.util.ScrollPaneTextArea;
 import com.view.util.ViewModules;
 import com.common.util.FormatUtil;
+import com.common.util.JsonUtil;
 import com.common.util.StringUtil;
-
-import freemarker.template.TemplateException;
 
 @SuppressWarnings("serial")
 public class GeneratorPanel extends JPanel implements ActionListener {
@@ -48,13 +45,13 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 	private String[] types = {"TEXT", "JSON", "HTML"};
 	
 	private GeneratorFrame parent;
-	private Map<String, Object> dataMap;
+	private DataForJavaBean dataBean;
 	
-	public GeneratorPanel(GeneratorFrame parent, Map<String, Object> dataMap) {
+	public GeneratorPanel(GeneratorFrame parent, DataForJavaBean dataBean) {
 		this.parent = parent;
 		this.setBorder(new LineBorder(new Color(255, 200, 0), 2));
 		this.setLayout(ViewModules.getGridBagLayout(40, 10, 5, 5, 1.0, 1.0));
-		this.dataMap = dataMap;
+		this.dataBean = dataBean;
 		
 		defineComponents();
 		layoutComponents();
@@ -99,7 +96,7 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 		
 		applyButton = ViewModules.createButton("GeneScript", "GENEJAVA", this);
 	}
-
+	
 	public void layoutComponents() {
 		JTabbedPane tabbedPane = new JTabbedPane();
 		tabbedPane.setTabPlacement(JTabbedPane.TOP);// 设置标签置放位置。
@@ -171,37 +168,30 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 	}
 
 	public void initData() {
-		String url = StringUtil.toString(dataMap.get("url"));
-		String method = StringUtil.toString(dataMap.get("method"));
-		String reqHeader = StringUtil.toString(dataMap.get("reqHeader"));
-		String reqParams = StringUtil.toString(dataMap.get("reqParams"));
-		String statusCode = StringUtil.toString(dataMap.get("statusCode"));
-		String reasonPhrase = StringUtil.toString(dataMap.get("reasonPhrase"));
-		String rspHeader = StringUtil.toString(dataMap.get("rspHeader"));
-		String rspBody = StringUtil.toString(dataMap.get("rspBody"));
-		
 		packageNameField.setText(PropertyHelper.getPackageName());
-		String methodName = HttptHelper.getInterfaceMethodName(url);
-		methodName = methodName.toUpperCase().substring(0, 1) + methodName.substring(1);
-		methodNameField.setText("test" + methodName);
-		if(null == methodName || methodName.trim().length() < 1){
-			classNameField.setText(PropertyHelper.getClassName());
-		} else {
-			String className = methodName + "Test";
-			classNameField.setText(className);
+		if(StringUtil.validate(dataBean.getUrl())){
+			String methodName = HttptHelper.getInterfaceMethodName(dataBean.getUrl());
+			methodName = methodName.toUpperCase().substring(0, 1) + methodName.substring(1);
+			methodNameField.setText("test" + methodName);
+			if(null == methodName || methodName.trim().length() < 1){
+				classNameField.setText(PropertyHelper.getClassName());
+			} else {
+				String className = methodName + "Test";
+				classNameField.setText(className);
+			}
 		}
-		urlField.setText(url);
-		httpMethodField.setText(method);
-		reqParamsArea.setTableValues(reqParams);
-		statusCodeField.setText(statusCode);
-		reasonPhraseField.setText(reasonPhrase);
+		urlField.setText(dataBean.getUrl());
+		httpMethodField.setText(dataBean.getMethod());
+		reqParamsArea.setTableValues(dataBean.getReqParams());
+		statusCodeField.setText(StringUtil.toString(dataBean.getStatusCode()));
+		reasonPhraseField.setText(dataBean.getReasonPhrase());
 		
 		classDescArea.setText("test class description");
 		testMethodDescArea.setText("test method description");
 		testCaseDescArea.setText("case description");
-		reqHeaderArea.setTableValues(reqHeader);
-		rspHeaderArea.setTableValues(rspHeader);
-		rspBodyArea.setText(rspBody);
+		reqHeaderArea.setTableValues(dataBean.getReqHeader());
+		rspHeaderArea.setTableValues(dataBean.getRspHeader());
+		rspBodyArea.setText(StringUtil.toString(dataBean.getRspBody()));
 		
 		smokeScriptCheckBox.setSelected(PropertyHelper.getSmokeScript());
 		
@@ -254,61 +244,35 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 	}
 
 	public boolean createJavaFile(){
-		String packageName = packageNameField.getText();
-		String className = classNameField.getText().trim();
-		String classDesc = classDescArea.getText();
-		String methodName = methodNameField.getText().trim();
-		boolean isSmoke = smokeScriptCheckBox.isSelected();
-		String[] params = HttptHelper.PARAM_NAMES;
-		boolean isSucc = false;
-		ScriptGenerator generator = null;
-		try {
-			String templateDir = PropertyHelper.getTemplateDir();
-			String templateFile = PropertyHelper.getTemplateFile();
-			if(null == templateDir || templateDir.trim().length() == 0){
-				ViewModules.showMessageDialog(this, "Template dir can not be null.");
-				return isSucc;
-			} else {
-				generator = new ScriptGenerator(templateDir, packageName, className);
-				if(generator.targetFile.exists()){
-					String msg = generator.targetFile.getAbsolutePath() + "has exist, would you want to cover it?";
-					int option = JOptionPane.showConfirmDialog(parent, msg, "ConfirmDialog", JOptionPane.YES_NO_OPTION);
-					if(option != JOptionPane.YES_OPTION)
-						return true;
-				}
-			}
-			if(null == templateFile || templateFile.trim().length() == 0){
-				ViewModules.showMessageDialog(this, "Template file can not be null.");
-				return isSucc;
-			} else {
-				generator.setTemplate(templateFile);
-			}
-			Map<String, Object> dataModel = generator.createDataModel(packageName, className, classDesc, isSmoke, methodName, params);
-			generator.generateFile(dataModel, generator.targetFile);
-			isSucc = true;
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (TemplateException e) {
-			e.printStackTrace();
-		}
-		return isSucc;
+		ScriptForJavaBean bean = new ScriptForJavaBean();
+		bean.setPackageName(packageNameField.getText());
+		bean.setAuthor(PropertyHelper.getAuthor());
+		bean.setClassDesc(classDescArea.getText());
+		bean.setClassName(classNameField.getText().trim());
+		bean.setSuperclass(PropertyHelper.getSuperClass());
+		bean.setMethodName(methodNameField.getText().trim());
+		bean.setSmokeScript(smokeScriptCheckBox.isSelected());
+		bean.setParamNames(HttptHelper.PARAM_NAMES);
+		
+		ScriptGenerator generator = new ScriptGenerator(PropertyHelper.getTemplateDir(), PropertyHelper.getTemplateFile());
+		return generator.generateJavaFile(bean);
 	}
 
 	private boolean createExcelFile() {
-		Map<String, String> data = new HashMap<String, String>();
-		data.put("CaseID", "case-");
-		data.put("CaseDesc", testCaseDescArea.getText());
-		data.put("URL", urlField.getText());
-		data.put("Method", httpMethodField.getText());
-		data.put("ReqHeader", reqHeaderArea.getDataOfJsonString());
-		data.put("ReqParams", reqParamsArea.getDataOfJsonString());
-		data.put("StatusCode", statusCodeField.getText());
-		data.put("ReasonPhrase", reasonPhraseField.getText());
-		data.put("RspHeader", rspHeaderArea.getDataOfJsonString());
-		data.put("RspBody", rspBodyArea.getText());
+		DataForJavaBean dataBean = new DataForJavaBean();
+		dataBean.setCaseDesc(testCaseDescArea.getText());
+		dataBean.setUrl(urlField.getText());
+		dataBean.setMethod(httpMethodField.getText());
+		dataBean.setReqHeader(JsonUtil.getJson(reqHeaderArea.getDataOfJsonString()));
+		dataBean.setReqParams(JsonUtil.getJson(reqParamsArea.getDataOfJsonString()));
+		dataBean.setStatusCode(Integer.valueOf(statusCodeField.getText()));
+		dataBean.setReasonPhrase(reasonPhraseField.getText());
+		dataBean.setRspHeader(JsonUtil.getJson(rspHeaderArea.getDataOfJsonString()));
+		dataBean.setRspBody(rspBodyArea.getText());
+		
 		String file = AbstractGenerator.getDataFilePath(packageNameField.getText(), classNameField.getText());
 		String sheetName = methodNameField.getText().trim();
-		(new DataSaveHandler(data)).writeToExcel(file, sheetName, HttptHelper.PARAM_NAMES);
+		(new DataSaveHandler(dataBean)).writeToExcel(file, sheetName, HttptHelper.PARAM_NAMES);
 		return true;
 	}
 	

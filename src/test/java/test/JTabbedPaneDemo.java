@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.SwingUtilities;
 
+@SuppressWarnings("serial")
 public class JTabbedPaneDemo  extends JPanel {
 
 	private JTabbedPane jTabbedpane = new JTabbedPane();// 存放选项卡的组件

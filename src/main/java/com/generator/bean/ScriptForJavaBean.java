@@ -1,17 +1,20 @@
-package com.generator.entity;
+package com.generator.bean;
+
+import com.protocol.http.HttptHelper;
+import com.view.preference.PropertyHelper;
 
 /**
  * 实体类
  * @author  zhouyelin
  *
  */
-public class ScriptEntity {
+public class ScriptForJavaBean {
 	// 实体所在的包名
-	private String packageName;
+	private String packageName = PropertyHelper.getPackageName();
 	// 作者
 	private String author = System.getProperty("user.name");
 	// 实体类描述
-	private String classDesc = "Description: ";
+	private String classDesc = "Description: test class description";
 	// 实体类名
 	private String className;
 	// 测试方法名
@@ -19,7 +22,7 @@ public class ScriptEntity {
 	// 父类名
 	private String superclass;
 	// 参数集合
-	private String[] paramNames;
+	private String[] paramNames = HttptHelper.PARAM_NAMES;
 	// 是否冒烟脚本
 	private boolean smokeScript = false;
 	
@@ -32,14 +35,12 @@ public class ScriptEntity {
 	}
 
 	public String getAuthor() {
-		return author;
+		return null != author ? author : PropertyHelper.getAuthor();
 	}
 
 	public void setAuthor(String author) {
 		if(null != author)
 			this.author = author;
-		else
-			this.author = System.getProperty("user.name");
 	}
 	
 	public String getClassDesc() {
@@ -47,7 +48,7 @@ public class ScriptEntity {
 	}
 
 	public void setClassDesc(String classDesc) {
-		this.classDesc = this.classDesc + classDesc;
+		this.classDesc = "Description: " + classDesc;
 	}
 	
 	public String getClassName() {
@@ -55,7 +56,7 @@ public class ScriptEntity {
 	}
 	
 	public void setClassName(String className) {
-		this.className = className;
+		this.className = className.endsWith("Test") ? className : className + "Test";
 	}
 	
 	public String getSuperclass() {
@@ -87,7 +88,7 @@ public class ScriptEntity {
 	}
 
 	public void setMethodName(String methodName) {
-		this.methodName = methodName;
+		this.methodName = methodName.startsWith("test") ? methodName : "test" + methodName;
 	}
 
 }

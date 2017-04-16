@@ -17,14 +17,25 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.SwingUtilities;
+
 import com.common.util.JsonUtil;
 import com.common.util.LogUtil;
+import com.common.util.StringUtil;
+import com.generator.AbstractGenerator;
+import com.generator.bean.DataForJavaBean;
+import com.generator.bean.ScriptForJavaBean;
+import com.generator.java.ScriptGenerator;
+import com.generator.maven.MavenPomHelper;
+import com.handler.DataSaveHandler;
 import com.netcap.captor.Netcaptor;
+import com.protocol.http.HttptHelper;
 import com.protocol.http.bean.HttpDataBean;
 import com.view.mainframe.MainFrame;
 import com.view.mainframe.table.RowTableScrollPane;
 import com.view.preference.PreferenceFrame;
+import com.view.preference.PropertyHelper;
 import com.view.script.editor.ScriptEditFrame;
+import com.view.script.generator.GeneratorFrame;
 import com.view.util.ViewDataHandler;
 import com.view.util.ViewModules;
 
@@ -55,14 +66,11 @@ public class ActionListenerForMenu implements ActionListener {
 				}
 			});
 			break;
-//		case "SAVE":
-//			saveDataToFile(frame, frame.getTitle(), getDataFromTable(table));
-//			break;
 		case "EXPORT":
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
 					frame.progress.startProgress("Export Data...");
-					saveDataToFile(frame, null, "data.dat", getDataFromTable(table));
+					saveDataToFile(frame, null, "data.json", getDataFromTable(table));
 					frame.progress.stopProgress("Data has exported!");
 				}
 			});
@@ -118,6 +126,25 @@ public class ActionListenerForMenu implements ActionListener {
 				}
 			});
 			break;
+		case "BATCHGENESCRIPT":
+			SwingUtilities.invokeLater(new Runnable() {
+				public void run() {
+					frame.progress.setStatus("Batch Generate Scripts...");
+					MavenPomHelper.initMavenProject();
+					batchGeneScript(getSelectedData(frame));
+					frame.progress.setStatus("Scripts has Generated");
+				}
+			});
+			break;
+		case "CREATESCRIPT":
+			SwingUtilities.invokeLater(new Runnable() {
+				public void run() {
+					frame.progress.setStatus("Open Script From File!");
+					new GeneratorFrame(frame, null);
+					frame.progress.setStatus("Script has opened");
+				}
+			});
+			break;
 		case "PREFERENCE":
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
@@ -140,7 +167,7 @@ public class ActionListenerForMenu implements ActionListener {
 		for(int i = 0; i < count; ){
 			JCheckBox checkBox = ((JCheckBox)(table.getValueAt(i, 0)));
 			if(checkBox.isSelected()){
-				frame.getScrollPane().deleteRowFromTable(i);
+				scrollPane.deleteRowFromTable(i);
 				flag++;
 			} else {
 				if(Integer.valueOf(checkBox.getText()) != (i + 1))
@@ -151,6 +178,46 @@ public class ActionListenerForMenu implements ActionListener {
 		}
 		if(flag == 0)
 			ViewModules.showMessageDialog(frame, "Please choose the data you want to delete...");
+	}
+	
+	private void batchGeneScript(List<DataForJavaBean> dataList){
+		for(DataForJavaBean dataBean : dataList){
+			String url = StringUtil.toString(dataBean.getUrl());
+			
+			String interfaceName = StringUtil.upperCaseFirstLetter(HttptHelper.getInterfaceMethodName(url));
+			ScriptForJavaBean bean = new ScriptForJavaBean();
+			bean.setClassName(interfaceName);
+			bean.setMethodName(interfaceName);
+			ScriptGenerator generator = new ScriptGenerator(PropertyHelper.getTemplateDir(), PropertyHelper.getTemplateFile());
+			generator.generateJavaFile(bean);
+			
+			String file = AbstractGenerator.getDataFilePath(bean.getPackageName(), bean.getClassName());
+			String sheetName = bean.getMethodName();
+			(new DataSaveHandler(dataBean)).writeToExcel(file, sheetName, HttptHelper.PARAM_NAMES);
+		}
+	}
+	
+	/**
+	 * 获取选中行的数据
+	 * @param frame
+	 * @return
+	 */
+	private List<DataForJavaBean> getSelectedData(MainFrame frame){
+		List<DataForJavaBean> list = new ArrayList<DataForJavaBean>();
+		int count = table.getRowCount();
+		for(int i = 0; i < count; i++){
+			JCheckBox checkBox = ((JCheckBox)(table.getValueAt(i, 0)));
+			if(checkBox.isSelected()){
+				DataForJavaBean dataBean = scrollPane.getRowData(table.getSelectedRow());
+				list.add(dataBean);
+			} else {
+				if(Integer.valueOf(checkBox.getText()) != (i + 1))
+					checkBox.setText(String.valueOf(i + 1));
+			}
+		}
+		if(list.isEmpty())
+			ViewModules.showMessageDialog(frame, "Please choose the data you want to delete...");
+		return list;
 	}
 
 	/**
@@ -195,10 +262,11 @@ public class ActionListenerForMenu implements ActionListener {
 		for(int i = 0; i < table.getRowCount(); i++){
 			JCheckBox checkBox = ((JCheckBox)(table.getValueAt(i, 0)));
 			if(checkBox.isSelected()){
-				Map<String, Object> oneData = scrollPane.getRowData(i);
-				String[] tableHead = frame.getTableHead();
-				String[] excludes = new String[]{tableHead[0], tableHead[tableHead.length - 1], "protocol"};
-				dataStr = dataStr + JsonUtil.mapToJson(oneData, excludes) + "\r\n\r\n";
+				DataForJavaBean dataBean = scrollPane.getRowData(i);
+//				String[] tableHead = frame.getTableHead();
+//				String[] excludes = new String[]{tableHead[0], tableHead[tableHead.length - 1], "protocol"};
+//				dataStr = dataStr + JsonUtil.mapToJson(dataBean, excludes) + "\r\n\r\n";
+				dataStr = dataStr + JsonUtil.beanToJson(dataBean) + "\r\n\r\n";
 			}
 		}
 		return dataStr;
@@ -247,6 +315,10 @@ public class ActionListenerForMenu implements ActionListener {
 	 * @return
 	 */
 	private void saveDataToFile(JFrame parent, String filePath, String defaultFileName, String content){
+		if(!StringUtil.validate(content)){
+			JOptionPane.showMessageDialog(parent, "Please choose the data that you want to export..");
+			return;
+		}
 		filePath = ViewDataHandler.saveDataToFile(parent, filePath, defaultFileName, content);
 		refreshDataView(readDataFromFile(new File(filePath)));
 		ViewModules.showMessageDialog(parent, "Data save is successed!");

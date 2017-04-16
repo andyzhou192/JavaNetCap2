@@ -34,10 +34,13 @@ import org.fife.ui.rtextarea.Gutter;
 import org.fife.ui.rtextarea.RTextScrollPane;
 
 import com.common.Constants;
+import com.common.util.LogUtil;
 import com.view.util.ViewDataHandler;
 
 @SuppressWarnings("serial")
 public class ScriptEditPane extends JRootPane implements HyperlinkListener, SyntaxConstants {
+	
+	private Class<?> cl = ScriptEditPane.class;
 
 	private JFrame parent;
 	private RTextScrollPane scrollPane;
@@ -47,7 +50,8 @@ public class ScriptEditPane extends JRootPane implements HyperlinkListener, Synt
 		this.parent = parent;
 		this.textArea = createTextArea();
 		this.textArea.setSyntaxEditingStyle(SYNTAX_STYLE_JAVA);
-		setText(file);
+		if(null != file)
+			setText(file);
 		this.scrollPane = new RTextScrollPane(textArea, true);
 		Gutter gutter = scrollPane.getGutter();
 		gutter.setBookmarkingEnabled(true);
@@ -208,7 +212,7 @@ public class ScriptEditPane extends JRootPane implements HyperlinkListener, Synt
 			textArea.setCaretPosition(0);
 			textArea.discardAllEdits();
 		} catch (RuntimeException re) {
-			throw re; // FindBugs
+			LogUtil.err(cl, re); // FindBugs
 		} catch (Exception e) { // Never happens
 			textArea.setText("Type here to see syntax highlighting");
 		}

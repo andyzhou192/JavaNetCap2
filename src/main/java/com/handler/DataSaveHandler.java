@@ -3,11 +3,12 @@ package com.handler;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Map;
 
 import com.common.helper.ExcelWriterHelper;
 import com.common.util.FileUtil;
 import com.common.util.LogUtil;
+import com.common.util.StringUtil;
+import com.generator.bean.DataForJavaBean;
 
 import jxl.write.Label;
 import jxl.write.WritableSheet;
@@ -16,19 +17,10 @@ import jxl.write.WriteException;
 public class DataSaveHandler {
 	private static Class<?> cl = DataSaveHandler.class;
 
-	private String caseId, caseDesc, method, url, reqHeader, reqParams, statusCode, reasonPhrase, rspHeader, rspBody;
-
-	public DataSaveHandler(Map<String, String> dataMap) {
-		this.caseId = dataMap.get("CaseID").toString();
-		this.caseDesc = dataMap.get("CaseDesc").toString();
-		this.method = dataMap.get("Method").toString();
-		this.url = dataMap.get("URL").toString();
-		this.reqHeader = dataMap.get("ReqHeader").toString();
-		this.reqParams = dataMap.get("ReqParams").toString();
-		this.statusCode = dataMap.get("StatusCode").toString();
-		this.reasonPhrase = dataMap.get("ReasonPhrase").toString();
-		this.rspHeader = dataMap.get("RspHeader").toString();
-		this.rspBody = dataMap.get("RspBody").toString();
+	private DataForJavaBean dataBean;
+	
+	public DataSaveHandler(DataForJavaBean dataBean) {
+		this.dataBean = dataBean;
 	}
 
 	public synchronized void writeToExcel(String file, String sheetName, String[] columnNames) {
@@ -52,16 +44,16 @@ public class DataSaveHandler {
 				}
 				rowCount = rowCount + 1;
 			}
-			sheet.addCell(new Label(0, rowCount, caseId + rowCount));
-			sheet.addCell(new Label(1, rowCount, caseDesc));
-			sheet.addCell(new Label(2, rowCount, method));
-			sheet.addCell(new Label(3, rowCount, url));
-			sheet.addCell(new Label(4, rowCount, reqHeader));
-			sheet.addCell(new Label(5, rowCount, reqParams));
-			sheet.addCell(new Label(6, rowCount, statusCode));
-			sheet.addCell(new Label(7, rowCount, reasonPhrase));
-			sheet.addCell(new Label(8, rowCount, rspHeader));
-			sheet.addCell(new Label(9, rowCount, rspBody));
+			sheet.addCell(new Label(0, rowCount, dataBean.getCaseId() + rowCount));
+			sheet.addCell(new Label(1, rowCount, dataBean.getCaseDesc()));
+			sheet.addCell(new Label(2, rowCount, dataBean.getMethod()));
+			sheet.addCell(new Label(3, rowCount, dataBean.getUrl()));
+			sheet.addCell(new Label(4, rowCount, StringUtil.toString(dataBean.getReqHeader())));
+			sheet.addCell(new Label(5, rowCount, StringUtil.toString(dataBean.getReqParams())));
+			sheet.addCell(new Label(6, rowCount, StringUtil.toString(dataBean.getStatusCode())));
+			sheet.addCell(new Label(7, rowCount, dataBean.getReasonPhrase()));
+			sheet.addCell(new Label(8, rowCount, StringUtil.toString(dataBean.getRspHeader())));
+			sheet.addCell(new Label(9, rowCount, StringUtil.toString(dataBean.getRspBody())));
 			book.write();
 			book.close();
 			ExcelWriterHelper.deleteTempFile(srcFile);

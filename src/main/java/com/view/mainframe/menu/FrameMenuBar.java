@@ -32,6 +32,8 @@ public class FrameMenuBar extends JMenuBar {
 		this.stopItem.setEnabled(false);
 		
 		ViewModules.addSimpleMenuItem(scriptMenu, "Open Script", "OPENSCRIPT", listener);
+		ViewModules.addSimpleMenuItem(scriptMenu, "Batch Gene Script", "BATCHGENESCRIPT", listener);
+		ViewModules.addSimpleMenuItem(scriptMenu, "Create Script", "CREATESCRIPT", listener);
 		
 		ViewModules.addSimpleMenuItem(setMenu, "Preference", "PREFERENCE", listener);
 	}
