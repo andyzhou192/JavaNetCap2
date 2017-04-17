@@ -140,7 +140,7 @@ public class ActionListenerForMenu implements ActionListener {
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
 					frame.progress.setStatus("Open Script From File!");
-					new GeneratorFrame(frame, null);
+					new GeneratorFrame(frame, new DataForJavaBean());
 					frame.progress.setStatus("Script has opened");
 				}
 			});
