@@ -17,7 +17,6 @@ import javax.swing.table.DefaultTableModel;
 import com.common.util.JsonUtil;
 import com.common.util.StringUtil;
 import com.generator.bean.DataForJavaBean;
-import com.protocol.http.bean.HttpDataBean;
 import com.view.listener.ActionListenerForButton;
 import com.view.mainframe.MainFrame;
 import com.view.mainframe.table.component.TableButtonEditor;
@@ -164,7 +163,7 @@ public class RowTableScrollPane extends JScrollPane {
 	 * 在table中新增一行
 	 * @param data
 	 */
-	public void addRowToTable(HttpDataBean data){
+	public void addRowToTable(DataForJavaBean data){
 		Object[] values = {new JCheckBox(String.valueOf(parent.getRows().size() + 1)), 
 				data.getUrl(), data.getMethod(), data.getReqHeader(), data.getReqParams(), 
 				data.getStatusCode(), data.getReasonPhrase(), data.getRspHeader(), data.getRspBody(), 

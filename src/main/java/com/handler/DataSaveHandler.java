@@ -3,16 +3,15 @@ package com.handler;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-import com.common.helper.ExcelWriterHelper;
+import com.common.helper.excel.ExcelHelper;
+import com.common.helper.excel.HssfExcelHelper;
+import com.common.helper.excel.JxlExcelHelper;
 import com.common.util.FileUtil;
 import com.common.util.LogUtil;
-import com.common.util.StringUtil;
 import com.generator.bean.DataForJavaBean;
-
-import jxl.write.Label;
-import jxl.write.WritableSheet;
-import jxl.write.WriteException;
 
 public class DataSaveHandler {
 	private static Class<?> cl = DataSaveHandler.class;
@@ -22,45 +21,61 @@ public class DataSaveHandler {
 	public DataSaveHandler(DataForJavaBean dataBean) {
 		this.dataBean = dataBean;
 	}
-
-	public synchronized void writeToExcel(String file, String sheetName, String[] columnNames) {
-		try {
-			File srcFile = new File(file);
-			String parentPath = srcFile.getParent();
-			if(null != parentPath && !FileUtil.fileIsExists(parentPath))
-				new File(parentPath).mkdirs();
-			ExcelWriterHelper book = ExcelWriterHelper.getBook(srcFile);
-			WritableSheet sheet = null;
-			if (null == book.getSheet(sheetName)) {
-				sheet = book.createSheet(sheetName, book.getNumberOfSheets());
-			} else {
-				sheet = book.getSheet(sheetName);
-			}
-			int rowCount = sheet.getRows();
-			if (rowCount < 1 || sheet.getColumns() < columnNames.length) {
-				for (int i = 0; i < columnNames.length; i++) {
-					Label label = new Label(i, 0, columnNames[i]);
-					sheet.addCell(label);
-				}
-				rowCount = rowCount + 1;
-			}
-			sheet.addCell(new Label(0, rowCount, dataBean.getCaseId() + rowCount));
-			sheet.addCell(new Label(1, rowCount, dataBean.getCaseDesc()));
-			sheet.addCell(new Label(2, rowCount, dataBean.getMethod()));
-			sheet.addCell(new Label(3, rowCount, dataBean.getUrl()));
-			sheet.addCell(new Label(4, rowCount, StringUtil.toString(dataBean.getReqHeader())));
-			sheet.addCell(new Label(5, rowCount, StringUtil.toString(dataBean.getReqParams())));
-			sheet.addCell(new Label(6, rowCount, StringUtil.toString(dataBean.getStatusCode())));
-			sheet.addCell(new Label(7, rowCount, dataBean.getReasonPhrase()));
-			sheet.addCell(new Label(8, rowCount, StringUtil.toString(dataBean.getRspHeader())));
-			sheet.addCell(new Label(9, rowCount, StringUtil.toString(dataBean.getRspBody())));
-			book.write();
-			book.close();
-			ExcelWriterHelper.deleteTempFile(srcFile);
-		} catch (WriteException | IOException e) {
+	
+	public synchronized void writeToExcel(String file, String sheetName){
+		File srcFile = new File(file);
+		String parentPath = srcFile.getParent();
+		if(null != parentPath && !FileUtil.fileIsExists(parentPath))
+			new File(parentPath).mkdirs();
+//		ExcelHelper eh = HssfExcelHelper.getInstance(srcFile, sheetName);
+		ExcelHelper eh = JxlExcelHelper.getInstance(srcFile, sheetName);
+		List<DataForJavaBean> dataList = new ArrayList<DataForJavaBean>();
+		dataList.add(dataBean);
+        try {
+			eh.writeExcel(DataForJavaBean.class, dataList);
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+
+//	public synchronized void writeToExcel(String file, String sheetName, String[] columnNames) {
+//		try {
+//			File srcFile = new File(file);
+//			String parentPath = srcFile.getParent();
+//			if(null != parentPath && !FileUtil.fileIsExists(parentPath))
+//				new File(parentPath).mkdirs();
+//			ExcelWriterHelper book = ExcelWriterHelper.getBook(srcFile);
+//			WritableSheet sheet = null;
+//			if (null == book.getSheet(sheetName)) {
+//				sheet = book.createSheet(sheetName, book.getNumberOfSheets());
+//			} else {
+//				sheet = book.getSheet(sheetName);
+//			}
+//			int rowCount = sheet.getRows();
+//			if (rowCount < 1 || sheet.getColumns() < columnNames.length) {
+//				for (int i = 0; i < columnNames.length; i++) {
+//					Label label = new Label(i, 0, columnNames[i]);
+//					sheet.addCell(label);
+//				}
+//				rowCount = rowCount + 1;
+//			}
+//			sheet.addCell(new Label(0, rowCount, dataBean.getCaseId() + rowCount));
+//			sheet.addCell(new Label(1, rowCount, dataBean.getCaseDesc()));
+//			sheet.addCell(new Label(2, rowCount, dataBean.getMethod()));
+//			sheet.addCell(new Label(3, rowCount, dataBean.getUrl()));
+//			sheet.addCell(new Label(4, rowCount, StringUtil.toString(dataBean.getReqHeader())));
+//			sheet.addCell(new Label(5, rowCount, StringUtil.toString(dataBean.getReqParams())));
+//			sheet.addCell(new Label(6, rowCount, StringUtil.toString(dataBean.getStatusCode())));
+//			sheet.addCell(new Label(7, rowCount, dataBean.getReasonPhrase()));
+//			sheet.addCell(new Label(8, rowCount, StringUtil.toString(dataBean.getRspHeader())));
+//			sheet.addCell(new Label(9, rowCount, StringUtil.toString(dataBean.getRspBody())));
+//			book.write();
+//			book.close();
+//			ExcelWriterHelper.deleteTempFile(srcFile);
+//		} catch (WriteException | IOException e) {
+//			e.printStackTrace();
+//		}
+//	}
 
 	// 自定义的save方法，参数为文件对象
 	public static boolean save(File file, String content) {

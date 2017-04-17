@@ -252,7 +252,6 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 		bean.setSuperclass(PropertyHelper.getSuperClass());
 		bean.setMethodName(methodNameField.getText().trim());
 		bean.setSmokeScript(smokeScriptCheckBox.isSelected());
-		bean.setParamNames(HttptHelper.PARAM_NAMES);
 		
 		ScriptGenerator generator = new ScriptGenerator(PropertyHelper.getTemplateDir(), PropertyHelper.getTemplateFile());
 		return generator.generateJavaFile(bean);
@@ -272,7 +271,7 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 		
 		String file = AbstractGenerator.getDataFilePath(packageNameField.getText(), classNameField.getText());
 		String sheetName = methodNameField.getText().trim();
-		(new DataSaveHandler(dataBean)).writeToExcel(file, sheetName, HttptHelper.PARAM_NAMES);
+		(new DataSaveHandler(dataBean)).writeToExcel(file, sheetName);
 		return true;
 	}
 	

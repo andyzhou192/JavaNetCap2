@@ -1,5 +1,9 @@
 package com.generator.bean;
 
+import java.lang.reflect.Field;
+
+import com.common.util.JsonUtil;
+
 import net.sf.json.JSONObject;
 
 public class DataForJavaBean {
@@ -93,5 +97,19 @@ public class DataForJavaBean {
 
 	public void setRspBody(Object rspBody) {
 		this.rspBody = rspBody;
+	}
+	
+	public static String[] getFields(){
+		Field[] fields = DataForJavaBean.class.getDeclaredFields();
+        String[] fieldNames = new String[fields.length];
+        for (int i = 0; i < fields.length; i++) {
+            String fieldName = fields[i].getName();
+            fieldNames[i] = fieldName;
+        }
+		return fieldNames;
+	}
+
+	public Object toJson() {
+		return JSONObject.fromObject(JsonUtil.beanToJson(this));
 	}
 }

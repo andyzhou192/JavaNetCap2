@@ -9,8 +9,7 @@ import com.common.asserts.Assert;
 import com.common.util.ArrayUtil;
 import com.common.util.LogUtil;
 import com.common.util.StringUtil;
-import com.protocol.http.bean.HttpDataBean;
-
+import com.generator.bean.DataForJavaBean;
 import net.sf.json.JSONObject;
 
 @SuppressWarnings("restriction")
@@ -27,7 +26,7 @@ public class HttptHelper {
 	public final static String EQUAL = "=";
 	public final static String AND = "&";
 	
-	public final static String[] PARAM_NAMES = {"CaseID", "CaseDesc", "Method", "URL","ReqHeader","ReqParams","StatusCode","ReasonPhrase","RspHeader","RspBody"};
+//	public final static String[] PARAM_NAMES = {"CaseID", "CaseDesc", "Method", "URL","ReqHeader","ReqParams","StatusCode","ReasonPhrase","RspHeader","RspBody"};
 	
 	/**
 	 * 
@@ -36,8 +35,8 @@ public class HttptHelper {
 	 * @return
 	 */
 	@SuppressWarnings("deprecation")
-	public static HttpDataBean getDataBean(String reqData, String rspData) {
-		HttpDataBean bean = new HttpDataBean();
+	public static DataForJavaBean getDataBean(String reqData, String rspData) {
+		DataForJavaBean bean = new DataForJavaBean();
 		try {
 			reqData = URLDecoder.decode(reqData.replaceAll("%(?![0-9a-fA-F]{2})", "%25"), "utf-8");
 			rspData = URLDecoder.decode(rspData.replaceAll("%(?![0-9a-fA-F]{2})", "%25"), "utf-8");
@@ -56,14 +55,13 @@ public class HttptHelper {
 	 * @param bean
 	 * @param requestData
 	 */
-	private static void initRequestData(HttpDataBean bean, String requestData){
+	private static void initRequestData(DataForJavaBean bean, String requestData){
 		int index = requestData.indexOf(HttptHelper.CRLF);
 		if(index < 0) return;
 		String requestLine = requestData.substring(0, index);
 		bean.setMethod(requestLine.trim().split(HttptHelper.SP)[0]);
 		String[] uriStr = requestLine.trim().split(HttptHelper.SP)[1].split(HttptHelper.QUES);
 		String uri = uriStr[0];
-		bean.setProtocolVersion(requestLine.trim().split(HttptHelper.SP)[2]);
 		int paramsIndex = requestData.indexOf(HttptHelper.BLANK_LINE);
 		String headData = requestData.trim().substring(index, paramsIndex);
 		int startIndex = headData.toUpperCase().indexOf("HOST" + HttptHelper.NVSeparator) + ("HOST" + HttptHelper.NVSeparator).length();
@@ -127,7 +125,7 @@ public class HttptHelper {
 	 * @param rspData
 	 * 
 	 **/
-	private static void initResponseData(HttpDataBean bean, String rspData){
+	private static void initResponseData(DataForJavaBean bean, String rspData){
 		if(!rspData.startsWith("HTTP/1.1")) return;
 		int index = rspData.indexOf(HttptHelper.CRLF);
 		String[] rspStatusLine = rspData.trim().substring(0, index).trim().split(HttptHelper.SP);

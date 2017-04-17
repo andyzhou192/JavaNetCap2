@@ -1,6 +1,5 @@
 package com.generator.bean;
 
-import com.protocol.http.HttptHelper;
 import com.view.preference.PropertyHelper;
 
 /**
@@ -22,7 +21,7 @@ public class ScriptForJavaBean {
 	// 父类名
 	private String superclass;
 	// 参数集合
-	private String[] paramNames = HttptHelper.PARAM_NAMES;
+	private String[] paramNames = DataForJavaBean.getFields();
 	// 是否冒烟脚本
 	private boolean smokeScript = false;
 	

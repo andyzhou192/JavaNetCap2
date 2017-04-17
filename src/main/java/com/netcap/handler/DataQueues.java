@@ -1,10 +1,11 @@
 package com.netcap.handler;
 
 import java.util.LinkedList;
+
 import com.common.util.LogUtil;
 import com.common.util.StringUtil;
+import com.generator.bean.DataForJavaBean;
 import com.protocol.http.HttptHelper;
-import com.protocol.http.bean.HttpDataBean;
 import com.view.mainframe.MainFrame;
 import com.view.preference.PropertyHelper;
 
@@ -43,7 +44,7 @@ public class DataQueues {
     	 * 
     	 */
         public void dataProcess(){
-        	HttpDataBean bean = HttptHelper.getDataBean(reqData, rspData);
+        	DataForJavaBean bean = HttptHelper.getDataBean(reqData, rspData);
         	if (bean != null && isValidReq(bean.getUrl())) {
             	LogUtil.debug(cl, bean.toJson());
             	if(null != this.frame)

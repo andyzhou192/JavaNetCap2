@@ -29,7 +29,6 @@ import com.generator.maven.MavenPomHelper;
 import com.handler.DataSaveHandler;
 import com.netcap.captor.Netcaptor;
 import com.protocol.http.HttptHelper;
-import com.protocol.http.bean.HttpDataBean;
 import com.view.mainframe.MainFrame;
 import com.view.mainframe.table.RowTableScrollPane;
 import com.view.preference.PreferenceFrame;
@@ -180,11 +179,15 @@ public class ActionListenerForMenu implements ActionListener {
 			ViewModules.showMessageDialog(frame, "Please choose the data you want to delete...");
 	}
 	
+	/**
+	 * 批量生成脚本
+	 * @param dataList
+	 */
 	private void batchGeneScript(List<DataForJavaBean> dataList){
 		for(DataForJavaBean dataBean : dataList){
 			String url = StringUtil.toString(dataBean.getUrl());
 			
-			String interfaceName = StringUtil.upperCaseFirstLetter(HttptHelper.getInterfaceMethodName(url));
+			String interfaceName = StringUtil.firstCharUpperCase(HttptHelper.getInterfaceMethodName(url));
 			ScriptForJavaBean bean = new ScriptForJavaBean();
 			bean.setClassName(interfaceName);
 			bean.setMethodName(interfaceName);
@@ -193,7 +196,7 @@ public class ActionListenerForMenu implements ActionListener {
 			
 			String file = AbstractGenerator.getDataFilePath(bean.getPackageName(), bean.getClassName());
 			String sheetName = bean.getMethodName();
-			(new DataSaveHandler(dataBean)).writeToExcel(file, sheetName, HttptHelper.PARAM_NAMES);
+			(new DataSaveHandler(dataBean)).writeToExcel(file, sheetName);
 		}
 	}
 	
@@ -245,7 +248,7 @@ public class ActionListenerForMenu implements ActionListener {
 		classMap.put("rspBody", JSONObject.class);
 		frame.getScrollPane().deleteRowFromTable(-1);
 		for(String data : dataList){
-			HttpDataBean bean = JsonUtil.jsonToBean(data, HttpDataBean.class, classMap);
+			DataForJavaBean bean = JsonUtil.jsonToBean(data, DataForJavaBean.class, classMap);
 			if(null == bean)
 				ViewModules.showMessageDialog(null, "json To Bean has some error!");
 			else
