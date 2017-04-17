@@ -3054,3 +3054,5 @@ Date: Fri, 14 Apr 2017 01:11:19 GMT
 2017-04-17 09:27:10  [ AWT-EventQueue-0:4305 ] - [ DEBUG ]  Converting 'java.net.URL[]' value '[Ljava.net.URL;@3be9c0c6' to type 'java.net.URL[]'
 2017-04-17 09:27:10  [ AWT-EventQueue-0:4305 ] - [ DEBUG ]      No conversion required, value is already a java.net.URL[]
 2017-04-17 09:27:27  [ AWT-EventQueue-0:21341 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\projects\MyTest\pom.xml
+2017-04-17 09:42:01  [ main:0 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\.\conf\setting.properties
+2017-04-17 09:42:05  [ AWT-EventQueue-0:3588 ] - [ DEBUG ]  D:\work\workspace\JavaNetCap2\projects\MyTest\pom.xml
