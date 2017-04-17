@@ -6,6 +6,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+
+import com.common.JsonValidator;
+
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import net.sf.json.JsonConfig;
@@ -26,6 +29,7 @@ import net.sf.json.JsonConfig;
  * }
  */
 public class JsonUtil {
+	private static Class<?> cl = JsonUtil.class;
 
 	/**
 	 * 从一个JSON 对象字符格式中得到一个java对象
@@ -36,9 +40,13 @@ public class JsonUtil {
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T> T jsonToBean(String jsonString, Class<T> beanCalss) {
-		JSONObject jsonObject = JSONObject.fromObject(jsonString);
-		T bean = (T) JSONObject.toBean(jsonObject, beanCalss);
-		return bean;
+		if(new JsonValidator().validate(jsonString)){
+			JSONObject jsonObject = JSONObject.fromObject(jsonString);
+			T bean = (T) JSONObject.toBean(jsonObject, beanCalss);
+			return bean;
+		}
+		LogUtil.err(cl, "jsonString is not a json String : " + jsonString);
+		return null;
 	}
 	
 	public static JSONObject getJson(Object obj){
@@ -56,9 +64,13 @@ public class JsonUtil {
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T> T jsonToBean(String jsonString, Class<T> beanCalss, Map<String, ?> classMap) {
-		JSONObject jsonObject = JSONObject.fromObject(jsonString);
-		T bean = (T) JSONObject.toBean(jsonObject, beanCalss, classMap);
-		return bean;
+		if(new JsonValidator().validate(jsonString)){
+			JSONObject jsonObject = JSONObject.fromObject(jsonString);
+			T bean = (T) JSONObject.toBean(jsonObject, beanCalss, classMap);
+			return bean;
+		}
+		LogUtil.err(cl, "jsonString is not a json String : " + jsonString);
+		return null;
 	}
 
 	/**
@@ -163,17 +175,21 @@ public class JsonUtil {
 	 */
 	@SuppressWarnings({ "rawtypes" })
 	public static Map<String, Object> jsonToMap(String jsonString) {
-		JSONObject jsonObject = JSONObject.fromObject(jsonString);
-		Iterator keyIter = jsonObject.keys();
-		String key;
-		Object value;
-		Map<String, Object> valueMap = new HashMap<String, Object>();
-		while (keyIter.hasNext()) {
-			key = (String) keyIter.next();
-			value = jsonObject.get(key);
-			valueMap.put(key, value);
+		if(new JsonValidator().validate(jsonString)){
+			JSONObject jsonObject = JSONObject.fromObject(jsonString);
+			Iterator keyIter = jsonObject.keys();
+			String key;
+			Object value;
+			Map<String, Object> valueMap = new HashMap<String, Object>();
+			while (keyIter.hasNext()) {
+				key = (String) keyIter.next();
+				value = jsonObject.get(key);
+				valueMap.put(key, value);
+			}
+			return valueMap;
 		}
-		return valueMap;
+		LogUtil.err(cl, "jsonString is not a json String : " + jsonString);
+		return null;
 	}
 
 	/**
@@ -217,8 +233,12 @@ public class JsonUtil {
 	 * @return
 	 */
 	public static Object[] jsonToObjectArray(String jsonString) {
-		JSONArray jsonArray = JSONArray.fromObject(jsonString);
-		return jsonArray.toArray();
+		if(new JsonValidator().validate(jsonString)){
+			JSONArray jsonArray = JSONArray.fromObject(jsonString);
+			return jsonArray.toArray();
+		}
+		LogUtil.err(cl, "jsonString is not a json String : " + jsonString);
+		return null;
 	}
 
 	public static String listToJson(List<?> list) {
@@ -235,17 +255,21 @@ public class JsonUtil {
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T> List<T> jsonToBeanList(String jsonString, Class<T> beanClass) {
-		JSONArray jsonArray = JSONArray.fromObject(jsonString);
-		JSONObject jsonObject;
-		T bean;
-		int size = jsonArray.size();
-		List<T> list = new ArrayList<T>(size);
-		for (int i = 0; i < size; i++) {
-			jsonObject = jsonArray.getJSONObject(i);
-			bean = (T) JSONObject.toBean(jsonObject, beanClass);
-			list.add(bean);
+		if(new JsonValidator().validate(jsonString)){
+			JSONArray jsonArray = JSONArray.fromObject(jsonString);
+			JSONObject jsonObject;
+			T bean;
+			int size = jsonArray.size();
+			List<T> list = new ArrayList<T>(size);
+			for (int i = 0; i < size; i++) {
+				jsonObject = jsonArray.getJSONObject(i);
+				bean = (T) JSONObject.toBean(jsonObject, beanClass);
+				list.add(bean);
+			}
+			return list;
 		}
-		return list;
+		LogUtil.err(cl, "jsonString is not a json String : " + jsonString);
+		return null;
 	}
 
 	/**
@@ -255,13 +279,17 @@ public class JsonUtil {
 	 * @return
 	 */
 	public static String[] jsonToStringArray(String jsonString) {
-		JSONArray jsonArray = JSONArray.fromObject(jsonString);
-		String[] stringArray = new String[jsonArray.size()];
-		int size = jsonArray.size();
-		for (int i = 0; i < size; i++) {
-			stringArray[i] = jsonArray.getString(i);
+		if(new JsonValidator().validate(jsonString)){
+			JSONArray jsonArray = JSONArray.fromObject(jsonString);
+			String[] stringArray = new String[jsonArray.size()];
+			int size = jsonArray.size();
+			for (int i = 0; i < size; i++) {
+				stringArray[i] = jsonArray.getString(i);
+			}
+			return stringArray;
 		}
-		return stringArray;
+		LogUtil.err(cl, "jsonString is not a json String : " + jsonString);
+		return null;
 	}
 
 	/**
@@ -271,13 +299,17 @@ public class JsonUtil {
 	 * @return
 	 */
 	public static Long[] jsonToLongArray(String jsonString) {
-		JSONArray jsonArray = JSONArray.fromObject(jsonString);
-		int size = jsonArray.size();
-		Long[] longArray = new Long[size];
-		for (int i = 0; i < size; i++) {
-			longArray[i] = jsonArray.getLong(i);
+		if(new JsonValidator().validate(jsonString)){
+			JSONArray jsonArray = JSONArray.fromObject(jsonString);
+			int size = jsonArray.size();
+			Long[] longArray = new Long[size];
+			for (int i = 0; i < size; i++) {
+				longArray[i] = jsonArray.getLong(i);
+			}
+			return longArray;
 		}
-		return longArray;
+		LogUtil.err(cl, "jsonString is not a json String : " + jsonString);
+		return null;
 	}
 
 	/**
@@ -287,13 +319,17 @@ public class JsonUtil {
 	 * @return
 	 */
 	public static Integer[] jsonToIntegerArray(String jsonString) {
-		JSONArray jsonArray = JSONArray.fromObject(jsonString);
-		int size = jsonArray.size();
-		Integer[] integerArray = new Integer[size];
-		for (int i = 0; i < size; i++) {
-			integerArray[i] = jsonArray.getInt(i);
+		if(new JsonValidator().validate(jsonString)){
+			JSONArray jsonArray = JSONArray.fromObject(jsonString);
+			int size = jsonArray.size();
+			Integer[] integerArray = new Integer[size];
+			for (int i = 0; i < size; i++) {
+				integerArray[i] = jsonArray.getInt(i);
+			}
+			return integerArray;
 		}
-		return integerArray;
+		LogUtil.err(cl, "jsonString is not a json String : " + jsonString);
+		return null;
 	}
 
 	/**
@@ -303,13 +339,17 @@ public class JsonUtil {
 	 * @return
 	 */
 	public static Double[] jsonToDoubleArray(String jsonString) {
-		JSONArray jsonArray = JSONArray.fromObject(jsonString);
-		int size = jsonArray.size();
-		Double[] doubleArray = new Double[size];
-		for (int i = 0; i < size; i++) {
-			doubleArray[i] = jsonArray.getDouble(i);
+		if(new JsonValidator().validate(jsonString)){
+			JSONArray jsonArray = JSONArray.fromObject(jsonString);
+			int size = jsonArray.size();
+			Double[] doubleArray = new Double[size];
+			for (int i = 0; i < size; i++) {
+				doubleArray[i] = jsonArray.getDouble(i);
+			}
+			return doubleArray;
 		}
-		return doubleArray;
+		LogUtil.err(cl, "jsonString is not a json String : " + jsonString);
+		return null;
 	}
 
 //	public static void main(String[] args) {
