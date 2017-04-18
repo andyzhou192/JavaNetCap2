@@ -5,8 +5,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.swing.JOptionPane;
-
 import com.common.util.LogUtil;
 import com.generator.bean.ScriptForJavaBean;
 import com.generator.AbstractGenerator;
@@ -45,10 +43,12 @@ public class ScriptGenerator extends AbstractGenerator {
 		File targetFile = getJavaFile(bean.getPackageName(), bean.getClassName());
 		try {
 			if(targetFile.exists()){
-				String msg = targetFile.getAbsolutePath() + "has exist, would you want to cover it?";
-				int option = JOptionPane.showConfirmDialog(null, msg, "ConfirmDialog", JOptionPane.YES_NO_OPTION);
-				if(option != JOptionPane.YES_OPTION) return true;
-			}
+//				String msg = targetFile.getAbsolutePath() + "has exist, would you want to cover it?";
+//				int option = JOptionPane.showConfirmDialog(null, msg, "ConfirmDialog", JOptionPane.YES_NO_OPTION);
+//				if(option != JOptionPane.YES_OPTION) return true;
+				if(!PropertyHelper.getScriptOverwrite())
+					return true;
+			} 
 			if(null == templateFile || templateFile.trim().length() == 0){
 				ViewModules.showMessageDialog(null, "Template file can not be null.");
 				return false;

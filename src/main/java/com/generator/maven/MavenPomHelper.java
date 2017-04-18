@@ -75,7 +75,7 @@ public class MavenPomHelper extends Dom4jXmlHelper {
 		if(!file.exists())
 			MavenPomHelper.initMavenProject();
 		Constants.PROJECT_INFO = new ProjectInfo(new MavenPomHelper(file));
-		if(Constants.USE_DEFAULT_MAVEN_PROJECT){
+		if(PropertyHelper.getUseDefaultProject()){
 			MavenPomHelper.mergePomXml(file.getAbsolutePath(), Constants.TEMPLATE_POM);
 			String targetJar = StringUtil.assembleRelativeFilePath(projectPath, Constants.HTTP_TEST_JAR);
 			FileUtil.copyFile(Constants.HTTP_TEST_JAR, targetJar, false);
@@ -143,7 +143,7 @@ public class MavenPomHelper extends Dom4jXmlHelper {
 		String projectPath = StringUtil.assembleRelativeFilePath(path, projectName);
 		
 		boolean isSucc = false;
-		if(Constants.USE_DEFAULT_MAVEN_PROJECT){
+		if(PropertyHelper.getUseDefaultProject()){
 			// 使用默认的maven工程模板
 			isSucc = FileUtil.copyDirectory(Constants.DEFAULT_MAVEN_PROJECT, projectPath, false);
 			if(isSucc){
@@ -163,7 +163,7 @@ public class MavenPomHelper extends Dom4jXmlHelper {
 		
 		if(isSucc){
 			MavenPomHelper.parsePomXml(projectPath);
-			if(!Constants.USE_DEFAULT_MAVEN_PROJECT)
+			if(!PropertyHelper.getUseDefaultProject())
 				FileUtil.mkdirs(projectPath, Constants.PROJECT_INFO.getSourceDir(), Constants.PROJECT_INFO.getTestSourceDir(), Constants.PROJECT_INFO.getResourceDir(), Constants.PROJECT_INFO.getTestResourceDir());
 		} else {
 			projectPath = path;

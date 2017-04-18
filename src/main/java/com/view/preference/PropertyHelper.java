@@ -20,6 +20,8 @@ public class PropertyHelper {
 	// Workspace Setting View
 	public static String WORKSPACE = "workspace";
 	
+	public static String USE_DEFAULT_PROJECT  = "useDefaultMavenProject";
+	
 	// Script Setting View
 	public static String PACKAGE_NAME = "packageName";
 	public static String AUTHOR = "author";
@@ -28,6 +30,7 @@ public class PropertyHelper {
 	public static String SUPER_CLASS = "superClass";
 	public static String PARAM_NAMES = "paramNames";
 	public static String SMOKE_SCRIPT = "smokeScript";
+	public static String SCRIPT_OVERWRITE = "scriptOverwrite";
 	public static String TEMPLATE_DIR = "templateDir";
 	public static String TEMPLATE_FILE = "templateFile";
 	
@@ -62,6 +65,12 @@ public class PropertyHelper {
 	public static void setWorkspace(String text){
 		Constants.PROPS.put(WORKSPACE, text);
 		prop.put(WORKSPACE, text);
+		//return PropertiesUtil.storeProperty(Constants.DEF_SET_PROP_FILE, WORKSPACE, text, "");
+	}
+	
+	public static void setUseDefaultProject(boolean isUse){
+		Constants.PROPS.put(USE_DEFAULT_PROJECT, isUse);
+		prop.put(SMOKE_SCRIPT, isUse);
 		//return PropertiesUtil.storeProperty(Constants.DEF_SET_PROP_FILE, WORKSPACE, text, "");
 	}
 	
@@ -105,6 +114,12 @@ public class PropertyHelper {
 	public static void setSmokeScript(boolean isSmoke){
 		Constants.PROPS.put(SMOKE_SCRIPT, isSmoke);
 		prop.put(SMOKE_SCRIPT, isSmoke);
+		//return PropertiesUtil.storeProperty(Constants.DEF_SET_PROP_FILE, SMOKE_SCRIPT, String.valueOf(isSmoke), "");
+	}
+	
+	public static void setScriptOverwrite(boolean isOverwrite){
+		Constants.PROPS.put(SCRIPT_OVERWRITE, isOverwrite);
+		prop.put(SCRIPT_OVERWRITE, isOverwrite);
 		//return PropertiesUtil.storeProperty(Constants.DEF_SET_PROP_FILE, SMOKE_SCRIPT, String.valueOf(isSmoke), "");
 	}
 	 
@@ -166,6 +181,13 @@ public class PropertyHelper {
 		}
 	}
 	
+	public static boolean getUseDefaultProject(){
+		if(null == Constants.PROPS)
+			PropertyHelper.loadProperties();
+		String value = String.valueOf(Constants.PROPS.get(USE_DEFAULT_PROJECT));
+		return (StringUtil.validate(value)) ? Boolean.valueOf(value) : true;
+	}
+	
 	/************************* Script Setting View *************************/
 	public static String getPackageName(){
 		if(null == Constants.PROPS)
@@ -215,6 +237,13 @@ public class PropertyHelper {
 		if(null == Constants.PROPS)
 			PropertyHelper.loadProperties();
 		String value = String.valueOf(Constants.PROPS.get(SMOKE_SCRIPT));
+		return (StringUtil.validate(value)) ? Boolean.valueOf(value) : false;
+	}
+	
+	public static boolean getScriptOverwrite(){
+		if(null == Constants.PROPS)
+			PropertyHelper.loadProperties();
+		String value = String.valueOf(Constants.PROPS.get(SCRIPT_OVERWRITE));
 		return (StringUtil.validate(value)) ? Boolean.valueOf(value) : false;
 	}
 	 

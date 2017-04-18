@@ -9,8 +9,6 @@ import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import javax.swing.filechooser.FileSystemView;
-
 import com.common.Constants;
 import com.common.util.StringUtil;
 import com.generator.maven.MavenPomHelper;
@@ -152,9 +150,13 @@ public class WorkspaceSettingView extends AbstractPreferencesView {
 	private String chooseSingleDir(Component parent){
 		String filepath = null;
 		JFileChooser chooser = new JFileChooser();             //设置选择器
-		File defaultDir = FileSystemView.getFileSystemView().getHomeDirectory(); // 获取桌面路径
-		if(StringUtil.validate(workSpaceTextField.getText()))
+//		File defaultDir = FileSystemView.getFileSystemView().getHomeDirectory(); // 获取桌面路径
+		File defaultDir = new File(Constants.DEFAULT_PROJECT_DIR);
+		if(StringUtil.validate(workSpaceTextField.getText())){
 			defaultDir = new File(workSpaceTextField.getText());
+			if(!defaultDir.exists())
+				defaultDir = new File(Constants.DEFAULT_PROJECT_DIR);
+		}
 		chooser.setCurrentDirectory(defaultDir); // 设置默认路径
 		//chooser.setMultiSelectionEnabled(true);             //设为多选
 		chooser.setDialogTitle("Please choose workspace");

@@ -3,7 +3,6 @@ package com.common;
 import java.io.File;
 import java.util.Properties;
 
-import com.common.util.PropertiesUtil;
 import com.common.util.StringUtil;
 import com.generator.maven.ProjectInfo;
 
@@ -48,7 +47,6 @@ public final class Constants {
 	public static String TEMPLATE_POM = StringUtil.assembleRelativeFilePath("." + File.separator + "maven", "template_pom.xml");
 	public static String DEFAULT_MAVEN_PROJECT = StringUtil.assembleRelativeFilePath("." + File.separator + "maven", "MyTest");
 	public static String HTTP_TEST_JAR = StringUtil.assembleRelativeFilePath("." + File.separator + "exts", "server-interface-ats-1.0.0.jar");
-	public static boolean USE_DEFAULT_MAVEN_PROJECT = PropertiesUtil.getProperty(Constants.DEF_SET_PROP_FILE, "useDefaultMavenProject") == null ? true : Boolean.valueOf(PropertiesUtil.getProperty(Constants.DEF_SET_PROP_FILE, "useDefaultMavenProject"));
 	
 	public static String DEFAULT_TEMPLATE_SCRIPT_DIR = "." + File.separator + "template" + File.separator;//new File("template").getAbsolutePath();
 	public static String DEFAULT_TEMPLATE_SCRIPT = StringUtil.assembleRelativeFilePath("." + File.separator + "template", "HttpTestScriptEntity.ftlh");

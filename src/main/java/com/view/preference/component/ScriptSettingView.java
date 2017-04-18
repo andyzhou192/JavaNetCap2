@@ -29,9 +29,9 @@ import com.view.util.ViewModules;
 public class ScriptSettingView extends AbstractPreferencesView {
 
 	private PreferenceFrame parent;
-	private JLabel packageNameLabel, authorLabel, classDescLabel, classNameLabel, superClassLabel, paramNamesLabel, smokeScriptLabel/**, templateDirLabel**/, templateFileLabel;
+	private JLabel packageNameLabel, authorLabel, classDescLabel, classNameLabel, superClassLabel, paramNamesLabel, smokeScriptLabel, scriptOverwriteLabel/**, templateDirLabel**/, templateFileLabel;
 	private JTextField packageNameField, authorField, classDescField, classNameField, superClassField, paramNamesField/**, templateDirField**/;
-	private JCheckBox smokeScriptCheckBox;
+	private JCheckBox smokeScriptCheckBox, scriptOverwriteCheckBox;
 	private JButton /**browseButton,**/ applyButton;
 	private JComboBox<String> templateFileCombBox;
 //	private DefaultComboBoxModel<String> combBoxModel;
@@ -62,6 +62,8 @@ public class ScriptSettingView extends AbstractPreferencesView {
 		paramNamesLabel.setToolTipText("生成的测试脚本的测试方法的参数名称,多个以','分隔");
 		smokeScriptLabel = ViewModules.createJLabel("smokeScript:", Color.BLACK);
 		smokeScriptLabel.setToolTipText("生成的测试脚本的测试方法是否是冒烟脚本");
+		scriptOverwriteLabel = ViewModules.createJLabel("scriptOverwrite:", Color.BLACK);
+		scriptOverwriteLabel.setToolTipText("当待生成的测试脚本已经存在时，是否覆盖");
 //		templateDirLabel = ViewModules.createJLabel("templateDir:", Color.RED);
 //		templateDirLabel.setToolTipText("生成测试脚本的模板文件存放目录");
 		templateFileLabel = ViewModules.createJLabel("templateFile:", Color.RED);
@@ -74,6 +76,7 @@ public class ScriptSettingView extends AbstractPreferencesView {
 		superClassField = ViewModules.createTextField(20, "", true);
 		paramNamesField = ViewModules.createTextField(20, "", true);
 		smokeScriptCheckBox = ViewModules.createCheckBox("Yes", null);
+		scriptOverwriteCheckBox = ViewModules.createCheckBox("Yes", null);
 //		templateDirField = ViewModules.createTextField(20, "", true);
 //		browseButton = ViewModules.createButton("browse", "Browse", this);
 //		templateDirField.getDocument().addDocumentListener(new DocumentChangeListener());
@@ -108,7 +111,9 @@ public class ScriptSettingView extends AbstractPreferencesView {
 		this.add(paramNamesField, ViewModules.getGridBagConstraints(2, 6, 9, 1));
 		
 		this.add(smokeScriptLabel, ViewModules.getGridBagConstraints(1, 7, 1, 1));
-		this.add(smokeScriptCheckBox, ViewModules.getGridBagConstraints(2, 7, 9, 1));
+		this.add(smokeScriptCheckBox, ViewModules.getGridBagConstraints(2, 7, 4, 1));
+		this.add(scriptOverwriteLabel, ViewModules.getGridBagConstraints(6, 7, 1, 1));
+		this.add(scriptOverwriteCheckBox, ViewModules.getGridBagConstraints(7, 7, 4, 1));
 
 //		this.add(templateDirLabel, ViewModules.getGridBagConstraints(1, 8, 1, 1));
 //		this.add(templateDirField, ViewModules.getGridBagConstraints(2, 8, 8, 1));
@@ -131,6 +136,7 @@ public class ScriptSettingView extends AbstractPreferencesView {
 		superClassField.setText(PropertyHelper.getSuperClass());
 		paramNamesField.setText(PropertyHelper.getParamNames());
 		smokeScriptCheckBox.setSelected(PropertyHelper.getSmokeScript());
+		scriptOverwriteCheckBox.setSelected(PropertyHelper.getScriptOverwrite());
 		//templateDirField.setText(PropertyHelper.getTemplateDir());
 //		updateFileList();
 		templateFileCombBox.setSelectedItem(PropertyHelper.getTemplateFile());
@@ -189,6 +195,8 @@ public class ScriptSettingView extends AbstractPreferencesView {
 		PropertyHelper.setParamNames(paramNamesField.getText());
 		// 选填，测试方法是否为冒烟测试脚本，值为true或false,默认false
 		PropertyHelper.setSmokeScript(smokeScriptCheckBox.isSelected());
+		// 选填，待生成的测试脚本存在时，是否覆盖，值为true或false,默认true
+		PropertyHelper.setScriptOverwrite(scriptOverwriteCheckBox.isSelected());
 		// 必填，模板文件的存储目录，可以是项目中的相对路径
 //		PropertyHelper.setTemplateDir(templateDirField.getText());
 		// 必填，模板文件名称，包括后缀名
