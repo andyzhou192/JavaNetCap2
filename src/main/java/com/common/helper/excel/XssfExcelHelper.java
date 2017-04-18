@@ -17,6 +17,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.common.util.DateUtil;
+import com.common.util.LogUtil;
 import com.common.util.ReflectUtil;
 import com.common.util.StringUtil;
  
@@ -27,6 +28,7 @@ import com.common.util.StringUtil;
  *
  */
 public class XssfExcelHelper extends ExcelHelper {
+	private Class<?> cl = XssfExcelHelper.class;
  
     private static XssfExcelHelper instance = null; // 单例对象
  
@@ -95,6 +97,7 @@ public class XssfExcelHelper extends ExcelHelper {
         // 获取excel工作簿
         XSSFWorkbook workbook = null;
         try{
+        	if(!file.exists() || !file.getName().endsWith(".xlsx")) return dataModels;
         	workbook = new XSSFWorkbook(new FileInputStream(file));
         	int sheetNo = workbook.getNumberOfSheets();
         	XSSFSheet sheet = null;
@@ -187,7 +190,7 @@ public class XssfExcelHelper extends ExcelHelper {
 					sheet = workbook.createSheet((String) sheetTag);
 				}
 			} else {
-				
+				LogUtil.err(cl, "sheetTag must be int or String.");
 			}
             
 			int rowCount = sheet.getLastRowNum(); // 最后一行的索引
@@ -232,7 +235,9 @@ public class XssfExcelHelper extends ExcelHelper {
         			// 如果是日期类型则进行格式化处理
         			if (isDateType(clazz, fieldName)) {
         				cell.setCellValue(DateUtil.format((Date) result));
-        			}
+        			} else if("caseId-".equalsIgnoreCase(StringUtil.toString(result))){
+        				cell.setCellValue(StringUtil.toString(result) + rowIndex);
+                    }
         		}
         	}
         	// 将数据写到磁盘上

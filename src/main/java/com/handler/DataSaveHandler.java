@@ -17,13 +17,7 @@ import com.generator.bean.DataForJavaBean;
 public class DataSaveHandler {
 	private static Class<?> cl = DataSaveHandler.class;
 
-	private DataForJavaBean dataBean;
-	
-	public DataSaveHandler(DataForJavaBean dataBean) {
-		this.dataBean = dataBean;
-	}
-	
-	public synchronized void writeToExcel(String file, String sheetName){
+	public static synchronized void writeToExcel(String file, String sheetName, DataForJavaBean dataBean){
 		LogUtil.debug(cl, "data file : " + file);
 		File srcFile = new File(file);
 		String parentPath = srcFile.getParent();
@@ -40,6 +34,25 @@ public class DataSaveHandler {
 		} catch (Exception e) {
 			LogUtil.err(cl, e);
 		}
+	}
+	
+	public static synchronized List<DataForJavaBean> readExcel(String file, Object sheetTag){
+		LogUtil.debug(cl, "data file : " + file);
+		List<DataForJavaBean> dataList = new ArrayList<DataForJavaBean>();
+		File srcFile = new File(file);
+		String parentPath = srcFile.getParent();
+		if(null != parentPath && !FileUtil.fileIsExists(parentPath))
+			return dataList;
+		ExcelHelper eh = HssfExcelHelper.getInstance(srcFile, sheetTag);
+		if(srcFile.getName().endsWith(".xlsx"))
+			eh = XssfExcelHelper.getInstance(srcFile, sheetTag);
+		try {
+			dataList = eh.readExcel(DataForJavaBean.class, true);
+		} catch (Exception e) {
+			LogUtil.err(cl, e);
+			e.printStackTrace();
+		}
+		return dataList;
 	}
 
 //	public synchronized void writeToExcel(String file, String sheetName, String[] columnNames) {

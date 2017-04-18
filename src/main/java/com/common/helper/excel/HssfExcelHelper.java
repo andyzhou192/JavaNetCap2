@@ -17,6 +17,7 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.CellType;
 
 import com.common.util.DateUtil;
+import com.common.util.LogUtil;
 import com.common.util.ReflectUtil;
 import com.common.util.StringUtil;
  
@@ -27,6 +28,8 @@ import com.common.util.StringUtil;
  *
  */
 public class HssfExcelHelper extends ExcelHelper {
+	
+	private Class<?> cl = HssfExcelHelper.class;
  
     private static HssfExcelHelper instance = null; // 单例对象
  
@@ -103,6 +106,7 @@ public class HssfExcelHelper extends ExcelHelper {
         // 获取excel工作簿
         HSSFWorkbook workbook = null;
         try{
+        	if(!file.exists() || !file.getName().endsWith(".xls")) return dataModels;
         	workbook = new HSSFWorkbook(new FileInputStream(file));
         	int sheetNo = workbook.getNumberOfSheets();
         	HSSFSheet sheet = null;
@@ -145,12 +149,10 @@ public class HssfExcelHelper extends ExcelHelper {
         			// 如果属性是日期类型则将内容转换成日期对象
         			if (isDateType(clazz, fieldName)) {
         				// 如果属性是日期类型则将内容转换成日期对象
-        				ReflectUtil.invokeSetter(target, fieldName,
-        						DateUtil.parse(content));
+        				ReflectUtil.invokeSetter(target, fieldName, DateUtil.parse(content));
         			} else {
         				Field field = clazz.getDeclaredField(fieldName);
-        				ReflectUtil.invokeSetter(target, fieldName,
-        						parseValueWithType(content, field.getType()));
+        				ReflectUtil.invokeSetter(target, fieldName, parseValueWithType(content, field.getType()));
         			}
         		}
         		dataModels.add(target);
@@ -195,7 +197,7 @@ public class HssfExcelHelper extends ExcelHelper {
 					sheet = workbook.createSheet((String) sheetTag);
 				}
 			} else {
-				
+				LogUtil.err(cl, "sheetTag must be int or String.");
 			}
 			
 			int rowCount = sheet.getLastRowNum(); // 最后一行的索引
@@ -239,7 +241,9 @@ public class HssfExcelHelper extends ExcelHelper {
         			// 如果是日期类型则进行格式化处理
         			if (isDateType(clazz, fieldName)) {
         				cell.setCellValue(DateUtil.format((Date) result));
-        			}
+        			} else if("caseId-".equalsIgnoreCase(StringUtil.toString(result))){
+        				cell.setCellValue(StringUtil.toString(result) + rowIndex);
+                    }
         		}
         	}
         	// 将数据写到磁盘上

@@ -196,7 +196,7 @@ public class ActionListenerForMenu implements ActionListener {
 			
 			String file = AbstractGenerator.getDataFilePath(bean.getPackageName(), bean.getClassName());
 			String sheetName = bean.getMethodName();
-			(new DataSaveHandler(dataBean)).writeToExcel(file, sheetName);
+			DataSaveHandler.writeToExcel(file, sheetName, dataBean);
 		}
 	}
 	

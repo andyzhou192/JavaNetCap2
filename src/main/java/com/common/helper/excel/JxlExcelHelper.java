@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.common.util.LogUtil;
 import com.common.util.ReflectUtil;
 import com.common.util.StringUtil;
 import com.common.util.DateUtil;
@@ -27,6 +28,7 @@ import jxl.write.WritableWorkbook;
  *
  */
 public class JxlExcelHelper extends ExcelHelper {
+	private Class<?> cl = JxlExcelHelper.class;
  
     private static JxlExcelHelper instance = null; // 单例对象
  
@@ -105,6 +107,7 @@ public class JxlExcelHelper extends ExcelHelper {
         // 获取excel工作簿
         Workbook workbook = null;
         try {
+        	if(!file.exists() || !file.getName().endsWith(".xls")) return dataModels;
         	workbook = Workbook.getWorkbook(file);
         	int sheetNo = workbook.getNumberOfSheets();
         	Sheet sheet = null;
@@ -190,7 +193,7 @@ public class JxlExcelHelper extends ExcelHelper {
 					sheet = workbook.createSheet((String) sheetTag, sheetNo);
 				}
 			} else {
-				
+				LogUtil.err(cl, "sheetTag must be int or String.");
 			}
             
             if(sheet.getRows() <= 0 || sheet.getColumns() != titles.length){
@@ -224,6 +227,8 @@ public class JxlExcelHelper extends ExcelHelper {
                     // 如果是日期类型则进行格式化处理
                     if (isDateType(clazz, fieldName)) {
                         label.setString(DateUtil.format((Date) result));
+                    } else if("caseId-".equalsIgnoreCase(StringUtil.toString(result))){
+                    	label.setString(StringUtil.toString(result) + rowIndex);
                     }
                     sheet.addCell(label);
                 }

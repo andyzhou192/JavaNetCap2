@@ -3,16 +3,15 @@ package com.view.mainframe;
 import java.awt.BorderLayout;
 import java.util.Vector;
 
-import javax.swing.JFrame;
-
 import com.view.mainframe.menu.FrameMenuBar;
 import com.view.mainframe.table.RowTableScrollPane;
 import com.view.preference.PropertyHelper;
+import com.view.util.BaseFrame;
 import com.view.util.StatusProgressPanel;
 import com.view.util.ViewModules;
 
 @SuppressWarnings("serial")
-public class MainFrame extends JFrame {
+public class MainFrame extends BaseFrame {
 
 	private RowTableScrollPane scrollPane = null;
 	private FrameMenuBar menuBar;

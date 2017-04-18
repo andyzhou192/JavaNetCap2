@@ -8,21 +8,18 @@ import javax.swing.JScrollPane;
 
 import com.generator.bean.DataForJavaBean;
 import com.view.script.generator.component.GeneratorPanel;
+import com.view.util.BaseFrame;
 import com.view.util.FrameWindowAdapter;
-import com.view.util.StatusProgressPanel;
 
 @SuppressWarnings("serial")
-public class GeneratorFrame extends JFrame {
+public class GeneratorFrame extends BaseFrame {
 
-	public StatusProgressPanel progress;
-	
 	public GeneratorFrame(JFrame parent, DataForJavaBean dataBean){
 		this.setTitle("Data Detail");
 		this.setBackground(Color.LIGHT_GRAY);
 		this.setBounds(100, 100, 1000, 600);
 		JScrollPane scrollPane = new JScrollPane(new GeneratorPanel(this, dataBean));
 		this.getContentPane().add(scrollPane, BorderLayout.CENTER);
-		progress = new StatusProgressPanel();
 		this.getContentPane().add(progress, BorderLayout.SOUTH);
 		this.pack();
 		this.setVisible(true);

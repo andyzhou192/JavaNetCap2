@@ -24,7 +24,7 @@ import com.generator.maven.MavenPomHelper;
 import com.handler.DataSaveHandler;
 import com.protocol.http.HttptHelper;
 import com.view.preference.PropertyHelper;
-import com.view.script.generator.GeneratorFrame;
+import com.view.util.BaseFrame;
 import com.view.util.ScrollPaneTextArea;
 import com.view.util.ViewModules;
 import com.common.util.FormatUtil;
@@ -44,10 +44,10 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 	
 	private String[] types = {"TEXT", "JSON", "HTML"};
 	
-	private GeneratorFrame parent;
+	private BaseFrame parent;
 	private DataForJavaBean dataBean;
 	
-	public GeneratorPanel(GeneratorFrame parent, DataForJavaBean dataBean) {
+	public GeneratorPanel(BaseFrame parent, DataForJavaBean dataBean) {
 		this.parent = parent;
 		this.setBorder(new LineBorder(new Color(255, 200, 0), 2));
 		this.setLayout(ViewModules.getGridBagLayout(40, 10, 5, 5, 1.0, 1.0));
@@ -271,7 +271,7 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 		
 		String file = AbstractGenerator.getDataFilePath(packageNameField.getText(), classNameField.getText());
 		String sheetName = methodNameField.getText().trim();
-		(new DataSaveHandler(dataBean)).writeToExcel(file, sheetName);
+		DataSaveHandler.writeToExcel(file, sheetName, dataBean);
 		return true;
 	}
 	

@@ -22,11 +22,12 @@ import javax.swing.tree.TreeSelectionModel;
 import com.view.preference.component.JcaptureSettingView;
 import com.view.preference.component.ScriptSettingView;
 import com.view.preference.component.WorkspaceSettingView;
+import com.view.util.BaseFrame;
 import com.view.util.FrameWindowAdapter;
 import com.view.util.StatusProgressPanel;
 
 @SuppressWarnings("serial")
-public class PreferenceFrame extends JFrame implements TreeSelectionListener {
+public class PreferenceFrame extends BaseFrame implements TreeSelectionListener {
 
 	public StatusProgressPanel progress;
 
@@ -34,8 +35,8 @@ public class PreferenceFrame extends JFrame implements TreeSelectionListener {
 	private CardLayout card = new CardLayout();
 	private JPanel panel;
 
-	public PreferenceFrame(JFrame parent) {
-		super("Preferences");
+	public PreferenceFrame(BaseFrame parent) {
+		this.setTitle("Preferences");
 		this.setBackground(Color.LIGHT_GRAY);
 		this.setBounds(100, 100, 900, 600);
 		Container container = this.getContentPane();
@@ -66,7 +67,7 @@ public class PreferenceFrame extends JFrame implements TreeSelectionListener {
 		tree.setEditable(false); // 不可编辑
 		tree.setDragEnabled(false);// 不可拖拉
 		tree.setForeground(Color.BLUE);
-		tree.setToolTipText("Preferences");
+//		tree.setToolTipText("Preferences");
 		tree.setBorder(new LineBorder(Color.ORANGE));
 
 		DefaultMutableTreeNode root = new DefaultMutableTreeNode("Preferences");

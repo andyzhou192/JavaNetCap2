@@ -3,6 +3,11 @@ package com.common.helper.excel;
 import java.lang.reflect.Field;
 import java.util.Date;
 import java.util.List;
+
+import net.sf.json.JSONObject;
+
+import com.common.util.JsonUtil;
+import com.common.util.LogUtil;
  
 /**
  * Excel工具抽象类
@@ -13,6 +18,8 @@ import java.util.List;
  *            操作数据类型
  */
 public abstract class ExcelHelper {
+	private Class<?> cl = ExcelHelper.class;
+	
     /**
      * 对象序列化版本号名称
      */
@@ -153,11 +160,13 @@ public abstract class ExcelHelper {
                 result = Float.parseFloat(value);
             } else if (Double.TYPE == type) {
                 result = Double.parseDouble(value);
-            } else {
+            } else if (JSONObject.class == type) {
+            	result = JsonUtil.getJson(value);
+            }else {
                 result = (Object) value;
             }
         } catch (Exception e) {
-            // 把异常吞掉直接返回null
+            LogUtil.err(cl, e);// 把异常吞掉直接返回null
         }
         return result;
     }
