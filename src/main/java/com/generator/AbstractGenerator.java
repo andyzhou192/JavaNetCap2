@@ -9,6 +9,7 @@ import java.io.Writer;
 import java.util.Map;
 
 import com.common.Constants;
+import com.common.util.FileUtil;
 import com.common.util.LogUtil;
 import com.common.util.StringUtil;
 import com.generator.bean.ScriptForJavaBean;
@@ -115,10 +116,11 @@ public abstract class AbstractGenerator {
 		String packagePath = (StringUtil.validate(packageName) ? packageName : Constants.PROJECT_INFO.getGroupId()).replace('.', '/');
 		String fileDir = new File(outDir, packagePath).getAbsolutePath();
 		fileName = (StringUtil.validate(fileName) ? fileName : (PropertyHelper.getClassName() + "Test"));
-		String file = new File(fileDir, fileName + ".xls").getAbsolutePath();
-//		if(!FileUtil.fileIsExists(file))
-//			FileUtil.createFile(fileName, ".xls", fileDir);
-		return file;
+		String file1 = new File(fileDir, fileName + ".xls").getAbsolutePath();
+		String file2 = new File(fileDir, fileName + ".xlsx").getAbsolutePath();
+		if(FileUtil.fileIsExists(file2))
+			return file2;
+		return file1;
 	}
 	
 	/**

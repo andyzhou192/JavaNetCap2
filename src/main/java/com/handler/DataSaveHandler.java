@@ -8,7 +8,8 @@ import java.util.List;
 
 import com.common.helper.excel.ExcelHelper;
 import com.common.helper.excel.HssfExcelHelper;
-import com.common.helper.excel.JxlExcelHelper;
+import com.common.helper.excel.XssfExcelHelper;
+//import com.common.helper.excel.JxlExcelHelper;
 import com.common.util.FileUtil;
 import com.common.util.LogUtil;
 import com.generator.bean.DataForJavaBean;
@@ -23,18 +24,21 @@ public class DataSaveHandler {
 	}
 	
 	public synchronized void writeToExcel(String file, String sheetName){
+		LogUtil.debug(cl, "data file : " + file);
 		File srcFile = new File(file);
 		String parentPath = srcFile.getParent();
 		if(null != parentPath && !FileUtil.fileIsExists(parentPath))
 			new File(parentPath).mkdirs();
-//		ExcelHelper eh = HssfExcelHelper.getInstance(srcFile, sheetName);
-		ExcelHelper eh = JxlExcelHelper.getInstance(srcFile, sheetName);
+		ExcelHelper eh = HssfExcelHelper.getInstance(srcFile, sheetName);
+//		ExcelHelper eh = JxlExcelHelper.getInstance(srcFile, sheetName);
+		if(srcFile.getName().endsWith(".xlsx"))
+			eh = XssfExcelHelper.getInstance(srcFile, sheetName);
 		List<DataForJavaBean> dataList = new ArrayList<DataForJavaBean>();
 		dataList.add(dataBean);
         try {
 			eh.writeExcel(DataForJavaBean.class, dataList);
 		} catch (Exception e) {
-			e.printStackTrace();
+			LogUtil.err(cl, e);
 		}
 	}
 

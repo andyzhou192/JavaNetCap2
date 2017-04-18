@@ -3,6 +3,7 @@ package com.generator.maven;
 import java.io.File;
 import java.util.HashSet;
 import java.util.List;
+
 import org.dom4j.Element;
 import org.dom4j.Node;
 
@@ -74,9 +75,11 @@ public class MavenPomHelper extends Dom4jXmlHelper {
 		if(!file.exists())
 			MavenPomHelper.initMavenProject();
 		Constants.PROJECT_INFO = new ProjectInfo(new MavenPomHelper(file));
-		MavenPomHelper.mergePomXml(file.getAbsolutePath(), Constants.TEMPLATE_POM);
-		String targetJar = StringUtil.assembleRelativeFilePath(projectPath, Constants.HTTP_TEST_JAR);
-		FileUtil.copyFile(Constants.HTTP_TEST_JAR, targetJar, false);
+		if(Constants.USE_DEFAULT_MAVEN_PROJECT){
+			MavenPomHelper.mergePomXml(file.getAbsolutePath(), Constants.TEMPLATE_POM);
+			String targetJar = StringUtil.assembleRelativeFilePath(projectPath, Constants.HTTP_TEST_JAR);
+			FileUtil.copyFile(Constants.HTTP_TEST_JAR, targetJar, false);
+		}
 	}
 
 	/**
@@ -91,6 +94,8 @@ public class MavenPomHelper extends Dom4jXmlHelper {
 	
 	/**
 	 * 
+	 * @param mainxlm
+	 * @param subxml
 	 */
 	public static void mergePomXml(String mainxlm, String subxml){
 		MavenPomHelper mainHelper = new MavenPomHelper(mainxlm);
@@ -135,16 +140,31 @@ public class MavenPomHelper extends Dom4jXmlHelper {
 			path = Constants.DEFAULT_PROJECT_DIR;
 		if(!new File(path).exists())
 			new File(path).mkdirs();
-		String disk = path.substring(0, path.indexOf(":"));
-		String paths = path.substring(path.indexOf(":") + 1);
-		
-		String cmd = StringUtil.assembleStrWithSpace(Constants.MAVEN_BAT, disk, paths, groupId, projectName);
-		boolean isSucc = CommandHelper.exec(cmd);
-		
 		String projectPath = StringUtil.assembleRelativeFilePath(path, projectName);
+		
+		boolean isSucc = false;
+		if(Constants.USE_DEFAULT_MAVEN_PROJECT){
+			// 使用默认的maven工程模板
+			isSucc = FileUtil.copyDirectory(Constants.DEFAULT_MAVEN_PROJECT, projectPath, false);
+			if(isSucc){
+				Dom4jXmlHelper pomHelper = new Dom4jXmlHelper(StringUtil.assembleRelativeFilePath(projectPath, POM));
+				pomHelper.modifyElement(GroupId_PATH, groupId);
+				pomHelper.modifyElement(ArtifactId_PATH, projectName);
+				pomHelper.modifyElement(Name_PATH, projectName);
+				pomHelper.save();
+			}
+		} else {
+			// 使用bat脚本创建maven工程
+			String disk = path.substring(0, path.indexOf(":"));
+			String paths = path.substring(path.indexOf(":") + 1);
+			String cmd = StringUtil.assembleStrWithSpace(Constants.MAVEN_BAT, disk, paths, groupId, projectName);
+			isSucc = CommandHelper.exec(cmd);
+		}
+		
 		if(isSucc){
 			MavenPomHelper.parsePomXml(projectPath);
-			FileUtil.mkdirs(projectPath, Constants.PROJECT_INFO.getSourceDir(), Constants.PROJECT_INFO.getTestSourceDir(), Constants.PROJECT_INFO.getResourceDir(), Constants.PROJECT_INFO.getTestResourceDir());
+			if(!Constants.USE_DEFAULT_MAVEN_PROJECT)
+				FileUtil.mkdirs(projectPath, Constants.PROJECT_INFO.getSourceDir(), Constants.PROJECT_INFO.getTestSourceDir(), Constants.PROJECT_INFO.getResourceDir(), Constants.PROJECT_INFO.getTestResourceDir());
 		} else {
 			projectPath = path;
 		}

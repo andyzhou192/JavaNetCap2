@@ -3,12 +3,16 @@ package com.view.preference.component;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
+import java.io.File;
+
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.filechooser.FileSystemView;
 
 import com.common.Constants;
+import com.common.util.StringUtil;
 import com.generator.maven.MavenPomHelper;
 import com.generator.maven.ProjectInfo;
 import com.view.preference.AbstractPreferencesView;
@@ -148,6 +152,10 @@ public class WorkspaceSettingView extends AbstractPreferencesView {
 	private String chooseSingleDir(Component parent){
 		String filepath = null;
 		JFileChooser chooser = new JFileChooser();             //设置选择器
+		File defaultDir = FileSystemView.getFileSystemView().getHomeDirectory(); // 获取桌面路径
+		if(StringUtil.validate(workSpaceTextField.getText()))
+			defaultDir = new File(workSpaceTextField.getText());
+		chooser.setCurrentDirectory(defaultDir); // 设置默认路径
 		//chooser.setMultiSelectionEnabled(true);             //设为多选
 		chooser.setDialogTitle("Please choose workspace");
 		chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);

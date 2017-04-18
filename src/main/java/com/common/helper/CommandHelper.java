@@ -25,8 +25,8 @@ public class CommandHelper {
 		return result;
 	}
 	
-	public static void main(String[] args) {
-		exec("exts/create_maven_project.bat");
-	}
+//	public static void main(String[] args) {
+//		exec("exts/create_maven_project.bat");
+//	}
 
 }

@@ -159,10 +159,11 @@ public class XssfExcelHelper extends ExcelHelper {
     public <T> void writeExcel(Class<T> clazz, List<T> dataModels, String[] fieldNames, String[] titles) throws Exception {
         XSSFWorkbook workbook = null;
         FileOutputStream fos = null;
+        FileInputStream fis = null;
         try {
         	// 检测文件是否存在，如果存在则修改文件，否则创建文件
         	if (file.exists()) {
-        		FileInputStream fis = new FileInputStream(file);
+        		fis = new FileInputStream(file);
         		workbook = new XSSFWorkbook(fis);
         	} else {
         		workbook = new XSSFWorkbook();
@@ -189,7 +190,12 @@ public class XssfExcelHelper extends ExcelHelper {
 				
 			}
             
-            if(sheet.getLastRowNum() <= 0 || sheet.getRow(0).getPhysicalNumberOfCells() != titles.length){
+			int rowCount = sheet.getLastRowNum(); // 最后一行的索引
+            int colCount = 0; // 总列数
+            if(sheet.getRow(0) != null){
+            	colCount = sheet.getRow(0).getPhysicalNumberOfCells(); // 总列数
+            }
+            if(rowCount <= 0 || colCount != titles.length){
             	XSSFRow headRow = sheet.createRow(0);
             	// 添加表格标题
             	for (int i = 0; i < titles.length; i++) {
@@ -211,7 +217,8 @@ public class XssfExcelHelper extends ExcelHelper {
         	// 添加表格内容
         	for (int i = 0; i < dataModels.size(); i++) {
         		T target = dataModels.get(i);
-        		XSSFRow row = sheet.createRow(i + 1);
+        		int rowIndex = sheet.getLastRowNum() + 1; // 总行数
+        		XSSFRow row = sheet.createRow(rowIndex);
         		// 遍历属性列表
         		for (int j = 0; j < fieldNames.length; j++) {
         			// 通过反射获取属性的值域
@@ -232,12 +239,12 @@ public class XssfExcelHelper extends ExcelHelper {
         	fos = new FileOutputStream(file);
             workbook.write(new FileOutputStream(file));
         } finally {
-        	if (fos != null) {
+        	if (fis != null)
+        		fis.close();
+        	if (fos != null)
         		fos.close(); // 不管是否有异常发生都关闭文件输出流
-        	}
-        	if (workbook != null) {
+        	if (workbook != null)
         		workbook.close();
-        	}
 		}
     }
  
