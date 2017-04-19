@@ -15,7 +15,6 @@ import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.CellType;
-
 import com.common.util.DateUtil;
 import com.common.util.LogUtil;
 import com.common.util.ReflectUtil;
@@ -145,7 +144,7 @@ public class HssfExcelHelper extends ExcelHelper {
         			if (cell == null) {
         				continue;
         			}
-        			String content = cell.getStringCellValue();
+        			String content = getCellContent(cell);
         			// 如果属性是日期类型则将内容转换成日期对象
         			if (isDateType(clazz, fieldName)) {
         				// 如果属性是日期类型则将内容转换成日期对象
@@ -257,6 +256,36 @@ public class HssfExcelHelper extends ExcelHelper {
         	if (workbook != null)
         		workbook.close();
 		}
+    }
+    
+    /**
+     * 获取单元格的内容
+     *
+     * @param cell
+     *            单元格
+     * @return 返回单元格内容
+     */
+    private String getCellContent(HSSFCell cell) {
+        StringBuffer buffer = new StringBuffer();
+        switch (cell.getCellTypeEnum()) {
+            case NUMERIC : // 数字
+                buffer.append(cell.getNumericCellValue());
+                break;
+            case BOOLEAN : // 布尔
+                buffer.append(cell.getBooleanCellValue());
+                break;
+            case FORMULA : // 公式
+                buffer.append(cell.getCellFormula());
+                break;
+            case STRING : // 字符串
+                buffer.append(cell.getStringCellValue());
+                break;
+            case BLANK : // 空值
+            case ERROR : // 故障
+            default :
+                break;
+        }
+        return buffer.toString();
     }
 }
 

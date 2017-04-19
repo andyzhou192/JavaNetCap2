@@ -50,7 +50,7 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 	public GeneratorPanel(BaseFrame parent, DataForJavaBean dataBean) {
 		this.parent = parent;
 		this.setBorder(new LineBorder(new Color(255, 200, 0), 2));
-		this.setLayout(ViewModules.getGridBagLayout(40, 10, 5, 5, 1.0, 1.0));
+		this.setLayout(ViewModules.getGridBagLayout(15, 10, 5, 5, 1.0, 1.0));
 		this.dataBean = dataBean;
 		
 		defineComponents();
@@ -162,9 +162,9 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 		
 		//this.add(responseInfoPanel, ViewModules.getGridBagConstraints(1, 24, 10, 13));
 		tabbedPane.add("Response Info", responseInfoPanel);
-		this.add(tabbedPane, ViewModules.getGridBagConstraints(1, 1, 10, 37));
+		this.add(tabbedPane, ViewModules.getGridBagConstraints(1, 1, 10, 14));
 		// button
-		this.add(applyButton, ViewModules.getGridBagConstraints(10, 40, 1, 1));
+		this.add(applyButton, ViewModules.getGridBagConstraints(10, 15, 1, 1));
 	}
 
 	public void initData() {

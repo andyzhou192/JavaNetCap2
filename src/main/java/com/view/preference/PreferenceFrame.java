@@ -9,6 +9,7 @@ import java.util.Enumeration;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JSplitPane;
 import javax.swing.JTree;
 import javax.swing.border.LineBorder;
 import javax.swing.event.TreeSelectionEvent;
@@ -48,11 +49,11 @@ public class PreferenceFrame extends BaseFrame implements TreeSelectionListener 
 		this.panel.add("JavaScriptSetting", new ScriptSettingView(this));
 		card.show(this.panel, "WorkspaceSetting");
 		createTree();
-		JScrollPane jsp = new JScrollPane(this.panel,
-				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
-				JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-		container.add(jsp, BorderLayout.CENTER);
-		container.add(tree, BorderLayout.WEST);
+		JScrollPane jsp = new JScrollPane(this.panel);
+		JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, tree, jsp);
+//		container.add(jsp, BorderLayout.CENTER);
+//		container.add(tree, BorderLayout.WEST);
+		container.add(splitPane);
 		this.pack();
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);

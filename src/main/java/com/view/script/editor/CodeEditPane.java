@@ -38,15 +38,15 @@ import com.common.util.LogUtil;
 import com.view.util.ViewDataHandler;
 
 @SuppressWarnings("serial")
-public class ScriptEditPane extends JRootPane implements HyperlinkListener, SyntaxConstants {
+public class CodeEditPane extends JRootPane implements HyperlinkListener, SyntaxConstants {
 	
-	private Class<?> cl = ScriptEditPane.class;
+	private Class<?> cl = CodeEditPane.class;
 
 	private JFrame parent;
 	private RTextScrollPane scrollPane;
 	private RSyntaxTextArea textArea;
 	
-	public ScriptEditPane(JFrame parent, String file) {
+	public CodeEditPane(JFrame parent, String file) {
 		this.parent = parent;
 		this.textArea = createTextArea();
 		this.textArea.setSyntaxEditingStyle(SYNTAX_STYLE_JAVA);
@@ -225,7 +225,7 @@ public class ScriptEditPane extends JRootPane implements HyperlinkListener, Synt
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			JOptionPane.showMessageDialog(ScriptEditPane.this,
+			JOptionPane.showMessageDialog(CodeEditPane.this,
 					"<html><b>RSyntaxTextArea</b> - A Swing syntax highlighting text component" +
 					"<br>Version 2.0.7" +
 					"<br>Licensed under a modified BSD license",
