@@ -17,23 +17,62 @@ import com.generator.bean.DataForJavaBean;
 public class DataSaveHandler {
 	private static Class<?> cl = DataSaveHandler.class;
 
-	public static synchronized void writeToExcel(String file, String sheetName, DataForJavaBean dataBean){
+	public static synchronized boolean writeToExcel(String file, Object sheetTag, DataForJavaBean dataBean){
 		LogUtil.debug(cl, "data file : " + file);
 		File srcFile = new File(file);
 		String parentPath = srcFile.getParent();
 		if(null != parentPath && !FileUtil.fileIsExists(parentPath))
 			new File(parentPath).mkdirs();
-		ExcelHelper eh = HssfExcelHelper.getInstance(srcFile, sheetName);
-//		ExcelHelper eh = JxlExcelHelper.getInstance(srcFile, sheetName);
-		if(srcFile.getName().endsWith(".xlsx"))
-			eh = XssfExcelHelper.getInstance(srcFile, sheetName);
+		ExcelHelper eh = null;
+		if(srcFile.getName().endsWith(".xls"))
+			eh = HssfExcelHelper.getInstance(srcFile, sheetTag);
+		else
+			eh = XssfExcelHelper.getInstance(srcFile, sheetTag);
 		List<DataForJavaBean> dataList = new ArrayList<DataForJavaBean>();
 		dataList.add(dataBean);
         try {
 			eh.writeExcel(DataForJavaBean.class, dataList);
 		} catch (Exception e) {
 			LogUtil.err(cl, e);
+			return false;
 		}
+        return true;
+	}
+	
+	public static synchronized boolean updateExcelSingleRowData(String file, Object sheetTag, DataForJavaBean dataBean, int columnIndex){
+		LogUtil.debug(cl, "data file : " + file);
+		File srcFile = new File(file);
+		ExcelHelper eh = null;
+		if(file.endsWith(".xls")){
+			eh = HssfExcelHelper.getInstance(srcFile, sheetTag);
+		} else {
+			eh = XssfExcelHelper.getInstance(srcFile, sheetTag);
+		}
+        try {
+			eh.updateExcelSingleRowData(DataForJavaBean.class, dataBean, dataBean.getCaseId(), columnIndex);
+		} catch (Exception e) {
+			LogUtil.err(cl, e);
+			return false;
+		}
+        return true;
+	}
+	
+	public static synchronized boolean deleteExcelSingleRowData(String file, Object sheetTag, String content, int columnIndex){
+		LogUtil.debug(cl, "data file : " + file);
+		File srcFile = new File(file);
+		ExcelHelper eh = null;
+		if(file.endsWith(".xls")){
+			eh = HssfExcelHelper.getInstance(srcFile, sheetTag);
+		} else {
+			eh = XssfExcelHelper.getInstance(srcFile, sheetTag);
+		}
+        try {
+			eh.deleteExcelSingleRowData(content, columnIndex);
+		} catch (Exception e) {
+			LogUtil.err(cl, e);
+			return false;
+		}
+        return true;
 	}
 	
 	public static synchronized List<DataForJavaBean> readExcel(String file, Object sheetTag){
@@ -43,8 +82,10 @@ public class DataSaveHandler {
 		String parentPath = srcFile.getParent();
 		if(null != parentPath && !FileUtil.fileIsExists(parentPath))
 			return dataList;
-		ExcelHelper eh = HssfExcelHelper.getInstance(srcFile, sheetTag);
-		if(srcFile.getName().endsWith(".xlsx"))
+		ExcelHelper eh = null;
+		if(srcFile.getName().endsWith(".xls"))
+			eh = HssfExcelHelper.getInstance(srcFile, sheetTag);
+		else
 			eh = XssfExcelHelper.getInstance(srcFile, sheetTag);
 		try {
 			dataList = eh.readExcel(DataForJavaBean.class, true);
@@ -54,45 +95,6 @@ public class DataSaveHandler {
 		}
 		return dataList;
 	}
-
-//	public synchronized void writeToExcel(String file, String sheetName, String[] columnNames) {
-//		try {
-//			File srcFile = new File(file);
-//			String parentPath = srcFile.getParent();
-//			if(null != parentPath && !FileUtil.fileIsExists(parentPath))
-//				new File(parentPath).mkdirs();
-//			ExcelWriterHelper book = ExcelWriterHelper.getBook(srcFile);
-//			WritableSheet sheet = null;
-//			if (null == book.getSheet(sheetName)) {
-//				sheet = book.createSheet(sheetName, book.getNumberOfSheets());
-//			} else {
-//				sheet = book.getSheet(sheetName);
-//			}
-//			int rowCount = sheet.getRows();
-//			if (rowCount < 1 || sheet.getColumns() < columnNames.length) {
-//				for (int i = 0; i < columnNames.length; i++) {
-//					Label label = new Label(i, 0, columnNames[i]);
-//					sheet.addCell(label);
-//				}
-//				rowCount = rowCount + 1;
-//			}
-//			sheet.addCell(new Label(0, rowCount, dataBean.getCaseId() + rowCount));
-//			sheet.addCell(new Label(1, rowCount, dataBean.getCaseDesc()));
-//			sheet.addCell(new Label(2, rowCount, dataBean.getMethod()));
-//			sheet.addCell(new Label(3, rowCount, dataBean.getUrl()));
-//			sheet.addCell(new Label(4, rowCount, StringUtil.toString(dataBean.getReqHeader())));
-//			sheet.addCell(new Label(5, rowCount, StringUtil.toString(dataBean.getReqParams())));
-//			sheet.addCell(new Label(6, rowCount, StringUtil.toString(dataBean.getStatusCode())));
-//			sheet.addCell(new Label(7, rowCount, dataBean.getReasonPhrase()));
-//			sheet.addCell(new Label(8, rowCount, StringUtil.toString(dataBean.getRspHeader())));
-//			sheet.addCell(new Label(9, rowCount, StringUtil.toString(dataBean.getRspBody())));
-//			book.write();
-//			book.close();
-//			ExcelWriterHelper.deleteTempFile(srcFile);
-//		} catch (WriteException | IOException e) {
-//			e.printStackTrace();
-//		}
-//	}
 
 	// 自定义的save方法，参数为文件对象
 	public static boolean save(File file, String content) {

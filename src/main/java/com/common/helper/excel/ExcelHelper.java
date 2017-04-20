@@ -80,6 +80,21 @@ public abstract class ExcelHelper {
         }
         writeExcel(clazz, dataModels, fieldNames, fieldNames);
     }
+    
+    /**
+     * 
+     * @param clazz
+     * @return
+     */
+    protected <T> String[] getFieldNames(Class<T> clazz){
+    	Field[] fields = clazz.getDeclaredFields();
+        String[] fieldNames = new String[fields.length];
+        for (int i = 0; i < fields.length; i++) {
+            String fieldName = fields[i].getName();
+            fieldNames[i] = fieldName;
+        }
+		return fieldNames;
+    }
  
     /**
      * 写入数据到指定excel文件中
@@ -170,5 +185,9 @@ public abstract class ExcelHelper {
         }
         return result;
     }
+
+	public abstract <T> void updateExcelSingleRowData(Class<T> clazz, T dataModel, String content, int columnIndex) throws Exception;
+
+	public abstract void deleteExcelSingleRowData(String content, int columnIndex) throws Exception;
  
 }

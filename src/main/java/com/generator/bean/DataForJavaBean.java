@@ -8,7 +8,7 @@ import net.sf.json.JSONObject;
 
 public class DataForJavaBean {
 
-	private String caseId = "case-";
+	private String caseId = "caseId-";
 	private String caseDesc = "";
 	private String method = "";
 	private String url = "";

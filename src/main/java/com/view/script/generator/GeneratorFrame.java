@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 
 import com.generator.bean.DataForJavaBean;
-import com.view.script.generator.component.GeneratorPanel;
+import com.view.script.generator.pane.GeneratorPanel;
 import com.view.util.BaseFrame;
 import com.view.util.FrameWindowAdapter;
 

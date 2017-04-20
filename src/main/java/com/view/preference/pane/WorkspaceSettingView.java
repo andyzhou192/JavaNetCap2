@@ -1,4 +1,4 @@
-package com.view.preference.component;
+package com.view.preference.pane;
 
 import java.awt.Color;
 import java.awt.Component;

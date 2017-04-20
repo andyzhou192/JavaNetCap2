@@ -24,7 +24,7 @@ import jxl.write.WritableWorkbook;
 /**
  * 基于JXL实现的Excel工具类
  *
- * @author liujiduo
+ * @author zhouyelin
  *
  */
 public class JxlExcelHelper extends ExcelHelper {
@@ -240,6 +240,20 @@ public class JxlExcelHelper extends ExcelHelper {
             }
         }
     }
+
+	@Override
+	public <T> void updateExcelSingleRowData(Class<T> clazz, T dataModel,
+			String content, int columnIndex) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteExcelSingleRowData(String content, int columnIndex)
+			throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
 

@@ -92,7 +92,7 @@ public class ScriptBaseInfoPane extends JPanel implements ActionListener {
 			Map<String, String> dataMap = new TreeMap<String, String>();
 			dataMap.put("source_file", sourceFileField.getText());
 			dataMap.put("resource_file", resourceFileField.getText());
-			((ScriptEditFrame)parent).updateData(dataMap);
+			((ScriptEditFrame)parent).initSourceFile(dataMap);
 			break;
 		default:
 			break;

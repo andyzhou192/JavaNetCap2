@@ -6,6 +6,8 @@ import java.awt.Font;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+import com.common.util.FormatUtil;
+
 @SuppressWarnings("serial")
 public class ScrollPaneTextArea extends JScrollPane {
 	 
@@ -33,6 +35,28 @@ public class ScrollPaneTextArea extends JScrollPane {
 		textArea.setFont(new Font(Font.SERIF, Font.PLAIN, 13));
 		this.setViewportView(textArea);
 		this.setRowHeaderView(lineNumView);
+	}
+	
+	public void showWithFormat(String fromatName){
+		switch(fromatName){
+		case "JSON":
+			this.setText(FormatUtil.formatJson(this.getText()));
+			break;
+		case "HTML":
+			String text = this.getText();
+			try {
+				text = FormatUtil.formatHtml(text);
+			} catch (Exception e1) {
+				
+			}
+			this.setText(text);
+			break;
+		case "TEXT":
+			this.setText(FormatUtil.formatText(this.getText()));
+			break;
+		default:
+			break;
+		}
 	}
 	
 	public void setText(String text){

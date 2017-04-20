@@ -79,6 +79,7 @@ public class BaseTree extends JTree {
 				parentNode = this.searchSingleNode(parentNodeName);
 			}
 			treeModel.insertNodeInto(newNode, parentNode, parentNode.getChildCount());
+			treeModel.reload();
 		}
 	}
 	

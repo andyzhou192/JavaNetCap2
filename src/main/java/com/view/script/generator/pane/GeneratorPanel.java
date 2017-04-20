@@ -1,4 +1,4 @@
-package com.view.script.generator.component;
+package com.view.script.generator.pane;
 
 import java.awt.Color;
 import java.awt.GridBagConstraints;

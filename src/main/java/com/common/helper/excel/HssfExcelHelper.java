@@ -2,7 +2,9 @@ package com.common.helper.excel;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,6 +17,7 @@ import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.CellType;
+
 import com.common.util.DateUtil;
 import com.common.util.LogUtil;
 import com.common.util.ReflectUtil;
@@ -34,6 +37,7 @@ public class HssfExcelHelper extends ExcelHelper {
  
     private File file; // 操作文件
     private Object sheetTag; // 目标sheet名称或索引
+    private HSSFWorkbook workbook = null;
  
     /**
      * 私有化构造方法
@@ -44,6 +48,16 @@ public class HssfExcelHelper extends ExcelHelper {
     private HssfExcelHelper(File file, Object sheetTag) {
         super();
         this.file = file;
+        if(file.exists()){
+        	try {
+        		// 获取excel工作簿
+        		FileInputStream fis = new FileInputStream(file);
+				workbook = new HSSFWorkbook(fis);
+				fis.close();
+			} catch (IOException e) {
+				LogUtil.err(cl, e);
+			}
+        }
         this.sheetTag = sheetTag;
     }
  
@@ -102,29 +116,14 @@ public class HssfExcelHelper extends ExcelHelper {
     @Override
     public <T> List<T> readExcel(Class<T> clazz, String[] fieldNames, boolean hasTitle) throws Exception {
         List<T> dataModels = new ArrayList<T>();
-        // 获取excel工作簿
-        HSSFWorkbook workbook = null;
+        
         try{
-        	if(!file.exists() || !file.getName().endsWith(".xls")) return dataModels;
-        	workbook = new HSSFWorkbook(new FileInputStream(file));
-        	int sheetNo = workbook.getNumberOfSheets();
-        	HSSFSheet sheet = null;
-        	if (null == sheetTag) {
-        		return dataModels;
-        	} else if (sheetTag instanceof Integer){
-        		int sheetIndex = (Integer) sheetTag;
-        		if(sheetNo > 0 && sheetNo >= sheetIndex)
-        			sheet = workbook.getSheetAt((Integer) sheetTag);
-        		else
-        			return dataModels;
-        	} else if (sheetTag instanceof String){
-        		sheet = workbook.getSheet((String) sheetTag);
-        		if (null == sheet) {
-        			return dataModels;
-        		}
-        	} else {
+        	if(!file.exists() || !file.getName().endsWith(".xls")){
+        		LogUtil.err(cl, "file is not exist : " + file.getAbsolutePath());
         		return dataModels;
         	}
+        	HSSFSheet sheet = getSheet(sheetTag);
+        	if(null == sheet) return dataModels;
         	
         	int start = sheet.getFirstRowNum() + (hasTitle ? 1 : 0); // 如果有标题则从第二行开始
         	for (int i = start; i <= sheet.getLastRowNum(); i++) {
@@ -157,47 +156,21 @@ public class HssfExcelHelper extends ExcelHelper {
         		dataModels.add(target);
         	}
         } finally{
-        	if (workbook != null) {
-        		workbook.close();
-        	}
+        	close();
         }
         return dataModels;
     }
  
     @Override
     public <T> void writeExcel(Class<T> clazz, List<T> dataModels, String[] fieldNames, String[] titles) throws Exception {
-        HSSFWorkbook workbook = null;
-        FileOutputStream fos = null;
-        FileInputStream fis = null;
         try {
         	// 检测文件是否存在，如果存在则修改文件，否则创建文件
-        	if (file.exists()) {
-        		fis = new FileInputStream(file);
-        		workbook = new HSSFWorkbook(fis);
-        	} else {
-        		workbook = new HSSFWorkbook();
-        	}
+        	if (null == workbook) workbook = new HSSFWorkbook();
         	
-        	HSSFSheet sheet = null;
-        	int sheetNo = workbook.getNumberOfSheets();
-			String defaultSheetName = "sheet-" + sheetNo;
-			if (null == sheetTag) {
-				// 根据当前工作表数量创建相应编号的工作表
-				sheet = workbook.createSheet(defaultSheetName);
-			} else if (sheetTag instanceof Integer){
-				int sheetIndex = (Integer) sheetTag;
-				if(sheetNo > 0 && sheetNo >= sheetIndex)
-					sheet = workbook.getSheetAt((Integer) sheetTag);
-				else
-					sheet = workbook.createSheet(defaultSheetName);
-			} else if (sheetTag instanceof String){
-				sheet = workbook.getSheet((String) sheetTag);
-				if (null == sheet) {
-					sheet = workbook.createSheet((String) sheetTag);
-				}
-			} else {
-				LogUtil.err(cl, "sheetTag must be int or String.");
-			}
+        	HSSFSheet sheet = getSheet(sheetTag);
+        	if(null == sheet){
+        		sheet = workbook.createSheet(StringUtil.toString(sheetTag));
+        	}
 			
 			int rowCount = sheet.getLastRowNum(); // 最后一行的索引
             int colCount = 0; // 总列数
@@ -205,23 +178,7 @@ public class HssfExcelHelper extends ExcelHelper {
             	colCount = sheet.getRow(0).getPhysicalNumberOfCells(); // 总列数
             }
             if(rowCount <= 0 || colCount != titles.length){
-            	HSSFRow headRow = sheet.createRow(0);
-            	// 添加表格标题
-            	for (int i = 0; i < titles.length; i++) {
-            		HSSFCell cell = headRow.createCell(i);
-            		cell.setCellType(CellType.STRING);
-            		cell.setCellValue(titles[i]);
-            		// 设置字体加粗
-            		HSSFCellStyle cellStyle = workbook.createCellStyle();
-            		HSSFFont font = workbook.createFont();
-            		font.setBold(true);
-            		cellStyle.setFont(font);
-            		// 设置自动换行
-            		cellStyle.setWrapText(true);
-            		cell.setCellStyle(cellStyle);
-            		// 设置单元格宽度
-            		sheet.setColumnWidth(i, titles[i].length() * 1000);
-            	}
+            	setTableTitle(workbook, sheet, titles);
             }
         	// 添加表格内容
         	for (int i = 0; i < dataModels.size(); i++) {
@@ -245,17 +202,170 @@ public class HssfExcelHelper extends ExcelHelper {
                     }
         		}
         	}
+        	FileOutputStream fos = new FileOutputStream(file);
         	// 将数据写到磁盘上
-        	fos = new FileOutputStream(file);
-            workbook.write(new FileOutputStream(file));
+            workbook.write(fos);
+            fos.flush();
+            fos.close();
         } finally {
-        	if (fis != null)
-        		fis.close();
-        	if (fos != null)
-        		fos.close(); // 不管是否有异常发生都关闭文件输出流
-        	if (workbook != null)
-        		workbook.close();
+        	close();
 		}
+    }
+    
+    /**
+     * 
+     * @param clazz
+     * @param dataModel
+     * @param rowIndex
+     * @throws Exception 
+     */
+    @Override
+    public <T> void updateExcelSingleRowData(Class<T> clazz, T dataModel, String content, int columnIndex) throws Exception {
+        try {
+        	// 检测文件是否存在，如果存在则修改文件，否则创建文件
+        	if (null == workbook) return;
+        	
+        	HSSFSheet sheet = getSheet(sheetTag);
+        	if(null == sheet) return;
+			
+        	// 更新表格内容
+        	int rowIndex = getRowIndex(sheet, content, columnIndex); // 总行数
+        	HSSFRow row = sheet.getRow(rowIndex);
+        	
+        	String[] fieldNames = getFieldNames(clazz);
+        	// 遍历属性列表
+        	for (int j = 0; j < fieldNames.length; j++) {
+        		// 通过反射获取属性的值域
+        		String fieldName = fieldNames[j];
+        		if (fieldName == null || UID.equals(fieldName)) {
+        			continue; // 过滤serialVersionUID属性
+        		}
+        		Object result = ReflectUtil.invokeGetter(dataModel, fieldName);
+        		HSSFCell cell = row.createCell(j);
+        		cell.setCellValue(StringUtil.toString(result));
+        		// 如果是日期类型则进行格式化处理
+        		if (isDateType(clazz, fieldName)) {
+        			cell.setCellValue(DateUtil.format((Date) result));
+        		}
+        	}
+        	FileOutputStream fos = new FileOutputStream(file);
+        	// 将数据写到磁盘上
+            workbook.write(fos);
+            fos.flush();
+            fos.close();
+        } finally {
+        	close();
+		}
+    }
+    
+    /**
+     * 
+     * @param clazz
+     * @param dataModel
+     * @param rowIndex
+     * @throws Exception 
+     */
+    @Override
+    public void deleteExcelSingleRowData(String content, int columnIndex) throws Exception {
+        try {
+        	// 检测文件是否存在，如果存在则修改文件，否则创建文件
+        	if (null == workbook) return;
+        	
+        	HSSFSheet sheet = getSheet(sheetTag);
+        	if(null == sheet) return;
+			
+        	// 更新表格内容
+        	int rowIndex = getRowIndex(sheet, content, columnIndex); // 总行数
+        	HSSFRow row = sheet.getRow(rowIndex);
+        	sheet.removeRow(row);
+        	
+        	FileOutputStream fos = new FileOutputStream(file);
+        	// 将数据写到磁盘上
+            workbook.write(fos);
+            fos.flush();
+            fos.close();
+        } finally {
+        	close();
+		}
+    }
+    
+    /**
+     * 根据单元格内容及所属列索引，获取单元格的行索引
+     * @param sheet
+     * @param content
+     * @param columnIndex
+     * @return
+     */
+    public int getRowIndex(HSSFSheet sheet, String content, int columnIndex){
+    	for(int i = 0; i <= sheet.getLastRowNum(); i++){
+    		String cellContent = getCellContent(sheet.getRow(i).getCell(columnIndex));
+    		if(cellContent.equalsIgnoreCase(content))
+    			return i;
+    	}
+    	return -1;
+    }
+    
+    /**
+     * 
+     * @throws IOException
+     */
+    public void close() throws IOException{
+    	if (workbook != null)
+    		workbook.close();
+    	instance = null;
+    }
+    
+    /**
+     * 
+     * @param workbook
+     * @param sheetTag
+     * @return
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
+    public HSSFSheet getSheet(Object sheetTag) {
+    	HSSFSheet sheet = null;
+    	if(null == workbook) return null;
+    	int sheetNo = workbook.getNumberOfSheets();
+		if (null == sheetTag) {
+			// 根据当前工作表数量创建相应编号的工作表
+			return null;
+		} else if (sheetTag instanceof Integer){
+			int sheetIndex = (Integer) sheetTag;
+			if(sheetNo > 0 && sheetNo >= sheetIndex)
+				sheet = workbook.getSheetAt((Integer) sheetTag);
+			else
+				return null;;
+		} else if (sheetTag instanceof String){
+			sheet = workbook.getSheet((String) sheetTag);
+		}
+		return sheet;
+    }
+    
+    /**
+     * 
+     * @param workbook
+     * @param sheet
+     * @param titles
+     */
+    public void setTableTitle(HSSFWorkbook workbook, HSSFSheet sheet, String...titles){
+    	HSSFRow headRow = sheet.createRow(0);
+    	// 添加表格标题
+    	for (int i = 0; i < titles.length; i++) {
+    		HSSFCell cell = headRow.createCell(i);
+    		cell.setCellType(CellType.STRING);
+    		cell.setCellValue(titles[i]);
+    		// 设置字体加粗
+    		HSSFCellStyle cellStyle = workbook.createCellStyle();
+    		HSSFFont font = workbook.createFont();
+    		font.setBold(true);
+    		cellStyle.setFont(font);
+    		// 设置自动换行
+    		cellStyle.setWrapText(true);
+    		cell.setCellStyle(cellStyle);
+    		// 设置单元格宽度
+    		sheet.setColumnWidth(i, titles[i].length() * 1000);
+    	}
     }
     
     /**
@@ -287,5 +397,6 @@ public class HssfExcelHelper extends ExcelHelper {
         }
         return buffer.toString();
     }
+
 }
 
