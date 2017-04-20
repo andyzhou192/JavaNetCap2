@@ -7,13 +7,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTree;
+import javax.swing.SwingUtilities;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
 
 import com.generator.bean.DataForJavaBean;
@@ -21,6 +25,7 @@ import com.handler.DataSaveHandler;
 import com.view.util.BaseFrame;
 import com.view.util.BaseTree;
 import com.view.util.FrameWindowAdapter;
+import com.view.util.ViewModules;
 
 @SuppressWarnings("serial")
 public class ScriptEditFrame extends BaseFrame {
@@ -31,6 +36,7 @@ public class ScriptEditFrame extends BaseFrame {
 	private String sourceFile = null;
 	private String resourceFile = null;
 	private Map<String, DataForJavaBean> dataMapOneSheet = new TreeMap<String, DataForJavaBean>(); // TreeMap有排序
+	private ScriptEditFrame frame;
 	
 	public ScriptEditFrame(BaseFrame parent) {
 		this.setTitle("Script");
@@ -44,6 +50,7 @@ public class ScriptEditFrame extends BaseFrame {
 		JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, tree, new JScrollPane(this.panel));
 		this.getContentPane().add(splitPane);
 		
+		this.frame = this;
 		//this.pack();
 		this.setVisible(true);
 		this.setDefaultCloseOperation(BaseFrame.DO_NOTHING_ON_CLOSE);
@@ -73,7 +80,71 @@ public class ScriptEditFrame extends BaseFrame {
 		tree.expandAllTree();
 		// 默认选择JavaCode节点
 		tree.setSelectionPath("Script");
+		tree.addMouseListener(new java.awt.event.MouseAdapter() {
+			public void mouseClicked(java.awt.event.MouseEvent evt) {
+				mouseRightButtonClick(evt);
+			}
+		});
 		return tree;
+	}
+	
+	// 鼠标右键点击事件
+	private void mouseRightButtonClick(java.awt.event.MouseEvent evt) {
+		// 判断是否为鼠标的BUTTON3按钮，BUTTON3为鼠标右键
+		if (evt.getButton() == java.awt.event.MouseEvent.BUTTON3) {
+			// 通过点击位置找到点击为表格中的行
+			TreePath path = tree.getPathForLocation(evt.getX(), evt.getY()); // 关键是这个方法的使用;
+			if(path.getLastPathComponent().toString().equals("Cases") || path.getParentPath().getLastPathComponent().toString().equals("Cases")){
+				// 弹出菜单
+				createPopupMenu().show(tree, evt.getX(), evt.getY());
+			} else {
+				return;
+			}
+			tree.setSelectionPath(path);
+			
+		}
+	}
+
+	private JPopupMenu createPopupMenu() {
+		JPopupMenu popupMenu = new JPopupMenu();
+		JMenuItem addMenItem = new JMenuItem("Add");
+		addMenItem.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				// 该操作需要做的事
+				SwingUtilities.invokeLater(new Runnable() {
+					public void run() {
+						progress.startProgress("Data is Adding...");
+						String caseId = "caseId-" + tree.searchSingleNode("Cases").getChildCount() + 1;
+						tree.insertNodes("Cases", caseId);
+						panel.add(caseId, new DataEditPane(frame, null));
+						tree.setSelectionPath(caseId);
+						progress.stopProgress("Data has Added!");
+					}
+				});
+			}
+		});
+		JMenuItem delMenItem = new JMenuItem("Delete");
+		delMenItem.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				// 该操作需要做的事
+				SwingUtilities.invokeLater(new Runnable() {
+					public void run() {
+						progress.startProgress("Data is Saving...");
+						String nodeName = ((DefaultMutableTreeNode)tree.getLastSelectedPathComponent()).getUserObject().toString();
+						boolean isDel = delCaseData(nodeName);
+						if(!isDel){
+							ViewModules.showMessageDialog(frame, "Data Delete Failed.");
+						} else {
+							ViewModules.showMessageDialog(frame, "Data Delete Success.");
+						}
+						progress.stopProgress("Data has Deleted!");
+					}
+				});
+			}
+		});
+		popupMenu.add(addMenItem);
+		popupMenu.add(delMenItem);
+		return popupMenu;
 	}
 	
 	/**
@@ -112,7 +183,12 @@ public class ScriptEditFrame extends BaseFrame {
 	 * @return
 	 */
 	public boolean updateCaseData(DataForJavaBean dataBean){
-		return DataSaveHandler.updateExcelSingleRowData(resourceFile, 0, dataBean, 0);
+		if (null != dataMapOneSheet.get(dataBean.getCaseId())) {
+			return DataSaveHandler.updateExcelSingleRowData(resourceFile, 0, dataBean, 0);
+		} else {
+			dataMapOneSheet.put(dataBean.getCaseId(), dataBean);
+			return DataSaveHandler.appendToExcel(resourceFile, 0, dataBean);
+		}
 	}
 
 	/**
@@ -121,8 +197,11 @@ public class ScriptEditFrame extends BaseFrame {
 	 * @return
 	 */
 	public boolean delCaseData(String caseId){
-		boolean isSucc = DataSaveHandler.deleteExcelSingleRowData(resourceFile, 0, caseId, 0);
-		dataMapOneSheet.remove(caseId);
+		boolean isSucc = true;
+		if(null != dataMapOneSheet.get(caseId)){
+			isSucc = DataSaveHandler.deleteExcelSingleRowData(resourceFile, 0, caseId, 0);
+			dataMapOneSheet.remove(caseId);
+		}
 		updateNavigateTree();
 		return isSucc;
 	}

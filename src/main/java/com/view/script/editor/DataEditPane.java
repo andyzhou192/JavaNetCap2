@@ -134,6 +134,7 @@ public class DataEditPane extends JPanel implements ActionListener {
 	}
 
 	public void initData() {
+		if(null == dataBean) return;
 		urlField.setText(dataBean.getUrl());
 		httpMethodField.setText(dataBean.getMethod());
 		reqParamsArea.setTableValues(dataBean.getReqParams());

@@ -17,7 +17,7 @@ import com.generator.bean.DataForJavaBean;
 public class DataSaveHandler {
 	private static Class<?> cl = DataSaveHandler.class;
 
-	public static synchronized boolean writeToExcel(String file, Object sheetTag, DataForJavaBean dataBean){
+	public static synchronized boolean appendToExcel(String file, Object sheetTag, DataForJavaBean dataBean){
 		LogUtil.debug(cl, "data file : " + file);
 		File srcFile = new File(file);
 		String parentPath = srcFile.getParent();

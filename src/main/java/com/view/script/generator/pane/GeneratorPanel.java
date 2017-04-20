@@ -271,7 +271,7 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 		
 		String file = AbstractGenerator.getDataFilePath(packageNameField.getText(), classNameField.getText());
 		String sheetName = methodNameField.getText().trim();
-		DataSaveHandler.writeToExcel(file, sheetName, dataBean);
+		DataSaveHandler.appendToExcel(file, sheetName, dataBean);
 		return true;
 	}
 	
