@@ -79,8 +79,8 @@ public class CodeEditPane extends JRootPane implements HyperlinkListener, Syntax
 		menu.add(item);
 	}
 	
-	private void addFileItem(JFrame frame, String name, JMenu menu) {
-		JMenuItem item = new JMenuItem(new SaveFileAction(frame, name));
+	private void addFileItem(JFrame frame, String name, JMenu menu, URL iconUrl) {
+		JMenuItem item = new JMenuItem(new SaveFileAction(frame, name, iconUrl));
 		menu.add(item);
 	}
 
@@ -89,8 +89,8 @@ public class CodeEditPane extends JRootPane implements HyperlinkListener, Syntax
 		JMenuBar mb = new JMenuBar();
 
 		JMenu menu = new JMenu("File");
-		addFileItem(parent, "Save", menu);
-		addFileItem(parent, "SaveAs", menu);
+		addFileItem(parent, "Save", menu, Constants.SAVE_ICON);
+		addFileItem(parent, "SaveAs", menu, Constants.SAVEAS_ICON);
 		mb.add(menu);
 		
 		menu = new JMenu("Language");
@@ -143,7 +143,7 @@ public class CodeEditPane extends JRootPane implements HyperlinkListener, Syntax
 		mb.add(menu);
 
 		menu = new JMenu("Help");
-		JMenuItem item = new JMenuItem(new AboutAction());
+		JMenuItem item = new JMenuItem(new AboutAction(Constants.ABOUT_ICON));
 		menu.add(item);
 		mb.add(menu);
 
@@ -220,8 +220,9 @@ public class CodeEditPane extends JRootPane implements HyperlinkListener, Syntax
 
 
 	private class AboutAction extends AbstractAction {
-		public AboutAction() {
+		public AboutAction(URL iconUrl) {
 			putValue(NAME, "About RSyntaxTextArea...");
+			putValue(SMALL_ICON, new ImageIcon(iconUrl));
 		}
 
 		public void actionPerformed(ActionEvent e) {
@@ -263,8 +264,9 @@ public class CodeEditPane extends JRootPane implements HyperlinkListener, Syntax
 
 	private class SaveFileAction extends AbstractAction {
 		private JFrame frame;
-		public SaveFileAction(JFrame frame, String name){
+		public SaveFileAction(JFrame frame, String name, URL iconUrl){
 			putValue(NAME, name);
+			putValue(SMALL_ICON, new ImageIcon(iconUrl));
 			this.frame = frame;
 		}
 

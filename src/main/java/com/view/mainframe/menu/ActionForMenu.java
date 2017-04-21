@@ -1,17 +1,19 @@
-package com.view.listener;
+package com.view.mainframe.menu;
 
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.swing.AbstractAction;
+import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -40,23 +42,27 @@ import com.view.util.ViewModules;
 
 import net.sf.json.JSONObject;
 
-public class ActionListenerForMenu implements ActionListener {
-	private Class<?> cl = ActionListenerForMenu.class;
+@SuppressWarnings("serial")
+public class ActionForMenu extends AbstractAction {
+	private Class<?> cl = ActionForMenu.class;
 	
 	private MainFrame frame;
 	private RowTableScrollPane scrollPane;
 	private JTable table;
 
-	public ActionListenerForMenu(MainFrame frame) {
+	public ActionForMenu(MainFrame frame, String name, String commond, URL iconUrl) {
+		if(null != name) putValue(NAME, name);
+		if(null != commond) putValue(ACTION_COMMAND_KEY, commond);
+		if(null != iconUrl) putValue(SMALL_ICON, new ImageIcon(iconUrl));
 		this.frame = frame;
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent event) {
+	public void actionPerformed(ActionEvent e) {
 		this.scrollPane = frame.getScrollPane();
 		this.table = frame.getScrollPane().getTable();
-		switch(event.getActionCommand()){
-		case "IMPORT":
+		switch(e.getActionCommand()){
+		case "Import":
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
 					frame.progress.startProgress("Import Data From File...");
@@ -65,7 +71,7 @@ public class ActionListenerForMenu implements ActionListener {
 				}
 			});
 			break;
-		case "EXPORT":
+		case "Export":
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
 					frame.progress.startProgress("Export Data...");
@@ -74,7 +80,7 @@ public class ActionListenerForMenu implements ActionListener {
 				}
 			});
 			break;
-		case "DELETE":
+		case "Delete":
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
 					frame.progress.startProgress("Delete data...");
@@ -83,7 +89,7 @@ public class ActionListenerForMenu implements ActionListener {
 				}
 			});
 			break;
-		case "EXIT":
+		case "Exit":
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
 					String title = "Exit Confirm Dialog";
@@ -95,7 +101,7 @@ public class ActionListenerForMenu implements ActionListener {
 				}
 			});
 			break;
-		case "START":
+		case "Start":
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
 					Netcaptor.startCapture(frame);
@@ -105,7 +111,7 @@ public class ActionListenerForMenu implements ActionListener {
 				}
 			});
 			break;
-		case "STOP":
+		case "Stop":
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
 					Netcaptor.stopCapture();
@@ -115,7 +121,7 @@ public class ActionListenerForMenu implements ActionListener {
 				}
 			});
 			break;
-		case "OPENSCRIPT":
+		case "OpenScript":
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
 					frame.progress.setStatus("Open Script From File!");
@@ -125,7 +131,7 @@ public class ActionListenerForMenu implements ActionListener {
 				}
 			});
 			break;
-		case "BATCHGENESCRIPT":
+		case "BatchGeneScript":
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
 					frame.progress.setStatus("Batch Generate Scripts...");
@@ -135,7 +141,7 @@ public class ActionListenerForMenu implements ActionListener {
 				}
 			});
 			break;
-		case "CREATESCRIPT":
+		case "CreateScript":
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
 					frame.progress.setStatus("Open Script From File!");
@@ -144,7 +150,7 @@ public class ActionListenerForMenu implements ActionListener {
 				}
 			});
 			break;
-		case "PREFERENCE":
+		case "Preference":
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
 					new PreferenceFrame(frame);

@@ -14,6 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
+import javax.swing.JToolBar;
 import javax.swing.border.LineBorder;
 
 import com.generator.AbstractGenerator;
@@ -27,6 +28,7 @@ import com.view.preference.PropertyHelper;
 import com.view.util.BaseFrame;
 import com.view.util.ScrollPaneTextArea;
 import com.view.util.ViewModules;
+import com.common.Constants;
 import com.common.util.FormatUtil;
 import com.common.util.JsonUtil;
 import com.common.util.StringUtil;
@@ -40,7 +42,6 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 	private ParameterTablePanel reqParamsArea, reqHeaderArea, rspHeaderArea;
 	private JCheckBox smokeScriptCheckBox;
 	private JComboBox<Object> typeComboBox;
-	private JButton applyButton;
 	
 	private String[] types = {"TEXT", "JSON", "HTML"};
 	
@@ -56,6 +57,14 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 		defineComponents();
 		layoutComponents();
 		initData();
+	}
+	
+	private JToolBar createToolBar() {
+		JToolBar toolBar = new JToolBar();
+		toolBar.setFloatable(false);
+		JButton geneScriptBtn = ViewModules.createButton("GeneScript", "GENEJAVA", Constants.GENE_SCRIPT_ICON, this);
+		toolBar.add(geneScriptBtn);
+		return toolBar;
 	}
 	
 	public void defineComponents() {
@@ -93,15 +102,13 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 		smokeScriptCheckBox = ViewModules.createCheckBox("is Smoke Case", null);
 		typeComboBox = ViewModules.createComboBox(types);
 		typeComboBox.setBounds(0, 0, 100, 25);
-		
-		applyButton = ViewModules.createButton("GeneScript", "GENEJAVA", this);
 	}
 	
 	public void layoutComponents() {
 		JTabbedPane tabbedPane = new JTabbedPane();
-		tabbedPane.setTabPlacement(JTabbedPane.TOP);// 设置标签置放位置。
+		tabbedPane.setTabPlacement(JTabbedPane.LEFT);// 设置标签置放位置。
 		// script base info
-		JPanel scriptInfoPanel = ViewModules.createPanel("Script Base Info");
+		JPanel scriptInfoPanel = ViewModules.createPanel("Base Info");
 		scriptInfoPanel.setLayout(ViewModules.getGridBagLayout(9, 10, 5, 5, 1.0, 1.0));
 		
 		scriptInfoPanel.add(packageNameLabel, ViewModules.getGridBagConstraints(1, 1, 1, 1));
@@ -162,9 +169,9 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 		
 		//this.add(responseInfoPanel, ViewModules.getGridBagConstraints(1, 24, 10, 13));
 		tabbedPane.add("Response Info", responseInfoPanel);
-		this.add(tabbedPane, ViewModules.getGridBagConstraints(1, 1, 10, 14));
-		// button
-		this.add(applyButton, ViewModules.getGridBagConstraints(10, 15, 1, 1));
+		
+		this.add(createToolBar(), ViewModules.getGridBagConstraints(9, 1, 1, 1));
+		this.add(tabbedPane, ViewModules.getGridBagConstraints(1, 2, 10, 14));
 	}
 
 	public void initData() {

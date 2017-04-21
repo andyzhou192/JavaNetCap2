@@ -10,8 +10,10 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.JToolBar;
 import javax.swing.border.LineBorder;
 
+import com.common.Constants;
 import com.common.util.FileUtil;
 import com.common.util.StringUtil;
 import com.view.util.BaseFrame;
@@ -23,7 +25,7 @@ public class ScriptBaseInfoPane extends JPanel implements ActionListener {
 
 	private JLabel sourceFileLabel, resourceFileLabel;
 	private JTextField sourceFileField, resourceFileField;
-	private JButton sourceFileBrowseBtn, resourceFileBrowseBtn, okBtn;
+	private JButton sourceFileBrowseBtn, resourceFileBrowseBtn;
 
 	private BaseFrame parent;
 
@@ -35,29 +37,35 @@ public class ScriptBaseInfoPane extends JPanel implements ActionListener {
 		defineComponents();
 		layoutComponents();
 	}
+	
+	private JToolBar createToolBar() {
+		JToolBar toolBar = new JToolBar();
+		toolBar.setFloatable(false);
+		JButton reloadBtn = ViewModules.createButton("Reload", "RELOAD", Constants.RELOAD_ICON, this);
+		toolBar.add(reloadBtn);
+		return toolBar;
+	}
 
 	private void defineComponents() {
 		sourceFileLabel = ViewModules.createJLabel("Source File : ", Color.BLACK);
 		sourceFileField = ViewModules.createTextField(20, "", true);
-		sourceFileBrowseBtn = ViewModules.createButton("Browse", "BROWSESOURCE", this);
+		sourceFileBrowseBtn = ViewModules.createButton("Browse", "BROWSESOURCE", Constants.BROWSE_ICON, this);
 		
 		resourceFileLabel = ViewModules.createJLabel("Resource File : ", Color.BLACK);
 		resourceFileField = ViewModules.createTextField(20, "", true);
-		resourceFileBrowseBtn = ViewModules.createButton("Browse", "BROWSERESOURCE", this);
-		
-		okBtn = ViewModules.createButton("OK", "OK", this);
+		resourceFileBrowseBtn = ViewModules.createButton("Browse", "BROWSERESOURCE", Constants.BROWSE_ICON, this);
 	}
 
 	private void layoutComponents() {
-		this.add(sourceFileLabel, ViewModules.getGridBagConstraints(1, 1, 1, 1));
-		this.add(sourceFileField, ViewModules.getGridBagConstraints(2, 1, 8, 1));
-		this.add(sourceFileBrowseBtn, ViewModules.getGridBagConstraints(10, 1, 1, 1));
+		this.add(sourceFileLabel, ViewModules.getGridBagConstraints(1, 2, 1, 1));
+		this.add(sourceFileField, ViewModules.getGridBagConstraints(2, 2, 8, 1));
+		this.add(sourceFileBrowseBtn, ViewModules.getGridBagConstraints(10, 2, 1, 1));
 
-		this.add(resourceFileLabel, ViewModules.getGridBagConstraints(1, 2, 1, 1));
-		this.add(resourceFileField, ViewModules.getGridBagConstraints(2, 2, 8, 1));
-		this.add(resourceFileBrowseBtn, ViewModules.getGridBagConstraints(10, 2, 1, 1));
+		this.add(resourceFileLabel, ViewModules.getGridBagConstraints(1, 3, 1, 1));
+		this.add(resourceFileField, ViewModules.getGridBagConstraints(2, 3, 8, 1));
+		this.add(resourceFileBrowseBtn, ViewModules.getGridBagConstraints(10, 3, 1, 1));
 
-		this.add(okBtn, ViewModules.getGridBagConstraints(10, 15, 1, 1));
+		this.add(createToolBar(), ViewModules.getGridBagConstraints(10, 1, 1, 1));
 	}
 
 	private void initData(String file) {
@@ -80,15 +88,19 @@ public class ScriptBaseInfoPane extends JPanel implements ActionListener {
 		switch (e.getActionCommand()) {
 		case "BROWSESOURCE":
 			String sourceFile = ViewDataHandler.openFile(parent);
-			sourceFileField.setText(sourceFile);
-			initData(sourceFile);
+			if (null != sourceFile) {
+				sourceFileField.setText(sourceFile);
+				initData(sourceFile);
+			}
 			break;
 		case "BROWSERESOURCE":
 			String resourceFile = ViewDataHandler.openFile(parent);
-			resourceFileField.setText(resourceFile);
-			initData(resourceFile);
+			if (null != resourceFile) {
+				resourceFileField.setText(resourceFile);
+				initData(resourceFile);
+			}
 			break;
-		case "OK":
+		case "RELOAD":
 			Map<String, String> dataMap = new TreeMap<String, String>();
 			dataMap.put("source_file", sourceFileField.getText());
 			dataMap.put("resource_file", resourceFileField.getText());

@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
@@ -25,7 +26,6 @@ import com.handler.DataSaveHandler;
 import com.view.util.BaseFrame;
 import com.view.util.BaseTree;
 import com.view.util.FrameWindowAdapter;
-import com.view.util.ViewModules;
 
 @SuppressWarnings("serial")
 public class ScriptEditFrame extends BaseFrame {
@@ -94,9 +94,12 @@ public class ScriptEditFrame extends BaseFrame {
 		if (evt.getButton() == java.awt.event.MouseEvent.BUTTON3) {
 			// 通过点击位置找到点击为表格中的行
 			TreePath path = tree.getPathForLocation(evt.getX(), evt.getY()); // 关键是这个方法的使用;
-			if(path.getLastPathComponent().toString().equals("Cases") || path.getParentPath().getLastPathComponent().toString().equals("Cases")){
+			if(path.getLastPathComponent().toString().equals("Cases")){
 				// 弹出菜单
-				createPopupMenu().show(tree, evt.getX(), evt.getY());
+				createPopupMenu(false).show(tree, evt.getX(), evt.getY());
+			} else if (path.getParentPath().getLastPathComponent().toString().equals("Cases")) {
+				// 弹出菜单
+				createPopupMenu(true).show(tree, evt.getX(), evt.getY());
 			} else {
 				return;
 			}
@@ -105,45 +108,47 @@ public class ScriptEditFrame extends BaseFrame {
 		}
 	}
 
-	private JPopupMenu createPopupMenu() {
+	private JPopupMenu createPopupMenu(boolean hasDeleteItem) {
 		JPopupMenu popupMenu = new JPopupMenu();
-		JMenuItem addMenItem = new JMenuItem("Add");
+		JMenuItem addMenItem = new JMenuItem("AddCase");
 		addMenItem.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				// 该操作需要做的事
 				SwingUtilities.invokeLater(new Runnable() {
 					public void run() {
 						progress.startProgress("Data is Adding...");
-						String caseId = "caseId-" + tree.searchSingleNode("Cases").getChildCount() + 1;
+						String caseId = "caseId-" + (tree.searchSingleNode("Cases").getChildCount() + 1);
 						tree.insertNodes("Cases", caseId);
-						panel.add(caseId, new DataEditPane(frame, null));
+						panel.add(caseId, new DataEditPane(frame, caseId, null));
 						tree.setSelectionPath(caseId);
 						progress.stopProgress("Data has Added!");
 					}
 				});
 			}
 		});
-		JMenuItem delMenItem = new JMenuItem("Delete");
-		delMenItem.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				// 该操作需要做的事
-				SwingUtilities.invokeLater(new Runnable() {
-					public void run() {
-						progress.startProgress("Data is Saving...");
-						String nodeName = ((DefaultMutableTreeNode)tree.getLastSelectedPathComponent()).getUserObject().toString();
-						boolean isDel = delCaseData(nodeName);
-						if(!isDel){
-							ViewModules.showMessageDialog(frame, "Data Delete Failed.");
-						} else {
-							ViewModules.showMessageDialog(frame, "Data Delete Success.");
-						}
-						progress.stopProgress("Data has Deleted!");
-					}
-				});
-			}
-		});
 		popupMenu.add(addMenItem);
-		popupMenu.add(delMenItem);
+
+		if(hasDeleteItem){
+			JMenuItem delMenItem = new JMenuItem("DeleteCase");
+			delMenItem.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent evt) {
+					// 该操作需要做的事
+					SwingUtilities.invokeLater(new Runnable() {
+						public void run() {
+							String nodeName = ((DefaultMutableTreeNode)tree.getLastSelectedPathComponent()).getUserObject().toString();
+							String msg = "Are you sure want to delete this case (" + nodeName + ") ?";
+							int result = JOptionPane.showConfirmDialog(frame, msg, "ConfirmDialog", JOptionPane.YES_NO_OPTION);
+							if(result == JOptionPane.YES_OPTION) {
+								progress.startProgress("Data is Saving...");
+								delCaseData(nodeName);
+								progress.stopProgress("Data has Deleted!");
+							}
+						}
+					});
+				}
+			});
+			popupMenu.add(delMenItem);
+		}
 		return popupMenu;
 	}
 	
@@ -158,7 +163,7 @@ public class ScriptEditFrame extends BaseFrame {
 		List<DataForJavaBean> dataListOneSheet = DataSaveHandler.readExcel(resourceFile, 0);
 		for(DataForJavaBean dataBean : dataListOneSheet){
 			dataMapOneSheet.put(dataBean.getCaseId(), dataBean);
-			this.panel.add(dataBean.getCaseId(), new DataEditPane(this, dataBean));
+			this.panel.add(dataBean.getCaseId(), new DataEditPane(this, dataBean.getCaseId(), dataBean));
 		}
 		tree.insertNodes("Cases", dataMapOneSheet.keySet());
 	}

@@ -2,8 +2,12 @@ package com.view.mainframe.table;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.net.URL;
 import java.util.Vector;
 
+import javax.swing.AbstractAction;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JMenuItem;
@@ -14,10 +18,10 @@ import javax.swing.SwingUtilities;
 import javax.swing.event.TableModelEvent;
 import javax.swing.table.DefaultTableModel;
 
+import com.common.Constants;
 import com.common.util.JsonUtil;
 import com.common.util.StringUtil;
 import com.generator.bean.DataForJavaBean;
-import com.view.listener.ActionListenerForButton;
 import com.view.mainframe.MainFrame;
 import com.view.mainframe.table.component.TableButtonEditor;
 import com.view.mainframe.table.component.TableCheckBoxEditor;
@@ -30,23 +34,17 @@ public class RowTableScrollPane extends JScrollPane {
 	private MainFrame parent;
 	// data table
 	private JTable table = null;
-	private ActionListenerForButton listener;
 	
 	public RowTableScrollPane(MainFrame parent, Vector<Vector<Object>> rows, Vector<Object> header, MainFrame frame) {
 		this.parent = parent;
-		this.listener = new ActionListenerForButton(frame);
 		initTable(rows, header);
 		this.setViewportView(this.getTable());
 		this.setAutoscrolls(true);
-		//this.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-		//this.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 	}
 	
 	public void addNotifyTable(){
 		if(null != this.getTable()){
 			this.getTable().addNotify();
-//			this.getTable().updateUI();
-//			this.validate();
 		} else {
 			ViewModules.showMessageDialog(parent, "data import failed!");
 		}
@@ -174,10 +172,8 @@ public class RowTableScrollPane extends JScrollPane {
 	}
 	
 	public JButton getButton(){
-		JButton button = new JButton("Detail");
-		button.addActionListener(this.listener); 
+		JButton button = new JButton(new ViewDetailAction(parent, "Detail", Constants.DETAIL_ICON));//ViewModules.createButton("Detail", "SAVE", Constants.DETAIL_ICON, this);
 		button.setEnabled(true);
-		button.setActionCommand("DETAIL");
 		button.setVisible(true);
 		return button;
 	}
@@ -204,6 +200,37 @@ public class RowTableScrollPane extends JScrollPane {
 
 	public void setTable(JTable table) {
 		this.table = table;
+	}
+	
+
+	private class ViewDetailAction extends AbstractAction{
+		private MainFrame frame;
+		private RowTableScrollPane scrollPane;
+		private JTable table;
+		
+		public ViewDetailAction(MainFrame frame, String name, URL iconUrl){
+			putValue(NAME, name);
+			putValue(SMALL_ICON, new ImageIcon(iconUrl));
+			this.frame = frame;
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			this.scrollPane = frame.getScrollPane();
+			this.table = frame.getScrollPane().getTable();
+			switch(((JButton)e.getSource()).getText()){
+			case "Detail":
+				SwingUtilities.invokeLater(new Runnable() {
+					public void run() {
+						DataForJavaBean dataBean = scrollPane.getRowData(table.getSelectedRow());
+						new GeneratorFrame(frame, dataBean);
+					}
+				});
+				break;
+			default:
+				break;
+			}
+		}
 	}
 
 }

@@ -1,6 +1,7 @@
 package com.common;
 
 import java.io.File;
+import java.net.URL;
 import java.util.Properties;
 
 import com.common.util.StringUtil;
@@ -28,14 +29,39 @@ public final class Constants {
 	public final static String VERTICAL_LINE = "\\|";
 	
 	
-	public static String EXPAND_ICON = "/img/expand.png";
-	public static String COLLAPSE_ICON = "/img/collapse.png";
-	public static String BOOKMARK_ICON = "/img/bookmark.png";
-//	public static String EXPAND_ICON = Thread.currentThread().getContextClassLoader().getResource("img/expand.png").getPath();
-//	public static String COLLAPSE_ICON = Thread.currentThread().getContextClassLoader().getResource("img/collapse.png").getPath();
-//	public static String BOOKMARK_ICON = Thread.currentThread().getContextClassLoader().getResource("img/bookmark.png").getPath();
+	public static URL EXPAND_ICON = Constants.class.getClass().getResource("/img/expand.png");
+	public static URL COLLAPSE_ICON = Constants.class.getClass().getResource("/img/collapse.png");
+	public static URL BOOKMARK_ICON = Constants.class.getClass().getResource("/img/bookmark.png");
+	public static URL SAVE_ICON = Constants.class.getClass().getResource("/img/Save.png");
+	public static URL SAVEAS_ICON = Constants.class.getClass().getResource("/img/SaveAs.png");
+	public static URL DELETE_ICON = Constants.class.getClass().getResource("/img/Delete.png");
+	public static URL ADD_ICON = Constants.class.getClass().getResource("/img/Add.png");
+	public static URL OPEN_ICON = Constants.class.getClass().getResource("/img/Open.png");
+	public static URL CLOSE_ICON = Constants.class.getClass().getResource("/img/Close.png");
+	public static URL EXIT_ICON = Constants.class.getClass().getResource("/img/Exit.png");
+	public static URL REFRESH_ICON = Constants.class.getClass().getResource("/img/Refresh.png");
+	public static URL RELOAD_ICON = Constants.class.getClass().getResource("/img/Reload.png");
+	public static URL BROWSE_ICON = Constants.class.getClass().getResource("/img/Browse.png");
+	public static URL DETAIL_ICON = Constants.class.getClass().getResource("/img/Detail.png");
+	public static URL HELP_ICON = Constants.class.getClass().getResource("/img/Help.png");
+	public static URL ABOUT_ICON = Constants.class.getClass().getResource("/img/About.png");
+	public static URL UP_ICON = Constants.class.getClass().getResource("/img/Up.png");
+	public static URL DOWN_ICON = Constants.class.getClass().getResource("/img/Down.png");
+	public static URL INFO_ICON = Constants.class.getClass().getResource("/img/Info.png");
+	public static URL EDIT_ICON = Constants.class.getClass().getResource("/img/Edit.png");
+	public static URL START_NORMAL_ICON = Constants.class.getClass().getResource("/img/StartNormal.png");
+	public static URL START_DISABLED_ICON = Constants.class.getClass().getResource("/img/StartDisabled.png");
+	public static URL STOP_NORMAL_ICON = Constants.class.getClass().getResource("/img/StopNormal.png");
+	public static URL STOP_DISABLED_ICON = Constants.class.getClass().getResource("/img/StopDisabled.png");
+	public static URL PAUSE_NORMAL_ICON = Constants.class.getClass().getResource("/img/PauseNormal.png");
+	public static URL PAUSE_DISABLED_ICON = Constants.class.getClass().getResource("/img/PauseDisabled.png");
+	public static URL DATA_IMPORT_ICON = Constants.class.getClass().getResource("/img/DataImport.png");
+	public static URL DATA_EXPORT_ICON = Constants.class.getClass().getResource("/img/DataExport.png");
+	public static URL OPEN_SCRIPT_ICON = Constants.class.getClass().getResource("/img/OpenScript.png");
+	public static URL ADD_SCRIPT_ICON = Constants.class.getClass().getResource("/img/AddScript.png");
+	public static URL GENE_SCRIPT_ICON = Constants.class.getClass().getResource("/img/GeneScript.png");
+	public static URL SETTINGS_ICON = Constants.class.getClass().getResource("/img/Settings.png");
 	
-	//public static String DEF_LOG_PROP_FILE = StringUtil.assembleRelativeFilePath("." + File.separator + "conf", "log4j.properties");
 	public static String DEF_SET_PROP_FILE = StringUtil.assembleRelativeFilePath("." + File.separator + "conf", "setting.properties");
 	
 	public static Properties PROPS = null;

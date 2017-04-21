@@ -11,10 +11,13 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRootPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
+import javax.swing.JToolBar;
 import javax.swing.border.LineBorder;
 
+import com.common.Constants;
 import com.common.util.JsonUtil;
 import com.common.util.StringUtil;
 import com.generator.bean.DataForJavaBean;
@@ -24,33 +27,44 @@ import com.view.util.ScrollPaneTextArea;
 import com.view.util.ViewModules;
 
 @SuppressWarnings("serial")
-public class DataEditPane extends JPanel implements ActionListener {
+public class DataEditPane extends JRootPane implements ActionListener {
 
 	private JLabel urlLabel, httpMethodLabel, testCaseDescLabel, statusCodeLabel, reasonPhraseLabel;
 	private JTextField urlField, httpMethodField, statusCodeField, reasonPhraseField;
 	private ScrollPaneTextArea testCaseDescArea, rspBodyArea;
 	private ParameterTablePanel reqParamsArea, reqHeaderArea, rspHeaderArea;
 	private JComboBox<Object> typeComboBox;
-	private JButton saveBtn, deleteBtn;
 	
 	private JPanel reqParamsPanel, reqHeaderPanel, rspHeaderPanel, rspBodyPanel;
 	
 	private String[] types = {"TEXT", "JSON", "HTML"};
 	
 	private BaseFrame parent;
+	private String caseId;
 	private DataForJavaBean dataBean;
 	
-	public DataEditPane(BaseFrame parent, DataForJavaBean dataBean) {
-		this.parent = parent;
+	public DataEditPane(BaseFrame parent, String caseId, DataForJavaBean dataBean) {
 		this.setBorder(new LineBorder(new Color(255, 200, 0), 2));
 		this.setLayout(ViewModules.getGridBagLayout(20, 10, 5, 5, 1.0, 1.0));
+		this.parent = parent;
 		this.dataBean = dataBean;
+		this.caseId = caseId;
 		
 		defineComponents();
 		layoutComponents();
 		initData();
 	}
 	
+	private JToolBar createToolBar() {
+		JToolBar toolBar = new JToolBar();
+		toolBar.setFloatable(false);
+		JButton saveBtn = ViewModules.createButton("Save", "SAVE", Constants.SAVE_ICON, this);
+		JButton deleteBtn = ViewModules.createButton("Delete", "DELETE", Constants.DELETE_ICON, this);
+		toolBar.add(saveBtn);
+		toolBar.add(deleteBtn);
+		return toolBar;
+	}
+
 	public void defineComponents() {
 		urlLabel = ViewModules.createJLabel("URL:", Color.BLACK);
 		httpMethodLabel = ViewModules.createJLabel("Method:", Color.BLACK);
@@ -77,8 +91,6 @@ public class DataEditPane extends JPanel implements ActionListener {
 		rspHeaderPanel = ViewModules.createPanel("Response Headers");
 		rspBodyPanel = ViewModules.createPanel("Response Body");
 		
-		saveBtn = ViewModules.createButton("Save", "SAVE", this);
-		deleteBtn = ViewModules.createButton("Delete", "DELETE", this);
 	}
 	
 	public void layoutComponents() {
@@ -127,10 +139,9 @@ public class DataEditPane extends JPanel implements ActionListener {
 		responseInfoPanel.add(rspBodyPanel, ViewModules.getGridBagConstraints(1, 9, 10, 6));
 		
 		tabbedPane.add("Response Info", responseInfoPanel);
-		this.add(tabbedPane, ViewModules.getGridBagConstraints(1, 1, 10, 14));
-		// button
-		this.add(deleteBtn, ViewModules.getGridBagConstraints(8, 20, 1, 1));
-		this.add(saveBtn, ViewModules.getGridBagConstraints(10, 20, 1, 1));
+
+		this.add(createToolBar(), ViewModules.getGridBagConstraints(1, 1, 10, 1));
+		this.add(tabbedPane, ViewModules.getGridBagConstraints(1, 2, 10, 14));
 	}
 
 	public void initData() {
@@ -170,7 +181,7 @@ public class DataEditPane extends JPanel implements ActionListener {
 			break;
 		case "DELETE":
 			parent.progress.startProgress("Data is Saving...");
-			boolean isDel = deleteData();
+			boolean isDel = deleteData(caseId);
 			if(!isDel){
 				ViewModules.showMessageDialog(this, "Data Delete Failed.");
 			} else {
@@ -183,8 +194,8 @@ public class DataEditPane extends JPanel implements ActionListener {
 		}
 	}
 
-	private boolean deleteData() {
-		return ((ScriptEditFrame)parent).delCaseData(dataBean.getCaseId());
+	private boolean deleteData(String caseId) {
+		return ((ScriptEditFrame)parent).delCaseData(caseId);
 	}
 
 	private boolean updateData() {

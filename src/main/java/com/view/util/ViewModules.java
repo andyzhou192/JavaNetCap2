@@ -10,12 +10,15 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.LayoutManager;
 import java.awt.event.ActionListener;
+import java.net.URL;
 import java.util.Vector;
 
 import javax.swing.AbstractButton;
+import javax.swing.Action;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -32,6 +35,7 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
+import javax.swing.JToolBar;
 import javax.swing.SpringLayout;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
@@ -95,6 +99,29 @@ public class ViewModules {
 	}
 	
 	/**
+	 * 
+	 * @param menu
+	 * @param action
+	 */
+	public static JMenuItem addMenuItem(JMenu menu, Action action) {
+		JMenuItem item = new JMenuItem(action);
+		menu.add(item);
+		return item;
+	}
+	
+	/**
+	 * 
+	 * @param toolBar
+	 * @param action
+	 * @return
+	 */
+	public static JButton addToolButton(JToolBar toolBar, Action action) {
+		JButton btn = new JButton(action);
+		toolBar.add(btn);
+		return btn;
+	}
+	
+	/**
 	 * 创建JMenuItem
 	 * @param name
 	 * @param command
@@ -155,6 +182,25 @@ public class ViewModules {
 		button.setText(name);
 		button.setActionCommand(command);
 		button.addActionListener(listener);
+		return button;
+	}
+	
+	/**
+	 * 
+	 * @param name
+	 * @param command
+	 * @param iconName
+	 * @param listener
+	 * @return
+	 */
+	public static JButton createButton(String name, String command, URL iconUrl, ActionListener listener){
+		JButton button = new JButton(name, new ImageIcon(iconUrl));
+		button.setActionCommand(command);
+		button.addActionListener(listener);
+		button.setBackground(Color.LIGHT_GRAY);
+		// 以下两行设置icon和文案垂直居中显示，文案显示在icon下面
+		//button.setVerticalTextPosition(JButton.BOTTOM);
+		//button.setHorizontalTextPosition(JButton.CENTER);
 		return button;
 	}
 	

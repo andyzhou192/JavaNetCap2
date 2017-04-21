@@ -6,9 +6,12 @@ import java.awt.Font;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.swing.AbstractAction;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -18,9 +21,11 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.JToolBar;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
+import com.common.Constants;
 import com.common.JsonValidator;
 import com.view.util.ScrollPaneTextArea;
 import com.view.util.ViewModules;
@@ -28,7 +33,7 @@ import com.view.util.ViewModules;
 import net.sf.json.JSONObject;
 
 @SuppressWarnings("serial")
-public class ParameterTablePanel extends JPanel implements ActionListener {
+public class ParameterTablePanel extends JPanel {
 	
 	private JFrame parent;
 	private DefaultTableModel tableModel; // 表格模型对象
@@ -41,9 +46,9 @@ public class ParameterTablePanel extends JPanel implements ActionListener {
 		this.setLayout(ViewModules.getGridBagLayout(6, 10, 5, 5, 1.0, 1.0));
 		setTableValues(data);
 		JScrollPane scrollPane = getScrollTable();
-		JPanel operatePanel = getOperatePanel();
+		JToolBar toolBar = createToolBar();
 		this.add(scrollPane, ViewModules.getGridBagConstraints(1, 1, 10, 5));
-		this.add(operatePanel, ViewModules.getGridBagConstraints(1, 6, 10, 1));
+		this.add(toolBar, ViewModules.getGridBagConstraints(10, 6, 1, 1));
 	}
 
 	@SuppressWarnings("unchecked")
@@ -104,64 +109,75 @@ public class ParameterTablePanel extends JPanel implements ActionListener {
 		return scrollPane;
 	}
 	
-	private JPanel getOperatePanel(){
-		JPanel operatePanel = new JPanel();
-		operatePanel.setLayout(ViewModules.getGridBagLayout(1, 10, 5, 5, 1.0, 1.0));
-		JButton detailButton = ViewModules.createButton("Detail", "DETAIL", this); // 详情按钮
-		JButton addButton = ViewModules.createButton("Add", "ADD", this); // 添加按钮
-		JButton upButton = ViewModules.createButton("Up", "UP", this);
-		JButton downButton = ViewModules.createButton("Down", "DOWN", this);
-		JButton delButton = ViewModules.createButton("Delete", "DELETE", this);
-		operatePanel.add(detailButton, ViewModules.getGridBagConstraints(2, 1, 1, 1));
-		operatePanel.add(addButton, ViewModules.getGridBagConstraints(4, 1, 1, 1));
-		operatePanel.add(upButton, ViewModules.getGridBagConstraints(6, 1, 1, 1));
-		operatePanel.add(downButton, ViewModules.getGridBagConstraints(8, 1, 1, 1));
-		operatePanel.add(delButton, ViewModules.getGridBagConstraints(10, 1, 1, 1));
-		return operatePanel;
+	private JToolBar createToolBar(){
+		JToolBar toolBar = new JToolBar();
+		toolBar.setFloatable(false);
+		JButton detailButton = ViewModules.addToolButton(toolBar, new ParamsOperateAction("Detail", "DETAIL", Constants.DETAIL_ICON));
+		toolBar.add(detailButton);
+		JButton addButton = ViewModules.addToolButton(toolBar, new ParamsOperateAction("Add", "ADD", Constants.ADD_ICON));
+		toolBar.add(addButton);
+		JButton upButton = ViewModules.addToolButton(toolBar, new ParamsOperateAction("Up", "UP", Constants.UP_ICON));
+		toolBar.add(upButton);
+		JButton downButton = ViewModules.addToolButton(toolBar, new ParamsOperateAction("Down", "DOWN", Constants.DOWN_ICON));
+		toolBar.add(downButton);
+		JButton delButton = ViewModules.addToolButton(toolBar, new ParamsOperateAction("Delete", "DELETE", Constants.DELETE_ICON));
+		toolBar.add(delButton);
+		return toolBar;
+	}
+	
+	private class ParamsOperateAction extends AbstractAction {
+		public ParamsOperateAction(String name, String commond, URL iconUrl) {
+			if(null != name) putValue(NAME, name);
+			if(null != commond) putValue(ACTION_COMMAND_KEY, commond);
+			if(null != iconUrl) putValue(SMALL_ICON, new ImageIcon(iconUrl));
+		}
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			int selectedRow = table.getSelectedRow();// 获得选中行的索引
+			switch(e.getActionCommand()){
+			case "DETAIL":
+				if (selectedRow != -1) {// 是否存在选中行
+					new NameValueDialog(parent, selectedRow);
+				}
+				break;
+			case "ADD":
+				String[] rowValues = {"", ""};
+				tableModel.addRow(rowValues); // 添加一行
+				Rectangle rect = table.getCellRect(table.getRowCount()-1, 0, true);  
+				//table.repaint(); 若需要的话  
+				//table.updateUI();若需要的话  
+				table.scrollRectToVisible(rect);  
+				break;
+			case "UP":
+				if(selectedRow > 0 && selectedRow < table.getRowCount()){
+					tableModel.moveRow(selectedRow, selectedRow, selectedRow-1);
+					selectedRow = selectedRow - 1;
+					table.getSelectionModel().setSelectionInterval(selectedRow, selectedRow);
+				}
+				break;
+			case "DOWN":
+				if(selectedRow >= 0 && selectedRow < table.getRowCount()-1){
+					tableModel.moveRow(selectedRow, selectedRow, selectedRow+1);
+					selectedRow = selectedRow + 1;
+					table.getSelectionModel().setSelectionInterval(selectedRow, selectedRow);
+				}
+				break;
+			case "DELETE":
+				if (selectedRow >= 0 && selectedRow < table.getRowCount()) { // 存在选中行
+					tableModel.removeRow(selectedRow); // 删除行
+					if(selectedRow < table.getRowCount())
+						table.getSelectionModel().setSelectionInterval(selectedRow, selectedRow);
+				}
+				break;
+			default:
+				break;
+			}
+		}
+
 	}
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		int selectedRow = table.getSelectedRow();// 获得选中行的索引
-		switch(e.getActionCommand()){
-		case "DETAIL":
-			if (selectedRow != -1) {// 是否存在选中行
-				new NameValueDialog(parent, selectedRow);
-			}
-			break;
-		case "ADD":
-			String[] rowValues = {"", ""};
-			tableModel.addRow(rowValues); // 添加一行
-			Rectangle rect = table.getCellRect(table.getRowCount()-1, 0, true);  
-			//table.repaint(); 若需要的话  
-			//table.updateUI();若需要的话  
-			table.scrollRectToVisible(rect);  
-			break;
-		case "UP":
-			if(selectedRow > 0 && selectedRow < table.getRowCount()){
-				tableModel.moveRow(selectedRow, selectedRow, selectedRow-1);
-				selectedRow = selectedRow - 1;
-				table.getSelectionModel().setSelectionInterval(selectedRow, selectedRow);
-			}
-			break;
-		case "DOWN":
-			if(selectedRow >= 0 && selectedRow < table.getRowCount()-1){
-				tableModel.moveRow(selectedRow, selectedRow, selectedRow+1);
-				selectedRow = selectedRow + 1;
-				table.getSelectionModel().setSelectionInterval(selectedRow, selectedRow);
-			}
-			break;
-		case "DELETE":
-			if (selectedRow >= 0 && selectedRow < table.getRowCount()) { // 存在选中行
-				tableModel.removeRow(selectedRow); // 删除行
-				if(selectedRow < table.getRowCount())
-					table.getSelectionModel().setSelectionInterval(selectedRow, selectedRow);
-			}
-			break;
-		default:
-			break;
-		}
-	}
+	
 	
 	class NameValueDialog extends JDialog implements ActionListener {
 		private JTextField nameField;
