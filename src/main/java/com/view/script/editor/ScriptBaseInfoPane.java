@@ -1,5 +1,6 @@
 package com.view.script.editor;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,6 +10,7 @@ import java.util.TreeMap;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JToolBar;
 import javax.swing.border.LineBorder;
@@ -32,7 +34,6 @@ public class ScriptBaseInfoPane extends JPanel implements ActionListener {
 	public ScriptBaseInfoPane(BaseFrame parent) {
 		this.parent = parent;
 		this.setBorder(new LineBorder(new Color(255, 200, 0), 2));
-		this.setLayout(ViewModules.getGridBagLayout(15, 10, 5, 5, 1.0, 1.0));
 
 		defineComponents();
 		layoutComponents();
@@ -41,6 +42,7 @@ public class ScriptBaseInfoPane extends JPanel implements ActionListener {
 	private JToolBar createToolBar() {
 		JToolBar toolBar = new JToolBar();
 		toolBar.setFloatable(false);
+		toolBar.setBackground(new Color(216,218,254));
 		JButton reloadBtn = ViewModules.createButton("Reload", "RELOAD", Constants.RELOAD_ICON, this);
 		toolBar.add(reloadBtn);
 		return toolBar;
@@ -57,15 +59,17 @@ public class ScriptBaseInfoPane extends JPanel implements ActionListener {
 	}
 
 	private void layoutComponents() {
-		this.add(sourceFileLabel, ViewModules.getGridBagConstraints(1, 2, 1, 1));
-		this.add(sourceFileField, ViewModules.getGridBagConstraints(2, 2, 8, 1));
-		this.add(sourceFileBrowseBtn, ViewModules.getGridBagConstraints(10, 2, 1, 1));
+		JPanel pane = new JPanel(ViewModules.getGridBagLayout(15, 10, 5, 5, 1.0, 1.0));
+		pane.add(sourceFileLabel, ViewModules.getGridBagConstraints(1, 2, 1, 1));
+		pane.add(sourceFileField, ViewModules.getGridBagConstraints(2, 2, 8, 1));
+		pane.add(sourceFileBrowseBtn, ViewModules.getGridBagConstraints(10, 2, 1, 1));
 
-		this.add(resourceFileLabel, ViewModules.getGridBagConstraints(1, 3, 1, 1));
-		this.add(resourceFileField, ViewModules.getGridBagConstraints(2, 3, 8, 1));
-		this.add(resourceFileBrowseBtn, ViewModules.getGridBagConstraints(10, 3, 1, 1));
+		pane.add(resourceFileLabel, ViewModules.getGridBagConstraints(1, 3, 1, 1));
+		pane.add(resourceFileField, ViewModules.getGridBagConstraints(2, 3, 8, 1));
+		pane.add(resourceFileBrowseBtn, ViewModules.getGridBagConstraints(10, 3, 1, 1));
 
-		this.add(createToolBar(), ViewModules.getGridBagConstraints(10, 1, 1, 1));
+		this.add(createToolBar(), BorderLayout.NORTH);
+		this.add(new JScrollPane(pane), BorderLayout.CENTER);
 	}
 
 	private void initData(String file) {
