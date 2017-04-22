@@ -1,5 +1,6 @@
 package com.view.script.generator.pane;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.event.ActionEvent;
@@ -12,6 +13,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.JToolBar;
@@ -51,7 +53,7 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 	public GeneratorPanel(BaseFrame parent, DataForJavaBean dataBean) {
 		this.parent = parent;
 		this.setBorder(new LineBorder(new Color(255, 200, 0), 2));
-		this.setLayout(ViewModules.getGridBagLayout(15, 10, 5, 5, 1.0, 1.0));
+		//this.setLayout(ViewModules.getGridBagLayout(15, 10, 5, 5, 1.0, 1.0));
 		this.dataBean = dataBean;
 		
 		defineComponents();
@@ -62,6 +64,7 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 	private JToolBar createToolBar() {
 		JToolBar toolBar = new JToolBar();
 		toolBar.setFloatable(false);
+		toolBar.setBackground(new Color(216,218,254));
 		JButton geneScriptBtn = ViewModules.createButton("GeneScript", "GENEJAVA", Constants.GENE_SCRIPT_ICON, this);
 		toolBar.add(geneScriptBtn);
 		return toolBar;
@@ -131,7 +134,7 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 		scriptInfoPanel.add(testCaseDescArea, ViewModules.getGridBagConstraints(1, 9, 10, 1));
 		
 		//this.add(scriptInfoPanel, ViewModules.getGridBagConstraints(1, 1, 10, 9));
-		tabbedPane.add("Script Base Info", scriptInfoPanel);
+		tabbedPane.add("Script Base Info", new JScrollPane(scriptInfoPanel));
 		// request info
 		JPanel requestInfoPanel = ViewModules.createPanel("Request Info");
 		requestInfoPanel.setLayout(ViewModules.getGridBagLayout(13, 10, 5, 5, 1.0, 1.0));
@@ -149,7 +152,7 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 		requestInfoPanel.add(reqHeaderArea, ViewModules.getGridBagConstraints(1, 9, 10, 5));
 		
 		//this.add(requestInfoPanel, ViewModules.getGridBagConstraints(1, 10, 10, 13));
-		tabbedPane.add("Request Info", requestInfoPanel);
+		tabbedPane.add("Request Info", new JScrollPane(requestInfoPanel));
 		// response info
 		JPanel responseInfoPanel = ViewModules.createPanel("Response Info");
 		responseInfoPanel.setLayout(ViewModules.getGridBagLayout(13, 10, 5, 5, 1.0, 1.0));
@@ -168,10 +171,10 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 		responseInfoPanel.add(rspBodyArea, ViewModules.getGridBagConstraints(1, 9, 10, 5));
 		
 		//this.add(responseInfoPanel, ViewModules.getGridBagConstraints(1, 24, 10, 13));
-		tabbedPane.add("Response Info", responseInfoPanel);
+		tabbedPane.add("Response Info", new JScrollPane(responseInfoPanel));
 		
-		this.add(createToolBar(), ViewModules.getGridBagConstraints(9, 1, 1, 1));
-		this.add(tabbedPane, ViewModules.getGridBagConstraints(1, 2, 10, 14));
+		this.add(createToolBar(), BorderLayout.NORTH);
+		this.add(tabbedPane, BorderLayout.CENTER);
 	}
 
 	public void initData() {
