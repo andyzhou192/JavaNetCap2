@@ -60,7 +60,7 @@ public class FrameMenuBar extends JMenuBar {
 		toolBar.add(importBtn);
 		
 		JButton exportBtn = ViewModules.addToolButton(toolBar, new ActionForMenu(frame, null, "Export", Constants.DATA_EXPORT_ICON));
-		exportBtn.setToolTipText("Import Data To File");
+		exportBtn.setToolTipText("Export Data To File");
 		exportBtn.setBackground(new Color(216,218,254));
 		toolBar.add(exportBtn);
 		

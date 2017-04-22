@@ -4,8 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 
 import javax.swing.JFrame;
-import javax.swing.JScrollPane;
-
+import javax.swing.JPanel;
 import com.generator.bean.DataForJavaBean;
 import com.view.script.generator.pane.GeneratorPanel;
 import com.view.util.BaseFrame;
@@ -18,8 +17,8 @@ public class GeneratorFrame extends BaseFrame {
 		this.setTitle("Data Detail");
 		this.setBackground(Color.LIGHT_GRAY);
 		this.setBounds(100, 100, 1000, 600);
-		JScrollPane scrollPane = new JScrollPane(new GeneratorPanel(this, dataBean));
-		this.getContentPane().add(scrollPane, BorderLayout.CENTER);
+		JPanel pane = new GeneratorPanel(this, dataBean);
+		this.getContentPane().add(pane, BorderLayout.CENTER);
 		this.getContentPane().add(progress, BorderLayout.SOUTH);
 		this.pack();
 		this.setVisible(true);

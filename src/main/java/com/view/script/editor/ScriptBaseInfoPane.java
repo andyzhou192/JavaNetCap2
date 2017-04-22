@@ -34,7 +34,7 @@ public class ScriptBaseInfoPane extends JPanel implements ActionListener {
 	public ScriptBaseInfoPane(BaseFrame parent) {
 		this.parent = parent;
 		this.setBorder(new LineBorder(new Color(255, 200, 0), 2));
-
+		this.setLayout(new BorderLayout());
 		defineComponents();
 		layoutComponents();
 	}
@@ -43,8 +43,9 @@ public class ScriptBaseInfoPane extends JPanel implements ActionListener {
 		JToolBar toolBar = new JToolBar();
 		toolBar.setFloatable(false);
 		toolBar.setBackground(new Color(216,218,254));
+		toolBar.setLayout(ViewModules.getGridBagLayout(1, 11, 0, 0, 1.0, 1.0));
 		JButton reloadBtn = ViewModules.createButton("Reload", "RELOAD", Constants.RELOAD_ICON, this);
-		toolBar.add(reloadBtn);
+		toolBar.add(reloadBtn, ViewModules.getGridBagConstraints(5, 1, 1, 1));
 		return toolBar;
 	}
 
@@ -68,8 +69,8 @@ public class ScriptBaseInfoPane extends JPanel implements ActionListener {
 		pane.add(resourceFileField, ViewModules.getGridBagConstraints(2, 3, 8, 1));
 		pane.add(resourceFileBrowseBtn, ViewModules.getGridBagConstraints(10, 3, 1, 1));
 
-		this.add(createToolBar(), BorderLayout.NORTH);
 		this.add(new JScrollPane(pane), BorderLayout.CENTER);
+		this.add(createToolBar(), BorderLayout.SOUTH);
 	}
 
 	private void initData(String file) {

@@ -53,7 +53,7 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 	public GeneratorPanel(BaseFrame parent, DataForJavaBean dataBean) {
 		this.parent = parent;
 		this.setBorder(new LineBorder(new Color(255, 200, 0), 2));
-		//this.setLayout(ViewModules.getGridBagLayout(15, 10, 5, 5, 1.0, 1.0));
+		this.setLayout(new BorderLayout());
 		this.dataBean = dataBean;
 		
 		defineComponents();
@@ -65,8 +65,10 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 		JToolBar toolBar = new JToolBar();
 		toolBar.setFloatable(false);
 		toolBar.setBackground(new Color(216,218,254));
+		JPanel pane = new JPanel(new BorderLayout());
 		JButton geneScriptBtn = ViewModules.createButton("GeneScript", "GENEJAVA", Constants.GENE_SCRIPT_ICON, this);
-		toolBar.add(geneScriptBtn);
+		pane.add(geneScriptBtn, BorderLayout.CENTER);
+		toolBar.add(pane);
 		return toolBar;
 	}
 	
@@ -109,7 +111,7 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 	
 	public void layoutComponents() {
 		JTabbedPane tabbedPane = new JTabbedPane();
-		tabbedPane.setTabPlacement(JTabbedPane.LEFT);// 设置标签置放位置。
+		tabbedPane.setTabPlacement(JTabbedPane.TOP);// 设置标签置放位置。
 		// script base info
 		JPanel scriptInfoPanel = ViewModules.createPanel("Base Info");
 		scriptInfoPanel.setLayout(ViewModules.getGridBagLayout(9, 10, 5, 5, 1.0, 1.0));
@@ -173,8 +175,8 @@ public class GeneratorPanel extends JPanel implements ActionListener {
 		//this.add(responseInfoPanel, ViewModules.getGridBagConstraints(1, 24, 10, 13));
 		tabbedPane.add("Response Info", new JScrollPane(responseInfoPanel));
 		
-		this.add(createToolBar(), BorderLayout.NORTH);
 		this.add(tabbedPane, BorderLayout.CENTER);
+		this.add(createToolBar(), BorderLayout.SOUTH);
 	}
 
 	public void initData() {

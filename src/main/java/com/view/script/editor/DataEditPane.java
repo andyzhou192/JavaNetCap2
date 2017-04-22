@@ -1,5 +1,6 @@
 package com.view.script.editor;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.event.ActionEvent;
@@ -12,6 +13,7 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRootPane;
+import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.JToolBar;
@@ -45,7 +47,7 @@ public class DataEditPane extends JRootPane implements ActionListener {
 	
 	public DataEditPane(BaseFrame parent, String caseId, DataForJavaBean dataBean) {
 		this.setBorder(new LineBorder(new Color(255, 200, 0), 2));
-		this.setLayout(ViewModules.getGridBagLayout(20, 10, 5, 5, 1.0, 1.0));
+		this.setLayout(new BorderLayout());
 		this.parent = parent;
 		this.dataBean = dataBean;
 		this.caseId = caseId;
@@ -58,10 +60,12 @@ public class DataEditPane extends JRootPane implements ActionListener {
 	private JToolBar createToolBar() {
 		JToolBar toolBar = new JToolBar();
 		toolBar.setFloatable(false);
-		JButton saveBtn = ViewModules.createButton("Save", "SAVE", Constants.SAVE_ICON, this);
+		toolBar.setBackground(new Color(216,218,254));
+		toolBar.setLayout(ViewModules.getGridBagLayout(1, 4, 0, 0, 1.0, 1.0));
 		JButton deleteBtn = ViewModules.createButton("Delete", "DELETE", Constants.DELETE_ICON, this);
-		toolBar.add(saveBtn);
-		toolBar.add(deleteBtn);
+		JButton saveBtn = ViewModules.createButton("Save", "SAVE", Constants.SAVE_ICON, this);
+		toolBar.add(deleteBtn, ViewModules.getGridBagConstraints(1, 1, 1, 1));
+		toolBar.add(saveBtn, ViewModules.getGridBagConstraints(2, 1, 1, 1));
 		return toolBar;
 	}
 
@@ -118,7 +122,7 @@ public class DataEditPane extends JRootPane implements ActionListener {
 		reqHeaderPanel.add(reqHeaderArea, ViewModules.getGridBagConstraints(1, 2, 10, 5));
 		requestInfoPanel.add(reqHeaderPanel, ViewModules.getGridBagConstraints(1, 12, 10, 5));
 		
-		tabbedPane.add("Request Info", requestInfoPanel);
+		tabbedPane.add("Request Info", new JScrollPane(requestInfoPanel));
 		// response info
 		JPanel responseInfoPanel = new JPanel();
 		responseInfoPanel.setLayout(ViewModules.getGridBagLayout(13, 10, 5, 5, 1.0, 1.0));
@@ -138,10 +142,10 @@ public class DataEditPane extends JRootPane implements ActionListener {
 		rspBodyPanel.add(rspBodyArea, ViewModules.getGridBagConstraints(1, 2, 10, 5));
 		responseInfoPanel.add(rspBodyPanel, ViewModules.getGridBagConstraints(1, 9, 10, 6));
 		
-		tabbedPane.add("Response Info", responseInfoPanel);
+		tabbedPane.add("Response Info", new JScrollPane(responseInfoPanel));
 
-		this.add(createToolBar(), ViewModules.getGridBagConstraints(1, 1, 10, 1));
-		this.add(tabbedPane, ViewModules.getGridBagConstraints(1, 2, 10, 14));
+		this.add(tabbedPane, BorderLayout.CENTER);
+		this.add(createToolBar(), BorderLayout.SOUTH);
 	}
 
 	public void initData() {

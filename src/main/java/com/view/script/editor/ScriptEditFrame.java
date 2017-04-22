@@ -11,7 +11,6 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
-import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTree;
 import javax.swing.SwingUtilities;
@@ -47,7 +46,7 @@ public class ScriptEditFrame extends BaseFrame {
 		this.panel.add("Script", new ScriptBaseInfoPane(this));
 		this.card.show(this.panel, "Script");
 		this.tree = getNavigateTree();
-		JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, tree, new JScrollPane(this.panel));
+		JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, tree, this.panel);
 		this.getContentPane().add(splitPane);
 		
 		this.frame = this;
