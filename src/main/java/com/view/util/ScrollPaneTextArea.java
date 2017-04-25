@@ -2,11 +2,13 @@ package com.view.util;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.io.UnsupportedEncodingException;
 
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 import com.common.util.FormatUtil;
+import com.common.util.LogUtil;
 
 @SuppressWarnings("serial")
 public class ScrollPaneTextArea extends JScrollPane {
@@ -17,7 +19,7 @@ public class ScrollPaneTextArea extends JScrollPane {
 	public ScrollPaneTextArea(){
 		this.textArea = new JTextArea();
 		textArea.setEditable(true);
-		textArea.setLineWrap(true);
+		textArea.setLineWrap(true); // 设置自动换行
 		textArea.setWrapStyleWord(true);
 		textArea.setForeground(Color.BLACK);
 		this.setViewportView(textArea);
@@ -27,12 +29,12 @@ public class ScrollPaneTextArea extends JScrollPane {
 	public ScrollPaneTextArea(int rows, String content){
 		this.textArea = new JTextArea();
 		textArea.setEditable(true);
-		textArea.setLineWrap(true);
+		textArea.setLineWrap(true); // 设置自动换行
 		textArea.setWrapStyleWord(true);
 		textArea.setForeground(Color.BLACK);
 		textArea.setRows(rows);
 		textArea.setText(content);
-		textArea.setFont(new Font(Font.SERIF, Font.PLAIN, 13));
+		textArea.setFont(new Font("Text", Font.PLAIN, 13));
 		this.setViewportView(textArea);
 		this.setRowHeaderView(lineNumView);
 	}
@@ -60,6 +62,11 @@ public class ScrollPaneTextArea extends JScrollPane {
 	}
 	
 	public void setText(String text){
+		try {
+			text = new String(text.getBytes(), "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			LogUtil.err(ScrollPaneTextArea.class, e);
+		}
 		this.textArea.setText(text);
 	}
 	

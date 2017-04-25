@@ -20,6 +20,7 @@ import javax.swing.table.DefaultTableModel;
 
 import com.common.Constants;
 import com.common.util.JsonUtil;
+import com.common.util.LogUtil;
 import com.common.util.StringUtil;
 import com.generator.bean.DataForJavaBean;
 import com.view.mainframe.MainFrame;
@@ -223,6 +224,7 @@ public class RowTableScrollPane extends JScrollPane {
 				SwingUtilities.invokeLater(new Runnable() {
 					public void run() {
 						DataForJavaBean dataBean = scrollPane.getRowData(table.getSelectedRow());
+						LogUtil.debug(RowTableScrollPane.class, dataBean.toJson());
 						new GeneratorFrame(frame, dataBean);
 					}
 				});
