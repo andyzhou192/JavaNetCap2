@@ -16,7 +16,8 @@ import com.view.util.ViewModules;
 public class FrameMenuBar extends JMenuBar {
 	
 	private MainFrame frame;
-	private JMenuItem startItem, stopItem;
+	private JMenuItem startItem, stopItem, pauseItem, resumeItem;
+	private JButton startBtn, pauseBtn, resumeBtn, stopBtn;
 
 	public FrameMenuBar(MainFrame frame) {
 		this.frame = frame;
@@ -33,7 +34,11 @@ public class FrameMenuBar extends JMenuBar {
 		ViewModules.addMenuItem(editMenu, new ActionForMenu(frame, "Delete", "Delete", Constants.DELETE_ICON));
 		
 		this.startItem = ViewModules.addMenuItem(mainMenu, new ActionForMenu(frame, "Start", "Start", Constants.START_NORMAL_ICON));
+		this.pauseItem = ViewModules.addMenuItem(mainMenu, new ActionForMenu(frame, "Pause", "Pause", Constants.PAUSE_NORMAL_ICON));
+		this.resumeItem = ViewModules.addMenuItem(mainMenu, new ActionForMenu(frame, "Resume", "Resume", Constants.RESUME_ICON));
 		this.stopItem = ViewModules.addMenuItem(mainMenu, new ActionForMenu(frame, "Stop", "Stop", Constants.STOP_NORMAL_ICON));
+		this.pauseItem.setEnabled(false);
+		this.resumeItem.setEnabled(false);
 		this.stopItem.setEnabled(false);
 		
 		ViewModules.addMenuItem(scriptMenu, new ActionForMenu(frame, "OpenScript", "OpenScript", Constants.OPEN_SCRIPT_ICON));
@@ -64,12 +69,22 @@ public class FrameMenuBar extends JMenuBar {
 		exportBtn.setBackground(new Color(216,218,254));
 		toolBar.add(exportBtn);
 		
-		JButton startBtn = ViewModules.addToolButton(toolBar, new ActionForMenu(frame, null, "Start", Constants.START_NORMAL_ICON));
+		startBtn = ViewModules.addToolButton(toolBar, new ActionForMenu(frame, null, "Start", Constants.START_NORMAL_ICON));
 		startBtn.setToolTipText("Start Capture");
 		startBtn.setBackground(new Color(216,218,254));
 		toolBar.add(startBtn);
 		
-		JButton stopBtn = ViewModules.addToolButton(toolBar, new ActionForMenu(frame, null, "Stop", Constants.STOP_NORMAL_ICON));
+		pauseBtn = ViewModules.addToolButton(toolBar, new ActionForMenu(frame, null, "Pause", Constants.PAUSE_NORMAL_ICON));
+		startBtn.setToolTipText("Pause Capture");
+		startBtn.setBackground(new Color(216,218,254));
+		toolBar.add(pauseBtn);
+		
+		resumeBtn = ViewModules.addToolButton(toolBar, new ActionForMenu(frame, null, "Resume", Constants.RESUME_ICON));
+		startBtn.setToolTipText("Resume Capture");
+		startBtn.setBackground(new Color(216,218,254));
+		toolBar.add(resumeBtn);
+		
+		stopBtn = ViewModules.addToolButton(toolBar, new ActionForMenu(frame, null, "Stop", Constants.STOP_NORMAL_ICON));
 		stopBtn.setToolTipText("Stop Capture");
 		stopBtn.setBackground(new Color(216,218,254));
 		toolBar.add(stopBtn);
@@ -100,20 +115,23 @@ public class FrameMenuBar extends JMenuBar {
 		toolBar.add(settingBtn);
 		return toolBar;
 	}
-
-	public JMenuItem getStartItem() {
-		return startItem;
+	
+	/**
+	 * 
+	 * @param start
+	 * @param pause
+	 * @param resume
+	 * @param stop
+	 */
+	public void setCaptureEnabled(boolean start, boolean pause, boolean resume, boolean stop){
+		startBtn.setEnabled(start);
+		startItem.setEnabled(start);
+		pauseBtn.setEnabled(pause);
+		pauseItem.setEnabled(pause);
+		resumeBtn.setEnabled(resume);
+		resumeItem.setEnabled(resume);
+		stopBtn.setEnabled(stop);
+		stopItem.setEnabled(stop);
 	}
-
-	public void setStartItem(JMenuItem startItem) {
-		this.startItem = startItem;
-	}
-
-	public JMenuItem getStopItem() {
-		return stopItem;
-	}
-
-	public void setStopItem(JMenuItem stopItem) {
-		this.stopItem = stopItem;
-	}
+	
 }

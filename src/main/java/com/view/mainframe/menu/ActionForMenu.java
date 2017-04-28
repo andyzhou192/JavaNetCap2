@@ -29,7 +29,7 @@ import com.generator.bean.ScriptForJavaBean;
 import com.generator.java.ScriptGenerator;
 import com.generator.maven.MavenPomHelper;
 import com.handler.DataSaveHandler;
-import com.netcap.captor.Netcaptor;
+import com.netcap.captor.CaptureThread;
 import com.protocol.http.HttptHelper;
 import com.view.mainframe.MainFrame;
 import com.view.mainframe.table.RowTableScrollPane;
@@ -49,12 +49,19 @@ public class ActionForMenu extends AbstractAction {
 	private MainFrame frame;
 	private RowTableScrollPane scrollPane;
 	private JTable table;
+	private CaptureThread captureThread;
 
 	public ActionForMenu(MainFrame frame, String name, String commond, URL iconUrl) {
 		if(null != name) putValue(NAME, name);
 		if(null != commond) putValue(ACTION_COMMAND_KEY, commond);
 		if(null != iconUrl) putValue(SMALL_ICON, new ImageIcon(iconUrl));
 		this.frame = frame;
+	}
+	
+	public CaptureThread getCaptureThread(){
+		if(null == captureThread)
+			captureThread = new CaptureThread("CaptureThread", frame);
+		return captureThread;
 	}
 
 	@Override
@@ -102,24 +109,24 @@ public class ActionForMenu extends AbstractAction {
 			});
 			break;
 		case "Start":
-			SwingUtilities.invokeLater(new Runnable() {
-				public void run() {
-					Netcaptor.startCapture(frame);
-					frame.progress.startProgress("Capture Starting...");
-					frame.getFrameMenuBar().getStartItem().setEnabled(false);
-					frame.getFrameMenuBar().getStopItem().setEnabled(true);
-				}
-			});
+			getCaptureThread().start();
+			frame.progress.startProgress("Capture Starting...");
+			frame.getFrameMenuBar().setCaptureEnabled(false, true, false, true);
+			break;
+		case "Pause":
+			getCaptureThread().suspend();
+			frame.progress.startProgress("Capture Paused...");
+			frame.getFrameMenuBar().setCaptureEnabled(false, false, true, false);
+			break;
+		case "Resume":
+			getCaptureThread().resume();
+			frame.progress.startProgress("Capture Resume...");
+			frame.getFrameMenuBar().setCaptureEnabled(false, true, false, true);
 			break;
 		case "Stop":
-			SwingUtilities.invokeLater(new Runnable() {
-				public void run() {
-					Netcaptor.stopCapture();
-					frame.progress.stopProgress("Capture Stopped!");
-					frame.getFrameMenuBar().getStartItem().setEnabled(true);
-					frame.getFrameMenuBar().getStopItem().setEnabled(false);
-				}
-			});
+			getCaptureThread().stop();
+			frame.progress.stopProgress("Capture Stopped!");
+			frame.getFrameMenuBar().setCaptureEnabled(true, false, false, false);
 			break;
 		case "OpenScript":
 			SwingUtilities.invokeLater(new Runnable() {

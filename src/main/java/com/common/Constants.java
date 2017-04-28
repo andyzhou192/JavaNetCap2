@@ -54,6 +54,7 @@ public final class Constants {
 	public static URL OPEN_SCRIPT_ICON = Constants.class.getClass().getResource("/img/OpenScript.png");
 	public static URL PAUSE_NORMAL_ICON = Constants.class.getClass().getResource("/img/PauseNormal.png");
 	public static URL PAUSE_DISABLED_ICON = Constants.class.getClass().getResource("/img/PauseDisabled.png");
+	public static URL RESUME_ICON = Constants.class.getClass().getResource("/img/Resume.png");
 	public static URL REFRESH_ICON = Constants.class.getClass().getResource("/img/Refresh.png");
 	public static URL RELOAD_ICON = Constants.class.getClass().getResource("/img/Reload.png");
 	public static URL SAVE_ICON = Constants.class.getClass().getResource("/img/Save.png");
