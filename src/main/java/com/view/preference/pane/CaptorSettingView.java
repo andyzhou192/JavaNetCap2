@@ -10,7 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
-import com.netcap.captor.Netcaptor;
+import com.netcap.captor.NetCaptor;
 import com.view.preference.AbstractPreferencesView;
 import com.view.preference.PreferenceFrame;
 import com.view.preference.PropertyHelper;
@@ -28,7 +28,7 @@ import com.view.util.ViewModules;
  * ANY CORPORATE OR COMMERCIAL PURPOSE.
  */
 @SuppressWarnings({ "serial" })
-public class JcaptureSettingView extends AbstractPreferencesView {
+public class CaptorSettingView extends AbstractPreferencesView {
 
 	private PreferenceFrame parent;
 	private JLabel ethernetLabel, protocolLabel, promiscLabel, urlLabel, maxLengthLabel;
@@ -39,7 +39,7 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 	private JRadioButton wholeRadioButton, headRadioButton, otherRadioButton;
 	private JButton applyButton;
 	
-	public JcaptureSettingView(PreferenceFrame parent) {
+	public CaptorSettingView(PreferenceFrame parent) {
 		super(11, 10);
 		this.parent = parent;
 		defineComponents();
@@ -60,9 +60,9 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 		urlLabel = ViewModules.createJLabel("Capture Url:(Multiple addresses are separated by ',')", Color.BLACK);
 		urlLabel.setToolTipText("请填写待捕获的URL");
 		maxLengthLabel = ViewModules.createJLabel("Max Length:", Color.BLACK);
-		maxLengthLabel.setToolTipText("请选择每次捕获数据的最大长度，大小在68~6656之间");
+		maxLengthLabel.setToolTipText("请选择每次捕获数据的最大长度，大小在68~65536之间");
 		
-		netJComboBox = ViewModules.createComboBox(Netcaptor.devicesMap.keySet().toArray());
+		netJComboBox = ViewModules.createComboBox(NetCaptor.devicesMap.keySet().toArray());
 		proJComboBox = ViewModules.createComboBox(new String[]{"TCP"});
 		promiscCheckBox = ViewModules.createCheckBox("Yes", null);
 		urlFilterArea = new ScrollPaneTextArea(5, "");
@@ -71,7 +71,7 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 		otherRadioButton = ViewModules.createRadioButton("Other", "OTHER", this);
 		// 把单选框加到一个组中以确保一个组中的单选框只能单选
 		ViewModules.createButtonGroup(wholeRadioButton, headRadioButton, otherRadioButton);
-		caplenTextField = ViewModules.createTextField(20, "6656", false);
+		caplenTextField = ViewModules.createTextField(20, "65536", false);
 		
 		applyButton = ViewModules.createButton("Apply", "SaveCaptureSetting", this);
 	}
@@ -87,14 +87,14 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 		urlFilterArea.setText(PropertyHelper.getCaptureUrl());
 		
 		int caplen = PropertyHelper.getCaptureLength();
-		if (caplen < 68 || caplen > 6656) {
+		if (caplen < 68 || caplen > 65536) {
 			caplenTextField.setText(String.valueOf(caplen));
 			otherRadioButton.setSelected(true);
 		} else if(caplen == 68){
 			caplenTextField.setText(String.valueOf(caplen));
 			headRadioButton.setSelected(true);
 		} else {
-			caplenTextField.setText(String.valueOf(6656));
+			caplenTextField.setText(String.valueOf(65536)); // 65535为ip数据包支持的最大报文长度
 			wholeRadioButton.setSelected(true);
 		}
 	}
@@ -127,7 +127,7 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 	public void actionPerformed(ActionEvent evt) {
 		switch(evt.getActionCommand()){
 		case "WHOLE":
-			caplenTextField.setText("6656");
+			caplenTextField.setText("65536");
 			caplenTextField.setEnabled(false);
 			break;
 		case "HEAD":
@@ -154,8 +154,8 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 	 */
 	public boolean saveSettings(){
 		int caplen = Integer.parseInt(caplenTextField.getText());
-		if (caplen < 68 || caplen > 6656) {
-			ViewModules.showMessageDialog(null, "捕获长度必须介于 68 和 6656之间");
+		if (caplen < 68 || caplen > 65536) {
+			ViewModules.showMessageDialog(null, "捕获长度必须介于 68 和 65536之间");
 			return false;
 		}
 		// 网卡序号，默认为0
@@ -164,7 +164,7 @@ public class JcaptureSettingView extends AbstractPreferencesView {
 		PropertyHelper.setPromisc(promiscCheckBox.isSelected());
 		// 待捕获的协议类型，默认为tcp
 		PropertyHelper.setProtocolType(proJComboBox.getSelectedItem().toString());
-		// 待捕获的数据长度 ,捕获长度必须介于 68和6656之间的整数，默认为6656
+		// 待捕获的数据长度 ,捕获长度必须介于 68和65536之间的整数，默认为65536
 		PropertyHelper.setCaptureLength(caplen);
 		// 待捕获的URL，不含参数
 		PropertyHelper.setCaptureUrl(urlFilterArea.getText());

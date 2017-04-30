@@ -6,30 +6,29 @@ import com.view.mainframe.MainFrame;
 public class CaptureThread implements Runnable {
 	private Class<?> cl = CaptureThread.class;
 
+	private NetCaptor captor;
 	public Thread t;
     private String threadName;
     private boolean suspended = false;
     private boolean stopped = false;
-    private MainFrame parent;
     
     public CaptureThread(String threadName, MainFrame parent){
         this.threadName=threadName;
-        this.parent = parent;
+        this.captor = new NetCaptor(parent);
     }
 
-    @SuppressWarnings("restriction")
-	public void run() {
+    public void run() {
     	synchronized(this) {
     		LogUtil.console(cl, "----->" + stopped);
     		while(!stopped) {
     			try {
-    				int packetNum = Netcaptor.getJpcapCaptor().processPacket(-1, new PacketReceiverImpl(parent));
-    				LogUtil.debug(cl, "received packet number : " + packetNum);
-    				synchronized(this) {
+    				int packetNum = captor.startCaptor();
+    				LogUtil.console(cl, "received packet number : " + packetNum);
+//    				synchronized(this) {
     					while(suspended) {
     						wait();
     					}
-    				}
+//    				}
     			} catch (InterruptedException e) {
     				LogUtil.err(cl, "Thread " +  threadName + " interrupted.");
     				LogUtil.err(cl, "Thread " +  threadName + e);
@@ -59,6 +58,7 @@ public class CaptureThread implements Runnable {
      */
     public synchronized void stop(){
     	stopped = true;
+    	captor.stopCaptor();
     	notify();
     	//t = null;
     }
@@ -67,14 +67,14 @@ public class CaptureThread implements Runnable {
      * 暂停
      */
     public void suspend(){
-        suspended = true;
+    	suspended = true;
     }
      
      /**
       * 继续
       */
      public synchronized void resume(){
-         suspended = false;
-         notify();
+     	suspended = false;
+        notify();
      }
 }

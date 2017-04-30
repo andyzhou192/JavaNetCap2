@@ -13,7 +13,7 @@ import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreeSelectionModel;
 
-import com.view.preference.pane.JcaptureSettingView;
+import com.view.preference.pane.CaptorSettingView;
 import com.view.preference.pane.ScriptSettingView;
 import com.view.preference.pane.WorkspaceSettingView;
 import com.view.util.BaseFrame;
@@ -33,7 +33,7 @@ public class PreferenceFrame extends BaseFrame {
 		this.setBounds(100, 100, 900, 600);
 		
 		this.panel.add("Workspace", new WorkspaceSettingView(this));
-		this.panel.add("Capture", new JcaptureSettingView(this));
+		this.panel.add("Capture", new CaptorSettingView(this));
 		this.panel.add("Java", new ScriptSettingView(this));
 		this.card.show(panel, "Workspace");
 		this.tree = getNavigateTree();

@@ -37,9 +37,6 @@ public class FrameMenuBar extends JMenuBar {
 		this.pauseItem = ViewModules.addMenuItem(mainMenu, new ActionForMenu(frame, "Pause", "Pause", Constants.PAUSE_NORMAL_ICON));
 		this.resumeItem = ViewModules.addMenuItem(mainMenu, new ActionForMenu(frame, "Resume", "Resume", Constants.RESUME_ICON));
 		this.stopItem = ViewModules.addMenuItem(mainMenu, new ActionForMenu(frame, "Stop", "Stop", Constants.STOP_NORMAL_ICON));
-		this.pauseItem.setEnabled(false);
-		this.resumeItem.setEnabled(false);
-		this.stopItem.setEnabled(false);
 		
 		ViewModules.addMenuItem(scriptMenu, new ActionForMenu(frame, "OpenScript", "OpenScript", Constants.OPEN_SCRIPT_ICON));
 		ViewModules.addMenuItem(scriptMenu, new ActionForMenu(frame, "BatchGeneScript", "BatchGeneScript", Constants.GENE_SCRIPT_ICON));

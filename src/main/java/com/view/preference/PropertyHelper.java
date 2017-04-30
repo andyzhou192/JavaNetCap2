@@ -11,7 +11,7 @@ import com.common.Constants;
 import com.common.util.LogUtil;
 import com.common.util.PropertiesUtil;
 import com.common.util.StringUtil;
-import com.netcap.captor.Netcaptor;
+import com.netcap.captor.NetCaptor;
 
 public class PropertyHelper {
 	
@@ -266,7 +266,7 @@ public class PropertyHelper {
 		if(null == Constants.PROPS)
 			PropertyHelper.loadProperties();
 		String value = String.valueOf(Constants.PROPS.get(NET_DEVICES_NAME));
-		return (StringUtil.validate(value)) ? value : Netcaptor.devicesMap.keySet().iterator().next();
+		return (StringUtil.validate(value)) ? value : NetCaptor.devicesMap.keySet().iterator().next();
 	}
 	
 	public static String getProtocolType(){
