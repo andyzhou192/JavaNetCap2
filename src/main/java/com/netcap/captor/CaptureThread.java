@@ -9,7 +9,7 @@ public class CaptureThread implements Runnable {
 	private NetCaptor captor;
 	public Thread t;
     private String threadName;
-    private boolean suspended = false;
+//    private boolean suspended = false;
     private boolean stopped = false;
     
     public CaptureThread(String threadName, MainFrame parent){
@@ -19,20 +19,19 @@ public class CaptureThread implements Runnable {
 
     public void run() {
     	synchronized(this) {
-    		LogUtil.console(cl, "----->" + stopped);
     		while(!stopped) {
-    			try {
+//    			try {
     				int packetNum = captor.startCaptor();
     				LogUtil.console(cl, "received packet number : " + packetNum);
 //    				synchronized(this) {
-    					while(suspended) {
-    						wait();
-    					}
+//    					while(suspended) {
+//    						wait();
+//    					}
 //    				}
-    			} catch (InterruptedException e) {
-    				LogUtil.err(cl, "Thread " +  threadName + " interrupted.");
-    				LogUtil.err(cl, "Thread " +  threadName + e);
-    			}
+//    			} catch (InterruptedException e) {
+//    				LogUtil.err(cl, "Thread " +  threadName + " interrupted.");
+//    				LogUtil.err(cl, "Thread " +  threadName + e);
+//    			}
     			LogUtil.console(cl, "Thread " +  threadName + " starting.");
     		}
     		LogUtil.console(cl, "Thread " +  threadName + " exiting.");
@@ -43,7 +42,8 @@ public class CaptureThread implements Runnable {
      * 开始
      */
     public void start(){
-    	LogUtil.console(cl, "Starting " +  threadName );
+    	LogUtil.debug(cl, "Starting " +  threadName );
+		PacketReceiverImpl.STATUS = 1;
         stopped = false;
         if(t == null){
             t = new Thread(this, threadName);
@@ -57,6 +57,7 @@ public class CaptureThread implements Runnable {
      * 停止
      */
     public synchronized void stop(){
+		PacketReceiverImpl.STATUS = 0;
     	stopped = true;
     	captor.stopCaptor();
     	notify();
@@ -66,15 +67,17 @@ public class CaptureThread implements Runnable {
     /**
      * 暂停
      */
-    public void suspend(){
-    	suspended = true;
+    public synchronized void suspend(){
+//    	suspended = true;
+    	PacketReceiverImpl.STATUS = 2;
     }
      
      /**
       * 继续
       */
      public synchronized void resume(){
-     	suspended = false;
+//     	suspended = false;
+     	PacketReceiverImpl.STATUS = 1;
         notify();
      }
 }

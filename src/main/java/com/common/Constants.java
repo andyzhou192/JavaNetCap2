@@ -41,6 +41,7 @@ public final class Constants {
 	public static URL CLOSE_ICON = Constants.class.getClass().getResource("/img/Close.png");
 	public static URL DOWN_ICON = Constants.class.getClass().getResource("/img/Down.png");
 	public static URL DETAIL_ICON = Constants.class.getClass().getResource("/img/Detail.png");
+	public static URL CLEAR_ICON = Constants.class.getClass().getResource("/img/Clear.png");;
 	public static URL DELETE_ICON = Constants.class.getClass().getResource("/img/Delete.png");
 	public static URL DATA_IMPORT_ICON = Constants.class.getClass().getResource("/img/DataImport.png");
 	public static URL DATA_EXPORT_ICON = Constants.class.getClass().getResource("/img/DataExport.png");

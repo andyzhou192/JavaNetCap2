@@ -32,6 +32,7 @@ public class FrameMenuBar extends JMenuBar {
 		ViewModules.addMenuItem(fileMenu, new ActionForMenu(frame, "Exit", "Exit", Constants.EXIT_ICON));
 		
 		ViewModules.addMenuItem(editMenu, new ActionForMenu(frame, "Delete", "Delete", Constants.DELETE_ICON));
+		ViewModules.addMenuItem(editMenu, new ActionForMenu(frame, "Clear", "Clear", Constants.CLEAR_ICON));
 		
 		this.startItem = ViewModules.addMenuItem(mainMenu, new ActionForMenu(frame, "Start", "Start", Constants.START_NORMAL_ICON));
 		this.pauseItem = ViewModules.addMenuItem(mainMenu, new ActionForMenu(frame, "Pause", "Pause", Constants.PAUSE_NORMAL_ICON));
@@ -66,6 +67,16 @@ public class FrameMenuBar extends JMenuBar {
 		exportBtn.setBackground(new Color(216,218,254));
 		toolBar.add(exportBtn);
 		
+		JButton delDataBtn = ViewModules.addToolButton(toolBar, new ActionForMenu(frame, null, "Delete", Constants.DELETE_ICON));
+		delDataBtn.setToolTipText("Delete Data From Data Table");
+		delDataBtn.setBackground(new Color(216,218,254));
+		toolBar.add(delDataBtn);
+		
+		JButton clearDataBtn = ViewModules.addToolButton(toolBar, new ActionForMenu(frame, null, "Clean", Constants.CLEAR_ICON));
+		delDataBtn.setToolTipText("Clear Data in Table");
+		delDataBtn.setBackground(new Color(216,218,254));
+		toolBar.add(clearDataBtn);
+		
 		startBtn = ViewModules.addToolButton(toolBar, new ActionForMenu(frame, null, "Start", Constants.START_NORMAL_ICON));
 		startBtn.setToolTipText("Start Capture");
 		startBtn.setBackground(new Color(216,218,254));
@@ -85,11 +96,6 @@ public class FrameMenuBar extends JMenuBar {
 		stopBtn.setToolTipText("Stop Capture");
 		stopBtn.setBackground(new Color(216,218,254));
 		toolBar.add(stopBtn);
-		
-		JButton delDataBtn = ViewModules.addToolButton(toolBar, new ActionForMenu(frame, null, "Delete", Constants.DELETE_ICON));
-		delDataBtn.setToolTipText("Delete Data From Data Table");
-		delDataBtn.setBackground(new Color(216,218,254));
-		toolBar.add(delDataBtn);
 		
 		JButton openScriptBtn = ViewModules.addToolButton(toolBar, new ActionForMenu(frame, null, "OpenScript", Constants.OPEN_SCRIPT_ICON));
 		openScriptBtn.setToolTipText("Open Script");
