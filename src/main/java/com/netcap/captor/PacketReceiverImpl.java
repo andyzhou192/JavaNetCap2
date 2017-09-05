@@ -1,5 +1,6 @@
 package com.netcap.captor;
 
+import com.common.util.LogUtil;
 import com.netcap.handler.PacketAsyncHandler;
 import com.netcap.handler.PacketQueues;
 import com.view.mainframe.MainFrame;
@@ -12,6 +13,8 @@ public class PacketReceiverImpl implements PacketReceiver {
 	private MainFrame frame;
 	
 	private Thread packetHandlerThread = null;
+	static int index = 1;
+	public static int STATUS = 1;
 	
 	public PacketReceiverImpl(MainFrame frame){
 		this.frame = frame;
@@ -23,9 +26,15 @@ public class PacketReceiverImpl implements PacketReceiver {
 	@Override
 	public void receivePacket(Packet packet) {
 		if(null != packet.data && packet.data.length > 0){
-			startPacketThread();
-			PacketQueues.Task task = new PacketQueues.Task(packet);
-			PacketQueues.add(task);
+			synchronized(this){
+				if(STATUS == 1){
+					startPacketThread();
+					PacketQueues.Task task = new PacketQueues.Task(packet);
+					PacketQueues.add(task);
+				} else {
+					return;
+				}
+			}
 		}
 	}
 	

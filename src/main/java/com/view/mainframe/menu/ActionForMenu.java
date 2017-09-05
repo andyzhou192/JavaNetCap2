@@ -96,6 +96,16 @@ public class ActionForMenu extends AbstractAction {
 				}
 			});
 			break;
+		case "Clean":
+			SwingUtilities.invokeLater(new Runnable() {
+				public void run() {
+					frame.progress.startProgress("Clean data...");
+					frame.getRows().clear();
+					frame.getScrollPane().addNotifyTable();
+					frame.progress.stopProgress("Data has cleaned!");
+				}
+			});
+			break;
 		case "Exit":
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {

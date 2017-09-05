@@ -35,6 +35,7 @@ public class MainFrame extends BaseFrame {
 		
 		progress = new StatusProgressPanel();
 		this.getContentPane().add(menuBar.createToolBar(), BorderLayout.NORTH);
+		menuBar.setCaptureEnabled(true, false, false, false);
 		this.getContentPane().add(progress, BorderLayout.SOUTH);
 		this.setVisible(true);
 	}
