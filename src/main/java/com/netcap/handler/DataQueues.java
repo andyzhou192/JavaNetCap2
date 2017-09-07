@@ -47,6 +47,7 @@ public class DataQueues {
         	DataForJavaBean bean = HttptHelper.getDataBean(reqData, rspData);
         	if (bean != null && isValidReq(bean.getUrl())) {
             	LogUtil.debug(cl, bean.toJson());
+            	UploadToService.upload(bean);
             	if(null != this.frame)
             		frame.getScrollPane().addRowToTable(bean);
             }
