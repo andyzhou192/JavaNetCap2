@@ -10,6 +10,7 @@ import com.view.mainframe.MainFrame;
 import com.view.preference.PropertyHelper;
 
 public class DataQueues {
+	private static Class<?> cl = DataQueues.class;
 
 	public static LinkedList<Task> queue = new LinkedList<Task>();
 	
@@ -68,8 +69,10 @@ public class DataQueues {
     			return true;
     		} else {
     			for(String address : captureUrl.split(",")){
-    				if(url.contains(address.trim()))
+    				LogUtil.debug(cl, "--------->" + url);
+    				if(url.contains(address.trim())){
     					return true;
+    				}
     			} 
     			return false;
     		}
