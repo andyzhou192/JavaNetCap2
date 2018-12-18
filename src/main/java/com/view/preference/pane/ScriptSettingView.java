@@ -181,7 +181,7 @@ public class ScriptSettingView extends AbstractPreferencesView {
 	 * 保存配置
 	 */
 	public boolean saveSettings(){
-		// 必填：生成的脚本文件包名，如：com.cmcc
+		// 必填：生成的脚本文件包名，如：net.andy
 		PropertyHelper.setPackageName(packageNameField.getText());
 		// 选填：生成的脚本作者，不填时使用电脑当前用户
 		PropertyHelper.setAuthor(authorField.getText());

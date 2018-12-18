@@ -172,7 +172,7 @@ public class WorkspaceSettingView extends AbstractPreferencesView {
 	 * 保存配置
 	 */
 	public boolean saveSettings(){
-		// 必填：生成的脚本文件包名，如：com.cmcc
+		// 必填：生成的脚本文件包名，如：net.andy
 		String groupId = groupIdField.getText();
 		String projectName = projectNameField.getText();
 		String sourceDir = sourceDirField.getText();
