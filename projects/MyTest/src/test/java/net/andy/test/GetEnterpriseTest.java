@@ -1,4 +1,4 @@
-package com.cmcc.test;
+package net.andy.test;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
