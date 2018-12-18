@@ -1,6 +1,5 @@
 package com.netcap.captor;
 
-import com.common.util.LogUtil;
 import com.netcap.handler.PacketAsyncHandler;
 import com.netcap.handler.PacketQueues;
 import com.view.mainframe.MainFrame;

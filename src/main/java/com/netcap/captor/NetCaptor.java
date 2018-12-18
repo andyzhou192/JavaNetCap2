@@ -156,10 +156,12 @@ public class NetCaptor {
 		return map;
 	}
 
-//	public static void main(String[] args) throws java.net.SocketException {
+	public static void main(String[] args) throws java.net.SocketException {
 		// javax.swing.JFrame frame = new javax.swing.JFrame();
 		// JcaptureSettingView inst = new JcaptureSettingView(frame);
 		// inst.setVisible(true);
+//		getNetDeviceMapFromJpcap();
+		getLocalNetworkInterface();
 //		getNetDeviceMap();
 //		java.util.Enumeration<java.net.NetworkInterface> e = java.net.NetworkInterface.getNetworkInterfaces();
 //		while (e.hasMoreElements()) {
@@ -204,7 +206,7 @@ public class NetCaptor {
 		// System.out.println();
 		// }
 		// }
-//	}
+	}
 
 	public static String displayMac(byte[] mac) {
 		String macStr = "";

@@ -9,7 +9,7 @@ import com.generator.maven.ProjectInfo;
 
 /**
  * 
- * @author zhouyelin@chinamobile.com
+ * @author sifuma@163.com
  *
  */
 public final class Constants {
