@@ -10,6 +10,7 @@ import com.view.mainframe.MainFrame;
 import com.view.preference.PropertyHelper;
 
 public class DataQueues {
+	private static Class<?> cl = DataQueues.class;
 
 	public static LinkedList<Task> queue = new LinkedList<Task>();
 	
@@ -47,6 +48,7 @@ public class DataQueues {
         	DataForJavaBean bean = HttptHelper.getDataBean(reqData, rspData);
         	if (bean != null && isValidReq(bean.getUrl())) {
             	LogUtil.debug(cl, bean.toJson());
+            	UploadToService.upload(bean);
             	if(null != this.frame)
             		frame.getScrollPane().addRowToTable(bean);
             }
@@ -67,8 +69,10 @@ public class DataQueues {
     			return true;
     		} else {
     			for(String address : captureUrl.split(",")){
-    				if(url.contains(address.trim()))
+    				LogUtil.debug(cl, "--------->" + url);
+    				if(url.contains(address.trim())){
     					return true;
+    				}
     			} 
     			return false;
     		}
